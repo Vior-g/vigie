@@ -1,0 +1,104 @@
+{
+  "dj": "Antre de la Reine Nyée",
+  "boss": "Reine Nyée",
+  "maj": "2026-10-22",
+  "essentiel": [
+    "Combo mortel : la Néfileuse met en Cocon (-100 PA/PM, 2 tours), l'Arapex exécute toute cible en Cocon (1-2 PO). Sépare-les et tue la Néfileuse tôt.",
+    "Frapper au contact un allié en Cocon le libère.",
+    "La Reine pond un Œuf tous les 2 tours ; il éclot en Trégénaire au 3e tour, qui la soigne d'environ 130 PV par tour, à toute portée.",
+    "Après « Appel de la Reine », les Trégénaires rouges explosent (~220 Neutre au contact)."
+  ],
+  "mecaniques": [
+    {
+      "t": "Cocon et Exécution",
+      "x": "Prison de soie (Néfileuse) : Cocon 2 tours. Exécution (Arapex, 1-2 PO) tue une cible en Cocon. Libère l'allié en le frappant au contact."
+    },
+    {
+      "t": "Œufs et Trégénaires",
+      "x": "Œuf (800 PV) tous les 2 tours, éclosion au 3e tour. Trégénaire : soin de la Reine (~130) chaque tour ; sacrifice explosif si elle devient rouge."
+    }
+  ],
+  "sorts": [
+    {
+      "n": "Mitraille de soie",
+      "x": "1-8 PO, cercle de 2 : ~150 Neutre, -15 % de résistances 2 tours."
+    },
+    {
+      "n": "Cisaillage",
+      "x": "Contact, zone bâton : ~150 Neutre, -2 PM, poussée ; 2 fois par tour."
+    },
+    {
+      "n": "Ponte d'Oeuf",
+      "x": "1-3 PO sans ligne de vue, tous les 2 tours."
+    }
+  ],
+  "monstres": [
+    {
+      "n": "Néfileuse",
+      "d": "haut",
+      "x": "Cocon au contact (tous les 3 tours) ; Fil collant -5 % de résistance cumulable ; toiles."
+    },
+    {
+      "n": "Arapex",
+      "d": "haut",
+      "x": "Exécution des Cocons ; Tourbillon qui attire ; Estocade en ligne."
+    },
+    {
+      "n": "Dardalaine",
+      "d": "moyen",
+      "x": "Ligne 1-8 PO sans ligne de vue, poison et -200 puissance cumulables ; renvoie au contact."
+    },
+    {
+      "n": "Gargantûl",
+      "d": "moyen",
+      "x": "Bouclier de 425 et +2 PM ; Mastication de plus en plus forte."
+    },
+    {
+      "n": "Saltik",
+      "d": "moyen",
+      "x": "Retire 2 PA et repousse ; bondit en zone."
+    },
+    {
+      "n": "Trégénaire",
+      "d": "moyen",
+      "x": "Soigne la Reine ; explose quand elle est rouge."
+    }
+  ],
+  "strategie": [
+    "Néfileuse ou Arapex dans les premiers tours, et ne les laisse jamais ensemble.",
+    "Détruis les œufs avant leur éclosion si tu veux finir la Reine vite.",
+    "Prépare le premier tour pour que tout le monde rejoigne le combat."
+  ],
+  "pieges": [
+    "Rester au contact des Trégénaires rouges.",
+    "Laisser un allié en Cocon à portée de l'Arapex."
+  ],
+  "tours": [
+    {
+      "from": 3,
+      "every": 2,
+      "level": "alerte",
+      "text": "Œufs de Trégénaire : éclosion possible ce tour (soins de la Reine)."
+    }
+  ],
+  "succes": [
+    {
+      "n": "Premier",
+      "x": "Vaincre la Reine Nyée en premier."
+    },
+    {
+      "n": "Hardi",
+      "x": "Finir chaque tour au contact d'un ennemi (les invocations aident tant que la Reine vit)."
+    },
+    {
+      "n": "Duo",
+      "x": "Deux personnages, moins de 20 tours : Néfileuse d'abord."
+    }
+  ],
+  "acces": [
+    "Bois des Arak-Haï, entrée en [-6,-15] (zaap de la Montagne des Craqueleurs en [-5,-8]).",
+    "Clé : trousseau ou clef (6 Lin, 6 Manganèse, 5 Orchidée Freyesque, 4 Bois d'Oliviolet, Glande d'Arak-haï).",
+    "Niveau conseillé 90."
+  ],
+  "src": "https://dofus.jeuxonline.info/article/13795/antre-reine-nyee"
+}

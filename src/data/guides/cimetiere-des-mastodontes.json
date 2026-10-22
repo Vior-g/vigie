@@ -1,0 +1,86 @@
+{
+  "dj": "Cimetière des Mastodontes",
+  "boss": "Mantiscore",
+  "maj": "2026-10-22",
+  "essentiel": [
+    "Quand on l'attaque, Mantiscore se téléporte symétriquement par rapport au personnage en état Sursis.",
+    "Force Poigne (contact) vole jusqu'à 2 PA ; Tombeau du Désert (2-5 PO) enracine 2 tours ; Provocaspion attire de 3.",
+    "Beaucoup de retraits de PM (Boulépique, Ouroboulos, Scordion Bleu) : garde tes PM.",
+    "Poisons punitifs : 10 PV par PM utilisé (Fennex) et 22 PV par PA utilisé (Léolhyène)."
+  ],
+  "mecaniques": [
+    {
+      "t": "Sursis",
+      "x": "Mantiscore se téléporte de façon symétrique par rapport au personnage en état Sursis quand il est attaqué : anticipe sa case d'arrivée."
+    }
+  ],
+  "sorts": [
+    {
+      "n": "Force Poigne",
+      "x": "Contact : Eau, vol jusqu'à 2 PA."
+    },
+    {
+      "n": "Tombeau du Désert",
+      "x": "2-5 PO : Terre, Enraciné 2 tours."
+    },
+    {
+      "n": "Provocaspion",
+      "x": "Attire de 3 cases."
+    }
+  ],
+  "monstres": [
+    {
+      "n": "Boulépique",
+      "d": "haut",
+      "x": "S'attire sur toi (ligne 6 PO) et retire 2 PA ; Feu en cercle avec Affaibli ; -3 PM au contact."
+    },
+    {
+      "n": "Léolhyène",
+      "d": "haut",
+      "x": "Gros dégâts Terre au contact ; poison Feu de 22 PV par PA utilisé."
+    },
+    {
+      "n": "Scordion Bleu",
+      "d": "moyen",
+      "x": "Invisible dans son glyphe ; -100 puissance (1-2 PO) ; -2 PM au contact."
+    },
+    {
+      "n": "Fennex",
+      "d": "moyen",
+      "x": "Poison de 10 PV par PM utilisé ; booste un allié (+30 % vitalité, +100 puissance) ; révèle l'invisible."
+    },
+    {
+      "n": "Ouroboulos",
+      "d": "moyen",
+      "x": "Vole 2 PM et repousse ; -3 PO (3 PO)."
+    }
+  ],
+  "strategie": [
+    "Les monstres frappent peu à distance : joue à distance et laisse-les venir.",
+    "Bouge le moins possible sous poison du Fennex, utilise peu de PA sous celui du Léolhyène."
+  ],
+  "pieges": [
+    "Rester au contact du Boulépique, de l'Ouroboulos ou du Scordion (PM perdus).",
+    "Oublier le Scordion invisible caché dans son glyphe."
+  ],
+  "succes": [
+    {
+      "n": "Mains Propres",
+      "x": "Achever les ennemis par dégâts indirects (pièges, poisons, invocations)."
+    },
+    {
+      "n": "Zombie",
+      "x": "Un seul PM par tour."
+    },
+    {
+      "n": "Duo",
+      "x": "Deux personnages, moins de 20 tours."
+    }
+  ],
+  "acces": [
+    "Désert de Saharach, entrée en [19,-61] (zaap de Saharach en [15,-58]).",
+    "Clé : trousseau ou Clef du Cimetière des Mastodontes (Lin, Manganèse, Bois d'Érable, Orchidée Freyesque, Écaille d'Ouroboulos, Queue de Scordion Bleu, Queue de Fennex, Œil de Léolhyène).",
+    "Niveau conseillé 80."
+  ],
+  "src": "https://dofus.jeuxonline.info/article/14247/cimetiere-mastodontes-mantiscore"
+}

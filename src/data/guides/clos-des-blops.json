@@ -1,0 +1,85 @@
+{
+  "dj": "Clos des Blops",
+  "boss": "Blop Coco Royal",
+  "maj": "2026-10-22",
+  "essentiel": [
+    "Après la salle 4, tu choisis le Blop Royal à affronter (Coco, Griotte, Indigo ou Reinette).",
+    "Chaque Royal rend une cible insensible à son élément (Blotection) : Air pour Coco, Feu pour Griotte, Eau pour Indigo, Terre pour Reinette.",
+    "Blovocation invoque un Blop au hasard, parfois un Gloutoblop : tue-le tout de suite.",
+    "Le Gloutoblop avale tout ce qu'il croise (alliés compris) et gagne PM et vitalité à chaque gloutage."
+  ],
+  "mecaniques": [
+    {
+      "t": "Choix du Royal",
+      "x": "Le Royal choisi détermine l'élément à éviter (son élément) ; frappe-le dans sa faiblesse, visible sur sa carte de résistances."
+    },
+    {
+      "t": "Blyphe",
+      "x": "Glyphe posé jusqu'à 14 PO : dégâts en fin de tour et -1 PM pour qui y reste."
+    }
+  ],
+  "sorts": [
+    {
+      "n": "Blopunition Royale",
+      "x": "1-4 PO : vol de vie Air et vol de 1 PM."
+    },
+    {
+      "n": "Blovocation",
+      "x": "Invoque un Blop au hasard (Gloutoblop possible)."
+    },
+    {
+      "n": "Blotection",
+      "x": "1-4 PO : rend la cible insensible à l'élément du Royal."
+    }
+  ],
+  "monstres": [
+    {
+      "n": "Gloutoblop",
+      "d": "haut",
+      "x": "Avale toute entité sur son passage et se renforce : priorité absolue."
+    },
+    {
+      "n": "Blopignon",
+      "d": "moyen",
+      "x": "Agressif au contact ; poison selon les PM utilisés."
+    },
+    {
+      "n": "Tronkoblop",
+      "d": "moyen",
+      "x": "Soigne les Blops autour de lui ; 2 PM seulement : isole-le."
+    },
+    {
+      "n": "Blop Coco",
+      "d": "bas",
+      "x": "Fuyard ; invoque des Biblops qui deviennent invisibles."
+    }
+  ],
+  "strategie": [
+    "Frappe le Royal dans son élément faible, jamais dans le sien.",
+    "Gloutoblop dès qu'il apparaît, puis isole le Tronkoblop."
+  ],
+  "pieges": [
+    "Rester sur un Blyphe en fin de tour.",
+    "Laisser un Gloutoblop avaler tes alliés."
+  ],
+  "succes": [
+    {
+      "n": "Pusillanime",
+      "x": "Ne jamais finir son tour au contact d'un adversaire."
+    },
+    {
+      "n": "Duel",
+      "x": "Un ennemi attaqué ne doit l'être que par un seul personnage."
+    },
+    {
+      "n": "Duo",
+      "x": "Deux personnages, moins de 20 tours."
+    }
+  ],
+  "acces": [
+    "Lac de Cania, entrée en [-7,-43] (zaap du Lac de Cania en [-3,-42]).",
+    "Clé : trousseau, ou 5 Menthe Sauvage, 5 Houblon, 5 Kobalte, 1 Bois de Chêne et un Bout de Blop de chaque couleur.",
+    "Niveau conseillé 60."
+  ],
+  "src": "https://dofus.jeuxonline.info/article/13771/donjon-blops-antre-blop-multicolore"
+}

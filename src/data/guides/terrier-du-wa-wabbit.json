@@ -1,0 +1,94 @@
+{
+  "dj": "Terrier du Wa Wabbit",
+  "boss": "Wa Wobot",
+  "maj": "2026-10-22",
+  "essentiel": [
+    "Le Wa Wobot te déplace sans arrêt : Mékattwaction t'attire de 12 cases (4-12 PO) et laisse un Wobot Tamponneur à ta place.",
+    "Wouste (1-2 PO) repousse de 3 : les dégâts de poussée sont le grand danger du combat.",
+    "Il remplace les invocations qu'il tue par des Wobots Tamponneurs : le terrain se remplit vite.",
+    "Mékawapace : +30 % à toutes ses résistances."
+  ],
+  "mecaniques": [
+    {
+      "t": "Encombrement",
+      "x": "Mékattwaction et Twansmutation remplissent la carte de Wobots Tamponneurs : évite les placements où une poussée te projette contre eux."
+    },
+    {
+      "t": "Collant",
+      "x": "Le Black Wo Wabbit empêche de quitter sa zone si tu restes trop près."
+    }
+  ],
+  "sorts": [
+    {
+      "n": "Mékattwaction",
+      "x": "4-12 PO : attire de 12, Neutre, invoque un Wobot Tamponneur."
+    },
+    {
+      "n": "Wouste",
+      "x": "1-2 PO : Feu, poussée de 3."
+    },
+    {
+      "n": "Mékawapace",
+      "x": "+30 % de résistances."
+    },
+    {
+      "n": "Substitution",
+      "x": "Échange de positions."
+    }
+  ],
+  "monstres": [
+    {
+      "n": "Tiwobot",
+      "d": "haut",
+      "x": "Fuyard qui te pousse dans les coins ; Affaibli au contact."
+    },
+    {
+      "n": "Black Wo Wabbit",
+      "d": "moyen",
+      "x": "Attire, Pesanteur, empêche de s'éloigner."
+    },
+    {
+      "n": "Blanc Pa Wabbit",
+      "d": "moyen",
+      "x": "Soigne et donne 2 PM/2 PO à ses alliés quand il est frappé."
+    },
+    {
+      "n": "Wobot",
+      "d": "bas",
+      "x": "Retire des PM en zone, baisse la résistance aux poussées."
+    },
+    {
+      "n": "Wobot Kiafin",
+      "d": "bas",
+      "x": "Fonce au contact, attire en ligne, retire de la fuite."
+    }
+  ],
+  "strategie": [
+    "Joue loin des murs et des Tamponneurs pour limiter les dégâts de poussée.",
+    "Garde une grosse source de dégâts pour finir les ennemis entamés."
+  ],
+  "pieges": [
+    "Frapper le Blanc Pa Wabbit sans le tuer (il booste son groupe).",
+    "Les poussées contre les obstacles."
+  ],
+  "succes": [
+    {
+      "n": "Mains Propres",
+      "x": "Achever avec glyphes, pièges, invocations ou poussée."
+    },
+    {
+      "n": "Blitzkrieg",
+      "x": "Achever chaque monstre attaqué avant son tour."
+    },
+    {
+      "n": "Duo",
+      "x": "Deux personnages, moins de 20 tours."
+    }
+  ],
+  "acces": [
+    "Îlot de la Couronne, entrée en [24,-13] (zaap de l'Île des Wabbits en [25,-4], ou Cocawotte).",
+    "Clé : trousseau ou Clef du Terrier (5 Cawotte, 5 Cuivre, Manganèse, Poils de Wo Wabbit, Patte de Wabbit, 3 Poil du Wa Wabbit, Bandeau de Black Wabbit Squelette).",
+    "Niveau conseillé 80 ; 5 salles."
+  ],
+  "src": "https://dofus.jeuxonline.info/article/13891/terrier-wa-wabbit"
+}

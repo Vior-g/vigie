@@ -1,0 +1,89 @@
+{
+  "dj": "Pitons Rocheux des Craqueleurs",
+  "boss": "Craqueleur Légendaire",
+  "maj": "2026-10-22",
+  "essentiel": [
+    "Peau de Topaze : -1000 dommages subis pendant 3 tours ; garde tes gros coups pour après.",
+    "Il invoque souvent (Craqueleur, Craqueboule, Craqueleur des Plaines) et ses résistances montent au fil du combat : tue-le en priorité.",
+    "Sa frappe au contact touche aussi un cercle de 2 cases autour de la cible : ne te groupe pas.",
+    "Craqueboules et Craqueleurs des Plaines retirent beaucoup de PA/PM : tu peux passer des tours entiers."
+  ],
+  "mecaniques": [
+    {
+      "t": "Peau de Topaze",
+      "x": "-1000 dommages subis pendant 3 tours."
+    },
+    {
+      "t": "Salle du vide",
+      "x": "Entre les salles 4 et 5, traverse le vide en ligne droite, case par case, sur le chemin central (active la grille)."
+    }
+  ],
+  "sorts": [
+    {
+      "n": "Frappe du Craqueleur Légendaire",
+      "x": "Contact : Feu sur la cible et en cercle de 2 autour."
+    },
+    {
+      "n": "Peau de Topaze",
+      "x": "-1000 dommages subis 3 tours."
+    },
+    {
+      "n": "Invocation Montagnarde",
+      "x": "Craqueleur, Craqueboule ou Craqueleur des Plaines."
+    },
+    {
+      "n": "Cœur de Craqueleur",
+      "x": "+1 PA pendant 5 tours."
+    }
+  ],
+  "monstres": [
+    {
+      "n": "Craqueleur des Plaines",
+      "d": "haut",
+      "x": "Retire des PA dans un cercle de 5 et soigne ses alliés 4 tours : à tuer vite."
+    },
+    {
+      "n": "Craqueboule",
+      "d": "haut",
+      "x": "Retire des PA au contact ; +4 PA et +2 PM sur elle-même."
+    },
+    {
+      "n": "Craquelope",
+      "d": "moyen",
+      "x": "Retire de la PO (2-6), repousse de 2 ; Feu + poison au contact."
+    },
+    {
+      "n": "Élémenterre",
+      "d": "moyen",
+      "x": "Retire 1 PM et de la résistance Terre ; se téléporte (1-5 PO)."
+    }
+  ],
+  "strategie": [
+    "Fonce sur le boss avant qu'il n'empile ses invocations.",
+    "Ne te colle ni aux obstacles ni aux Craqueleurs pour ne pas être bloqué."
+  ],
+  "pieges": [
+    "Frapper pendant Peau de Topaze.",
+    "Salles 2 et 3 limitées à 4 personnages."
+  ],
+  "succes": [
+    {
+      "n": "Pusillanime",
+      "x": "Ne jamais finir son tour au contact d'un adversaire."
+    },
+    {
+      "n": "Premier",
+      "x": "Vaincre le Craqueleur Légendaire en premier."
+    },
+    {
+      "n": "Duo",
+      "x": "Deux personnages, moins de 20 tours."
+    }
+  ],
+  "acces": [
+    "Montagne des Craqueleurs, entrée en [-3,-7] (zaap en [-5,-8]).",
+    "Clé : trousseau ou Clef des Pitons Rocheux (Menthe Sauvage, Houblon, Pierre du Craqueleur, Kobalte, Charbon, Silex, Fragment de Pierre Polie, Bois de Bombu).",
+    "Niveau conseillé 70."
+  ],
+  "src": "https://dofus.jeuxonline.info/article/13758/pitons-rocheux-craqueleurs"
+}
