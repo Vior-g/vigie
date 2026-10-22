@@ -16,6 +16,7 @@
   --feu: #e6643a;
   --eau: #4aa3e3;
   --air: #62c483;
+  --songe: #a98bff;
   --radius: 12px;
   font-family: "Segoe UI Variable Text", "Segoe UI", system-ui, sans-serif;
   font-size: 13px;
@@ -23,6 +24,7 @@
 }
 
 * { box-sizing: border-box; }
+[hidden] { display: none !important; }
 html, body { margin: 0; height: 100%; background: transparent; overflow: hidden; }
 button { font: inherit; color: inherit; cursor: pointer; }
 input, select { font: inherit; color: inherit; }
@@ -220,7 +222,89 @@ kbd { font-family: inherit; font-size: 11px; padding: 0 5px; border: 1px solid r
 .tiers td { padding: 2px 3px; }
 .tiers input { width: 52px !important; }
 
+/* ------------------------------------------------------------ Modes */
+.modes { display: flex; gap: 4px; padding: 6px 10px 0; }
+.modes button {
+  border: 1px solid rgba(255, 255, 255, 0.07); background: var(--bg-2); color: var(--muted);
+  border-radius: 8px; padding: 4px 10px; font-size: 12px;
+}
+.modes button.on { color: #1b1510; background: var(--gold); border-color: var(--gold); font-weight: 600; }
+.modes button .count:not(:empty) { display: inline-block; min-width: 16px; padding: 0 4px; margin-left: 2px; border-radius: 8px; background: rgba(0, 0, 0, 0.25); font-size: 11px; }
+.modes .read { margin-left: auto; color: var(--gold-2); border-color: var(--line); }
+.modes .read:hover { background: rgba(214, 177, 106, 0.12); }
+.modes .read:disabled { opacity: 0.6; cursor: wait; }
+.chip-btn.up { color: #0f1a12; background: var(--ok); border-color: var(--ok); }
+.chip-btn.on { background: rgba(214, 177, 106, 0.2); color: var(--gold-2); }
+.small { font-size: 11px; }
+.results .sub { font-size: 11px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; flex: 1; min-width: 0; }
+.results .lbl { white-space: nowrap; }
+.results .k-monstre { color: var(--info); }
+.results .k-songe { color: var(--songe); }
+.results .k-boss { color: var(--gold); }
+
+/* Accueil */
+.quick .ico { width: 28px; height: 28px; flex: none; border-radius: 8px; display: grid; place-items: center; background: var(--bg-3); color: var(--gold); font-weight: 700; }
+.quick button.songe { border-color: rgba(169, 139, 255, 0.35); background: rgba(169, 139, 255, 0.08); }
+.quick button.songe .ico { color: var(--songe); }
+.qlabel { margin: 6px 2px 0; color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: 0.6px; }
+
+/* Fiche */
+.tabbody h4.sec { margin: 12px 0 6px; }
+.warnbox { padding: 7px 9px; border-radius: 9px; background: rgba(224, 168, 63, 0.1); border-left: 3px solid var(--warn); margin-bottom: 8px !important; }
+.aber-on { outline: 1px solid var(--songe); }
+.chips { display: flex; flex-wrap: wrap; gap: 5px; margin: 6px 0; }
+.chip { border: 1px solid rgba(255, 255, 255, 0.1); background: var(--bg-2); border-radius: 999px; padding: 3px 9px; font-size: 12px; }
+.chip:hover:not(:disabled) { border-color: var(--gold); }
+.chip:disabled { opacity: 0.5; cursor: default; }
+
+/* Cartes de monstres */
+.cards { display: grid; gap: 7px; }
+.card { padding: 8px 9px; border-radius: 10px; background: var(--bg-2); border-left: 3px solid transparent; }
+.card.is-boss { border-left-color: var(--gold); }
+.card.danger-haut { border-left-color: var(--danger); }
+.card.danger-moyen { border-left-color: var(--warn); }
+.card .monster-head { align-items: flex-start; }
+.card .monster-head img, .card .noimg { width: 34px; height: 34px; object-fit: contain; flex: none; }
+.card .noimg { display: grid; place-items: center; border-radius: 8px; background: var(--bg-3); color: var(--gold); font-weight: 700; }
+.mh-t { flex: 1; min-width: 0; }
+.mh-t h4 { margin: 0; font-size: 13px; color: var(--gold-2); display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.mh-t .pv { color: var(--muted); font-size: 11.5px; margin-left: 0; }
+.card .x { border: 0; background: transparent; color: var(--muted); width: 22px; height: 22px; border-radius: 6px; flex: none; }
+.card .x:hover { background: var(--bg-3); color: var(--text); }
+.badge { font-size: 9.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px; padding: 1px 5px; border-radius: 4px; background: rgba(214, 177, 106, 0.2); color: var(--gold); }
+.badge.ab { background: rgba(169, 139, 255, 0.2); color: var(--songe); }
+.facts { color: var(--muted); font-size: 11.5px; margin: 2px 0; }
+.note-m { margin-top: 5px; padding: 5px 7px; border-radius: 7px; background: rgba(127, 176, 216, 0.08); font-size: 12px; line-height: 1.4; }
+.note-m .from { color: var(--muted); font-size: 11px; }
+.abbox { margin-top: 5px; padding: 6px 8px; border-radius: 8px; background: rgba(169, 139, 255, 0.1); border: 1px solid rgba(169, 139, 255, 0.35); font-size: 12px; line-height: 1.4; }
+.abbox b { color: var(--songe); }
+.abbox.big { margin: 0 0 8px; }
+.abbox.big p { margin: 4px 0; }
+.card-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 5px; margin-top: 6px; }
+.spells { list-style: none; margin: 6px 0 0; padding: 0; display: none; gap: 5px; }
+.spells.open { display: grid; }
+.tabbody > .spells { display: grid; }
+.spells li { padding: 6px 8px; border-radius: 8px; background: rgba(0, 0, 0, 0.18); }
+.sp-head { display: flex; gap: 8px; align-items: baseline; flex-wrap: wrap; }
+.sp-head b { color: var(--text); }
+.sp-meta { color: var(--muted); font-size: 11px; }
+.sp-eff { font-size: 12px; margin-top: 2px; line-height: 1.4; }
+.sp-desc { font-size: 11.5px; color: var(--muted); margin-top: 2px; font-style: italic; }
+
+/* Combat */
+.combat-bar { display: flex; align-items: center; gap: 8px; margin: 6px 0; min-height: 22px; font-size: 12px; }
+.combat-bar .grow { flex: 1; }
+.summary { margin-bottom: 8px; }
+.summary:empty { display: none; }
+.sum-line { font-size: 12.5px; margin: 0 2px 6px; }
+.sum-line b { color: var(--ok); }
+.sum-line b.bad { color: var(--danger); }
+.res.small .r .v { font-size: 12px; }
+.empty-combat ol.steps { margin: 6px 0; padding-left: 20px; display: grid; gap: 5px; line-height: 1.45; }
+
 body.compact .searchbox, body.compact .stats, body.compact .res,
-body.compact .tabs, body.compact .tabbody, body.compact .empty .quick { display: none; }
+body.compact .tabs, body.compact .tabbody, body.compact .empty .quick,
+body.compact .card .facts, body.compact .card .card-actions, body.compact .card .spells,
+body.compact .card .note-m, body.compact .empty-combat ol { display: none; }
 body.compact main { overflow: hidden; }
 .portrait img { width: 100%; height: 100%; object-fit: contain; }

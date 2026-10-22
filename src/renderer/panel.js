@@ -31,78 +31,99 @@ function put(node, ...kids) {
 const ELEMENTS = [
   ['neutre', 'Neutre'], ['terre', 'Terre'], ['feu', 'Feu'], ['eau', 'Eau'], ['air', 'Air'],
 ];
+const EL_LABEL = Object.fromEntries(ELEMENTS);
 const TABS = [
   ['essentiel', 'Essentiel'], ['visee', 'Visée'], ['mecaniques', 'Mécaniques'], ['monstres', 'Monstres'],
   ['strategie', 'Stratégie'], ['succes', 'Succès'], ['acces', 'Accès'],
 ];
+const SONGE_TABS = [['essentiel', 'Essentiel'], ['regles', 'Règles'], ['aberrations', 'Aberrations'], ['avis', 'Avis de recherche']];
 
-let D = { bosses: [], settings: null, state: null, defaults: {}, hotkeysFailed: [] };
+let D = { settings: null, state: null, defaults: {}, hotkeysFailed: [], stats: null, version: '' };
 const ui = {
-  tab: 'essentiel', bossKey: null, tabKey: null, settingsOpen: false, compact: false,
-  monsters: {}, liveBoss: {}, sel: -1, results: [], mini: { me: null, target: null }, normalHeight: null,
+  tab: 'essentiel', tabKey: null, settingsOpen: false, compact: false,
+  fiche: null, ficheKey: null, loadingFiche: null,
+  mcache: new Map(), mrev: -1, group: null, groupKey: '', cardsKey: '', openSpells: new Set(),
+  sel: -1, results: [], mini: { me: null, target: null }, normalHeight: null, recentKey: '',
 };
 
-const boss = () => D.bosses.find((b) => b.id === (D.state && D.state.bossId)) || null;
 const fmt = (n) => (n == null ? '?' : Number(n).toLocaleString('fr-FR'));
 const hk = (name) => (D.settings && D.settings.hotkeys[name]) || '';
-const prettyKey = (acc) => acc.replace(/Control/g, 'Ctrl').replace(/Shift/g, 'Maj').replace(/\+/g, ' + ');
+const prettyKey = (acc) => (acc || '—').replace(/Control/g, 'Ctrl').replace(/Shift/g, 'Maj').replace(/\+/g, ' + ');
+const range = (r) => (Array.isArray(r) ? (r[0] === r[1] ? fmt(r[0]) : `${fmt(r[0])}–${fmt(r[1])}`) : fmt(r));
+const G = () => (ui.fiche && ui.fiche.guide) || null;
 
 // ------------------------------------------------------------------ rendu
 
 function render() {
-  renderHeader();
   renderStatus();
-  const b = boss();
-  $('empty').hidden = !!b;
-  $('fiche').hidden = !b;
-  if (!b) { renderQuick(); ui.bossKey = null; return; }
+  renderModes();
+  const s = D.state;
+  if (s.dataRev !== ui.mrev) { ui.mrev = s.dataRev; ui.mcache.clear(); ui.ficheKey = null; ui.cardsKey = ''; ui.groupKey = ''; }
 
-  if (ui.bossKey !== b.id) {
-    ui.bossKey = b.id;
-    ui.tab = D.state.monstre ? 'monstres' : 'essentiel';
+  const ficheKey = s.ficheId ? `${s.ficheId}|${s.dataRev}` : null;
+  if (ficheKey !== ui.ficheKey) {
+    ui.ficheKey = ficheKey;
+    ui.fiche = null;
     ui.tabKey = null;
     ui.mini = { me: null, target: null };
-    loadLiveBoss(b);
-  } else if (D.state.monstre && ui.lastMonstre !== D.state.monstre) {
-    ui.tab = 'monstres';
-    ui.tabKey = null;
+    if (s.ficheId) {
+      const want = ficheKey;
+      ui.loadingFiche = want;
+      window.vigie.fiche(s.ficheId).then((f) => {
+        if (ui.ficheKey !== want) return;
+        ui.fiche = f;
+        ui.tab = ui.wantTab || 'essentiel';
+        ui.wantTab = null;
+        render();
+      });
+    }
   }
-  ui.lastMonstre = D.state.monstre;
 
-  renderTurn(b);
-  renderStats(b);
-  renderTabs(b);
-  const key = `${b.id}|${ui.tab}`;
-  if (ui.tabKey !== key) { ui.tabKey = key; renderTab(b); }
-  else if (ui.tab === 'visee') updateVisee(b);
-  if (ui.settingsOpen) updateOcrDebug();
+  const combat = s.view === 'combat';
+  $('combat').hidden = !combat;
+  $('fiche').hidden = combat || !ui.fiche;
+  $('empty').hidden = combat || !!ui.fiche || !!s.ficheId;
+  renderHeader();
+  if (combat) renderCombat();
+  else if (ui.fiche) renderFiche();
+  else if (!s.ficheId) renderEmpty();
+  if (ui.settingsOpen) updateDebug();
   if (ui.compact) fitCompact();
 }
 
-/** En mode réduit, la fenêtre se cale sur l'en-tête + rappels du tour. */
+/** En mode réduit, la fenêtre se cale sur le contenu utile. */
 function fitCompact() {
   requestAnimationFrame(() => {
     const main = $('main');
-    const content = boss() ? $('fiche') : $('empty');
+    const content = [$('combat'), $('fiche'), $('empty')].find((n) => !n.hidden);
+    if (!content) return;
     const h = Math.ceil(main.offsetTop + content.offsetHeight + 20);
-    if (Math.abs(h - window.innerHeight) > 2) window.vigie.panelHeight(h);
+    if (Math.abs(h - window.innerHeight) > 2) window.vigie.panelHeight(Math.min(h, 520));
   });
 }
 
 function renderHeader() {
-  const b = boss();
+  const f = ui.fiche;
   const p = $('portrait');
-  $('bossName').textContent = b ? b.nom : 'Vigie';
-  $('dungeonName').textContent = b ? `${b.donjon} · ${b.zone || ''}` : 'Aide aux combats de boss';
-  const img = b && (ui.liveBoss[b.id]?.image || b.image);
-  const initial = b ? b.nom.slice(0, 1) : 'V';
-  if (p.dataset.src === (img || initial)) return;
-  p.dataset.src = img || initial;
-  if (img) {
-    put(p, el('img', { src: img, alt: '', onerror: () => { p.textContent = initial; } }));
-  } else {
-    p.textContent = initial;
+  const combat = D.state.view === 'combat';
+  let title = 'Vigie'; let sub = 'Aide aux combats Dofus'; let img = null;
+  if (combat) {
+    title = 'Combat';
+    sub = D.state.songe ? 'Songe · monstres lus à l\'écran' : 'Monstres lus à l\'écran';
+  } else if (f) {
+    title = f.nom;
+    if (f.type === 'songe') sub = 'Mode Songe';
+    else sub = [f.donjon !== f.nom ? f.donjon : null, f.niveau ? `niv. ${f.niveau}` : null, f.zone].filter(Boolean).join(' · ');
+    img = f.bosses && f.bosses[0] && f.bosses[0].image;
   }
+  $('bossName').textContent = title;
+  $('dungeonName').textContent = sub;
+  const initial = combat ? '⚔' : (f && f.type === 'songe' ? '☾' : title.slice(0, 1));
+  const key = img || initial;
+  if (p.dataset.src === key) return;
+  p.dataset.src = key;
+  if (img) put(p, el('img', { src: img, alt: '', onerror: () => { p.textContent = initial; } }));
+  else p.textContent = initial;
 }
 
 function renderStatus() {
@@ -123,142 +144,371 @@ function renderStatus() {
   } else if (det.match) {
     dot += ' on'; text = `Auto · « ${det.match.label} » (${det.match.score} %)`;
   } else {
-    dot += ' on'; text = det.time ? 'Détection active · rien de reconnu sur la carte' : 'Détection en cours de démarrage…';
+    dot += ' on'; text = det.time ? 'Détection active · lieu non reconnu' : 'Détection en cours de démarrage…';
   }
   st.append(el('span', { class: dot }), el('span', { class: 'grow', title: det.text || '' }, text));
   if (action) st.append(action);
+  if (s.update) {
+    st.append(el('button', { class: 'chip-btn up', title: 'Une nouvelle version est disponible sur GitHub', onclick: () => window.vigie.open(s.update.url) }, `v${s.update.version} dispo`));
+  }
 }
 
-function renderQuick() {
-  const q = $('quick');
-  if (q.childElementCount === D.bosses.length) return;
-  q.replaceChildren(...D.bosses.map((b) => el('button', { onclick: () => window.vigie.select(b.id) },
-    b.image ? el('img', { src: b.image, alt: '', onerror: (e) => e.target.remove() }) : null,
-    el('span', {}, el('strong', {}, b.nom), el('small', {}, b.donjon)))));
+function renderModes() {
+  const s = D.state;
+  $('modeFiche').classList.toggle('on', s.view !== 'combat');
+  $('modeCombat').classList.toggle('on', s.view === 'combat');
+  $('combatCount').textContent = s.combat.ids.length ? s.combat.ids.length : '';
+  const btn = $('btnRead');
+  btn.disabled = !!s.combat.reading;
+  btn.textContent = s.combat.reading ? '… lecture' : '◎ Lire les monstres';
+  btn.title = `Survole un groupe ou un monstre puis ${prettyKey(hk('scanMonsters'))}`;
 }
 
-function renderTurn(b) {
+// ------------------------------------------------------------ accueil
+
+async function renderEmpty() {
+  const recent = (D.state.recent || []).filter((id) => id !== 'songes');
+  const key = recent.join(',');
+  $('emptyHint').textContent = `Entre dans un donjon ou un Songe : la fiche s'ouvre toute seule. En combat, survole un groupe et appuie sur ${prettyKey(hk('scanMonsters'))} pour afficher les monstres.`;
+  const st = D.stats;
+  if (st) $('dataStats').textContent = `${fmt(st.dungeons)} donjons · ${fmt(st.monsters)} monstres · ${st.guides} guides de boss${st.generatedAt ? ` · données du ${new Date(st.generatedAt).toLocaleDateString('fr-FR')}` : ''} · v${D.version}`;
+  if (ui.recentKey === key && $('quick').childElementCount) return;
+  ui.recentKey = key;
+  const labels = recent.length ? await window.vigie.ficheLabels(recent) : [];
+  put($('quick'),
+    el('button', { class: 'songe', onclick: () => window.vigie.select('songes') },
+      el('span', { class: 'ico' }, '☾'), el('span', {}, el('strong', {}, 'Songes Infinis'), el('small', {}, 'règles, Aberrations, avis de recherche'))),
+    labels.length ? el('div', { class: 'qlabel' }, 'Récents') : null,
+    labels.map((f) => el('button', { onclick: () => window.vigie.select(f.id) },
+      el('span', { class: 'ico' }, f.nom.slice(0, 1)),
+      el('span', {}, el('strong', {}, f.nom), el('small', {}, `${f.donjon}${f.niveau ? ` · niv. ${f.niveau}` : ''}${f.guide ? '' : ' · sans guide'}`)))),
+  );
+}
+
+// ------------------------------------------------------------- fiche
+
+function renderFiche() {
+  const f = ui.fiche;
+  const songe = f.type === 'songe';
+  const tours = (G() && G().tours) || [];
+  $('turnbar').hidden = songe;
+  renderTurn(tours);
+  const boss = !songe && f.bosses && f.bosses[0];
+  $('stats').hidden = !boss; $('res').hidden = !boss;
+  if (boss) {
+    put($('stats'),
+      el('span', {}, 'Niv. ', el('b', {}, range(boss.niveau))),
+      el('span', {}, el('b', {}, range(boss.pv)), ' PV'),
+      el('span', {}, el('b', {}, boss.pa ?? '?'), ' PA'),
+      el('span', {}, el('b', {}, boss.pm ?? '?'), ' PM'),
+      el('span', { title: 'Esquive PA / PM' }, 'Esq. ', el('b', {}, `${boss.esquivePA ?? '?'} / ${boss.esquivePM ?? '?'}`)),
+    );
+    $('res').replaceChildren(...resChips(boss.res));
+  }
+  const tabs = (songe ? SONGE_TABS : TABS).filter(([id]) => hasTab(f, id));
+  if (!tabs.some(([id]) => id === ui.tab)) ui.tab = tabs[0] ? tabs[0][0] : 'essentiel';
+  $('tabs').replaceChildren(...tabs.map(([id, label]) => el('button', {
+    class: ui.tab === id ? 'on' : '', onclick: () => { ui.tab = id; render(); },
+  }, label)));
+  const key = `${ui.ficheKey}|${ui.tab}`;
+  if (ui.tabKey !== key) { ui.tabKey = key; renderTab(f); $('main').scrollTop = 0; }
+  else if (ui.tab === 'visee') updateVisee();
+}
+
+function hasTab(f, id) {
+  const g = f.guide;
+  if (f.type === 'songe') return true;
+  switch (id) {
+    case 'essentiel': return true;
+    case 'visee': return f.outil === 'harebourg';
+    case 'mecaniques': return true;
+    case 'monstres': return !!((f.monsters && f.monsters.length) || (f.bosses && f.bosses.length > 1) || (f.extraNotes && f.extraNotes.length));
+    case 'strategie': return !!(g && ((g.strategie || []).length || (g.pieges || []).length));
+    case 'succes': return !!(g && (g.succes || []).length);
+    case 'acces': return true;
+    default: return false;
+  }
+}
+
+function renderTurn(tours) {
   const t = D.state.turn;
   $('turnNum').textContent = t;
   const par = $('turnParity');
   par.textContent = t % 2 === 0 ? 'tour pair' : 'tour impair';
   par.className = `parity ${t % 2 === 0 ? 'pair' : ''}`;
-  const rules = window.TurnRules.rulesFor(b, t);
+  const rules = ui.fiche && ui.fiche.type !== 'songe' ? window.TurnRules.rulesFor({ tours }, t) : [];
   $('reminders').replaceChildren(...rules.map((r) => el('li', { class: r.level || 'info' }, r.text)));
-}
-
-function renderStats(b) {
-  const live = ui.liveBoss[b.id];
-  const st = { ...b.stats, ...(live ? { pv: live.pv, pa: live.pa, pm: live.pm, res: live.res } : {}) };
-  const pv = Array.isArray(st.pv) ? (st.pv[0] === st.pv[1] ? fmt(st.pv[0]) : `${fmt(st.pv[0])} – ${fmt(st.pv[1])}`) : fmt(st.pv);
-  put($('stats'), 
-    el('span', {}, 'Niv. ', el('b', {}, st.niveau || '?')),
-    el('span', {}, el('b', {}, pv), ' PV'),
-    el('span', {}, el('b', {}, st.pa ?? '?'), ' PA'),
-    el('span', {}, el('b', {}, st.pm ?? '?'), ' PM'),
-    live ? el('span', { title: 'Valeurs à jour depuis DofusDB' }, '· DofusDB ✓') : null,
-  );
-  $('res').replaceChildren(...resChips(st.res));
 }
 
 function resChips(res) {
   if (!res) return [];
   const vals = ELEMENTS.map(([k]) => res[k]).filter((v) => typeof v === 'number');
-  const min = Math.min(...vals);
+  const min = Math.max(...vals) > Math.min(...vals) ? Math.min(...vals) : NaN;
   return ELEMENTS.map(([k, label]) => el('div', {
     class: `r ${res[k] === min ? 'best' : ''}`, style: `--c: var(--${k})`, title: `Résistance ${label}`,
   }, el('div', { class: 'n' }, label), el('div', { class: 'v' }, res[k] == null ? '?' : `${res[k]}%`)));
 }
 
-function renderTabs(b) {
-  const tabs = TABS.filter(([id]) => id !== 'visee' || b.outil === 'harebourg');
-  $('tabs').replaceChildren(...tabs.map(([id, label]) => el('button', {
-    class: ui.tab === id ? 'on' : '', onclick: () => { ui.tab = id; render(); },
-  }, label)));
-}
+function list(items, fn) { return el('ul', { class: 'list' }, items.map(fn)); }
 
-function renderTab(b) {
+function renderTab(f) {
   const body = $('tabbody');
   body.replaceChildren();
   const T = ui.tab;
+  const g = f.guide;
+  if (f.type === 'songe') { renderSongeTab(f, body); return; }
   if (T === 'essentiel') {
-    body.append(el('ul', { class: 'list' }, (b.essentiel || []).map((t) => el('li', {}, t))));
-    if (b.salleBoss) body.append(el('p', { class: 'note' }, b.salleBoss));
+    if (g) {
+      body.append(list(g.essentiel || [], (t) => el('li', {}, t)));
+      if (g.note) body.append(el('p', { class: 'note' }, g.note));
+    } else {
+      body.append(el('p', { class: 'warnbox' }, 'Pas encore de guide détaillé pour ce donjon : voici ce que disent les données du jeu.'));
+      body.append(autoSummary(f));
+    }
   } else if (T === 'mecaniques') {
-    body.append(el('ul', { class: 'list' },
-      (b.mecaniques || []).map((m) => el('li', {}, el('h4', {}, m.titre), el('p', {}, m.texte))),
-      (b.sortsBoss || []).length ? el('li', {}, el('h4', {}, `Sorts de ${b.nom}`),
-        el('ul', { style: 'margin:4px 0 0;padding-left:16px' }, b.sortsBoss.map((s) => el('li', {}, el('b', {}, s.nom), ' — ', s.texte)))) : null));
+    if (g && (g.mecaniques || []).length) body.append(list(g.mecaniques, (m) => el('li', {}, m.t ? el('h4', {}, m.t) : null, el('p', {}, m.x))));
+    if (g && (g.sorts || []).length) {
+      body.append(el('h4', { class: 'sec' }, `Sorts à connaître (${f.nom})`),
+        list(g.sorts, (s) => el('li', {}, el('b', {}, s.n), s.x ? ` — ${s.x}` : '')));
+    }
+    for (const b of f.bosses || []) {
+      body.append(el('h4', { class: 'sec' }, `Sorts de ${b.nom} (données du jeu)`), spellList(b.spells, true));
+    }
   } else if (T === 'monstres') {
-    renderMonsters(b, body);
+    const others = (f.bosses || []).slice(1);
+    if ((f.monsters || []).length) body.append(el('div', { class: 'cards' }, f.monsters.map((m) => monsterCard(m, { compact: true }))));
+    if (others.length) {
+      body.append(el('h4', { class: 'sec' }, 'Autres boss rattachés à ce donjon (données du jeu)'),
+        el('div', { class: 'cards' }, others.map((b) => monsterCard(b, { compact: true }))));
+    }
+    if ((f.extraNotes || []).length) {
+      body.append(el('h4', { class: 'sec' }, 'Invocations et autres'),
+        list(f.extraNotes, (m) => el('li', { class: `danger-${m.danger || 'moyen'}` }, el('h4', {}, m.nom), el('p', {}, m.note))));
+    }
   } else if (T === 'strategie') {
-    body.append(el('ol', { class: 'steps' }, (b.strategie || []).map((t) => el('li', {}, t))));
-    if ((b.pieges || []).length) {
-      body.append(el('h4', { style: 'margin:12px 0 6px' }, 'Pièges à éviter'),
-        el('ul', { class: 'list' }, b.pieges.map((t) => el('li', { class: 'danger-haut' }, t))));
+    if ((g.strategie || []).length) body.append(el('ol', { class: 'steps' }, g.strategie.map((t) => el('li', {}, t))));
+    if ((g.pieges || []).length) {
+      body.append(el('h4', { class: 'sec' }, 'Pièges à éviter'), list(g.pieges, (t) => el('li', { class: 'danger-haut' }, t)));
     }
   } else if (T === 'succes') {
-    body.append(el('ul', { class: 'list' }, (b.succes || []).map((s) => el('li', {}, el('h4', {}, s.nom), el('p', {}, s.texte)))));
+    body.append(list(g.succes, (s) => el('li', {}, el('h4', {}, s.n), el('p', {}, s.x))));
   } else if (T === 'acces') {
-    body.append(el('ul', { class: 'list' }, (b.acces || []).map((t) => el('li', {}, t))));
-    body.append(el('h4', { style: 'margin:12px 0 6px' }, 'Sources'),
-      el('ul', { class: 'list' }, (b.sources || []).map((s) => el('li', {},
-        el('a', { onclick: () => window.vigie.open(s.url) }, s.titre)))));
-    body.append(el('p', { class: 'note' }, `Fiche mise à jour le ${b.maj || '?'}${b.perso ? ' · fiche perso' : ''}. Les guides peuvent dater : vérifie en jeu après une mise à jour d'Ankama.`));
-  } else if (T === 'visee') {
-    renderVisee(b, body);
-  }
-}
-
-// --------------------------------------------------------------- monstres
-
-async function loadLiveBoss(b) {
-  try {
-    const r = await window.vigie.monsters([b.nom]);
-    if (r && r[b.nom] && r[b.nom].res) {
-      ui.liveBoss[b.id] = r[b.nom];
-      if (boss() && boss().id === b.id) { renderStats(b); renderHeader(); }
+    const facts = [
+      f.donjon ? `Donjon : ${f.donjon}` : null,
+      f.niveau ? `Niveau : ${f.niveau}` : null,
+      f.zone ? `Zone : ${f.zone}` : null,
+      f.pos ? `Position de l'entrée : [${f.pos[0]}, ${f.pos[1]}]` : null,
+    ].filter(Boolean);
+    if (facts.length) body.append(list(facts, (t) => el('li', {}, t)));
+    if (g && (g.acces || []).length) body.append(el('h4', { class: 'sec' }, 'Accès'), list(g.acces, (t) => el('li', {}, t)));
+    if (g && g.src) {
+      body.append(el('h4', { class: 'sec' }, 'Source'),
+        el('p', {}, el('a', { onclick: () => window.vigie.open(g.src) }, g.src.replace(/^https:\/\/(www\.)?/, ''))));
     }
-  } catch (e) { /* hors ligne : on garde la fiche */ }
+    body.append(el('p', { class: 'note' }, g
+      ? `Guide résumé${g.maj ? ` (mis à jour le ${g.maj})` : ''}${g.perso ? ' · guide perso' : ''}. Les mécaniques peuvent changer avec les mises à jour d'Ankama : vérifie en jeu.`
+      : 'Statistiques, résistances et sorts : données du jeu (DofusDB), mises à jour chaque semaine.'));
+  } else if (T === 'visee') {
+    renderVisee(body);
+  }
 }
 
-function renderMonsters(b, body) {
-  const list = el('ul', { class: 'list' });
-  const items = {};
-  for (const m of b.monstres || []) {
-    const li = el('li', { class: `danger-${m.danger || 'moyen'}`, 'data-name': m.nom });
-    items[m.nom] = li;
-    fillMonster(li, m);
-    list.append(li);
+/** Fiche sans guide : faits utiles tirés des données. */
+function autoSummary(f) {
+  const box = el('div', {});
+  const b = f.bosses && f.bosses[0];
+  if (b) {
+    const vals = ELEMENTS.map(([k]) => [k, b.res[k]]).filter(([, v]) => typeof v === 'number').sort((x, y) => x[1] - y[1]);
+    const items = [];
+    if (vals.length) items.push(`Élément le plus efficace : ${EL_LABEL[vals[0][0]]} (${vals[0][1]} %) · le moins : ${EL_LABEL[vals[vals.length - 1][0]]} (${vals[vals.length - 1][1]} %).`);
+    items.push(`${b.nom} : ${range(b.pv)} PV, ${b.pa} PA, ${b.pm} PM, esquive PA ${b.esquivePA ?? '?'} / PM ${b.esquivePM ?? '?'}.`);
+    if (b.flags.length) items.push(b.flags.join(' · '));
+    const strong = (b.spells || []).filter((s) => (s.e || []).some((e) => /PA|PM|Pousse|Attire|Invoque|Téléporte|vol|Vole|état|Soigne|Renvoie|bouclier|Bouclier|Termine/i.test(e)));
+    for (const s of strong.slice(0, 6)) items.push(`${s.n} : ${(s.e || []).slice(0, 3).join(' · ')}`);
+    box.append(list(items, (t) => el('li', {}, t)));
   }
-  body.append(list);
-  const missing = (b.monstres || []).map((m) => m.nom).filter((n) => !(n in ui.monsters));
-  if (missing.length) {
-    window.vigie.monsters(missing).then((r) => {
-      Object.assign(ui.monsters, r || {});
-      for (const m of b.monstres || []) if (items[m.nom]?.isConnected) fillMonster(items[m.nom], m);
-    }).catch(() => {});
+  const monsters = (f.monsters || []).slice(0, 6);
+  if (monsters.length) {
+    box.append(el('h4', { class: 'sec' }, 'Monstres du donjon'),
+      list(monsters, (m) => {
+        const vals = ELEMENTS.map(([k]) => [k, m.res[k]]).filter(([, v]) => typeof v === 'number').sort((x, y) => x[1] - y[1]);
+        return el('li', {}, el('b', {}, m.nom), ` — ${range(m.pv)} PV, faible ${vals.length ? `${EL_LABEL[vals[0][0]]} (${vals[0][1]} %)` : '?'}`);
+      }));
   }
-  const target = D.state.monstre && items[D.state.monstre];
-  if (target) requestAnimationFrame(() => { target.scrollIntoView({ block: 'center' }); target.classList.add('focus-flash'); });
+  return box;
 }
 
-function fillMonster(li, m) {
-  const live = ui.monsters[m.nom];
-  const head = el('div', { class: 'monster-head' },
-    live?.image ? el('img', { src: live.image, alt: '', onerror: (e) => e.target.remove() }) : null,
-    el('h4', {}, m.nom),
-    live?.pv ? el('span', { class: 'pv' }, `${fmt(live.pv[1])} PV · ${live.pa} PA · ${live.pm} PM`) : null);
-  const kids = [head];
-  if (live?.res) {
-    const vals = ELEMENTS.map(([k]) => live.res[k]).filter((v) => typeof v === 'number');
-    const min = Math.min(...vals);
-    kids.push(el('div', { class: 'mini-res' }, ELEMENTS.map(([k, label]) => el('span', {
-      style: `--c: var(--${k})`, class: live.res[k] === min ? 'best' : '', title: label,
-    }, `${label.slice(0, 1)} ${live.res[k]}%`))));
+function renderSongeTab(f, body) {
+  const sg = f.songes;
+  if (ui.tab === 'essentiel') {
+    body.append(list(sg.essentiel || [], (t) => el('li', {}, t)));
+    body.append(el('div', { class: 'row' },
+      el('button', { class: 'btn gold', onclick: () => window.vigie.combatScan() }, `Lire les monstres (${prettyKey(hk('scanMonsters'))})`),
+      el('button', { class: 'btn', onclick: () => window.vigie.view('combat') }, 'Voir le combat')));
+    body.append(el('p', { class: 'note' }, 'En Songe, Vigie affiche la version niveau 200+ des monstres lus. Une Aberration se lit en survolant son icône (en haut à droite) avant d\'appuyer sur le raccourci.'));
+  } else if (ui.tab === 'regles') {
+    body.append(list(sg.regles || [], (r) => el('li', {}, el('h4', {}, r.t), el('p', {}, r.x))));
+  } else if (ui.tab === 'aberrations') {
+    const seen = new Set(D.state.combat.aberrations || []);
+    body.append(el('p', { class: 'muted' }, 'Gardiens modifiés quand une Aberration est active dans le Songe :'));
+    body.append(list(sg.aberrations || [], (a) => el('li', { class: seen.has(a.boss) ? 'aber-on' : '' },
+      el('h4', {}, a.famille ? `Famille ${a.boss}` : a.boss, seen.has(a.boss) ? el('span', { class: 'badge ab' }, 'active') : null),
+      el('p', {}, a.x))));
+  } else if (ui.tab === 'avis') {
+    body.append(el('p', { class: 'muted' }, 'Avis de recherche pouvant apparaître dans les Songes (cliquer pour afficher la fiche du monstre) :'));
+    body.append(el('div', { class: 'chips' }, (sg.avis || []).map((a) => el('button', {
+      class: 'chip', disabled: !a.id, onclick: () => a.id && window.vigie.combatAdd(a.id),
+    }, a.nom))));
+    body.append(el('p', { class: 'note' }, 'Ils sont plus faibles pour chaque allié présent : environ 1 500 PV et 100 de puissance en moins par allié.'));
   }
-  kids.push(el('p', {}, m.texte));
-  put(li, kids);
+  if ((sg.sources || []).length && ui.tab === 'regles') {
+    body.append(el('p', { class: 'note' }, 'Source : ', ...sg.sources.map((s) => el('a', { onclick: () => window.vigie.open(s.url) }, s.titre))));
+  }
+}
+
+// ------------------------------------------------------- monstres / sorts
+
+function spellList(spells, open) {
+  if (!spells || !spells.length) return el('p', { class: 'muted' }, 'Aucun sort connu.');
+  return el('ul', { class: `spells ${open ? 'open' : ''}` }, spells.map((s) => {
+    const meta = [];
+    if (s.pa != null) meta.push(`${s.pa} PA`);
+    if (s.po) meta.push(`PO ${s.po[0] === s.po[1] ? s.po[0] : `${s.po[0]}–${s.po[1]}`}${s.mod ? '+' : ''}`);
+    if (s.lig) meta.push('en ligne');
+    if (s.dia) meta.push('en diagonale');
+    if (s.ldv === 0) meta.push('sans ligne de vue');
+    if (s.tour) meta.push(`${s.tour}×/tour`);
+    if (s.cib) meta.push(`${s.cib}×/cible`);
+    if (s.cd) meta.push(`relance ${s.cd} t`);
+    if (s.ini) meta.push(`dispo tour ${s.ini + 1}`);
+    return el('li', {},
+      el('div', { class: 'sp-head' }, el('b', {}, s.n), el('span', { class: 'sp-meta' }, meta.join(' · '))),
+      (s.e || []).length ? el('div', { class: 'sp-eff' }, s.e.join(' · ')) : null,
+      s.d ? el('div', { class: 'sp-desc' }, s.d) : null);
+  }));
+}
+
+function miniRes(res) {
+  const vals = ELEMENTS.map(([k]) => res[k]).filter((v) => typeof v === 'number');
+  const min = Math.max(...vals) > Math.min(...vals) ? Math.min(...vals) : NaN;
+  return el('div', { class: 'mini-res' }, ELEMENTS.map(([k, label]) => el('span', {
+    style: `--c: var(--${k})`, class: res[k] === min ? 'best' : '', title: `Résistance ${label}`,
+  }, `${label.slice(0, 1)} ${res[k] ?? '?'}%`)));
+}
+
+/**
+ * Carte d'un monstre.
+ * opts.compact : sorts repliés ; opts.combat : boutons retirer / variantes.
+ */
+function monsterCard(m, opts = {}) {
+  const key = `${opts.combat ? 'c' : 'f'}${m.id}`;
+  const open = ui.openSpells.has(key);
+  const danger = m.danger || (m.boss ? 'boss' : '');
+  const card = el('div', { class: `card ${danger ? `danger-${danger}` : ''} ${m.boss ? 'is-boss' : ''}`, 'data-id': m.id });
+  const ab = m.aberration && (D.state.songe || (D.state.combat.aberrations || []).includes(m.nom));
+  const variants = (m.variants || []).filter((v) => (v.lv[1] || 0) >= 10);
+  put(card,
+    el('div', { class: 'monster-head' },
+      m.image ? el('img', { src: m.image, alt: '', loading: 'lazy', onerror: (e) => e.target.remove() }) : el('span', { class: 'noimg' }, m.nom.slice(0, 1)),
+      el('div', { class: 'mh-t' },
+        el('h4', {}, m.nom, m.boss ? el('span', { class: 'badge' }, 'boss') : null, m.miniBoss ? el('span', { class: 'badge' }, 'archi/mini-boss') : null),
+        el('div', { class: 'pv' }, `niv. ${range(m.niveau)} · ${range(m.pv)} PV · ${m.pa ?? '?'} PA · ${m.pm ?? '?'} PM`)),
+      opts.combat ? el('button', { class: 'x', title: 'Retirer', onclick: () => window.vigie.combatRemove(m.id) }, '✕') : null),
+    m.res ? miniRes(m.res) : null,
+    el('div', { class: 'facts' },
+      `Esquive PA ${m.esquivePA ?? '?'} · PM ${m.esquivePM ?? '?'}`,
+      m.race ? ` · ${m.race}` : '',
+      m.flags && m.flags.length ? ` · ${m.flags.join(' · ')}` : ''),
+    ab ? el('div', { class: 'abbox' }, el('b', {}, 'Aberration : '), m.aberration) : null,
+    m.note ? el('div', { class: 'note-m' }, m.note, m.noteFrom && opts.combat ? el('span', { class: 'from' }, ` — ${m.noteFrom}`) : null) : null,
+  );
+  const actions = el('div', { class: 'card-actions' });
+  if (m.ficheId && opts.combat) actions.append(el('button', { class: 'chip-btn', onclick: () => window.vigie.select(m.ficheId) }, 'Mécaniques du boss →'));
+  if (opts.combat && variants.length > 1) {
+    actions.append(el('span', { class: 'muted small' }, 'Version :'),
+      ...variants.slice(-3).map((v) => el('button', {
+        class: `chip-btn ${v.id === m.id ? 'on' : ''}`, title: v.expe ? 'Version des expéditions' : '',
+        onclick: () => v.id !== m.id && window.vigie.combatSwap(m.id, v.id),
+      }, `niv. ${range(v.lv)}${v.expe ? ' (expé.)' : ''}`)));
+  }
+  const sp = m.spells || [];
+  if (sp.length) {
+    actions.append(el('button', {
+      class: 'chip-btn', onclick: () => {
+        if (ui.openSpells.has(key)) ui.openSpells.delete(key); else ui.openSpells.add(key);
+        const n = card.querySelector('.spells');
+        n.classList.toggle('open');
+        if (ui.compact) fitCompact();
+      },
+    }, `Sorts (${sp.length})`));
+  }
+  if (actions.childElementCount) card.append(actions);
+  if (sp.length) card.append(spellList(sp, open));
+  return card;
+}
+
+// ------------------------------------------------------------- combat
+
+async function ensureMonsters(ids) {
+  const missing = ids.filter((id) => !ui.mcache.has(id));
+  if (missing.length) for (const v of await window.vigie.monsters(missing)) ui.mcache.set(v.id, v);
+}
+
+function renderCombat() {
+  const c = D.state.combat;
+  $('combatInfo').textContent = c.info || (c.ids.length ? '' : '');
+  $('combatClear').hidden = !c.ids.length;
+  const key = `${c.ids.join(',')}|${(c.aberrations || []).join(',')}|${D.state.songe}|${ui.mrev}`;
+  if (key === ui.cardsKey) return;
+  ui.cardsKey = key;
+  if (!c.ids.length) {
+    put($('cards')); put($('summary')); put($('aberr'));
+    put($('combatEmpty'),
+      el('p', {}, el('b', {}, 'Aucun monstre pour l\'instant.')),
+      el('ol', { class: 'steps' },
+        el('li', {}, 'Survole le groupe de monstres sur la carte, ou un monstre en combat (sur le terrain ou dans la timeline).'),
+        el('li', {}, 'Appuie sur ', el('kbd', {}, prettyKey(hk('scanMonsters'))), ' : Vigie lit les noms affichés et montre résistances, PA/PM, sorts et conseils.'),
+        el('li', {}, 'Recommence pour ajouter d\'autres monstres. ', el('kbd', {}, prettyKey(hk('clearMonsters'))), ' vide la liste.')),
+      el('p', { class: 'muted small' }, 'Tu peux aussi chercher un monstre par son nom dans la barre de recherche.'));
+    return;
+  }
+  put($('combatEmpty'));
+  const want = key;
+  ensureMonsters(c.ids).then(async () => {
+    if (ui.cardsKey !== want) return;
+    const views = c.ids.map((id) => ui.mcache.get(id)).filter(Boolean);
+    const gkey = c.ids.join(',');
+    if (ui.groupKey !== gkey) { ui.groupKey = gkey; ui.group = await window.vigie.group(c.ids); }
+    if (ui.cardsKey !== want) return;
+    renderSummary(views);
+    const ab = (c.aberrations || []);
+    put($('aberr'), ab.length ? el('div', { class: 'abbox big' }, el('b', {}, `Aberration active : ${ab.join(', ')}`),
+      ...ab.map((name) => {
+        const v = views.find((x) => x.nom === name);
+        return v && v.aberration ? el('p', {}, v.aberration) : null;
+      }),
+      el('button', { class: 'chip-btn', onclick: () => { ui.wantTab = 'aberrations'; if (D.state.ficheId === 'songes') { ui.tab = 'aberrations'; ui.tabKey = null; } window.vigie.select('songes'); } }, 'Toutes les Aberrations')) : null);
+    put($('cards'), views.map((v) => monsterCard(v, { combat: true, compact: true })));
+    const focus = D.state.focusMonster && $('cards').querySelector(`[data-id="${D.state.focusMonster}"]`);
+    if (focus) requestAnimationFrame(() => { focus.scrollIntoView({ block: 'nearest' }); focus.classList.add('focus-flash'); });
+    if (ui.compact) fitCompact();
+  });
+}
+
+function renderSummary(views) {
+  const g = ui.group;
+  if (!g || views.length < 2) {
+    put($('summary'), views.length === 1 && g ? el('div', { class: 'sum-line' }, 'Élément conseillé : ', el('b', {}, g.best.map((e) => EL_LABEL[e]).join(', '))) : null);
+    return;
+  }
+  const bosses = views.filter((v) => v.boss).length;
+  put($('summary'),
+    el('div', { class: 'sum-line' },
+      `${views.length} monstres${bosses ? ` dont ${bosses} boss` : ''} · élément conseillé : `,
+      el('b', {}, g.best.map((e) => EL_LABEL[e]).join(', ')),
+      ` · à éviter : `, el('b', { class: 'bad' }, EL_LABEL[g.worst])),
+    el('div', { class: 'res small' }, resChips(g.avg)),
+    el('div', { class: 'muted small' }, 'Résistances moyennes du groupe, pondérées par les PV.'));
 }
 
 // -------------------------------------------------------------- Harebourg
@@ -268,7 +518,7 @@ function rotButton(q, glyph, label) {
     el('span', { class: 'g' }, glyph), label);
 }
 
-function renderVisee(b, body) {
+function renderVisee(body) {
   const s = D.settings; const tiers = s.harebourg.tiers || D.defaults.tiers;
   const hpInput = el('input', {
     type: 'number', min: 0, max: 100, id: 'hpInput', placeholder: '%',
@@ -292,7 +542,7 @@ function renderVisee(b, body) {
       el('b', { id: 'meleeNum' }, '0'),
       el('button', { class: 'step', onclick: () => window.vigie.harebourg({ meleeLines: D.state.harebourg.meleeLines + 1 }) }, '+')),
     el('div', { class: 'eff', id: 'effBox' }),
-    el('h4', { style: 'margin:12px 0 2px' }, 'Simulateur'),
+    el('h4', { class: 'sec' }, 'Simulateur'),
     el('p', { class: 'muted' }, 'Clic gauche : ta case · clic droit : la cible (Comte ou monstre).'),
     canvas,
     el('div', { class: 'legend' },
@@ -301,7 +551,7 @@ function renderVisee(b, body) {
       el('span', { style: '--c:#5cff8f' }, el('i'), 'case à viser'),
       el('span', { style: '--c:#ffae42' }, el('i'), 'où tomberait un tir direct'),
       el('span', { style: '--c:#c48bff' }, el('i'), 'arrivée de la téléportation')),
-    el('h4', { style: 'margin:14px 0 4px' }, 'Directement sur le jeu'),
+    el('h4', { class: 'sec' }, 'Directement sur le jeu'),
     el('ol', { class: 'steps' },
       el('li', {}, 'Survole ta case et appuie sur ', el('kbd', {}, prettyKey(hk('harebourgAim')))),
       el('li', {}, 'Survole la cible et appuie de nouveau sur le même raccourci.'),
@@ -310,9 +560,9 @@ function renderVisee(b, body) {
       el('span', { class: 'muted', id: 'calStatus' },
         cal ? `Grille calibrée pour ${D.state.sizeKey}.` : 'Grille non calibrée : la visée en jeu sera approximative.'),
       el('button', { class: `btn ${cal ? '' : 'gold'}`, onclick: () => window.vigie.boardMode('calibrate') }, cal ? 'Recalibrer' : 'Calibrer la grille')),
-    el('p', { class: 'note' }, `Paliers de PV indicatifs (source Papycha) : ${tiers.map((t) => `${t.min}–${t.max} % ${H.ROT_LABEL[H.ROT[t.rotation]]}`).join(' · ')}. Fie-toi d'abord à l'état affiché en combat ; la table se modifie dans les réglages.`),
+    el('p', { class: 'note' }, `Paliers de PV indicatifs : ${tiers.map((t) => `${t.min}–${t.max} % ${H.ROT_LABEL[H.ROT[t.rotation]]}`).join(' · ')}. Fie-toi d'abord à l'état affiché en combat ; la table se modifie dans les réglages.`),
   );
-  requestAnimationFrame(() => updateVisee(b));
+  requestAnimationFrame(() => updateVisee());
 }
 
 function updateVisee() {
@@ -382,13 +632,11 @@ function setupSearch() {
 
 function drawResults() {
   const box = $('results');
-  const KIND = { donjon: 'donjon', boss: 'boss', monstre: 'monstre', entree: 'entrée' };
-  box.replaceChildren(...ui.results.map((r, i) => {
-    const b = D.bosses.find((x) => x.id === r.bossId);
-    return el('button', { class: i === ui.sel ? 'sel' : '', onmousedown: (e) => { e.preventDefault(); pick(r); } },
-      el('span', {}, r.label), r.kind === 'monstre' ? el('span', { class: 'muted' }, `· ${b ? b.nom : ''}`) : null,
-      el('span', { class: 'kind' }, KIND[r.kind] || r.kind));
-  }));
+  const KIND = { donjon: 'donjon', boss: 'boss', monstre: 'monstre', songe: 'songe' };
+  box.replaceChildren(...ui.results.map((r, i) => el('button', {
+    class: i === ui.sel ? 'sel' : '', onmousedown: (e) => { e.preventDefault(); pick(r); },
+  }, el('span', { class: 'lbl' }, r.label), r.sub ? el('span', { class: 'muted sub' }, r.sub) : null,
+  el('span', { class: `kind k-${r.kind}` }, KIND[r.kind] || r.kind))));
   box.hidden = !ui.results.length;
 }
 
@@ -396,7 +644,8 @@ function pick(r) {
   $('search').value = '';
   $('results').hidden = true;
   $('search').blur();
-  window.vigie.select(r.bossId, r.monstre || null);
+  if (r.kind === 'monstre') window.vigie.combatAdd(r.ref);
+  else window.vigie.select(r.ref);
 }
 
 // -------------------------------------------------------------- réglages
@@ -411,33 +660,49 @@ function checkbox(checked, onchange) {
   return el('input', { type: 'checkbox', checked: !!checked, onchange: (e) => onchange(e.target.checked) });
 }
 
+function num(value, attrs, onchange) {
+  return el('input', { type: 'number', value, ...attrs, onchange: (e) => onchange(Number(e.target.value)) });
+}
+
 function openSettings() {
   ui.settingsOpen = true;
   const s = D.settings; const sh = $('settings');
   sh.hidden = false;
-  const d = s.detection;
+  const d = s.detection; const c = s.combat;
   const tiers = (s.harebourg.tiers || D.defaults.tiers).map((t) => ({ ...t }));
 
   const hotkeyInputs = {};
   const HOTKEY_LABELS = {
-    togglePanel: 'Afficher / masquer', search: 'Recherche', harebourgAim: 'Visée : poser toi / la cible',
-    harebourgClear: 'Visée : effacer', nextTurn: 'Tour suivant', prevTurn: 'Tour précédent',
-    resetTurn: 'Revenir au tour 1', forceScan: 'Relire l\'écran maintenant',
+    togglePanel: 'Afficher / masquer', search: 'Recherche',
+    scanMonsters: 'Lire les monstres sous le curseur', clearMonsters: 'Vider la liste des monstres',
+    harebourgAim: 'Harebourg : poser toi / la cible', harebourgClear: 'Harebourg : effacer',
+    nextTurn: 'Tour suivant', prevTurn: 'Tour précédent', resetTurn: 'Revenir au tour 1', forceScan: 'Relire le lieu maintenant',
   };
+  const st = D.stats || {};
 
   sh.replaceChildren(
     el('h3', {}, 'Réglages', el('button', { class: 'btn', onclick: closeSettings }, 'Fermer')),
-    el('fieldset', {}, el('legend', {}, 'Détection automatique'),
+    el('fieldset', {}, el('legend', {}, 'Détection du lieu (coin haut-gauche)'),
       line('Activée', checkbox(d.enabled, (v) => setSettings({ detection: { enabled: v } }))),
-      line('Intervalle (ms)', el('input', { type: 'number', min: 700, step: 100, value: d.intervalMs, onchange: (e) => setSettings({ detection: { intervalMs: Number(e.target.value) } }) })),
-      line('Seuil du texte clair (0-255)', el('input', { type: 'number', min: 60, max: 250, value: d.threshold, onchange: (e) => setSettings({ detection: { threshold: Number(e.target.value) } }) })),
-      line('Agrandissement avant lecture', el('input', { type: 'number', min: 1, max: 4, value: d.scale, onchange: (e) => setSettings({ detection: { scale: Number(e.target.value) } }) })),
+      line('Intervalle (ms)', num(d.intervalMs, { min: 700, step: 100 }, (v) => setSettings({ detection: { intervalMs: v } }))),
+      line('Seuil du texte clair (0-255)', num(d.threshold, { min: 60, max: 250 }, (v) => setSettings({ detection: { threshold: v } }))),
+      line('Agrandissement avant lecture', num(d.scale, { min: 1, max: 4 }, (v) => setSettings({ detection: { scale: v } }))),
       line('Lire toute la fenêtre (plus lent)', checkbox(d.fullWindow, (v) => setSettings({ detection: { fullWindow: v } }))),
       line('Processus du jeu (regex)', el('input', { type: 'text', value: d.processPattern, onchange: (e) => setSettings({ detection: { processPattern: e.target.value } }) })),
       el('div', { class: 'row' },
         el('button', { class: 'btn gold', onclick: () => window.vigie.boardMode('ocrzone') }, 'Définir la zone de lecture'),
         el('button', { class: 'btn', onclick: () => window.vigie.scan() }, 'Lire maintenant')),
       el('div', { id: 'ocrDebug' })),
+    el('fieldset', {}, el('legend', {}, 'Combat et Songes'),
+      line('Compléter la liste si lue dans les (s)', num(Math.round((c.mergeWindowMs || 120000) / 1000), { min: 10, max: 1800 }, (v) => setSettings({ combat: { mergeWindowMs: v * 1000 } }))),
+      line('Zone autour du curseur : largeur (0-1)', num(c.cursorBox.w, { min: 0.1, max: 1, step: 0.02 }, (v) => setSettings({ combat: { cursorBox: { w: v } } }))),
+      line('… au-dessus du curseur (0-1)', num(c.cursorBox.up, { min: 0.05, max: 1, step: 0.02 }, (v) => setSettings({ combat: { cursorBox: { up: v } } }))),
+      line('… en dessous du curseur (0-1)', num(c.cursorBox.down, { min: 0, max: 1, step: 0.02 }, (v) => setSettings({ combat: { cursorBox: { down: v } } }))),
+      line('Seuil du texte sombre (0-255)', num(c.darkThreshold, { min: 20, max: 200 }, (v) => setSettings({ combat: { darkThreshold: v } }))),
+      line('Si rien n\'est lu, lire toute la fenêtre', checkbox(c.fullWindowFallback, (v) => setSettings({ combat: { fullWindowFallback: v } }))),
+      line('Toujours montrer la version niv. 200+', checkbox(c.preferHighLevel, (v) => setSettings({ combat: { preferHighLevel: v } }))),
+      el('div', { class: 'row' }, el('button', { class: 'btn', onclick: () => window.vigie.combatScan() }, 'Tester la lecture des monstres')),
+      el('div', { id: 'monDebug' })),
     el('fieldset', {}, el('legend', {}, 'Affichage'),
       line('Opacité du panneau', el('input', { type: 'range', min: 0.4, max: 1, step: 0.02, value: s.panel.opacity, oninput: (e) => setSettings({ panel: { opacity: Number(e.target.value) } }) })),
       line('Masquer hors de Dofus', checkbox(s.panel.autoHide, (v) => setSettings({ panel: { autoHide: v } }))),
@@ -472,26 +737,40 @@ function openSettings() {
           setSettings({ hotkeys: patch });
         },
       }, 'Appliquer les raccourcis'))),
-    el('fieldset', {}, el('legend', {}, 'Fiches'),
-      el('p', { class: 'muted', style: 'margin:2px 0 6px' }, 'Ajoute tes propres fiches (avis de recherche, autres donjons) en JSON dans le dossier perso : même format que les fiches fournies. Une fiche perso avec le même « id » remplace la fiche d\'origine.'),
+    el('fieldset', {}, el('legend', {}, 'Données et guides'),
+      el('p', { class: 'muted', style: 'margin:2px 0 6px' },
+        `${fmt(st.dungeons)} donjons, ${fmt(st.monsters)} monstres, ${fmt(st.spells)} sorts, ${st.guides} guides (${st.fichesWithGuide} donjons couverts). Données du jeu du ${st.generatedAt ? new Date(st.generatedAt).toLocaleDateString('fr-FR') : '?'}. ${D.state.dataInfo || ''}`),
+      line('Chercher les mises à jour sur GitHub', checkbox(s.updates !== false, (v) => setSettings({ updates: v }))),
       el('div', { class: 'row' },
-        el('button', { class: 'btn', onclick: () => window.vigie.openFiches() }, 'Ouvrir le dossier'),
-        el('button', { class: 'btn', onclick: async () => { D.bosses = await window.vigie.reloadFiches(); render(); } }, 'Recharger les fiches'))),
-    el('div', { class: 'row' }, el('button', { class: 'btn', onclick: () => window.vigie.quit() }, 'Quitter Vigie')),
+        el('button', { class: 'btn', onclick: async () => { D.stats = await window.vigie.checkUpdates(); openSettings(); } }, 'Vérifier maintenant')),
+      el('p', { class: 'muted', style: 'margin:8px 0 6px' }, 'Tes propres guides (JSON, même format que ceux fournis) vont dans le dossier perso ; un guide perso du même nom remplace celui d\'origine.'),
+      el('div', { class: 'row' },
+        el('button', { class: 'btn', onclick: () => window.vigie.openFiches() }, 'Ouvrir le dossier perso'),
+        el('button', { class: 'btn', onclick: async () => { D.stats = await window.vigie.reloadFiches(); openSettings(); } }, 'Recharger'))),
+    el('div', { class: 'row' }, el('span', { class: 'muted' }, `Vigie v${D.version}`), el('button', { class: 'btn', onclick: () => window.vigie.quit() }, 'Quitter Vigie')),
   );
-  updateOcrDebug();
+  updateDebug();
 }
 
-function updateOcrDebug() {
+function updateDebug() {
   const box = $('ocrDebug');
-  if (!box) return;
-  const det = D.state.detection || {};
-  put(box,
-    el('p', { class: 'muted', style: 'margin:8px 0 2px' }, det.time ? `Dernière lecture : ${new Date(det.time).toLocaleTimeString('fr-FR')}` : 'Aucune lecture pour l\'instant.'),
-    det.preview ? el('img', { class: 'ocrprev', src: det.preview, alt: 'Zone lue' }) : null,
-    el('div', { class: 'ocrtext' }, det.text || '—'),
-    el('p', { class: 'muted', style: 'margin:4px 0 0' }, det.match ? `Reconnu : ${det.match.label} (${det.match.kind}, ${det.match.score} %)` : 'Rien de reconnu.'),
-  );
+  if (box) {
+    const det = D.state.detection || {};
+    put(box,
+      el('p', { class: 'muted', style: 'margin:8px 0 2px' }, det.time ? `Dernière lecture : ${new Date(det.time).toLocaleTimeString('fr-FR')}` : 'Aucune lecture pour l\'instant.'),
+      det.preview ? el('img', { class: 'ocrprev', src: det.preview, alt: 'Zone lue' }) : null,
+      el('div', { class: 'ocrtext' }, det.text || '—'),
+      el('p', { class: 'muted', style: 'margin:4px 0 0' }, det.match ? `Reconnu : ${det.match.label} (${det.match.kind}, ${det.match.score} %)` : 'Rien de reconnu.'),
+    );
+  }
+  const mb = $('monDebug');
+  if (mb) {
+    const c = D.state.combat || {};
+    put(mb,
+      c.preview ? el('img', { class: 'ocrprev', src: c.preview, alt: 'Zone lue autour du curseur' }) : null,
+      c.text ? el('div', { class: 'ocrtext' }, c.text) : null,
+      c.info ? el('p', { class: 'muted', style: 'margin:4px 0 0' }, c.info) : null);
+  }
 }
 
 function closeSettings() { ui.settingsOpen = false; $('settings').hidden = true; }
@@ -510,6 +789,10 @@ async function start() {
     if (ui.compact) fitCompact();
     else if (ui.normalHeight) window.vigie.panelHeight(ui.normalHeight);
   });
+  $('modeFiche').addEventListener('click', () => window.vigie.view('fiche'));
+  $('modeCombat').addEventListener('click', () => window.vigie.view('combat'));
+  $('btnRead').addEventListener('click', () => window.vigie.combatScan());
+  $('combatClear').addEventListener('click', () => window.vigie.combatClear());
   $('turnPlus').addEventListener('click', () => window.vigie.setTurn(D.state.turn + 1));
   $('turnMinus').addEventListener('click', () => window.vigie.setTurn(D.state.turn - 1));
   $('turnReset').addEventListener('click', () => window.vigie.setTurn(1));

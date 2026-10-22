@@ -1,0 +1,50 @@
+{
+  "id": "songes",
+  "nom": "Songes Infinis",
+  "maj": "2026-10-22",
+  "detection": ["Songes Infinis", "Contrées oniriques", "Puits des Songes", "Songe Infini"],
+  "essentiel": [
+    "Chaque combat tire un groupe au hasard parmi tout le bestiaire : survole le groupe (ou un monstre de la timeline en combat) et appuie sur Ctrl+Alt+M pour afficher leurs résistances, sorts et conseils.",
+    "La mort est définitive : un combat perdu termine le songe, sauf avec un Sable de Draconiros.",
+    "Tes PV sont restaurés après chaque salle, mais pas entre les vagues du boss final (et l'érosion reste).",
+    "Une Aberration (icône en haut à droite) signale un gardien modifié : son effet est affiché dans la fiche du boss.",
+    "Les avis de recherche des songes s'affaiblissent avec chaque allié présent (environ -1 500 PV et -100 puissance par allié)."
+  ],
+  "regles": [
+    { "t": "Structure", "x": "26 salles réparties en 5 paliers (1-3, 4-9, 10-15, 16-21, 22-26). Les 3 premières salles sont des combats ; une Fontaine Onirique ouvre les paliers (profondeurs 4, 10, 16 et 25)." },
+    { "t": "Intensités", "x": "Rêve I-III, Paradoxe I-IV, Cauchemar I-III. Plus l'intensité est haute, plus les combats sont durs et le butin élevé. Paradoxe est souvent jugé le plus rentable." },
+    { "t": "Combats", "x": "1 à 8 monstres générés selon la difficulté de la salle, avec ou sans boss. Environ 60 maps propres aux songes, 16 cases de départ. Préparation 3 minutes, tours de 90 secondes." },
+    { "t": "Salle difficile", "x": "Fond orangé et point d'exclamation sur le portail : prépare-toi davantage." },
+    { "t": "Boss final (Fin du rêve)", "x": "Vagues aléatoires (boss, avis de recherche, monstres). Une vague arrive dès que la précédente meurt et n'est pas invulnérable à son apparition. Les mécaniques d'une vague disparaissent ensuite ; tes boosts, invocations et pièges restent." },
+    { "t": "Niveau des vagues", "x": "Rêve 250 (+5 par vague), Paradoxe 275 (+10), Cauchemar 300 (+15). 50 tours maximum. Vagues pour gagner : 1 en Rêve, 3 en Paradoxe et Cauchemar ; les suivantes rapportent des Bribes de rêve." },
+    { "t": "Outils", "x": "Sable de Draconiros : rejouer un combat perdu. Tempête astrale : changer le groupe et la map (1 chance sur 3 de garder la map). Le mode Entraînement (via un Souvenir) permet de tester sans risque." },
+    { "t": "Groupe", "x": "4 joueurs maximum. Seul le propriétaire choisit les salles, lance les combats et achète les bonus ; il doit participer à tous les combats." }
+  ],
+  "aberrations": [
+    { "boss": "Ilyzaelle", "x": "N'invoque plus de Brûlâmes et augmente la Vitalité de ses alliés. Applique la Brûle-âme aux ennemis non Brûlâmes. Ne se téléporte plus avec Défense des Rois." },
+    { "boss": "Osavora", "famille": true, "x": "Les monstres d'Osavora apparaissent sous leur forme perturbée." },
+    { "boss": "Belladone", "x": "Entre directement dans sa dernière phase au début du combat." },
+    { "boss": "Bethel Akarna", "x": "Invoque le Monolithe et le Dagon des Profondeurs près de lui. Ne pose plus d'Entrave tentaculaire mais des Étoiles de Mer autour de sa case ciblée. Applique l'Aquazomb aux ennemis hors Submergés et Calcinés." },
+    { "boss": "Dantinéa", "x": "Invoque ses Grokillages près de ses alliés, dont la Vitalité est doublée." },
+    { "boss": "Founoroshi", "x": "Passe directement à sa dernière phase, sans tonneaux anti-incendie ni feux de Bengale." },
+    { "boss": "Fraktale", "x": "Invoque l'Auroraire près de lui ; elle ne se téléporte plus et ne permet plus de se téléporter." },
+    { "boss": "Kabahal", "x": "N'est plus invulnérable au début. Peut invoquer un Bras Démoniaque à partir du tour 2 (relance 4 tours). Tant que ses Bras vivent, il ignore les attaques qui ne viennent pas des Bras." },
+    { "boss": "Roi Nidas", "x": "Invoque la première Boubourse près de l'allié ciblé au début du combat." },
+    { "boss": "Solar", "x": "Ne pose plus de glyphe à chaque cycle solaire." },
+    { "boss": "Torkélonia", "x": "N'invoque plus sa Lunorbe mais applique le Cycle Lunaire aux ennemis hors Crocodailles de Crocuzko. La Parade Lunaire se déclenche lors de dégâts de poussée." },
+    { "boss": "Vortex", "x": "Invoque l'Auroraire, qui ne se téléporte plus. Vortex change d'heure à chaque dégât subi et passe à l'action après que ses monstres ont été achevés deux fois à la même heure. Il perd son invulnérabilité avant le tour 20." },
+    { "boss": "XLII", "x": "Invoque l'Auroraire près de lui ; elle ne se téléporte plus et ne téléporte plus." },
+    { "boss": "Capitaine Meno", "x": "N'appelle plus de renforts, mais réduit les dégâts subis par ses alliés au début du combat." },
+    { "boss": "Chaloeil", "x": "Le Jeu du Chaloeil est remplacé par des dés lancés par ses ennemis à chaque tour : selon le résultat, un bonus va aux alliés ou à l'ennemi lanceur (cas particuliers pour les doubles). Il perd son invulnérabilité avant le tour 20." },
+    { "boss": "Père Ver", "x": "Ne se téléporte plus au début du combat." }
+  ],
+  "avis": [
+    "Aermyne 'Braco' Scalptaras", "Aigripoil", "Ali Grothor", "Bouflouth", "Buldalazred", "Chevalier de Glace",
+    "Culbutoeuf", "Docteur Eggob", "Dremoan", "Grand Kongoku", "Hin", "Homar Medali", "Katigrou", "Khepricorne",
+    "Maxi-malle", "Mekamouth", "Monsieur Pingouin", "Morblok", "Psikopompe", "Roub' Ignolles", "Sicogne",
+    "Takomako", "Vengeuse Masquée", "Voldelor"
+  ],
+  "sources": [
+    { "titre": "Dofus pour les Noobs — Songes Infinis", "url": "https://www.dofuspourlesnoobs.com/songes-infinis.html" }
+  ]
+}

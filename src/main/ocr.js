@@ -47,17 +47,27 @@ class Ocr {
     return this.ready;
   }
 
-  /** @param {Buffer} png image PNG */
-  async recognize(png) {
+  /**
+   * @param {Buffer} png image PNG
+   * @param {{wait?: boolean}} opts sans `wait`, renvoie null si le moteur est
+   *   occupé (lecture périodique) ; avec `wait`, attend son tour (lecture à
+   *   la demande).
+   */
+  async recognize(png, { wait = false } = {}) {
     await this.init();
-    if (this.busy) return null;
-    this.busy = true;
-    try {
-      const { data } = await this.worker.recognize(png);
-      return data.text || '';
-    } finally {
-      this.busy = false;
-    }
+    if (this.busy && !wait) return null;
+    const run = async () => {
+      this.busy = true;
+      try {
+        const { data } = await this.worker.recognize(png);
+        return data.text || '';
+      } finally {
+        this.busy = false;
+      }
+    };
+    const job = (this.queue || Promise.resolve()).then(run, run);
+    this.queue = job.catch(() => {});
+    return job;
   }
 
   async stop() {

@@ -23,9 +23,10 @@ function crop(buf, width, height, rect) {
 /**
  * Binarisation : un pixel est « texte » si son canal le plus faible dépasse
  * le seuil (texte blanc / crème du jeu), ce qui ignore les fonds colorés vifs.
+ * Avec `dark`, l'inverse : texte sombre sur fond clair.
  * Mise à l'échelle par plus proche voisin.
  */
-function binarize(img, { threshold = 165, scale = 2, invert = true } = {}) {
+function binarize(img, { threshold = 165, scale = 2, invert = true, dark = false } = {}) {
   const W = img.width * scale; const H = img.height * scale;
   const out = Buffer.alloc(W * H * 4);
   for (let y = 0; y < H; y++) {
@@ -33,8 +34,11 @@ function binarize(img, { threshold = 165, scale = 2, invert = true } = {}) {
     for (let x = 0; x < W; x++) {
       const sx = Math.floor(x / scale);
       const i = (sy * img.width + sx) * 4;
-      const lo = Math.min(img.data[i], img.data[i + 1], img.data[i + 2]);
-      const isText = lo >= threshold;
+      // Texte clair : canal le plus faible au-dessus du seuil.
+      // Texte sombre (infobulles claires) : canal le plus fort sous le seuil.
+      const isText = dark
+        ? Math.max(img.data[i], img.data[i + 1], img.data[i + 2]) <= threshold
+        : Math.min(img.data[i], img.data[i + 1], img.data[i + 2]) >= threshold;
       const v = (isText === invert) ? 0 : 255;
       const o = (y * W + x) * 4;
       out[o] = v; out[o + 1] = v; out[o + 2] = v; out[o + 3] = 255;

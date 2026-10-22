@@ -1,16 +1,17 @@
 {
   "name": "vigie",
   "productName": "Vigie",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "private": true,
-  "description": "Overlay d'aide aux combats de boss pour Dofus 3 (usage perso)",
+  "description": "Overlay d'aide aux combats pour Dofus 3 : fiches de tous les donjons, mode Combat/Songe, visée Harebourg (lecture seule)",
   "main": "src/main/main.js",
   "scripts": {
     "start": "electron .",
     "test": "node test/run-tests.js --ocr",
     "e2e": "electron test/e2e-main.js",
     "dist": "electron-builder --win dir",
-    "smoke": "node test/smoke-packaged.js"
+    "smoke": "node test/smoke-packaged.js",
+    "manifest": "node scripts/build-manifest.mjs"
   },
   "author": "Loïc",
   "license": "UNLICENSED",

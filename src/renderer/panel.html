@@ -13,7 +13,7 @@
       <div class="portrait" id="portrait"></div>
       <div class="titles">
         <div class="boss" id="bossName">Vigie</div>
-        <div class="dungeon" id="dungeonName">Aide aux combats de boss</div>
+        <div class="dungeon" id="dungeonName">Aide aux combats Dofus</div>
       </div>
       <div class="actions">
         <button class="icon" id="btnSettings" title="Réglages">⚙</button>
@@ -24,20 +24,27 @@
 
     <div class="status" id="status"></div>
 
+    <div class="modes" id="modes">
+      <button id="modeFiche" data-v="fiche">Fiche</button>
+      <button id="modeCombat" data-v="combat">Combat <span class="count" id="combatCount"></span></button>
+      <button class="read" id="btnRead" title="Lire les noms de monstres sous le curseur">◎ Lire les monstres</button>
+    </div>
+
     <div class="searchbox">
-      <input id="search" type="search" placeholder="Chercher un boss ou un monstre…  (Ctrl+Alt+F)" autocomplete="off" spellcheck="false">
+      <input id="search" type="search" placeholder="Donjon, boss ou monstre…  (Ctrl+Alt+F)" autocomplete="off" spellcheck="false">
       <div class="results" id="results" hidden></div>
     </div>
 
     <main id="main">
       <section class="empty" id="empty">
-        <p>Aucun boss détecté pour l'instant.</p>
-        <p class="muted">Entre dans un donjon de Frigost III : la fiche s'ouvrira toute seule. Tu peux aussi en choisir une :</p>
+        <p><b>Aucun donjon détecté pour l'instant.</b></p>
+        <p class="muted" id="emptyHint">Entre dans un donjon ou un Songe : la fiche s'ouvre toute seule.</p>
         <div class="quick" id="quick"></div>
+        <p class="muted small" id="dataStats"></p>
       </section>
 
       <section id="fiche" hidden>
-        <div class="turnbar">
+        <div class="turnbar" id="turnbar">
           <span class="lbl">Tour</span>
           <button class="step" id="turnMinus" title="Tour précédent (Ctrl+Alt+Maj+T)">‹</button>
           <span class="turn" id="turnNum">1</span>
@@ -52,6 +59,17 @@
 
         <nav class="tabs" id="tabs"></nav>
         <div class="tabbody" id="tabbody"></div>
+      </section>
+
+      <section id="combat" hidden>
+        <div class="combat-bar">
+          <span class="grow muted" id="combatInfo"></span>
+          <button class="chip-btn" id="combatClear" title="Vider la liste (Ctrl+Alt+Maj+M)">Vider</button>
+        </div>
+        <div class="summary" id="summary"></div>
+        <div class="aberr" id="aberr"></div>
+        <div class="cards" id="cards"></div>
+        <div class="empty-combat" id="combatEmpty"></div>
       </section>
     </main>
 

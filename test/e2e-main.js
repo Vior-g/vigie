@@ -28,22 +28,25 @@ const js = (win, code) => { LOG('js>', code.slice(0, 60).replace(/\s+/g, ' ')); 
 
 process.on('unhandledRejection', (e) => { LOG('ERREUR', e && e.stack); app.quit(); });
 app.whenReady().then(async () => {
-  await wait(9000);
+  await wait(8000);
   const panel = find('Vigie — panneau');
   const board = find('Vigie — calque');
-  await shot(panel, '1-detection');
   // Sans gestionnaire de fenêtres, le calque plein écran recouvre le panneau
   // (qui n'est alors plus repeint) : on le masque pendant les captures du panneau.
   if (board) board.hide();
+  await js(panel, `vigie.select(null)`);
+  await wait(300);
+  await shot(panel, '01-accueil');
 
-  // Onglet Visée + simulateur
-  // Sous Xvfb sans compositeur, le calque transparent apparaît noir et masque
-  // l'image du jeu : on choisit donc la fiche à la main pour la suite.
-  await js(panel, `vigie.select('comte-harebourg')`);
-  await wait(400);
+  const tab = (label) => js(panel, `[...document.querySelectorAll('#tabs button')].find(b => b.textContent === '${label}').click(); document.getElementById('main').scrollTop = 0;`);
+
+  // Fiche Harebourg (guide + outil de visée)
+  await js(panel, `vigie.select('d71')`);
+  await wait(600);
   await js(panel, `vigie.setTurn(4); vigie.harebourg({ baseQ: 1, meleeLines: 0 });`);
   await wait(300);
-  await js(panel, `[...document.querySelectorAll('#tabs button')].find(b => b.textContent === 'Visée').click();`);
+  await shot(panel, '02-harebourg');
+  await tab('Visée');
   await wait(400);
   await js(panel, `(() => {
     const c = document.getElementById('miniCanvas'); const r = c.getBoundingClientRect();
@@ -54,62 +57,72 @@ app.whenReady().then(async () => {
     document.getElementById('main').scrollTop = 330;
   })()`);
   await wait(300);
-  await shot(panel, '2-visee');
-
-  // Onglet Monstres
-  await js(panel, `[...document.querySelectorAll('#tabs button')].find(b => b.textContent === 'Monstres').click(); document.getElementById('main').scrollTop = 0;`);
-  await wait(500);
-  await shot(panel, '3-monstres');
-
-  // Recherche « verglas » -> Missiz Frizz
-  await js(panel, `(() => { const i = document.getElementById('search'); i.focus(); i.value = 'verglas'; i.dispatchEvent(new Event('input')); })()`);
+  await shot(panel, '03-visee');
+  await tab('Mécaniques');
   await wait(400);
-  await shot(panel, '4-recherche');
-  await js(panel, `document.querySelector('#results button').dispatchEvent(new MouseEvent('mousedown', { bubbles: true }))`);
+  await shot(panel, '04-mecaniques');
+  await tab('Monstres');
+  await wait(600);
+  await shot(panel, '05-monstres');
+
+  // Recherche dans tout le bestiaire
+  await js(panel, `(() => { const i = document.getElementById('search'); i.focus(); i.value = 'kralam'; i.dispatchEvent(new Event('input')); })()`);
   await wait(500);
-  await js(panel, `vigie.setTurn(5)`);
+  await shot(panel, '06-recherche');
+  await js(panel, `document.querySelector('#results button').dispatchEvent(new MouseEvent('mousedown', { bubbles: true }))`);
+  await wait(700);
+  await shot(panel, '07-kralamoure');
+
+  // Donjon sans guide : synthèse automatique
+  await js(panel, `vigie.search('Cour du Bouftou Royal').then(r => vigie.select(r[0].ref))`);
+  await wait(700);
+  await shot(panel, '08-sans-guide');
+
+  // Songes
+  await js(panel, `vigie.select('songes')`);
+  await wait(700);
+  await shot(panel, '09-songes');
+  await tab('Aberrations');
   await wait(300);
-  await shot(panel, '5-frizz-tour5');
+  await shot(panel, '10-aberrations');
+
+  // Lecture simulée d'un groupe en Songe
+  const ids = global.__vigieTestMonsters('Groupe de monstres\nCraqueleur (210)\nBouftou Royal\nCycloïde\nAberration de Solar\nSolar');
+  LOG('combat ids', JSON.stringify(ids));
+  await wait(900);
+  await shot(panel, '11-combat');
+  await js(panel, `[...document.querySelectorAll('.card .card-actions button')].find(b => b.textContent.startsWith('Sorts')).click()`);
+  await wait(300);
+  await js(panel, `document.getElementById('main').scrollTop = 260`);
+  await wait(200);
+  await shot(panel, '12-combat-sorts');
 
   // Réglages
   await js(panel, `document.getElementById('btnSettings').click()`);
   await wait(400);
-  await shot(panel, '6-reglages');
-  await js(panel, `document.getElementById('settings').scrollTop = 520`);
+  await shot(panel, '13-reglages');
+  await js(panel, `document.getElementById('settings').scrollTop = 560`);
   await wait(200);
-  await shot(panel, '7-reglages-bas');
+  await shot(panel, '14-reglages-bas');
   await js(panel, `document.getElementById('settings').querySelector('h3 button').click()`);
 
-  // Mode réduit
-  await js(panel, `vigie.select('nileza'); `);
-  await wait(300);
-  await js(panel, `vigie.setTurn(4)`);
+  // Mode réduit en combat
   await js(panel, `document.getElementById('btnCompact').click()`);
   await wait(700);
-  await shot(panel, '8-compact');
+  await shot(panel, '15-compact');
   await js(panel, `document.getElementById('btnCompact').click()`);
 
-  // Calque : visée en jeu sans calibrage puis avec calibrage
+  // Calque : visée en jeu
   if (board) {
     board.showInactive();
-    await wait(1500);
-    await js(panel, `vigie.select('comte-harebourg'); vigie.setTurn(2); vigie.harebourg({ baseQ: 3, meleeLines: 0 })`);
+    await wait(1200);
+    await js(panel, `vigie.select('d71'); vigie.setTurn(2); vigie.harebourg({ baseQ: 3, meleeLines: 0 })`);
     await wait(300);
-    // Calibrage simulé (case de 86 px centrée en 800,450), puis deux appuis du
-    // raccourci simulés : « toi » à 2 cases à droite, la cible plus loin.
     await js(panel, `vigie.boardDone('calibrate', { x: 800, y: 450, w: 86 })`);
     await wait(300);
     global.__vigieTestAim({ x: 800 + 86 * 1, y: 450 + 4 }, { x: 800 + 86 * 3 + 43, y: 450 - 43 * 1.5 - 3 });
     await wait(800);
-    await js(board, `JSON.stringify({ me: S.harebourg.me, target: S.harebourg.target, cal: S.calibration, q: S.harebourg.q, w: innerWidth })`).then((v) => LOG('board', v));
-    await shot(board, '9-calque-visee');
-    await js(panel, `vigie.boardMode('calibrate')`);
-    await wait(500);
-    await shot(board, '10-calque-calibrage');
-    await js(panel, `vigie.boardMode('ocrzone')`);
-    await wait(500);
-    await shot(board, '11-calque-zone');
-    await js(panel, `vigie.boardMode('idle')`);
+    await shot(board, '16-calque-visee');
   }
   await wait(300);
   app.quit();

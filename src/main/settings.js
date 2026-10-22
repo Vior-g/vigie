@@ -13,6 +13,9 @@ const DEFAULTS = {
     prevTurn: 'Control+Alt+Shift+T',
     resetTurn: 'Control+Alt+R',
     forceScan: 'Control+Alt+D',
+    // Lecture des noms de monstres sous le curseur (combat, Songes).
+    scanMonsters: 'Control+Alt+M',
+    clearMonsters: 'Control+Alt+Shift+M',
   },
   detection: {
     enabled: true,
@@ -25,6 +28,20 @@ const DEFAULTS = {
     // Nom de processus de la fenêtre du jeu (expression régulière).
     processPattern: '^dofus',
   },
+  combat: {
+    // Une nouvelle lecture moins de 2 min après la précédente complète la
+    // liste ; au-delà, elle la remplace (nouveau combat).
+    mergeWindowMs: 120000,
+    // Zone lue autour du curseur, en fractions de la fenêtre du jeu.
+    cursorBox: { w: 0.46, up: 0.34, down: 0.14 },
+    darkThreshold: 95,
+    fullWindowFallback: true,
+    // Afficher la version niv. 200+ des monstres (toujours vrai en Songe).
+    preferHighLevel: false,
+  },
+  recent: [],
+  // Vérifier les nouvelles données et versions sur GitHub.
+  updates: true,
   panel: {
     bounds: null,
     opacity: 0.96,

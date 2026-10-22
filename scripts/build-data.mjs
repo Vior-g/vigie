@@ -127,6 +127,7 @@ function zoneText(z) {
   if (!f) return '';
   const p = z.param1 ?? z.size ?? 0;
   if (shape !== 65 && shape !== 97 && !(p > 0)) return '';
+  if (p >= 40) return shape === 84 || shape === 76 ? 'toute la ligne' : 'tout le terrain';
   return f(p);
 }
 
@@ -269,7 +270,10 @@ async function main() {
     if (/état/i.test(tpl)) names[3] = stateName.get(e.value) || null;
     if (/lance le sort|sort #1/i.test(tpl) && spellById.get(e.diceNum)) names[1] = fr(spellById.get(e.diceNum).name);
     let txt = renderTemplate(tpl, e.diceNum, e.diceSide, e.value, names);
-    if (!txt || /#\d/.test(txt)) return null;
+    // Balises d'icônes du client (<sprite name="PA">…) et identifiants de sorts.
+    txt = txt.replace(/<sprite[^>]*>/g, '').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+    txt = txt.replace(/^(\d{3,6}) :/, (m, id) => (spellById.get(Number(id)) ? `${fr(spellById.get(Number(id)).name)} :` : m));
+    if (!txt || /#\d/.test(txt) || /^\d{3,6} :/.test(txt)) return null;
     const zone = zoneText(e.zoneDescr || e.rawZone);
     const dur = e.duration > 0 ? `${e.duration} tour${e.duration > 1 ? 's' : ''}` : '';
     const extra = [zone, dur].filter(Boolean).join(', ');

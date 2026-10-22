@@ -9,7 +9,7 @@ on:
     - cron: '17 5 * * 3'
   push:
     branches: [main]
-    paths: ['scripts/build-data.mjs', '.github/workflows/data.yml']
+    paths: ['scripts/build-data.mjs', 'scripts/build-manifest.mjs', '.github/workflows/data.yml']
   workflow_dispatch:
 
 permissions:
@@ -32,11 +32,14 @@ jobs:
       - name: Construire la base depuis DofusDB
         run: node scripts/build-data.mjs
 
+      - name: Mettre à jour le manifeste (mises à jour des Vigie installés)
+        run: node scripts/build-manifest.mjs
+
       - name: Enregistrer les changements
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add src/data/generated data-probe
+          git add src/data/generated src/data/manifest.json data-probe
           if git diff --cached --quiet; then
             echo "Données inchangées."
             exit 0
