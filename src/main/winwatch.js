@@ -21,7 +21,7 @@ class WinWatch extends EventEmitter {
     if (!this.supported || this.proc) return;
     this.proc = spawn('powershell.exe', [
       '-NoProfile', '-NonInteractive', '-ExecutionPolicy', 'Bypass', '-File', this.scriptPath,
-    ], { windowsHide: true });
+    ], { windowsHide: true, cwd: require('os').tmpdir() });
     let buf = '';
     this.proc.stdout.setEncoding('utf8');
     this.proc.stdout.on('data', (chunk) => {

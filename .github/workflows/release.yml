@@ -33,6 +33,9 @@ jobs:
       - name: Tests (géométrie, fiches, reconnaissance, OCR)
         run: npm test
 
+      - name: Test du remplacement de fichiers (mise à jour)
+        run: node test/update-swap.js
+
       - name: Construire Vigie.exe
         run: npx electron-builder --win dir --x64 --publish never
 
@@ -43,17 +46,40 @@ jobs:
           Copy-Item -Recurse dist/win-unpacked/resources/app $iso
           node test/smoke-packaged.js $iso
 
-      - name: Zipper
+      - name: Paquets de mise à jour
         shell: pwsh
         run: |
+          $out = 'dist/release'
+          $7z = (Get-Command 7z -ErrorAction SilentlyContinue).Source
+          if (!$7z) { $7z = 'C:\Program Files\7-Zip\7z.exe' }
+          node scripts/release-meta.mjs dist/win-unpacked/resources/app $out
+          # Code seul (sans les modules) : quelques Mo, suffit tant qu'Electron
+          # et les modules ne changent pas.
+          $tmp = Join-Path $env:RUNNER_TEMP 'pkg'
+          robocopy dist/win-unpacked/resources/app (Join-Path $tmp 'app') /E /XD node_modules /NFL /NDL /NJH /NJS /NP | Out-Null
+          if ($LASTEXITCODE -ge 8) { exit 1 }
+          Push-Location $tmp; & $7z a -tzip -mx=7 (Join-Path $env:GITHUB_WORKSPACE "$out/vigie-app.zip") app | Out-Null; Pop-Location
+          Push-Location dist/win-unpacked/resources/app; & $7z a -tzip -mx=7 (Join-Path $env:GITHUB_WORKSPACE "$out/vigie-modules.zip") node_modules | Out-Null; Pop-Location
           Rename-Item dist/win-unpacked Vigie
-          Compress-Archive -Path dist/Vigie -DestinationPath dist/Vigie-win-x64.zip
+          Push-Location dist; & $7z a -tzip -mx=7 (Join-Path $env:GITHUB_WORKSPACE "$out/Vigie-win-x64.zip") Vigie | Out-Null; Pop-Location
+          Get-ChildItem $out | Format-Table Name, Length
 
-      - name: Garder le zip (onglet Actions)
+      - name: Vérifier les archives (tar de Windows, comme chez l'utilisateur)
+        shell: pwsh
+        run: |
+          $t = Join-Path $env:RUNNER_TEMP 'x'
+          New-Item -ItemType Directory $t | Out-Null
+          tar -xf dist/release/vigie-app.zip -C $t
+          tar -xf dist/release/vigie-modules.zip -C $t
+          if (!(Test-Path "$t/app/package.json") -or !(Test-Path "$t/node_modules/tesseract.js/package.json")) { throw 'archives inattendues' }
+          tar -xf dist/release/Vigie-win-x64.zip -C $t
+          if (!(Test-Path "$t/Vigie/Vigie.exe")) { throw 'Vigie.exe absent du zip complet' }
+
+      - name: Garder les fichiers (onglet Actions)
         uses: actions/upload-artifact@v4
         with:
           name: Vigie-win-x64
-          path: dist/Vigie-win-x64.zip
+          path: dist/release/*
           retention-days: 14
 
       - name: Publier la Release (nouvelle version uniquement)
@@ -67,4 +93,6 @@ jobs:
             echo "La Release $v existe déjà : rien à publier (change la version pour publier)."
             exit 0
           fi
-          gh release create "$v" dist/Vigie-win-x64.zip --target "$GITHUB_SHA" --title "Vigie $v" --generate-notes
+          cd dist/release
+          gh release create "$v" Vigie-win-x64.zip vigie-app.zip vigie-modules.zip vigie-update.json \
+            --target "$GITHUB_SHA" --title "Vigie $v" --notes-file release-notes.md

@@ -36,15 +36,17 @@ const DEFAULTS = {
     cursorBox: { w: 0.46, up: 0.34, down: 0.14 },
     darkThreshold: 95,
     fullWindowFallback: true,
-    // Afficher la version niv. 200+ des monstres (toujours vrai en Songe).
-    preferHighLevel: false,
+    // Niveau des monstres en Songe (étage) quand aucun niveau n'est lu.
+    songeLevel: 200,
   },
   recent: [],
   // Vérifier les nouvelles données et versions sur GitHub.
   updates: true,
+  skipVersion: null, // version dont l'utilisateur a refusé la mise à jour
   panel: {
     bounds: null,
     opacity: 0.96,
+    zoom: 1, // taille du texte du panneau
     autoHide: true, // masquer quand ni Dofus ni Vigie n'est au premier plan
     compact: false,
   },

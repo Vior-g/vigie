@@ -13,12 +13,13 @@ Vigie affiche par-dessus Dofus une fiche de combat qui suit tout seule l'endroit
 - **Détection du lieu** : toutes les 2 secondes, Vigie capture l'écran, lit le nom de la zone en haut à gauche avec un OCR local (Tesseract, français embarqué) et ouvre la fiche du donjon ou le mode Songe.
 - **Lecture des monstres** : uniquement quand tu appuies sur `Ctrl+Alt+M` : Vigie lit la zone autour de ta souris (infobulle d'un groupe, d'un monstre, de la timeline). Un niveau lu à côté du nom (« Craqueleur (210) ») choisit la bonne version du monstre (normale ou expédition niv. 200+).
 - **Lecture seule** : aucune lecture de la mémoire du jeu, aucune interception réseau, aucun fichier du jeu modifié, aucun clic ni touche envoyé au jeu. Les fenêtres de Vigie sont invisibles aux captures (pour que l'OCR ne se lise pas lui-même).
-- **Données** : bestiaire, sorts et donjons sont générés chaque semaine depuis l'API publique [DofusDB](https://dofusdb.fr) ; les guides sont résumés et reformulés depuis [Dofus pour les Noobs](https://www.dofuspourlesnoobs.com). Vigie télécharge tout seul les données et guides mis à jour depuis ce dépôt GitHub (seuls les fichiers modifiés) et signale quand une nouvelle version du logiciel est publiée.
+- **Données** : bestiaire, sorts et donjons sont générés chaque semaine depuis l'API publique [DofusDB](https://dofusdb.fr) ; les guides sont résumés et reformulés depuis [Dofus pour les Noobs](https://www.dofuspourlesnoobs.com). Vigie télécharge tout seul les données et guides mis à jour depuis ce dépôt GitHub (seuls les fichiers modifiés).
+- **Mise à jour du logiciel** (comme Relais) : au démarrage, Vigie regarde la dernière Release ; si une version plus récente existe, un bandeau propose « Mettre à jour ». Vigie télécharge seulement ce qui a changé (le code seul pèse quelques Mo), se ferme, remplace ses fichiers et redémarre. En cas d'échec, l'ancienne version est remise en place (journal : `resources\mise-a-jour.log`).
 - **À savoir** : un overlay qui capture l'écran reste un outil tiers. Il ne fait rien d'autre que t'afficher des infos, mais relis les conditions d'Ankama ; usage perso, à tes risques.
 
 ## Installation
 
-**Version prête à l'emploi** : dans [Releases](https://github.com/Vior-g/vigie/releases), télécharge `Vigie-win-x64.zip`, dézippe-le où tu veux, puis lance `Vigie\Vigie.exe`. L'exécutable n'est pas signé : Windows SmartScreen peut afficher un avertissement (« Informations complémentaires » → « Exécuter quand même »). Pour mettre à jour, remplace le dossier par celui de la nouvelle version : tes réglages sont conservés.
+**Version prête à l'emploi** : dans [Releases](https://github.com/Vior-g/vigie/releases), télécharge `Vigie-win-x64.zip`, dézippe-le dans un dossier à toi (Documents, Bureau… pas dans Program Files, sinon Vigie ne pourra pas se mettre à jour), puis lance `Vigie\Vigie.exe`. L'exécutable n'est pas signé : Windows SmartScreen peut afficher un avertissement (« Informations complémentaires » → « Exécuter quand même »). Ensuite, Vigie se met à jour tout seul ; tes réglages sont conservés.
 
 **Depuis les sources** (Node.js 22 ou plus) :
 
@@ -60,6 +61,7 @@ Ces combinaisons ne produisent aucun caractère sur un clavier AZERTY (contraire
 2. Avant chaque combat, survole le groupe et appuie sur `Ctrl+Alt+M` : l'onglet **Combat** liste les monstres, l'élément conseillé contre le groupe (résistances moyennes pondérées par les PV) et celui à éviter. Chaque carte donne PV, PA/PM, esquives, résistances, sorts dépliables et le conseil du guide de leur donjon d'origine.
 3. Si une **Aberration** est active (icône en haut à droite), survole-la et appuie sur `Ctrl+Alt+M` : son effet s'affiche en tête de la liste et sur la carte du boss concerné.
 4. Une nouvelle lecture moins de 2 minutes après la précédente complète la liste ; au-delà, elle la remplace (nouveau combat). Durée réglable.
+5. **Niveau des monstres** : en Songe, le niveau des monstres suit l'étage. Vigie affiche chaque monstre au niveau lu dans l'infobulle (sinon au niveau réglé à côté du bouton « Songe »), avec ses PV estimés grâce à la courbe de PV du jeu (`≈`) ; en combat, survoler un monstre et appuyer sur `Ctrl+Alt+M` affiche ses PV réels. Résistances, PA/PM et sorts sont ceux du monstre. Le mode Songe s'active tout seul dans les Songes ou quand un niveau lu ne correspond pas au monstre classique ; le bouton « Songe » permet de le forcer.
 
 ## Le compteur de tours
 
@@ -123,7 +125,7 @@ test/            tests unitaires + OCR sur captures simulées, visite guidée de
 
 - **Données du jeu** : le workflow « Données du jeu » régénère `src/data/generated/` depuis DofusDB chaque mercredi (et à la demande), puis le manifeste. Les Vigie installés récupèrent les fichiers modifiés au démarrage.
 - **Guides** : après modification d'un guide, lance `npm run manifest` (le test échoue sinon).
-- **Nouvelle version** : à chaque push sur `main`, GitHub Actions teste, construit et vérifie Vigie. Si la version de `package.json` n'a pas encore de Release, il la publie avec `Vigie-win-x64.zip`.
+- **Nouvelle version** : à chaque push sur `main`, GitHub Actions teste, construit et vérifie Vigie. Si la version de `package.json` n'a pas encore de Release, il la publie avec `Vigie-win-x64.zip` (complet) et les paquets de mise à jour (`vigie-app.zip`, `vigie-modules.zip`, `vigie-update.json`). Les nouveautés affichées dans Vigie viennent de la section correspondante de `CHANGELOG.md`.
 
 ```
 npm version minor --no-git-tag-version   # 0.2.0 -> 0.3.0

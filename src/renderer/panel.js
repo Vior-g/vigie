@@ -56,6 +56,7 @@ const G = () => (ui.fiche && ui.fiche.guide) || null;
 
 function render() {
   renderStatus();
+  renderUpdate();
   renderModes();
   const s = D.state;
   if (s.dataRev !== ui.mrev) { ui.mrev = s.dataRev; ui.mcache.clear(); ui.ficheKey = null; ui.cardsKey = ''; ui.groupKey = ''; }
@@ -109,7 +110,7 @@ function renderHeader() {
   let title = 'Vigie'; let sub = 'Aide aux combats Dofus'; let img = null;
   if (combat) {
     title = 'Combat';
-    sub = D.state.songe ? 'Songe · monstres lus à l\'écran' : 'Monstres lus à l\'écran';
+    sub = D.state.combat.songe ? `Songe · monstres au niv. ${D.state.combat.songeLevel}` : 'Monstres lus à l\'écran';
   } else if (f) {
     title = f.nom;
     if (f.type === 'songe') sub = 'Mode Songe';
@@ -148,8 +149,48 @@ function renderStatus() {
   }
   st.append(el('span', { class: dot }), el('span', { class: 'grow', title: det.text || '' }, text));
   if (action) st.append(action);
-  if (s.update) {
-    st.append(el('button', { class: 'chip-btn up', title: 'Une nouvelle version est disponible sur GitHub', onclick: () => window.vigie.open(s.update.url) }, `v${s.update.version} dispo`));
+  const u = s.update;
+  if (u && u.dismissed && ['available', 'error'].includes(u.phase)) {
+    st.append(el('button', { class: 'chip-btn up', title: 'Une nouvelle version de Vigie est disponible', onclick: () => window.vigie.appUpdate('show') }, `v${u.version} dispo`));
+  }
+}
+
+const mo = (b) => `${Math.max(0.1, b / 1048576).toFixed(b > 10485760 ? 0 : 1).replace('.', ',')} Mo`;
+
+/** Bandeau de mise à jour du logiciel (comme dans Relais). */
+function renderUpdate() {
+  const box = $('updateBanner');
+  const u = D.state.update;
+  const show = u && !u.dismissed && ['available', 'download', 'extract', 'restart', 'error'].includes(u.phase);
+  box.hidden = !show;
+  if (!show) { box.dataset.key = ''; return; }
+  const key = JSON.stringify([u.phase, u.version, u.error, u.phase === 'download' ? Math.floor((u.done / (u.total || 1)) * 100) : 0, ui.notesOpen]);
+  if (box.dataset.key === key) return;
+  box.dataset.key = key;
+  const btn = (label, action, cls = '') => el('button', { class: `chip-btn ${cls}`, onclick: () => window.vigie.appUpdate(action) }, label);
+  if (u.phase === 'available') {
+    put(box,
+      el('div', { class: 'u-line' }, el('b', {}, `Vigie v${u.version} est disponible`), ` (tu as la v${u.current}).`),
+      el('div', { class: 'u-line muted small' }, u.canInstall
+        ? `${mo(u.size)} à télécharger, Vigie redémarrera tout seul.`
+        : 'Télécharge-la sur GitHub (mise à jour automatique disponible à partir de la version installée suivante).'),
+      el('div', { class: 'u-actions' },
+        u.canInstall ? btn('Mettre à jour', 'install', 'gold') : btn('Télécharger', 'open', 'gold'),
+        btn('Plus tard', 'later'),
+        u.notes ? el('button', { class: 'chip-btn', onclick: () => { ui.notesOpen = !ui.notesOpen; renderUpdate(); } }, ui.notesOpen ? 'Masquer les nouveautés' : 'Nouveautés') : null,
+        btn('Ignorer cette version', 'skip', 'ghosty')),
+      ui.notesOpen && u.notes ? el('div', { class: 'u-notes' }, u.notes) : null);
+  } else if (u.phase === 'download' || u.phase === 'extract') {
+    const pct = u.total ? Math.min(100, Math.floor((u.done / u.total) * 100)) : 0;
+    put(box,
+      el('div', { class: 'u-line' }, u.phase === 'download' ? `Téléchargement de la v${u.version}… ${pct} % (${mo(u.done || 0)} / ${mo(u.total || 0)})` : 'Préparation de la mise à jour…'),
+      el('div', { class: 'u-bar' }, el('i', { style: `width:${u.phase === 'extract' ? 100 : pct}%` })));
+  } else if (u.phase === 'restart') {
+    put(box, el('div', { class: 'u-line' }, el('b', {}, `Installation de la v${u.version} : Vigie redémarre…`)));
+  } else if (u.phase === 'error') {
+    put(box,
+      el('div', { class: 'u-line' }, el('b', {}, 'Mise à jour impossible : '), u.error || 'erreur inconnue'),
+      el('div', { class: 'u-actions' }, u.canInstall ? btn('Réessayer', 'install', 'gold') : null, btn('Page de téléchargement', 'open'), btn('Plus tard', 'later')));
   }
 }
 
@@ -191,7 +232,7 @@ function renderFiche() {
   const f = ui.fiche;
   const songe = f.type === 'songe';
   const tours = (G() && G().tours) || [];
-  $('turnbar').hidden = songe;
+  $('turnbar').hidden = songe || (!tours.length && f.outil !== 'harebourg');
   renderTurn(tours);
   const boss = !songe && f.bosses && f.bosses[0];
   $('stats').hidden = !boss; $('res').hidden = !boss;
@@ -210,6 +251,12 @@ function renderFiche() {
   $('tabs').replaceChildren(...tabs.map(([id, label]) => el('button', {
     class: ui.tab === id ? 'on' : '', onclick: () => { ui.tab = id; render(); },
   }, label)));
+  const ess = songe ? (f.songes.essentiel || []) : ((G() && G().essentiel) || []);
+  const ck = `${ui.ficheKey}`;
+  if ($('compactInfo').dataset.key !== ck) {
+    $('compactInfo').dataset.key = ck;
+    put($('compactInfo'), ess.slice(0, 3).map((t) => el('li', {}, t)));
+  }
   const key = `${ui.ficheKey}|${ui.tab}`;
   if (ui.tabKey !== key) { ui.tabKey = key; renderTab(f); $('main').scrollTop = 0; }
   else if (ui.tab === 'visee') updateVisee();
@@ -396,6 +443,47 @@ function miniRes(res) {
   }, `${label.slice(0, 1)} ${res[k] ?? '?'}%`)));
 }
 
+/** Élément le plus faible d'un monstre (texte court). */
+function weakTag(res) {
+  if (!res) return null;
+  const vals = ELEMENTS.map(([k]) => [k, res[k]]).filter(([, v]) => typeof v === 'number').sort((a, b) => a[1] - b[1]);
+  if (vals.length < 2 || vals[0][1] === vals[vals.length - 1][1]) return null;
+  return el('span', { class: 'weak', style: `--c: var(--${vals[0][0]})`, title: 'Élément le plus efficace' }, `faible ${EL_LABEL[vals[0][0]]} ${vals[0][1]} %`);
+}
+
+const SPELL_TAGS = [
+  [/(^|\| )-\d+( à -\d+)? PA\b|Vole \d+ PA\b/, 'retrait PA'],
+  [/(^|\| )-\d+( à -\d+)? PM\b|Vole \d+ PM\b/, 'retrait PM'],
+  [/-\d+ Portée|Vole \d+ Portée/, 'retrait PO'],
+  [/Repousse/, 'poussée'], [/Attire/, 'attirance'],
+  [/Téléporte|Échange de positions|Téléportation/, 'téléportation'],
+  [/Invoque|par l'invocation/, 'invocations'],
+  [/\bvol (Neutre|Terre|Feu|Eau|Air)\b/, 'vol de vie'],
+  [/Soin :|\bsoins (Neutre|Terre|Feu|Eau|Air)\b/, 'soins'],
+  [/Bouclier/, 'bouclier'], [/Érosion/, 'érosion'],
+  [/-\d+ Puissance|-\d+% Résistance|-\d+% Dommages/, 'malus'],
+  [/invisible/i, 'invisibilité'], [/glyphe|piège/i, 'glyphes/pièges'],
+  [/État Pesanteur/, 'Pesanteur'], [/État Indéplaçable/, 'Indéplaçable'], [/État Insoignable/, 'Insoignable'],
+  [/État Pacifiste/, 'Pacifiste'], [/État Affaibli/, 'Affaibli'], [/État Intaclable/, 'Intaclable'],
+];
+
+/** Effets marquants des sorts d'un monstre, lisibles sans déplier. */
+function spellTags(spells) {
+  const text = (spells || []).map((sp) => (sp.e || []).join(' | ')).join(' | ');
+  return SPELL_TAGS.filter(([re]) => re.test(text)).map(([, t]) => t);
+}
+
+/** Ligne niveau · PV · PA · PM, avec la mise à l'échelle du Songe. */
+function statLine(m) {
+  const sc = m.scaled;
+  const lv = sc ? el('b', { class: 'songe-lv', title: `Niveau de l'étage (version de base : niv. ${range(sc.baseLevel)})` }, `niv. ${sc.level}`) : `niv. ${range(m.niveau)}`;
+  let pv;
+  if (m.pvRead) pv = el('b', { title: 'PV lus à l\'écran' }, `${fmt(m.pvRead)} PV`);
+  else if (sc && sc.estimated) pv = el('span', { title: `Estimation : PV de base ${range(sc.basePv)} au niv. ${range(sc.baseLevel)}, mis au niveau ${sc.level} avec la courbe de PV du jeu` }, `≈ ${fmt(m.pv[1])} PV`);
+  else pv = `${range(m.pv)} PV`;
+  return [lv, m.levelRead && !sc ? ` (lu ${m.levelRead})` : '', ' · ', pv, ` · ${m.pa ?? '?'} PA · ${m.pm ?? '?'} PM`];
+}
+
 /**
  * Carte d'un monstre.
  * opts.compact : sorts repliés ; opts.combat : boutons retirer / variantes.
@@ -405,16 +493,17 @@ function monsterCard(m, opts = {}) {
   const open = ui.openSpells.has(key);
   const danger = m.danger || (m.boss ? 'boss' : '');
   const card = el('div', { class: `card ${danger ? `danger-${danger}` : ''} ${m.boss ? 'is-boss' : ''}`, 'data-id': m.id });
-  const ab = m.aberration && (D.state.songe || (D.state.combat.aberrations || []).includes(m.nom));
+  const ab = m.aberration && (D.state.combat.songe || D.state.songe || (D.state.combat.aberrations || []).includes(m.nom));
   const variants = (m.variants || []).filter((v) => (v.lv[1] || 0) >= 10);
   put(card,
     el('div', { class: 'monster-head' },
       m.image ? el('img', { src: m.image, alt: '', loading: 'lazy', onerror: (e) => e.target.remove() }) : el('span', { class: 'noimg' }, m.nom.slice(0, 1)),
       el('div', { class: 'mh-t' },
         el('h4', {}, m.nom, m.boss ? el('span', { class: 'badge' }, 'boss') : null, m.miniBoss ? el('span', { class: 'badge' }, 'archi/mini-boss') : null),
-        el('div', { class: 'pv' }, `niv. ${range(m.niveau)} · ${range(m.pv)} PV · ${m.pa ?? '?'} PA · ${m.pm ?? '?'} PM`)),
+        el('div', { class: 'pv' }, ...statLine(m))),
       opts.combat ? el('button', { class: 'x', title: 'Retirer', onclick: () => window.vigie.combatRemove(m.id) }, '✕') : null),
-    m.res ? miniRes(m.res) : null,
+    m.res ? el('div', { class: 'res-line' }, miniRes(m.res), weakTag(m.res)) : null,
+    (() => { const t = spellTags(m.spells); return t.length ? el('div', { class: 'tags' }, t.map((x) => el('span', {}, x))) : null; })(),
     el('div', { class: 'facts' },
       `Esquive PA ${m.esquivePA ?? '?'} · PM ${m.esquivePM ?? '?'}`,
       m.race ? ` · ${m.race}` : '',
@@ -449,16 +538,32 @@ function monsterCard(m, opts = {}) {
 
 // ------------------------------------------------------------- combat
 
-async function ensureMonsters(ids) {
-  const missing = ids.filter((id) => !ui.mcache.has(id));
-  if (missing.length) for (const v of await window.vigie.monsters(missing)) ui.mcache.set(v.id, v);
+function renderSongeBar(c) {
+  const bar = $('songeBar');
+  const on = !!c.songe;
+  const key = `${on}|${c.songeLevel}|${c.songeManual}`;
+  if (bar.dataset.key === key || bar.contains(document.activeElement)) return;
+  bar.dataset.key = key;
+  const level = el('input', {
+    type: 'number', min: 1, max: 400, value: c.songeLevel, title: 'Niveau des monstres (étage du Songe)',
+    onchange: (e) => window.vigie.combatSonge({ level: Number(e.target.value) }),
+  });
+  put(bar,
+    el('button', {
+      class: `chip-btn ${on ? 'on' : ''}`, title: on ? 'Les monstres sont mis au niveau de l\'étage' : 'Afficher les monstres au niveau d\'un étage de Songe',
+      onclick: () => window.vigie.combatSonge({ on: !on }),
+    }, on ? '☾ Songe : oui' : '☾ Songe : non'),
+    on ? el('label', { class: 'lvl' }, 'niv.', level) : null,
+    c.songeManual != null ? el('button', { class: 'chip-btn', title: 'Revenir à la détection automatique', onclick: () => window.vigie.combatSonge({ auto: true }) }, 'auto') : null,
+  );
 }
 
 function renderCombat() {
   const c = D.state.combat;
-  $('combatInfo').textContent = c.info || (c.ids.length ? '' : '');
+  $('combatInfo').textContent = c.info || '';
   $('combatClear').hidden = !c.ids.length;
-  const key = `${c.ids.join(',')}|${(c.aberrations || []).join(',')}|${D.state.songe}|${ui.mrev}`;
+  renderSongeBar(c);
+  const key = JSON.stringify([c.ids, c.aberrations, c.songe, c.songeLevel, c.levels, c.pvRead, ui.mrev]);
   if (key === ui.cardsKey) return;
   ui.cardsKey = key;
   if (!c.ids.length) {
@@ -474,12 +579,9 @@ function renderCombat() {
   }
   put($('combatEmpty'));
   const want = key;
-  ensureMonsters(c.ids).then(async () => {
+  window.vigie.combatViews().then(({ views, summary }) => {
     if (ui.cardsKey !== want) return;
-    const views = c.ids.map((id) => ui.mcache.get(id)).filter(Boolean);
-    const gkey = c.ids.join(',');
-    if (ui.groupKey !== gkey) { ui.groupKey = gkey; ui.group = await window.vigie.group(c.ids); }
-    if (ui.cardsKey !== want) return;
+    ui.group = summary;
     renderSummary(views);
     const ab = (c.aberrations || []);
     put($('aberr'), ab.length ? el('div', { class: 'abbox big' }, el('b', {}, `Aberration active : ${ab.join(', ')}`),
@@ -700,11 +802,13 @@ function openSettings() {
       line('… en dessous du curseur (0-1)', num(c.cursorBox.down, { min: 0, max: 1, step: 0.02 }, (v) => setSettings({ combat: { cursorBox: { down: v } } }))),
       line('Seuil du texte sombre (0-255)', num(c.darkThreshold, { min: 20, max: 200 }, (v) => setSettings({ combat: { darkThreshold: v } }))),
       line('Si rien n\'est lu, lire toute la fenêtre', checkbox(c.fullWindowFallback, (v) => setSettings({ combat: { fullWindowFallback: v } }))),
-      line('Toujours montrer la version niv. 200+', checkbox(c.preferHighLevel, (v) => setSettings({ combat: { preferHighLevel: v } }))),
+      line('Niveau des monstres en Songe (si non lu)', num(c.songeLevel || 200, { min: 1, max: 400 }, (v) => window.vigie.combatSonge({ level: v }))),
       el('div', { class: 'row' }, el('button', { class: 'btn', onclick: () => window.vigie.combatScan() }, 'Tester la lecture des monstres')),
       el('div', { id: 'monDebug' })),
     el('fieldset', {}, el('legend', {}, 'Affichage'),
       line('Opacité du panneau', el('input', { type: 'range', min: 0.4, max: 1, step: 0.02, value: s.panel.opacity, oninput: (e) => setSettings({ panel: { opacity: Number(e.target.value) } }) })),
+      line('Taille du texte', el('select', { onchange: (e) => setSettings({ panel: { zoom: Number(e.target.value) } }) },
+        [[0.85, 'Petite'], [1, 'Normale'], [1.15, 'Grande'], [1.3, 'Très grande']].map(([v, l]) => el('option', { value: v, selected: Math.abs((s.panel.zoom || 1) - v) < 0.01 }, l)))),
       line('Masquer hors de Dofus', checkbox(s.panel.autoHide, (v) => setSettings({ panel: { autoHide: v } }))),
       line('Invisible aux captures et aux streams', checkbox(s.contentProtection, (v) => setSettings({ contentProtection: v })))),
     el('fieldset', {}, el('legend', {}, 'Comte Harebourg'),
@@ -742,7 +846,10 @@ function openSettings() {
         `${fmt(st.dungeons)} donjons, ${fmt(st.monsters)} monstres, ${fmt(st.spells)} sorts, ${st.guides} guides (${st.fichesWithGuide} donjons couverts). Données du jeu du ${st.generatedAt ? new Date(st.generatedAt).toLocaleDateString('fr-FR') : '?'}. ${D.state.dataInfo || ''}`),
       line('Chercher les mises à jour sur GitHub', checkbox(s.updates !== false, (v) => setSettings({ updates: v }))),
       el('div', { class: 'row' },
-        el('button', { class: 'btn', onclick: async () => { D.stats = await window.vigie.checkUpdates(); openSettings(); } }, 'Vérifier maintenant')),
+        el('button', { class: 'btn', onclick: async () => { D.stats = await window.vigie.checkUpdates(); openSettings(); } }, 'Vérifier maintenant'),
+        D.state.update && D.state.update.phase === 'uptodate' ? el('span', { class: 'muted' }, `Vigie est à jour (v${D.version}).`) : null,
+        D.state.update && D.state.update.phase === 'available' ? el('button', { class: 'btn gold', onclick: () => { closeSettings(); window.vigie.appUpdate('show'); } }, `Installer la v${D.state.update.version}`) : null,
+        D.state.update && D.state.update.phase === 'error' ? el('span', { class: 'muted' }, D.state.update.error) : null),
       el('p', { class: 'muted', style: 'margin:8px 0 6px' }, 'Tes propres guides (JSON, même format que ceux fournis) vont dans le dossier perso ; un guide perso du même nom remplace celui d\'origine.'),
       el('div', { class: 'row' },
         el('button', { class: 'btn', onclick: () => window.vigie.openFiches() }, 'Ouvrir le dossier perso'),
@@ -800,6 +907,9 @@ async function start() {
   window.vigie.on('settings', (s) => { D.settings = s; if (ui.settingsOpen) openSettings(); });
   window.vigie.on('focus-search', () => { closeSettings(); $('search').focus(); $('search').select(); });
   window.addEventListener('resize', () => { if (ui.tab === 'visee') drawMini(); });
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && ui.settingsOpen) closeSettings();
+  });
   render();
 }
 

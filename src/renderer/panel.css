@@ -222,6 +222,16 @@ kbd { font-family: inherit; font-size: 11px; padding: 0 5px; border: 1px solid r
 .tiers td { padding: 2px 3px; }
 .tiers input { width: 52px !important; }
 
+/* ------------------------------------------------------------ Mise à jour */
+.update { margin: 6px 10px 0; padding: 8px 10px; border-radius: 10px; background: rgba(108, 194, 138, 0.1); border: 1px solid rgba(108, 194, 138, 0.35); font-size: 12px; line-height: 1.4; }
+.update .u-line { margin-bottom: 3px; }
+.update .u-actions { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 6px; }
+.update .chip-btn.gold { background: var(--ok); border-color: var(--ok); color: #0f1a12; font-weight: 600; }
+.update .chip-btn.ghosty { border-color: transparent; color: var(--muted); }
+.update .u-notes { margin-top: 6px; max-height: 140px; overflow: auto; white-space: pre-wrap; font-size: 11.5px; color: var(--muted); background: rgba(0, 0, 0, 0.2); border-radius: 8px; padding: 6px 8px; }
+.update .u-bar { height: 6px; border-radius: 3px; background: rgba(255, 255, 255, 0.08); overflow: hidden; margin-top: 4px; }
+.update .u-bar i { display: block; height: 100%; background: var(--ok); transition: width 0.25s; }
+
 /* ------------------------------------------------------------ Modes */
 .modes { display: flex; gap: 4px; padding: 6px 10px 0; }
 .modes button {
@@ -294,6 +304,12 @@ kbd { font-family: inherit; font-size: 11px; padding: 0 5px; border: 1px solid r
 /* Combat */
 .combat-bar { display: flex; align-items: center; gap: 8px; margin: 6px 0; min-height: 22px; font-size: 12px; }
 .combat-bar .grow { flex: 1; }
+.songe-bar { display: flex; align-items: center; gap: 6px; }
+.songe-bar .lvl { display: flex; align-items: center; gap: 4px; color: var(--muted); font-size: 11.5px; }
+.songe-bar input { width: 56px; padding: 2px 5px; border-radius: 6px; border: 1px solid rgba(169, 139, 255, 0.4); background: var(--bg-2); }
+.combat-info:empty { display: none; }
+.combat-info { margin: -2px 2px 6px; }
+.songe-lv { color: var(--songe); font-weight: 600; }
 .summary { margin-bottom: 8px; }
 .summary:empty { display: none; }
 .sum-line { font-size: 12.5px; margin: 0 2px 6px; }
@@ -301,6 +317,16 @@ kbd { font-family: inherit; font-size: 11px; padding: 0 5px; border: 1px solid r
 .sum-line b.bad { color: var(--danger); }
 .res.small .r .v { font-size: 12px; }
 .empty-combat ol.steps { margin: 6px 0; padding-left: 20px; display: grid; gap: 5px; line-height: 1.45; }
+
+.compact-info { display: none; }
+body.compact .compact-info { display: grid; list-style: none; margin: 0 0 6px; padding: 0; gap: 4px; }
+body.compact .compact-info li { padding: 5px 8px; border-radius: 8px; background: var(--bg-2); font-size: 12px; line-height: 1.35; }
+body.compact .modes .read { margin-left: auto; }
+.res-line { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.res-line .mini-res { margin: 4px 0 2px; }
+.weak { font-size: 10.5px; font-weight: 700; padding: 1px 6px; border-radius: 999px; color: #10120f; background: var(--c); }
+.tags { display: flex; flex-wrap: wrap; gap: 4px; margin: 3px 0; }
+.tags span { font-size: 10.5px; padding: 1px 6px; border-radius: 5px; background: rgba(226, 96, 76, 0.14); color: #f0a497; }
 
 body.compact .searchbox, body.compact .stats, body.compact .res,
 body.compact .tabs, body.compact .tabbody, body.compact .empty .quick,

@@ -10,6 +10,14 @@ const { normalize, similarity, TextIndex, coordsIn } = require('./matcher');
 
 const ELEMENTS = ['neutre', 'terre', 'feu', 'eau', 'air'];
 
+/*
+ * Courbe de PV du jeu : PV(niveau) = ratio × 0,9966 × niveau^1,6256.
+ * Ajustée sur les données (grade de référence et ratio de PV de chaque
+ * monstre) : écart < 3 % sur 33 niveaux de 1 à 212. Sert à estimer les PV
+ * d'un monstre mis au niveau de l'étage dans les Songes.
+ */
+const SCALE_EXP = 1.6256;
+
 function readJson(file, fallback) {
   try { return JSON.parse(fs.readFileSync(file, 'utf8')); } catch (e) { return fallback; }
 }
@@ -143,6 +151,10 @@ class GameData {
     this.variants = new Map();
     for (const [id, m] of Object.entries(this.monsters)) {
       if (m.q || !(m.s && m.s.length)) continue;
+      // Les invocations de classe (Tofu d'Osamodas…) et les copies niv. 1
+      // du tutoriel ne sont pas des versions du monstre.
+      if (/^invocations de classe/.test(normalize(m.race || ''))) continue;
+      if ((m.lv[1] || 0) <= 6 && String(this.monsterByName.get(normalize(m.n))) !== String(id)) continue;
       const k = normalize(m.n);
       if (!this.variants.has(k)) this.variants.set(k, []);
       this.variants.get(k).push(Number(id));
@@ -203,12 +215,35 @@ class GameData {
     };
   }
 
+  /** PV estimés d'un monstre au niveau L (Songes : le niveau suit l'étage). */
+  pvAtLevel(id, L) {
+    const m = this.monsters[id];
+    if (!m || !L) return null;
+    const [lref, pref] = m.sc ? [m.sc[0], m.sc[1]] : [m.lv[1], (m.pv || [])[1]];
+    if (!lref || !pref || pref <= 1) return null;
+    return Math.round((pref * (L / lref) ** SCALE_EXP) / 10) * 10;
+  }
+
+  /**
+   * Vue d'un monstre mis au niveau L (Songe) : PV estimés avec la courbe de
+   * mise à l'échelle du jeu ; résistances, PA, PM et sorts inchangés.
+   */
+  scaledView(id, L) {
+    const v = this.monsterView(id);
+    if (!v || !L) return v;
+    const pv = this.pvAtLevel(id, L);
+    return {
+      ...v, niveau: [L, L], pv: pv ? [pv, pv] : v.pv,
+      scaled: { level: L, baseLevel: v.niveau, basePv: v.pv, estimated: !!pv },
+    };
+  }
+
   /**
    * Synthèse d'un groupe : résistance moyenne par élément (pondérée par les
-   * PV) et éléments conseillés.
+   * PV) et éléments conseillés. Accepte des identifiants ou des vues.
    */
-  groupSummary(ids) {
-    const views = ids.map((id) => this.monsterView(id)).filter((v) => v && v.res && v.res.neutre != null);
+  groupSummary(items) {
+    const views = items.map((x) => (typeof x === 'object' ? x : this.monsterView(x))).filter((v) => v && v.res && v.res.neutre != null);
     if (!views.length) return null;
     const tot = {}; let wsum = 0;
     for (const e of ELEMENTS) tot[e] = 0;
@@ -461,7 +496,8 @@ class GameData {
       const d = level < a ? a - level : level > b ? level - b : 0;
       if (d < bd) { bd = d; best = v; }
     }
-    // Un nombre trop éloigné de tous les niveaux connus n'est pas un niveau.
+    // Un nombre trop éloigné de tous les niveaux connus n'est pas un niveau
+    // d'une version existante (en Songe, le niveau suit l'étage).
     return bd <= 20 ? best : null;
   }
 
@@ -476,6 +512,7 @@ class GameData {
     const ids = [];
     const aberrations = [];
     const levels = {};
+    const offLevel = {};
     for (const h of hits) {
       if (h.entry.kind === 'aberration') { if (!aberrations.includes(h.entry.ref)) aberrations.push(h.entry.ref); continue; }
       let level = null;
@@ -492,8 +529,11 @@ class GameData {
       const id = byLevel || Number(h.entry.ref);
       if (!ids.includes(id)) ids.push(id);
       if (byLevel) levels[id] = level;
+      // Niveau lu qui ne correspond à aucune version connue : monstre mis à
+      // l'échelle (Songe).
+      else if (level && level >= 100) { levels[id] = level; offLevel[id] = level; }
     }
-    return { ids, aberrations, levels };
+    return { ids, aberrations, levels, offLevel };
   }
 
   search(q, limit = 12) {
@@ -513,4 +553,4 @@ class GameData {
   }
 }
 
-module.exports = { GameData, normalizeGuide, cleanText, ELEMENTS };
+module.exports = { GameData, normalizeGuide, cleanText, ELEMENTS, SCALE_EXP };

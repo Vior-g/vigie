@@ -13,6 +13,8 @@ const S = require('../src/core/monsterscan');
 const MF = require('../src/core/manifest');
 const { GameData } = require('../src/core/gamedata');
 const { DataUpdater, cmpVersion } = require('../src/main/updater');
+const { planUpdate, makeScript } = require('../src/main/appupdate');
+const C = require('../src/core/combat');
 
 const DATA = path.join(__dirname, '..', 'src', 'data');
 const GUIDES = path.join(DATA, 'guides');
@@ -221,6 +223,58 @@ async function test(name, fn) {
     assert.ok(!out.inside && out.width === 1000);
   });
 
+  console.log('Songes : monstres au niveau de l\'étage');
+  await test('courbe de PV : au niveau de référence, on retrouve les PV du jeu', () => {
+    for (const n of ['Craqueleur', 'Bouftou Royal', 'Comte Harebourg', 'Mulou']) {
+      const id = gd.monsterIdByName(n); const m = gd.monsters[id];
+      if (!m.sc) continue;
+      assert.strictEqual(gd.pvAtLevel(id, m.sc[0]), Math.round(m.sc[1] / 10) * 10, n);
+    }
+  });
+  await test('courbe de PV : écart < 5 % sur la majorité du bestiaire', () => {
+    let ok = 0; let n = 0;
+    for (const m of Object.values(gd.monsters)) {
+      if (!m.sc || m.q || m.sc[2] < 0.05 || m.sc[0] < 10 || m.sc[0] > 212) continue;
+      n++;
+      const pred = m.sc[2] * 0.9966 * m.sc[0] ** 1.6256;
+      if (Math.abs(pred / m.sc[1] - 1) < 0.05) ok++;
+    }
+    assert.ok(n > 1500 && ok / n > 0.7, `${ok}/${n}`);
+  });
+  await test('niveau lu hors des versions connues → mode Songe automatique', () => {
+    const found = { ...gd.detectMonsters('Craqueleur (213)\nPissenlit Diabolique (213)\nTofu (213)'), text: '' };
+    const c = C.addScan(C.emptyCombat(200), found, { gd, songeFiche: false });
+    assert.ok(c.songe);
+    assert.strictEqual(c.songeLevel, 213);
+    const { views } = C.views(c, gd);
+    assert.deepStrictEqual(views.map((v) => v.nom), ['Craqueleur', 'Pissenlit Diabolique', 'Tofu']);
+    for (const v of views) {
+      assert.deepStrictEqual(v.niveau, [213, 213], v.nom);
+      assert.ok(v.pv[0] > 4000 && v.scaled.estimated, `${v.nom} ${v.pv}`);
+    }
+  });
+  await test('fiche Songe ouverte → monstres sans niveau lu mis au niveau choisi', () => {
+    const found = { ...gd.detectMonsters('Bouftou Royal'), text: '' };
+    const c = C.addScan(C.emptyCombat(230), found, { gd, songeFiche: true });
+    const v = C.views(c, gd).views[0];
+    assert.deepStrictEqual(v.niveau, [230, 230]);
+  });
+  await test('hors Songe : version normale et niveau classique', () => {
+    const found = { ...gd.detectMonsters('Bouftou Royal (30)'), text: '' };
+    const c = C.addScan(C.emptyCombat(200), found, { gd, songeFiche: false });
+    assert.ok(!c.songe);
+    assert.deepStrictEqual(C.views(c, gd).views[0].niveau, [30, 30]);
+  });
+  await test('PV lus dans l\'infobulle d\'un monstre en combat', () => {
+    assert.deepStrictEqual(C.readPv('Strigide 4 200 / 4 200'), [{ cur: 4200, max: 4200 }]);
+    const c = C.addScan(C.emptyCombat(), { ...gd.detectMonsters('Strigide'), text: 'Strigide\n3 100 / 4 200\n3 100 / 4 200' }, { gd });
+    assert.strictEqual(Object.values(c.pvRead)[0], 4200);
+  });
+  await test('les invocations de classe ne sont pas des versions du monstre', () => {
+    const v = gd.monsterView(gd.monsterIdByName('Tofu'));
+    assert.ok(v.variants.every((x) => !/Invocations de classe/.test(gd.monsters[x.id].race || '')));
+  });
+
   console.log('Recherche');
   await test('« cyclo » → Cycloïde (monstre)', () => {
     const r = gd.search('cyclo');
@@ -280,6 +334,21 @@ async function test(name, fn) {
     fs.writeFileSync(path.join(bundled, 'manifest.json'), JSON.stringify({ ...bm, stamp: '2026-04-01T00:00:00Z' }));
     assert.strictEqual(up.activeOverlay(), null);
     fs.rmSync(tmp, { recursive: true, force: true });
+  });
+
+  console.log('Mise à jour du logiciel');
+  await test('choix du paquet : code seul, code + modules, ou complet', () => {
+    const assets = { 'vigie-app.zip': {}, 'vigie-modules.zip': {}, 'Vigie-win-x64.zip': {} };
+    assert.strictEqual(planUpdate({ meta: { electron: '44.9.0', deps: 'a' }, assets, electron: '44.9.0', deps: 'a' }).mode, 'app');
+    assert.strictEqual(planUpdate({ meta: { electron: '44.9.0', deps: 'b' }, assets, electron: '44.9.0', deps: 'a' }).mode, 'app+mods');
+    assert.strictEqual(planUpdate({ meta: { electron: '45.0.0', deps: 'a' }, assets, electron: '44.9.0', deps: 'a' }).mode, 'full');
+    assert.strictEqual(planUpdate({ meta: null, assets: { 'Vigie-win-x64.zip': {} }, electron: '44.9.0' }).mode, 'full');
+    assert.strictEqual(planUpdate({ meta: null, assets: {}, electron: '44.9.0' }), null);
+  });
+  await test('script de remplacement : chemins échappés, relance de Vigie', () => {
+    const sc = makeScript({ mode: 'app', pid: 42, exe: "C:\\Jeux\\L'appli de Loïc\\Vigie.exe", installDir: 'C:\\Jeux', resourcesDir: 'C:\\Jeux\\resources', staging: 'C:\\Jeux\\resources\\mise-a-jour', log: 'C:\\x.log' });
+    assert.ok(sc.includes("'C:\\Jeux\\L''appli de Loïc\\Vigie.exe'"));
+    assert.ok(/Wait-Process -Id 42/.test(sc) && /Start-Process/.test(sc) && /Retry/.test(sc));
   });
 
   if (process.argv.includes('--ocr')) {

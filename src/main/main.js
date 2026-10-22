@@ -14,10 +14,12 @@ const { Settings } = require('./settings');
 const { WinWatch } = require('./winwatch');
 const { Ocr } = require('./ocr');
 const { DataUpdater } = require('./updater');
+const { AppUpdater } = require('./appupdate');
 const capture = require('./capture');
 const { GameData } = require('../core/gamedata');
 const { crop, binarize, regionToRect } = require('../core/preprocess');
 const { cursorRect, passes: scanPasses } = require('../core/monsterscan');
+const Combat = require('../core/combat');
 const Harebourg = require('../core/harebourg');
 
 if (!app.requestSingleInstanceLock()) { app.quit(); }
@@ -40,7 +42,7 @@ const VERSION = (() => { try { return require('../../package.json').version; } c
 const DATA_DIR = path.join(ROOT, 'data');
 let USER_DIR; let USER_FICHES; let DATA_CACHE;
 
-let settings; let winwatch; let ocr; let updater;
+let settings; let winwatch; let ocr; let updater; let appUpdater = null;
 let gd = null; // GameData
 let panel = null; let board = null; let tray = null;
 
@@ -50,9 +52,7 @@ const state = {
   pinned: false,
   lastAutoId: null,
   view: 'fiche', // 'fiche' | 'combat'
-  combat: {
-    ids: [], aberrations: [], at: 0, reading: false, info: '', text: '', preview: null,
-  },
+  combat: Combat.emptyCombat(),
   focusMonster: null,
   turn: 1,
   detection: {
@@ -92,11 +92,56 @@ async function checkUpdates() {
   } catch (e) {
     console.warn('[vigie] mise à jour des données impossible :', e.message);
   }
+  await checkAppUpdate(false);
+}
+
+// ------------------------------------------------- Mise à jour du logiciel
+
+let appInfo = null; // dernière Release plus récente trouvée
+
+async function checkAppUpdate(manual) {
+  if (!appUpdater) return;
+  if (state.update && ['download', 'extract', 'restart'].includes(state.update.phase)) return;
   try {
-    const rel = await updater.latestRelease(VERSION);
-    if (rel) { state.update = rel; broadcast(); }
+    const info = await appUpdater.check();
+    appInfo = info;
+    if (!info) {
+      state.update = manual ? { phase: 'uptodate', version: VERSION } : null;
+    } else {
+      const canInstall = app.isPackaged && process.platform === 'win32' && !!info.plan;
+      state.update = {
+        phase: 'available', version: info.version, current: VERSION, notes: info.notes, page: info.page,
+        mode: info.plan ? info.plan.mode : null, size: info.size, canInstall,
+        dismissed: !manual && settings.get().skipVersion === info.version,
+      };
+    }
   } catch (e) {
     console.warn('[vigie] vérification de version impossible :', e.message);
+    if (manual) state.update = { phase: 'error', error: e.message, version: VERSION };
+  }
+  broadcast();
+}
+
+async function installAppUpdate() {
+  if (!appInfo || !state.update || !state.update.canInstall) return;
+  if (['download', 'extract', 'restart'].includes(state.update.phase)) return;
+  const u = state.update;
+  try {
+    let last = 0;
+    await appUpdater.prepare(appInfo, (p) => {
+      const now = Date.now();
+      if (now - last < 250 && p.phase === 'download') return;
+      last = now;
+      state.update = { ...u, phase: p.phase, done: p.done, total: p.total };
+      broadcast();
+    });
+    state.update = { ...u, phase: 'restart' };
+    broadcast();
+    appUpdater.launch(appInfo, process.pid);
+    setTimeout(() => app.quit(), 600);
+  } catch (e) {
+    state.update = { ...u, phase: 'error', error: e.message };
+    broadcast();
   }
 }
 
@@ -156,22 +201,39 @@ function setFiche(id, source) {
     state.harebourg.target = null;
     state.view = 'fiche';
     pushRecent(id);
+    if (state.combat.songeManual == null) state.combat = { ...state.combat, songe: id === 'songes' };
   }
   broadcast();
 }
 
 // ------------------------------------------------------------ Combat
 
-/** Ajoute des monstres à la liste du combat (ou la remplace si elle est ancienne). */
-function addCombat(ids, { aberrations = [], replace = false } = {}) {
-  const c = state.combat;
-  const merge = !replace && Date.now() - c.at < (settings.get().combat.mergeWindowMs || 120000);
-  const base = merge ? c.ids : [];
-  const ab = merge ? c.aberrations : [];
-  const list = [...ids.filter((id) => !base.includes(id)), ...base].slice(0, 16);
-  state.combat = { ...c, ids: list, aberrations: [...new Set([...aberrations, ...ab])], at: Date.now() };
+/** Intègre une lecture (ou un ajout manuel) dans la liste du combat. */
+function addCombat(found, { replace = false } = {}) {
+  const s = settings.get();
+  state.combat = {
+    ...Combat.addScan(state.combat, found, {
+      gd, songeFiche: state.ficheId === 'songes', mergeWindowMs: s.combat.mergeWindowMs, replace,
+    }),
+    reading: state.combat.reading, info: state.combat.info, text: state.combat.text, preview: state.combat.preview,
+  };
   state.view = 'combat';
-  state.focusMonster = ids[0] || null;
+  state.focusMonster = state.combat.focus;
+  if (state.combat.songeLevel !== s.combat.songeLevel) settings.set({ combat: { songeLevel: state.combat.songeLevel } });
+}
+
+function setSonge(patch) {
+  const c = state.combat;
+  const next = { ...c };
+  if ('on' in patch) { next.songeManual = patch.on; next.songe = patch.on; }
+  if ('level' in patch && patch.level >= 1 && patch.level <= 400) {
+    next.songeLevel = Math.round(patch.level);
+    next.levels = {}; // le niveau choisi s'applique à tous les monstres
+    settings.set({ combat: { songeLevel: next.songeLevel } });
+  }
+  if (patch.auto) { next.songeManual = null; next.songe = state.ficheId === 'songes'; }
+  state.combat = next;
+  broadcast();
 }
 
 function removeCombat(id) {
@@ -180,7 +242,7 @@ function removeCombat(id) {
 }
 
 function clearCombat() {
-  state.combat = { ...state.combat, ids: [], aberrations: [], at: 0, info: '' };
+  state.combat = { ...state.combat, ids: [], levels: {}, pvRead: {}, aberrations: [], at: 0, info: '' };
   state.focusMonster = null;
   broadcast();
 }
@@ -226,6 +288,7 @@ function createPanel() {
   panel.setContentProtection(!!s.contentProtection);
   panel.setOpacity(s.panel.opacity || 1);
   panel.loadFile(path.join(ROOT, 'renderer', 'panel.html'));
+  panel.webContents.on('did-finish-load', () => panel.webContents.setZoomFactor(settings.get().panel.zoom || 1));
   panel.once('ready-to-show', () => panel.showInactive());
   let t;
   const saveBounds = () => {
@@ -431,13 +494,10 @@ async function scanMonsters() {
       texts.push(r.text);
       found = gd.detectMonsters(texts.join('\n'));
     }
-    let ids = found.ids.map(Number);
-    // En Songe, les monstres ont un niveau élevé : sans niveau lu, on montre
-    // leur version 200+.
-    if (state.ficheId === 'songes' || s.combat.preferHighLevel) ids = ids.map((id) => (found.levels[id] ? id : gd.highVariant(id)));
-    const n = ids.length;
+    found.text = texts.join('\n');
+    const n = found.ids.length;
     if (n || found.aberrations.length) {
-      addCombat(ids, { aberrations: found.aberrations });
+      addCombat(found);
       const parts = [];
       if (n) parts.push(`${n} monstre${n > 1 ? 's' : ''} reconnu${n > 1 ? 's' : ''}`);
       if (found.aberrations.length) parts.push(`Aberration : ${found.aberrations.join(', ')}`);
@@ -485,15 +545,14 @@ if (process.env.VIGIE_TEST) {
     Object.assign(state.harebourg, { me, target, at: Date.now() });
     broadcast();
   };
+  global.__vigieTestUpdate = (u) => { state.update = u; broadcast(); };
   // Simule une lecture de noms de monstres (texte OCR fourni).
   global.__vigieTestMonsters = (text) => {
-    const found = gd.detectMonsters(text);
-    let ids = found.ids.map(Number);
-    if (state.ficheId === 'songes') ids = ids.map((id) => (found.levels[id] ? id : gd.highVariant(id)));
-    addCombat(ids, { aberrations: found.aberrations });
-    state.combat.info = `${ids.length} monstres reconnus`;
+    const found = { ...gd.detectMonsters(text), text };
+    addCombat(found);
+    state.combat.info = `${found.ids.length} monstres reconnus`;
     broadcast();
-    return ids;
+    return state.combat.ids;
   };
 }
 
@@ -559,7 +618,8 @@ function registerIpc() {
     return f ? { id, nom: f.nom, donjon: f.donjon, niveau: f.niveau, guide: !!f.guide, type: f.type } : null;
   }).filter(Boolean));
   ipcMain.handle('vigie:monsters', (_e, ids) => (ids || []).slice(0, 40).map((id) => gd.monsterView(id)).filter(Boolean));
-  ipcMain.handle('vigie:group', (_e, ids) => gd.groupSummary(ids || []));
+  ipcMain.handle('vigie:combat-views', () => Combat.views(state.combat, gd));
+  ipcMain.handle('vigie:combat-songe', (_e, patch) => setSonge(patch || {}));
   ipcMain.handle('vigie:select', (_e, id) => {
     if (id === null) {
       state.pinned = false; state.source = state.ficheId ? 'auto' : null; broadcast(); return;
@@ -569,11 +629,13 @@ function registerIpc() {
   ipcMain.handle('vigie:view', (_e, v) => { state.view = v === 'combat' ? 'combat' : 'fiche'; broadcast(); });
   ipcMain.handle('vigie:combat-add', (_e, id, opts) => {
     if (!gd.monsters[id]) return;
-    addCombat([Number(id)], { replace: !!(opts && opts.replace) });
+    addCombat({ ids: [Number(id)], aberrations: [], levels: {}, text: '' }, { replace: !!(opts && opts.replace) });
     broadcast();
   });
   ipcMain.handle('vigie:combat-swap', (_e, from, to) => {
-    state.combat = { ...state.combat, ids: state.combat.ids.map((x) => (x === from ? Number(to) : x)) };
+    const levels = { ...state.combat.levels };
+    if (levels[from]) { levels[to] = levels[from]; delete levels[from]; }
+    state.combat = { ...state.combat, levels, ids: state.combat.ids.map((x) => (x === from ? Number(to) : x)) };
     if (state.focusMonster === from) state.focusMonster = Number(to);
     broadcast();
   });
@@ -615,6 +677,7 @@ function registerIpc() {
       for (const w of [panel, board]) if (w) w.setContentProtection(!!s.contentProtection);
     }
     if (patch && patch.panel && 'opacity' in patch.panel && panel) panel.setOpacity(s.panel.opacity);
+    if (patch && patch.panel && 'zoom' in patch.panel && panel) panel.webContents.setZoomFactor(s.panel.zoom || 1);
     broadcast();
     return s;
   });
@@ -626,7 +689,15 @@ function registerIpc() {
     shell.openPath(USER_FICHES);
   });
   ipcMain.handle('vigie:reload-fiches', () => { loadData(); broadcast(); return gd.stats(); });
-  ipcMain.handle('vigie:check-updates', async () => { await checkUpdates(); return gd.stats(); });
+  ipcMain.handle('vigie:check-updates', async () => { await checkUpdates(); await checkAppUpdate(true); return gd.stats(); });
+  ipcMain.handle('vigie:app-update', (_e, action) => {
+    if (action === 'install') return installAppUpdate();
+    if (action === 'later' && state.update) { state.update = { ...state.update, dismissed: true }; broadcast(); }
+    if (action === 'skip' && state.update) { settings.set({ skipVersion: state.update.version }); state.update = { ...state.update, dismissed: true }; broadcast(); }
+    if (action === 'show' && state.update) { state.update = { ...state.update, dismissed: false }; broadcast(); }
+    if (action === 'open' && state.update && state.update.page) shell.openExternal(state.update.page);
+    return null;
+  });
   ipcMain.handle('vigie:hide', () => { state.panelHidden = true; if (panel) panel.hide(); });
   ipcMain.handle('vigie:panel-height', (_e, h) => {
     if (!panel) return;
@@ -673,7 +744,12 @@ app.whenReady().then(() => {
   ocr = new Ocr(path.join(USER_DIR, 'ocr-cache'));
   const { net } = require('electron');
   updater = new DataUpdater({ bundledDir: DATA_DIR, cacheDir: DATA_CACHE, fetchFn: (u, o) => net.fetch(u, o) });
+  appUpdater = new AppUpdater({
+    fetchFn: (u, o) => net.fetch(u, o), version: VERSION, electron: process.versions.electron,
+    resourcesDir: process.resourcesPath, exe: process.execPath,
+  });
   loadData();
+  state.combat = Combat.emptyCombat(settings.get().combat.songeLevel || 200);
   registerIpc();
   createPanel();
   if (!process.env.VIGIE_NO_BOARD) createBoard();

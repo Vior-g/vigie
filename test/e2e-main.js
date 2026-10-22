@@ -37,6 +37,13 @@ app.whenReady().then(async () => {
   await js(panel, `vigie.select(null)`);
   await wait(300);
   await shot(panel, '01-accueil');
+  global.__vigieTestUpdate({ phase: 'available', version: '0.3.1', current: '0.3.0', notes: '- Exemple de nouveautés\n- Deuxième ligne', page: 'https://github.com/Vior-g/vigie/releases', mode: 'app', size: 3200000, canInstall: true });
+  await wait(300);
+  await shot(panel, '01b-mise-a-jour');
+  global.__vigieTestUpdate({ phase: 'download', version: '0.3.1', current: '0.3.0', done: 1500000, total: 3200000, canInstall: true });
+  await wait(300);
+  await shot(panel, '01c-telechargement');
+  global.__vigieTestUpdate(null);
 
   const tab = (label) => js(panel, `[...document.querySelectorAll('#tabs button')].find(b => b.textContent === '${label}').click(); document.getElementById('main').scrollTop = 0;`);
 
@@ -87,7 +94,7 @@ app.whenReady().then(async () => {
   await shot(panel, '10-aberrations');
 
   // Lecture simulée d'un groupe en Songe
-  const ids = global.__vigieTestMonsters('Groupe de monstres\nCraqueleur (210)\nBouftou Royal\nCycloïde\nAberration de Solar\nSolar');
+  const ids = global.__vigieTestMonsters('Groupe de monstres\nCraqueleur (213)\nPissenlit Diabolique (213)\nBouftou Royal\nCycloïde\nAberration de Solar\nSolar');
   LOG('combat ids', JSON.stringify(ids));
   await wait(900);
   await shot(panel, '11-combat');

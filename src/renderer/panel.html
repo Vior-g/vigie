@@ -23,6 +23,7 @@
     </header>
 
     <div class="status" id="status"></div>
+    <div class="update" id="updateBanner" hidden></div>
 
     <div class="modes" id="modes">
       <button id="modeFiche" data-v="fiche">Fiche</button>
@@ -53,6 +54,7 @@
           <button class="ghost" id="turnReset" title="Recommencer au tour 1 (Ctrl+Alt+R)">↺</button>
         </div>
         <ul class="reminders" id="reminders"></ul>
+        <ul class="compact-info" id="compactInfo"></ul>
 
         <div class="stats" id="stats"></div>
         <div class="res" id="res"></div>
@@ -63,9 +65,11 @@
 
       <section id="combat" hidden>
         <div class="combat-bar">
-          <span class="grow muted" id="combatInfo"></span>
+          <span class="songe-bar" id="songeBar"></span>
+          <span class="grow"></span>
           <button class="chip-btn" id="combatClear" title="Vider la liste (Ctrl+Alt+Maj+M)">Vider</button>
         </div>
+        <div class="muted small combat-info" id="combatInfo"></div>
         <div class="summary" id="summary"></div>
         <div class="aberr" id="aberr"></div>
         <div class="cards" id="cards"></div>
