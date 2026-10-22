@@ -1,0 +1,62 @@
+[
+ {
+  "_id": "69a716c996df4304dfe043dc",
+  "id": 0,
+  "name": {
+   "id": "947493",
+   "de": "Neutral",
+   "en": "Neutral",
+   "es": "Neutral",
+   "fr": "Neutre",
+   "pt": "Neutro"
+  }
+ },
+ {
+  "_id": "69a716c996df4304dfe043dd",
+  "id": 1,
+  "name": {
+   "id": "65375",
+   "de": "Betrunken",
+   "en": "Drunk",
+   "es": "Borracho",
+   "fr": "Saoul",
+   "pt": "Bêbado"
+  }
+ },
+ {
+  "_id": "69a716c996df4304dfe043de",
+  "id": 2,
+  "name": {
+   "id": "249270",
+   "de": "Seelenraub",
+   "en": "Soul Seeker",
+   "es": "Buscador de almas",
+   "fr": "Chercheur d'âmes",
+   "pt": "Buscador de almas"
+  }
+ },
+ {
+  "_id": "69a716c996df4304dfe043df",
+  "id": 3,
+  "name": {
+   "id": "1196598",
+   "de": "Träger",
+   "en": "Carrying",
+   "es": "Portador",
+   "fr": "Porteur",
+   "pt": "Carregador"
+  }
+ },
+ {
+  "_id": "69a716c996df4304dfe043e0",
+  "id": 4,
+  "name": {
+   "id": "65339",
+   "de": "Ängstlich",
+   "en": "Coward",
+   "es": "Temeroso",
+   "fr": "Peureux",
+   "pt": "Medroso"
+  }
+ }
+]
