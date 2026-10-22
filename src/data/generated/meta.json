@@ -1,0 +1,17 @@
+{
+ "generatedAt": "2026-10-22T12:52:55.483Z",
+ "source": "https://api.dofusdb.fr",
+ "counts": {
+  "dungeons": 187,
+  "monsters": 5127,
+  "spells": 7668,
+  "subareas": 567,
+  "dungeonsWithoutBoss": [
+   "Temple Maudit d'Araknas",
+   "Expédition - Cour du Bouftou Royal",
+   "Expédition - Donjon des Squelettes"
+  ]
+ },
+ "requests": 599,
+ "seconds": 33
+}

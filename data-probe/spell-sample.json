@@ -1,0 +1,291 @@
+[
+ {
+  "_id": "69a716ca96df4304dfe069af",
+  "m_flags": 1,
+  "id": 205,
+  "typeId": 425,
+  "order": 0,
+  "scriptParams": "",
+  "scriptParamsCritical": "",
+  "scriptId": 0,
+  "scriptIdCritical": 0,
+  "iconId": 15554,
+  "spellLevels": [
+   1021,
+   1022,
+   1023,
+   1024,
+   1025,
+   53412,
+   55374
+  ],
+  "boundScriptUsageData": [
+   {
+    "id": 5724,
+    "order": 1,
+    "scriptId": 5816,
+    "spellLevels": [],
+    "criterion": "",
+    "casterMask": "",
+    "targetMask": "",
+    "targetZone": "P1",
+    "activationMask": "",
+    "activationZone": "P1",
+    "random": 0,
+    "randomGroup": 0,
+    "sequenceGroup": 0,
+    "isTargetTreatedAsCaster": false,
+    "areTargetsAffectedConcurrently": false
+   }
+  ],
+  "criticalHitBoundScriptUsageData": [
+   {
+    "id": 5724,
+    "order": 1,
+    "scriptId": 5816,
+    "spellLevels": [],
+    "criterion": "",
+    "casterMask": "",
+    "targetMask": "",
+    "targetZone": "P1",
+    "activationMask": "",
+    "activationZone": "P1",
+    "random": 0,
+    "randomGroup": 0,
+    "sequenceGroup": 0,
+    "isTargetTreatedAsCaster": false,
+    "areTargetsAffectedConcurrently": false
+   }
+  ],
+  "basePreviewZoneDescr": {
+   "cellIds": [],
+   "shape": 0,
+   "param1": 0,
+   "param2": 0,
+   "damageDecreaseStepPercent": 0,
+   "maxDamageDecreaseApplyCount": 0,
+   "isStopAtTarget": false,
+   "forcedDirection": false,
+   "includeCarried": false,
+   "onlyAffectIfInSightLine": false
+  },
+  "adminName": "",
+  "name": {
+   "id": "101182",
+   "de": "Blitzgewitter",
+   "en": "Serial Lightnings",
+   "es": "Relámpago en Serie",
+   "fr": "Éclair en Série",
+   "pt": "Relâmpagos em Série"
+  },
+  "description": {
+   "id": "64353",
+   "de": "Bwork Magus",
+   "en": "Bwork Magus",
+   "es": "Bwork mago",
+   "fr": "Bwork mage",
+   "pt": "Bwork Mago"
+  },
+  "verboseCast": true,
+  "bypassSummoningLimit": false,
+  "canAlwaysTriggerSpells": false,
+  "hideCastConditions": false,
+  "className": "SpellData",
+  "m_id": 205,
+  "createdAt": "2026-03-03T17:13:45.995Z",
+  "updatedAt": "2026-10-07T22:26:43.085Z",
+  "img": "https://api.dofusdb.fr/img/spells/sort_15554.png"
+ },
+ {
+  "_id": "69a716ca96df4304dfe069b2",
+  "m_flags": 1,
+  "id": 208,
+  "typeId": 425,
+  "order": 0,
+  "scriptParams": "",
+  "scriptParamsCritical": "",
+  "scriptId": 0,
+  "scriptIdCritical": 0,
+  "iconId": 15554,
+  "spellLevels": [
+   1036,
+   1037,
+   1038,
+   1039,
+   1040,
+   53413,
+   55375
+  ],
+  "boundScriptUsageData": [
+   {
+    "id": 10271,
+    "order": 1,
+    "scriptId": 10265,
+    "spellLevels": [],
+    "criterion": "",
+    "casterMask": "",
+    "targetMask": "",
+    "targetZone": "P1",
+    "activationMask": "",
+    "activationZone": "P1",
+    "random": 0,
+    "randomGroup": 0,
+    "sequenceGroup": 0,
+    "isTargetTreatedAsCaster": false,
+    "areTargetsAffectedConcurrently": false
+   }
+  ],
+  "criticalHitBoundScriptUsageData": [
+   {
+    "id": 10271,
+    "order": 1,
+    "scriptId": 10265,
+    "spellLevels": [],
+    "criterion": "",
+    "casterMask": "",
+    "targetMask": "",
+    "targetZone": "P1",
+    "activationMask": "",
+    "activationZone": "P1",
+    "random": 0,
+    "randomGroup": 0,
+    "sequenceGroup": 0,
+    "isTargetTreatedAsCaster": false,
+    "areTargetsAffectedConcurrently": false
+   }
+  ],
+  "basePreviewZoneDescr": {
+   "cellIds": [],
+   "shape": 0,
+   "param1": 0,
+   "param2": 0,
+   "damageDecreaseStepPercent": 0,
+   "maxDamageDecreaseApplyCount": 0,
+   "isStopAtTarget": false,
+   "forcedDirection": false,
+   "includeCarried": false,
+   "onlyAffectIfInSightLine": false
+  },
+  "adminName": "",
+  "name": {
+   "id": "64721",
+   "de": "Tornado",
+   "en": "Tornado",
+   "es": "Tornado",
+   "fr": "Tornade",
+   "pt": "Tornado"
+  },
+  "description": {
+   "id": "64722",
+   "de": "(Luft)",
+   "en": "(air)",
+   "es": "(aire)",
+   "fr": "(air)",
+   "pt": "(Ar)"
+  },
+  "verboseCast": true,
+  "bypassSummoningLimit": false,
+  "canAlwaysTriggerSpells": false,
+  "hideCastConditions": false,
+  "className": "SpellData",
+  "m_id": 208,
+  "createdAt": "2026-03-03T17:13:45.995Z",
+  "updatedAt": "2026-10-07T22:26:43.085Z",
+  "img": "https://api.dofusdb.fr/img/spells/sort_15554.png"
+ },
+ {
+  "_id": "69a716ca96df4304dfe069bc",
+  "m_flags": 1,
+  "id": 218,
+  "typeId": 3646,
+  "order": 0,
+  "scriptParams": "",
+  "scriptParamsCritical": "",
+  "scriptId": 0,
+  "scriptIdCritical": 0,
+  "iconId": 13369,
+  "spellLevels": [
+   1086,
+   1087,
+   1088,
+   1089,
+   1090
+  ],
+  "boundScriptUsageData": [
+   {
+    "id": 10694,
+    "order": 1,
+    "scriptId": 10685,
+    "spellLevels": [],
+    "criterion": "",
+    "casterMask": "",
+    "targetMask": "",
+    "targetZone": "P1",
+    "activationMask": "",
+    "activationZone": "P1",
+    "random": 0,
+    "randomGroup": 0,
+    "sequenceGroup": 0,
+    "isTargetTreatedAsCaster": false,
+    "areTargetsAffectedConcurrently": false
+   }
+  ],
+  "criticalHitBoundScriptUsageData": [
+   {
+    "id": 10694,
+    "order": 1,
+    "scriptId": 10685,
+    "spellLevels": [],
+    "criterion": "",
+    "casterMask": "",
+    "targetMask": "",
+    "targetZone": "P1",
+    "activationMask": "",
+    "activationZone": "P1",
+    "random": 0,
+    "randomGroup": 0,
+    "sequenceGroup": 0,
+    "isTargetTreatedAsCaster": false,
+    "areTargetsAffectedConcurrently": false
+   }
+  ],
+  "basePreviewZoneDescr": {
+   "cellIds": [],
+   "shape": 0,
+   "param1": 0,
+   "param2": 0,
+   "damageDecreaseStepPercent": 0,
+   "maxDamageDecreaseApplyCount": 0,
+   "isStopAtTarget": false,
+   "forcedDirection": false,
+   "includeCarried": false,
+   "onlyAffectIfInSightLine": false
+  },
+  "adminName": "",
+  "name": {
+   "id": "1081907",
+   "de": "Blaubeergelee beschwören",
+   "en": "Summoning of Blueberry Jelly",
+   "es": "Invocación de Gelatina de Aciano",
+   "fr": "Invocation de Gelée Bleuet",
+   "pt": "Invocação de Gelatina de Mirtilo"
+  },
+  "description": {
+   "id": "1081908",
+   "de": "Königliches Blaubeergelee",
+   "en": "Royal Blue Jelly",
+   "es": "Gelatina real azul",
+   "fr": "",
+   "pt": "Gelatina Real Azul"
+  },
+  "verboseCast": true,
+  "bypassSummoningLimit": false,
+  "canAlwaysTriggerSpells": false,
+  "hideCastConditions": false,
+  "className": "SpellData",
+  "m_id": 218,
+  "createdAt": "2026-03-03T17:13:45.995Z",
+  "updatedAt": "2026-06-23T16:26:30.950Z",
+  "img": "https://api.dofusdb.fr/img/spells/sort_13369.png"
+ }
+]

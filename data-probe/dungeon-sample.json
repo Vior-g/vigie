@@ -1,0 +1,128 @@
+[
+ {
+  "_id": "69a716ba96df4304dfdd7a1f",
+  "id": 1,
+  "optimalPlayerLevel": 30,
+  "mapIds": [
+   121373185,
+   121374209,
+   121375233,
+   121373187,
+   121374211
+  ],
+  "entranceMapId": 120063489,
+  "exitMapId": 120063489,
+  "minLevel": 20,
+  "difficulty": 2,
+  "availableInAutomaticGroupSearch": true,
+  "availableInLobby": true,
+  "availableOnKeyring": true,
+  "requiredObjects": [
+   {
+    "id": 1568,
+    "quantity": 1
+   }
+  ],
+  "achievements": [
+   37,
+   490,
+   658,
+   6151,
+   659
+  ],
+  "bosses": [
+   147
+  ],
+  "name": {
+   "id": "752265",
+   "de": "Hof des Königlichen Fresssacks",
+   "en": "Royal Gobball's Court",
+   "es": "Corte del Jalató Real",
+   "fr": "Cour du Bouftou Royal",
+   "pt": "Pátio do Papatudo Real"
+  },
+  "className": "DungeonData",
+  "m_id": 1,
+  "slug": {
+   "de": "hof des koniglichen fresssacks koniglicher fresssack",
+   "en": "royal gobball's court royal gobball",
+   "es": "corte del jalato real jalato real",
+   "fr": "cour du bouftou royal bouftou royal",
+   "pt": "patio do papatudo real papatudo real"
+  },
+  "monsters": [
+   101,
+   134,
+   147,
+   148,
+   149,
+   4822
+  ],
+  "subarea": 82,
+  "createdAt": "2026-03-03T17:13:30.107Z",
+  "updatedAt": "2026-06-23T16:25:09.661Z"
+ },
+ {
+  "_id": "69a716ba96df4304dfdd7a20",
+  "id": 3,
+  "optimalPlayerLevel": 110,
+  "mapIds": [
+   159125512,
+   159124488,
+   159121666
+  ],
+  "entranceMapId": 158334976,
+  "exitMapId": 158334976,
+  "minLevel": 100,
+  "difficulty": 3,
+  "availableInAutomaticGroupSearch": true,
+  "availableInLobby": true,
+  "availableOnKeyring": true,
+  "requiredObjects": [
+   {
+    "id": 7926,
+    "quantity": 1
+   }
+  ],
+  "achievements": [
+   25,
+   515,
+   708,
+   709,
+   6188
+  ],
+  "bosses": [
+   289
+  ],
+  "name": {
+   "id": "220621",
+   "de": "Meister Rabs Bibliothek",
+   "en": "Lord Crow's Library",
+   "es": "Biblioteca del Maestro Cuerbok",
+   "fr": "Bibliothèque du Maître Corbac",
+   "pt": "Biblioteca do Mestre Corvoc"
+  },
+  "className": "DungeonData",
+  "m_id": 3,
+  "slug": {
+   "de": "meister rabs bibliothek meister rab",
+   "en": "lord crow's library lord crow",
+   "es": "biblioteca del maestro cuerbok maestro cuerbok",
+   "fr": "bibliotheque du maitre corbac maitre corbac",
+   "pt": "biblioteca do mestre corvoc mestre corvoc"
+  },
+  "monsters": [
+   289,
+   823,
+   824,
+   825,
+   4572,
+   4578,
+   4579,
+   4580
+  ],
+  "subarea": 211,
+  "createdAt": "2026-03-03T17:13:30.107Z",
+  "updatedAt": "2026-06-23T16:25:09.661Z"
+ }
+]
