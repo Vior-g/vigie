@@ -1,0 +1,86 @@
+{
+  "dj": "Bateau du Chouque",
+  "boss": "Le Chouque",
+  "maj": "2026-10-22",
+  "essentiel": [
+    "Nakunbra : Tranchage Mortel tue net une cible sous 50 % de ses PV ; garde tout le monde au-dessus de 50 %.",
+    "Le Chouque échange sa place avec ses alliés, les booste en puissance et te malusse ; son Sabre Maudit minimise tes effets aléatoires.",
+    "Tue l'Ivremor tôt : il gagne +100 intelligence à chaque gorgée et réduit la durée de tes effets.",
+    "Le Ricanif te retire 1 PM à chaque coup et gagne des PM quand tu le frappes."
+  ],
+  "mecaniques": [
+    {
+      "t": "Exécution",
+      "x": "Tranchage Mortel (Nakunbra) tue une cible sous 50 % de vitalité. Nakunbra attire de 3 cases et gagne du tacle."
+    },
+    {
+      "t": "Échanges de place",
+      "x": "Téléportation Spectrale : le Chouque échange avec un allié, ce qui casse les placements."
+    }
+  ],
+  "sorts": [
+    {
+      "n": "Coup de Sabre Maudit",
+      "x": "Contact : dégâts et minimisation des effets aléatoires de la cible."
+    },
+    {
+      "n": "Téléportation Spectrale",
+      "x": "Échange de place avec un allié."
+    }
+  ],
+  "monstres": [
+    {
+      "n": "Nakunbra",
+      "d": "haut",
+      "x": "Tue sous 50 % de PV ; attire de 3 et +20 tacle."
+    },
+    {
+      "n": "Ivremor",
+      "d": "haut",
+      "x": "Feu à 3 PO fixe, réduit la durée de tes effets ; +100 intelligence par gorgée ; glyphe Feu en croix."
+    },
+    {
+      "n": "Ricanif",
+      "d": "moyen",
+      "x": "Retire des PM en zone et au contact, -100 fuite ; gagne des PM quand on le frappe."
+    },
+    {
+      "n": "Canondorf",
+      "d": "moyen",
+      "x": "Fuyard : Feu à portée infinie sans ligne de vue, repousse ; -25 % de résistances."
+    },
+    {
+      "n": "Boomba",
+      "d": "moyen",
+      "x": "Bombe Feu 1-8 PO, 15 % d'érosion ; rend ses alliés invisibles."
+    }
+  ],
+  "strategie": [
+    "Ivremor d'abord, puis Nakunbra ; le Chouque à la fin.",
+    "Soigne tôt pour rester au-dessus de 50 % de vie face au Nakunbra."
+  ],
+  "pieges": [
+    "Descendre sous 50 % de PV à portée d'un Nakunbra.",
+    "Le Chemin du Crâne : des monstres peuvent t'agresser avant l'entrée."
+  ],
+  "succes": [
+    {
+      "n": "Dernier",
+      "x": "Tuer le Chouque après tous ses sbires."
+    },
+    {
+      "n": "Nomade",
+      "x": "Utiliser tous ses PM à chaque tour (attention aux retraits du Ricanif)."
+    },
+    {
+      "n": "Duo",
+      "x": "Deux personnages, moins de 20 tours."
+    }
+  ],
+  "acces": [
+    "Île de Moon, falaise au-dessus de la Jungle, entrée en [33,3] (zaap de la plage en [35,12]).",
+    "Clé : trousseau ou Clef du Bateau du Chouque (Manganèse, Orchidée Freyesque, Bois d'Oliviolet, Caleçon Mignon du Pirate, Boulet de Canondorf, Bandeau de Nakunbra, Canif Rouillé…).",
+    "Niveau conseillé 90."
+  ],
+  "src": "https://dofus.jeuxonline.info/article/14017/bateau-pirate-chouque"
+}

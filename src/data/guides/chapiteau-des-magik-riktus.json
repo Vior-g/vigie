@@ -1,0 +1,86 @@
+{
+  "dj": "Chapiteau des Magik Riktus",
+  "boss": "Choudini",
+  "maj": "2026-10-22",
+  "essentiel": [
+    "Choudini est peu dangereux mais fuit et échange sa place (Vinriktus, 12 PO, -2 PM).",
+    "Reste assis : -20 tacle et poison qui coûte des PV à chaque PM utilisé.",
+    "Tue le Roukouto en premier (-150 puissance à sa cible), puis le Bozoteur (vole 4 PO, échange de place).",
+    "Ne te groupe pas autour de la Pirolienne (zones en croix, diagonales et étoile)."
+  ],
+  "mecaniques": [
+    {
+      "t": "Pièges du Graboule",
+      "x": "Balle Piégée (-2 PA 2 tours), Poirier (-3 PM), Jonglerie (Pesanteur 4 tours) : regarde où tu marches."
+    }
+  ],
+  "sorts": [
+    {
+      "n": "Reste assis",
+      "x": "12 PO : -20 tacle, poison à chaque PM utilisé."
+    },
+    {
+      "n": "Vinriktus",
+      "x": "12 PO : Eau, -2 PM ; Choudini peut échanger sa place avec la cible."
+    },
+    {
+      "n": "Détriktus",
+      "x": "12 PO : Air en croix, repousse."
+    }
+  ],
+  "monstres": [
+    {
+      "n": "Roukouto",
+      "d": "haut",
+      "x": "Ériktion : Air et -150 puissance 2 tours ; se booste de 100 puissance."
+    },
+    {
+      "n": "Bozoteur",
+      "d": "haut",
+      "x": "Vole 4 PO ; échange de place ; bouclier et puissance à un allié."
+    },
+    {
+      "n": "Pirolienne",
+      "d": "moyen",
+      "x": "Croix de 3 (-4 PO), diagonales Feu (+200 puissance), étoile d'érosion 20 %."
+    },
+    {
+      "n": "Graboule",
+      "d": "moyen",
+      "x": "Pièges qui retirent PA, PM et posent la Pesanteur."
+    },
+    {
+      "n": "Tivelo",
+      "d": "bas",
+      "x": "Fusée Feu 4-16 PO ; pas de zone."
+    }
+  ],
+  "strategie": [
+    "Roukouto, puis Bozoteur, puis le reste ; Choudini pour la fin.",
+    "Prévois des soins ; protège tes personnages à distance du Bozoteur."
+  ],
+  "pieges": [
+    "Bouger sous « Reste assis » (perte de PV par PM).",
+    "Se regrouper près de la Pirolienne."
+  ],
+  "succes": [
+    {
+      "n": "Hardi",
+      "x": "Finir chaque tour au contact d'un ennemi (hors invocations)."
+    },
+    {
+      "n": "Collant",
+      "x": "Finir chaque tour au contact d'un allié (invocations comprises)."
+    },
+    {
+      "n": "Duo",
+      "x": "Deux personnages, moins de 20 tours."
+    }
+  ],
+  "acces": [
+    "Route des Roulottes, chapiteau en [-22,12] (zaap en [-25,12]).",
+    "Clé : trousseau ou Clef du Chapiteau (5 Lin, 5 Manganèse, 5 Orchidée Freyesque, 5 Bois d'Oliviolet, Roue de Tivelo, Bourgeon de Pirolienne, Bombe de Graboule, Couteau de Roukouto).",
+    "Niveau conseillé 90 ; 5 salles."
+  ],
+  "src": "https://dofus.jeuxonline.info/article/14586/chapiteau-magik-riktus"
+}

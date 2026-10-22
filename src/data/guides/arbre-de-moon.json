@@ -1,0 +1,103 @@
+{
+  "dj": "Arbre de Moon",
+  "boss": "Moon",
+  "maj": "2026-10-22",
+  "essentiel": [
+    "Moon commence avec 100 % de résistances partout (Rituel d'emprisonnement).",
+    "Darkli Moon invoque un Totem (Eau, Air, Feu ou Terre) par tour : amène chaque Totem sur le glyphe de son élément pour retirer 100 % de résistance à Moon dans cet élément.",
+    "Un Totem ne se déplace pas directement : lance un sort de son élément en ligne avec lui pour l'attirer à ton contact.",
+    "Tous les 5 tours, Darkli Moon détruit les Totems et les glyphes : il faut tout recommencer."
+  ],
+  "mecaniques": [
+    {
+      "t": "Totems",
+      "x": "Chaque Totem posé sur son glyphe retire 100 % de résistance à Moon dans son élément, jusqu'à sa mort. Équipe idéale : les 4 éléments, avec des sorts en ligne."
+    },
+    {
+      "t": "Cycle de 5 tours",
+      "x": "Darkli Moon détruit tous les Totems et retire les glyphes tous les 5 tours."
+    },
+    {
+      "t": "Téléportation",
+      "x": "Moon téléporte symétriquement les ennemis et invocations proches de lui."
+    }
+  ],
+  "sorts": [
+    {
+      "n": "Marteau de Moon",
+      "x": "Air : retire jusqu'à 3 PA, 3 PM et 1 PO."
+    },
+    {
+      "n": "Choc Sismique",
+      "x": "Air en cercle de 3 autour de la cible."
+    },
+    {
+      "n": "Face Cachée",
+      "x": "Invoque Darkli Moon."
+    }
+  ],
+  "monstres": [
+    {
+      "n": "Gloutovore",
+      "d": "haut",
+      "x": "Attire de 3 en ligne puis tue au contact (Gobage) ; récupère tous ses PV si on lui retire des PM."
+    },
+    {
+      "n": "Trukikol",
+      "d": "haut",
+      "x": "Glyphes qui retirent 100 PM ; Magnétisme attire vers sa cible quiconque la frappe."
+    },
+    {
+      "n": "Fourbasse",
+      "d": "moyen",
+      "x": "Retire 2 PA (1-6 PO) et 63 PO via un glyphe."
+    },
+    {
+      "n": "Dostrogo",
+      "d": "moyen",
+      "x": "Retire des PM sans ligne de vue ; repousse de 4."
+    },
+    {
+      "n": "Domoizelle",
+      "d": "bas",
+      "x": "Fuyarde, invoque des Dodounes, booste les dommages de poussée."
+    }
+  ],
+  "strategie": [
+    "Prends une équipe qui couvre les 4 éléments avec des sorts en ligne.",
+    "Place un Totem, frappe Moon dans cet élément, puis le suivant, avant la fin du cycle de 5 tours."
+  ],
+  "pieges": [
+    "Retirer des PM au Gloutovore (il se soigne entièrement).",
+    "Frapper la cible marquée par le Trukikol (Magnétisme t'attire)."
+  ],
+  "tours": [
+    {
+      "every": 5,
+      "from": 5,
+      "level": "alerte",
+      "text": "Cycle de Darkli Moon : Totems et glyphes détruits, replace-les."
+    }
+  ],
+  "succes": [
+    {
+      "n": "Versatile",
+      "x": "Chaque sort une seule fois par tour."
+    },
+    {
+      "n": "Statue",
+      "x": "Finir chaque tour sur sa case de départ."
+    },
+    {
+      "n": "Duo",
+      "x": "Deux personnages, moins de 20 tours."
+    }
+  ],
+  "acces": [
+    "Jungle Interdite de l'île de Moon, entrée en [29,6] (zaap de la plage en [35,12]).",
+    "Clé : trousseau ou Clef de l'Arbre de Moon (5 Étain, 5 Bois d'If, 5 Seigle, Edelweiss, Fleur de Gloutovore, Plume de Dostrogo, Trukikol Mort, Bourgeon de Fourbasse).",
+    "Niveau conseillé 100."
+  ],
+  "note": "Source de 2015 (mise à jour en 2020) : la mécanique des Totems est à vérifier en jeu.",
+  "src": "https://dofus.jeuxonline.info/article/14018/arbre-moon"
+}

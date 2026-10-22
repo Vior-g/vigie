@@ -1,0 +1,102 @@
+{
+  "dj": "Antre du Dragon Cochon",
+  "boss": "Dragon Cochon",
+  "maj": "2026-10-22",
+  "essentiel": [
+    "Au début du combat, l'Étourderie Mortelle t'empoisonne 2 tours : chaque PA utilisé coûte énormément de PV. Ne joue pas tes PA sous ce poison (sauf pour un kill sûr).",
+    "Place-toi sur la partie droite de la carte : les monstres arrivent quand le poison se termine.",
+    "Croutage (contact) repousse de 6 ; Immobilisation (1-6) retire des PM.",
+    "Traite d'abord les Don Duss Ang (soins), puis les Don Dorgan à distance (ils volent tes caractéristiques au contact)."
+  ],
+  "mecaniques": [
+    {
+      "t": "Étourderie Mortelle",
+      "x": "Poison de 2 tours en début de combat, dégâts Neutre très lourds par PA utilisé : passe tes premiers tours sans lancer de sort."
+    },
+    {
+      "t": "Gorgouille",
+      "x": "Mini-boss de la salle 5 : poussées (4 et 3 cases), échange de place, retrait de PO. Ne te fais pas pousser dans les glyphes autour de la carte."
+    }
+  ],
+  "sorts": [
+    {
+      "n": "Étourderie Mortelle",
+      "x": "Poison 2 tours par PA utilisé."
+    },
+    {
+      "n": "Croutage",
+      "x": "Contact : Neutre, poussée de 6."
+    },
+    {
+      "n": "Écrasement Handicapant",
+      "x": "Terre, retire des PA."
+    },
+    {
+      "n": "Immobilisation",
+      "x": "1-6 PO : retire des PM."
+    }
+  ],
+  "monstres": [
+    {
+      "n": "Don Duss Ang",
+      "d": "haut",
+      "x": "Soigne ses alliés (zone de 3) ; attire de 3 ; vol de vie Eau qui retire des critiques."
+    },
+    {
+      "n": "Don Dorgan",
+      "d": "haut",
+      "x": "Feu en zone 1-8 PO ; au contact retire tes caractéristiques élémentaires ; invoque des Cochons de Farle."
+    },
+    {
+      "n": "Porsalu",
+      "d": "moyen",
+      "x": "Sniper fuyard (1-12 PO) : retire des PM, applique Affaibli et poisons."
+    },
+    {
+      "n": "Gorgouille",
+      "d": "moyen",
+      "x": "Mini-boss : poussées vers les glyphes, échange de place, -PO."
+    },
+    {
+      "n": "Cochon de Farle",
+      "d": "bas",
+      "x": "Retire des PA à 1-2 PO, poison Feu."
+    }
+  ],
+  "strategie": [
+    "Attends la fin du poison sur la droite de la carte, puis attaque.",
+    "Don Duss Ang, puis Don Dorgan à distance, puis le Dragon Cochon."
+  ],
+  "pieges": [
+    "Dépenser des PA sous poison.",
+    "Se faire pousser dans les glyphes (Gorgouille)."
+  ],
+  "tours": [
+    {
+      "from": 1,
+      "to": 2,
+      "level": "danger",
+      "text": "Poison Étourderie Mortelle : chaque PA utilisé te coûte très cher. Ne lance rien sauf kill assuré."
+    }
+  ],
+  "succes": [
+    {
+      "n": "Hardi",
+      "x": "Finir chaque tour au contact d'un ennemi : il faut jouer avant le Dragon Cochon (initiative élevée)."
+    },
+    {
+      "n": "Versatile",
+      "x": "Chaque sort ou arme une seule fois par tour."
+    },
+    {
+      "n": "Duo",
+      "x": "Deux personnages, moins de 20 tours."
+    }
+  ],
+  "acces": [
+    "Territoire des Porcos, entrée en [-1,33] (zaap de la Plaine des Scarafeuilles en [-1,24]).",
+    "Clé : trousseau ou Clef du labyrinthe du Dragon Cochon (5 Charnière Cassée, 5 Trident Cassé, 5 Coque Endommagée, première et deuxième partie de la clef).",
+    "Niveau conseillé 100. Donjon lié au Dofus Turquoise."
+  ],
+  "src": "https://dofus.jeuxonline.info/article/13762/antre-dragon-cochon"
+}

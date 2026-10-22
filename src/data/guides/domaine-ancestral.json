@@ -1,0 +1,99 @@
+{
+  "dj": "Domaine Ancestral",
+  "boss": "Abraknyde Ancestral",
+  "maj": "2026-10-22",
+  "essentiel": [
+    "À partir du tour 6, puis tous les 5 tours, l'Abraknyde Ancestral récupère tous ses PV : tue-le dans la fenêtre.",
+    "Branche Paralysante : poison Neutre selon les PA utilisés.",
+    "Morsure Sylvestre (contact) retire PA et agilité ; il invoque une Arakne Majeure.",
+    "Les invocations des Abraknydes Sombres (Arbre Collant, Tronknyde) taclent fort : ne te fais pas enfermer."
+  ],
+  "mecaniques": [
+    {
+      "t": "Reconstitution Abraknydienne",
+      "x": "Soin complet du boss aux tours 6, 11, 16… Prévois ton burst juste avant."
+    }
+  ],
+  "sorts": [
+    {
+      "n": "Branche Paralysante",
+      "x": "Poison Neutre selon les PA utilisés."
+    },
+    {
+      "n": "Reconstitution Abraknydienne",
+      "x": "Soin complet, tous les 5 tours à partir du tour 6."
+    },
+    {
+      "n": "Morsure Sylvestre",
+      "x": "Contact : Neutre, retire PA et agilité."
+    },
+    {
+      "n": "Invocation d'Arakne Majeure",
+      "x": "Renfort."
+    }
+  ],
+  "monstres": [
+    {
+      "n": "Araknotron",
+      "d": "haut",
+      "x": "Air 1-8 PO qui retire des PM ; se booste (PO, puissance, critique) ; bond qui retire du tacle."
+    },
+    {
+      "n": "Abraknyde Sombre",
+      "d": "moyen",
+      "x": "Poison selon les PA ; Eau 2-8 PO ; invoque Arbre Collant et Tronknyde (gros tacle)."
+    },
+    {
+      "n": "Abrakne Sombre",
+      "d": "moyen",
+      "x": "Se téléporte, retire des résistances autour de la cible ; invoque un Champa Sombre."
+    },
+    {
+      "n": "Abraknyde Vénérable",
+      "d": "bas",
+      "x": "Retire des PM et des PA ; booste ses voisins ; se soigne."
+    }
+  ],
+  "strategie": [
+    "Garde une grosse source de dégâts pour tuer le boss avant le tour 6 (ou entre deux Reconstitutions).",
+    "Tiens les invocations à fort tacle loin de tes personnages."
+  ],
+  "pieges": [
+    "Entamer le boss juste avant une Reconstitution.",
+    "Rester bloqué entre alliés et invocations collantes."
+  ],
+  "tours": [
+    {
+      "from": 5,
+      "every": 5,
+      "level": "danger",
+      "text": "Dernier tour avant sa Reconstitution : il récupère tous ses PV au prochain tour."
+    },
+    {
+      "from": 6,
+      "every": 5,
+      "level": "alerte",
+      "text": "Reconstitution : l'Abraknyde Ancestral récupère tous ses PV."
+    }
+  ],
+  "succes": [
+    {
+      "n": "Premier",
+      "x": "Vaincre l'Abraknyde Ancestral en premier (avant sa Reconstitution)."
+    },
+    {
+      "n": "Nomade",
+      "x": "Utiliser tous ses PM chaque tour : difficile avec les tacles et retraits de PM."
+    },
+    {
+      "n": "Duo",
+      "x": "Deux personnages, moins de 20 tours."
+    }
+  ],
+  "acces": [
+    "Forêt des Abraknydes, entrée en [-9,-14] (zaap de la Montagne des Craqueleurs en [-5,-8]).",
+    "Clé : trousseau ou Clef du Domaine Ancestral (6 Lin, 6 Manganèse, Orchidée Freyesque, 5 Racine d'Abraknyde Sombre, Bois d'Oliviolet, Racine d'Abraknyde Vénérable, Écorce d'Abrakne Sombre, Glande d'Arak-haï).",
+    "Niveau conseillé 90 ; 5 salles."
+  ],
+  "src": "https://dofus.jeuxonline.info/article/13753/domaine-ancestral"
+}

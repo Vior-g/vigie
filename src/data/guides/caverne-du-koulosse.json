@@ -1,0 +1,91 @@
+{
+  "dj": "Caverne du Koulosse",
+  "boss": "Koulosse",
+  "maj": "2026-10-22",
+  "essentiel": [
+    "Au contact, le Koulosse t'attire (jusqu'à 10 cases, 2-8 PO) puis te transforme en Boufcool : -100 PA pendant 1 tour.",
+    "Souffle du Koulosse tue aussi une invocation ciblée, et peut être lancé jusqu'à 3 fois par tour.",
+    "Il invoque des Bouftous des Cavernes, qui se transforment en Boufcouls invisibles et frappent fort.",
+    "Concentre un monstre à la fois ; abrite-toi derrière les obstacles pour éviter l'Appel du Koulosse."
+  ],
+  "mecaniques": [
+    {
+      "t": "Transformation",
+      "x": "Souffle du Koulosse (1-5 PO) : -100 PA et transformation en Boufcool pendant 1 tour ; boost de ses dégâts."
+    },
+    {
+      "t": "Bouftous des Cavernes",
+      "x": "Invoqués par le Koulosse ; transformés en Boufcouls, ils deviennent invisibles."
+    }
+  ],
+  "sorts": [
+    {
+      "n": "Appel du Koulosse",
+      "x": "2-8 PO : attire de 10 cases."
+    },
+    {
+      "n": "Souffle du Koulosse",
+      "x": "1-5 PO : -100 PA, transformation, tue une invocation ; jusqu'à 3 fois par tour."
+    },
+    {
+      "n": "Calumet de la paix",
+      "x": "+5 PM, vitalité et caractéristiques pour lui."
+    }
+  ],
+  "monstres": [
+    {
+      "n": "Mama Koalak",
+      "d": "haut",
+      "x": "Invoque des Koalaks ; vole 1 PA en zone ; repousse de 3."
+    },
+    {
+      "n": "Piralak",
+      "d": "moyen",
+      "x": "Se téléporte ; poison selon les PA ; booste les dégâts autour de lui (alliés et ennemis)."
+    },
+    {
+      "n": "Warko Marron",
+      "d": "moyen",
+      "x": "Retire de la PO (1-8) ; booste vitalité et portée d'un allié."
+    },
+    {
+      "n": "Dok Alako",
+      "d": "moyen",
+      "x": "Vol de vie Feu qui retire des résistances ; soigne en croix."
+    },
+    {
+      "n": "Bouftou des Cavernes",
+      "d": "moyen",
+      "x": "Retire PA et PM à 1-4 PO ; devient Boufcoul invisible."
+    }
+  ],
+  "strategie": [
+    "Ne reste pas en ligne de vue du Koulosse entre 2 et 8 PO.",
+    "Tue ses Bouftous avant leur transformation."
+  ],
+  "pieges": [
+    "Se faire attirer au contact puis transformer (tour perdu).",
+    "Se perdre dans le Canyon Sauvage en chemin."
+  ],
+  "succes": [
+    {
+      "n": "Zombie",
+      "x": "Un seul PM par tour : abrite-toi derrière les obstacles."
+    },
+    {
+      "n": "Mains Propres",
+      "x": "Achever par pièges, glyphes, invocations, poussée ou poisons."
+    },
+    {
+      "n": "Duo",
+      "x": "Deux personnages, moins de 20 tours."
+    }
+  ],
+  "acces": [
+    "Canyon Sauvage (Montagne des Koalaks), entrée en [-17,8] (zaap du Village des Éleveurs en [-16,1]).",
+    "Clé : trousseau ou Clef de la Caverne du Koulosse (Étoffe de Dok Alako, Os de Pékeualak, Peau de Piralak).",
+    "Niveau conseillé 100."
+  ],
+  "note": "Source de 2015 (mise à jour en 2018) : chiffres à vérifier en jeu.",
+  "src": "https://dofus.jeuxonline.info/article/13859/caverne-koulosse"
+}
