@@ -1,0 +1,106 @@
+{
+  "dj": "Tanière du Meulou",
+  "boss": "Meulou",
+  "maj": "2026-10-22",
+  "essentiel": [
+    "Le Meulou ignore la première attaque de chaque tour de personnage : ouvre avec un sort à faible coût, puis frappe fort.",
+    "Rage Reconstituante aux tours 2, 8, 14… : gros soin, +2 PM et +20 tacle.",
+    "Son Milimeulou tue tes invocations et les remplace par des Mulous ; s'il meurt, tous les monstres gagnent 2 PM et 200 puissance pendant 2 tours.",
+    "Ne laisse pas le Cocholou jouer longtemps (dégâts à distance, +20 % de dommages subis)."
+  ],
+  "mecaniques": [
+    {
+      "t": "Invulnérabilité au premier coup",
+      "x": "La première attaque de chaque personnage à son tour ne le touche pas : utilise un petit sort pour la retirer."
+    },
+    {
+      "t": "Rage Reconstituante",
+      "x": "Tous les 6 tours à partir du tour 2 : soin important, +2 PM, +20 tacle."
+    },
+    {
+      "t": "Milimeulou",
+      "x": "Tue une invocation ciblée et la remplace par un Mulou ; sa mort booste tout le groupe ennemi."
+    }
+  ],
+  "sorts": [
+    {
+      "n": "Étripage",
+      "x": "Contact : Neutre."
+    },
+    {
+      "n": "Invocation de Milimeulou",
+      "x": "Terre et -20 fuite au contact ; remplace les invocations par des Mulous."
+    },
+    {
+      "n": "Rage Reconstituante",
+      "x": "Soin, +2 PM, +20 tacle (tours 2, 8, 14…)."
+    }
+  ],
+  "monstres": [
+    {
+      "n": "Cocholou",
+      "d": "haut",
+      "x": "Air à distance (+20 % dommages subis), Eau en zone qui retire 2 PM ; se renforce."
+    },
+    {
+      "n": "Muloubard",
+      "d": "haut",
+      "x": "Contact : vol de vie et -20 % PV 2 tours ; poison par PA utilisé ; devient Inébranlable."
+    },
+    {
+      "n": "Mulou",
+      "d": "moyen",
+      "x": "Cri en zone de 5 ; Césarienne Terre + Pesanteur au contact."
+    },
+    {
+      "n": "Mulounoké",
+      "d": "moyen",
+      "x": "Fonce en ligne (2-6 PO) ; -30 % soins reçus ; érosion 20 % et -2 PO autour de lui."
+    },
+    {
+      "n": "Mergranlou",
+      "d": "bas",
+      "x": "Soigne et booste un allié (+200 puissance, +4 PA)."
+    }
+  ],
+  "strategie": [
+    "Concentre un monstre à la fois, Cocholou en premier.",
+    "Sur le Meulou : petit sort d'abord, puis tes gros coups ; évite de le faire juste avant sa Rage."
+  ],
+  "pieges": [
+    "Gaspiller ton gros sort sur son invulnérabilité.",
+    "Tuer le Milimeulou au mauvais moment (boost de tout le groupe)."
+  ],
+  "tours": [
+    {
+      "from": 2,
+      "every": 6,
+      "level": "alerte",
+      "text": "Rage Reconstituante : le Meulou se soigne et gagne 2 PM et 20 tacle."
+    },
+    {
+      "level": "info",
+      "text": "Retire son invulnérabilité avec un petit sort avant chaque série de gros coups."
+    }
+  ],
+  "succes": [
+    {
+      "n": "Premier",
+      "x": "Vaincre le Meulou avant les autres monstres de la dernière salle."
+    },
+    {
+      "n": "Hardi",
+      "x": "Finir chaque tour au contact d'un ennemi."
+    },
+    {
+      "n": "Duo",
+      "x": "Deux personnages, moins de 20 tours."
+    }
+  ],
+  "acces": [
+    "Les Hauts des Hurlements, entrée en [-24,1] (zaap de la Route des Roulottes en [-25,12]).",
+    "Clé : trousseau ou Clef de la Tanière (Poils de Mulounoké, Queue du Mulou, 5 Canine de Mergranlou, 5 Étain, 5 Bois d'If, 5 Seigle, Edelweiss, Œil de Cocholou).",
+    "Niveau conseillé 100 ; 5 salles."
+  ],
+  "src": "https://dofus.jeuxonline.info/article/13854/taniere-meulou"
+}

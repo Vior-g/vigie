@@ -1,0 +1,98 @@
+{
+  "dj": "Potager d'Halouine",
+  "boss": "Halouine",
+  "maj": "2026-10-22",
+  "essentiel": [
+    "Donjon d'événement, ouvert quelques semaines autour d'Halouine (fin octobre).",
+    "Halouine ramène le dernier allié mort (1 % de PV, invulnérable 1 tour) : enchaîne les morts ou tue-le vite.",
+    "Râttirance l'attire à toi de 5 cases (en ligne) ; Moissonnage (contact) vole de la vie et lui donne +20 % de vitalité 3 tours.",
+    "Dévhorreur : Malheur retire 50 % de ta vitalité (1-6 PO sans ligne de vue), Torpeur jusqu'à 4 PM."
+  ],
+  "mecaniques": [
+    {
+      "t": "Plantes Zombies",
+      "x": "Invoque le dernier monstre mort avec 1 % de PV, invulnérable pendant 1 tour."
+    },
+    {
+      "t": "Poussées",
+      "x": "Les Champêtrouilles repoussent de 4 et baissent la résistance aux poussées : reste loin des obstacles."
+    }
+  ],
+  "sorts": [
+    {
+      "n": "Râttirance",
+      "x": "Attire de 5 cases (en ligne)."
+    },
+    {
+      "n": "Moissonnage",
+      "x": "Contact : vol de vie Terre, +20 % vitalité 3 tours, repousse d'1."
+    },
+    {
+      "n": "Plantes Zombies",
+      "x": "Ramène le dernier allié mort."
+    },
+    {
+      "n": "Citwouille Explosive",
+      "x": "1-7 PO : Eau, minimise tes effets aléatoires 1 tour."
+    }
+  ],
+  "monstres": [
+    {
+      "n": "Dévhorreur",
+      "d": "haut",
+      "x": "Gros Neutre à 1-2 PO (-20 fuite) ; -50 % vitalité ; -4 PM."
+    },
+    {
+      "n": "Cauchemarakne",
+      "d": "haut",
+      "x": "Au contact : Affaibli, -10 esquive PM, -10 % résistances ; glyphe qui retire des PM."
+    },
+    {
+      "n": "Lanverne",
+      "d": "moyen",
+      "x": "Frappe plus fort quand il perd des PV ; vole 100 puissance ; invisible 1 tour."
+    },
+    {
+      "n": "Chauffe-Soutrille",
+      "d": "moyen",
+      "x": "Poison Air : 4 PV perdus par PM utilisé ; esquive 50 % des coups en reculant."
+    },
+    {
+      "n": "Champêtrouille",
+      "d": "bas",
+      "x": "Repousse de 4 (-40 résistance poussée) ; attire de 5."
+    }
+  ],
+  "strategie": [
+    "Élimine d'abord Dévhorreur et Cauchemarakne.",
+    "Garde Halouine pour la fin (succès Dernier) en surveillant ses résurrections."
+  ],
+  "pieges": [
+    "Rester collé à un obstacle (dégâts de poussée).",
+    "Gaspiller des PM sous le poison du Chauffe-Soutrille."
+  ],
+  "succes": [
+    {
+      "n": "Hardi",
+      "x": "Finir chaque tour au contact d'un ennemi."
+    },
+    {
+      "n": "Dernier",
+      "x": "Vaincre Halouine en dernier."
+    },
+    {
+      "n": "Collant",
+      "x": "Finir chaque tour au contact d'un allié."
+    },
+    {
+      "n": "Duo",
+      "x": "Deux personnages, moins de 20 tours."
+    }
+  ],
+  "acces": [
+    "Plaine des Scarafeuilles, entrée en [-1,22] (zaap en [-1,24]).",
+    "Clé : trousseau ou Clef du Potager d'Halouine (Os de Chafer, Œuf de Tofu, Ongle de Chevaucheur de Karne, Corne de Boufton, Œil de Kwoan, Graines de Citwouille Maudites).",
+    "Niveau conseillé 100."
+  ],
+  "src": "https://dofus.jeuxonline.info/article/14179/potager-halouine"
+}

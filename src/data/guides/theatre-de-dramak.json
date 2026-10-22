@@ -1,0 +1,86 @@
+{
+  "dj": "Théâtre de Dramak",
+  "boss": "Maître des Pantins",
+  "maj": "2026-10-22",
+  "essentiel": [
+    "Le Maître des Pantins est invulnérable : tue toutes ses Marionnettes en moins de 5 tours pour le rendre vulnérable pendant 2 tours.",
+    "Après 5 tours, les Marionnettes reviennent : recommence autant que nécessaire.",
+    "Les Marionnettes échangent leur place avec tes personnages ; chaque couleur a son malus (résistances, fuite/poison, insoignable, glyphe de feu, puissance).",
+    "Dramak (mini-boss) est invulnérable tant qu'un allié collé à lui n'est pas touché par ton arme : il faut au moins 2 joueurs."
+  ],
+  "mecaniques": [
+    {
+      "t": "Marionnettes",
+      "x": "Grise : -30 % de résistances. Blanche : -100 fuite et poison. Verte : Insoignable, Pesanteur, Affaibli. Rouge : glyphe de feu (rayon 4). Bleue : -100 puissance 2 tours."
+    },
+    {
+      "t": "Vulnérabilité",
+      "x": "Toutes les Marionnettes mortes en moins de 5 tours : le Maître est vulnérable 2 tours. Prévois des dégâts de zone, poisons, pièges ou glyphes."
+    },
+    {
+      "t": "Dramak",
+      "x": "Invulnérable tant qu'un allié à son contact n'est pas frappé à l'arme ; tous les 3 tours, -100 PA et -100 PM à une cible et invocation d'un Pantin."
+    }
+  ],
+  "sorts": [
+    {
+      "n": "Tirer les ficelles",
+      "x": "Quand il est vulnérable : désenvoûte, vole 100 d'une caractéristique, dégâts dans tous les éléments."
+    },
+    {
+      "n": "Ensecret",
+      "x": "Invoque les Marionnettes."
+    }
+  ],
+  "monstres": [
+    {
+      "n": "Rhinoféroce",
+      "d": "haut",
+      "x": "Avance de 4 et repousse de 3 (1-4 PO) ; Terre et Air à 1-8 PO : priorité."
+    },
+    {
+      "n": "Bouledogre",
+      "d": "moyen",
+      "x": "Fonce de 5 cases (1-6 PO) ; poison par PM utilisé ; glyphe empoisonné. Ne reste pas aligné."
+    },
+    {
+      "n": "Gobvious",
+      "d": "moyen",
+      "x": "Réduit ta résistance aux poussées et tes effets aléatoires ; booste les poussées de ses alliés."
+    },
+    {
+      "n": "Molette",
+      "d": "bas",
+      "x": "Soigne et pose des boucliers de 10 % PV (rayon 2)."
+    }
+  ],
+  "strategie": [
+    "Ouginak (Roquet), Sram (pièges, poisons) ou Féca (glyphes) sont très efficaces contre les Marionnettes.",
+    "Rhinoféroce en premier dans les salles."
+  ],
+  "pieges": [
+    "Les murs avec les échanges de place des Marionnettes.",
+    "Te présenter seul contre Dramak (impossible à rendre vulnérable)."
+  ],
+  "succes": [
+    {
+      "n": "Mains Propres",
+      "x": "Achever par dégâts indirects (Ouginak, Sram, Féca conseillés)."
+    },
+    {
+      "n": "Statue",
+      "x": "Finir chaque tour sur sa case de départ : difficile si les Marionnettes vivent longtemps."
+    },
+    {
+      "n": "Duo",
+      "x": "Deux personnages, moins de 20 tours."
+    }
+  ],
+  "acces": [
+    "Île de Kartonpath, entrée en [21,7] (zaap du Rivage Sufokien en [10,22], puis la mine en [14,14]).",
+    "Clé : trousseau ou Clef du Théâtre (5 Étain, 5 Bois d'If, 5 Seigle, 5 Edelweiss, Patte de Bouledogre, Plume de Gobvious, Dent de Molette, Oreille de Rhinoféroce).",
+    "Salle 3 (attitude Jongler) : leviers dans l'ordre 2, 1, 4, 3, puis le levier seul en bas.",
+    "Niveau conseillé 100."
+  ],
+  "src": "https://dofus.jeuxonline.info/article/11585/theatre-dramak"
+}

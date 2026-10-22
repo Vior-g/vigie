@@ -1,0 +1,95 @@
+{
+  "dj": "Fabrique de Malléfisk",
+  "boss": "Malléfisk",
+  "maj": "2026-10-22",
+  "essentiel": [
+    "Combat en 5 vagues : autant de monstres par vague que de joueurs au départ ; la vague suivante arrive dès que la précédente est éliminée. Pas de soin entre les vagues.",
+    "Sous 50 % de PV, Malléfisk gagne 500 de bouclier par coup reçu : frappe avec des coups de plus de 500.",
+    "Nonoube Noharnak (tous les 5 tours) frappe les personnages selon l'érosion de Malléfisk : 180 à 75 % de PV, 375 à 50 %, 550 à 25 %.",
+    "Ka Dabor (1-4 PO en ligne, sans ligne de vue) vole 2 PM ; Malléfisk échange sa place avec ses alliés."
+  ],
+  "mecaniques": [
+    {
+      "t": "Ofranor",
+      "x": "Frapper Malléfisk donne temporairement de la puissance au frappeur et à lui. Nonoube Noharnak retire l'état à tout le monde et le lui rend."
+    },
+    {
+      "t": "Bouclier",
+      "x": "Sous 50 % de PV : +500 de bouclier par coup reçu. Colère de Iop, murs de bombes ou gros coups uniques."
+    },
+    {
+      "t": "Vagues",
+      "x": "5 vagues ; à 4 joueurs 20 monstres au total, à 8 joueurs 40."
+    }
+  ],
+  "sorts": [
+    {
+      "n": "Ka Dabor",
+      "x": "~120 Air, 1-4 PO en ligne, vole 2 PM ; 2 fois par tour."
+    },
+    {
+      "n": "Chté Hu !",
+      "x": "Échange de place en diagonale (1-4 PO), 100 Eau sur un ennemi."
+    },
+    {
+      "n": "Nonoube Noharnak",
+      "x": "Tous les 5 tours : dégâts Feu selon son érosion."
+    }
+  ],
+  "monstres": [
+    {
+      "n": "Mimikado",
+      "d": "haut",
+      "x": "Tireur 4-7 PO sans ligne de vue : retire 1 PM, vole 3 PO ; repousse."
+    },
+    {
+      "n": "Berserkoffre",
+      "d": "haut",
+      "x": "Invulnérable 1 tour avec un allié ; attire au centre ; -4 PA au contact."
+    },
+    {
+      "n": "Précieux",
+      "d": "moyen",
+      "x": "Morsurprise de plus en plus forte (+10 à chaque lancer) ; ligne de 4 cases."
+    },
+    {
+      "n": "Trésantène",
+      "d": "moyen",
+      "x": "Très fort au contact (érosion 20 % cumulable) ; gagne PM et puissance quand on le frappe."
+    },
+    {
+      "n": "Boursoin",
+      "d": "bas",
+      "x": "Soigne ; frappé sous Tact, il soigne tout le monde autour (ennemis compris)."
+    }
+  ],
+  "strategie": [
+    "Neutralise vite les Mimikados ; retire des PM aux Trésantènes et Précieux (dangereux seulement au contact).",
+    "Garde Malléfisk pour la fin pour éviter Nonoube Noharnak à pleine puissance, ou tue-le très vite en duo.",
+    "Anticipe l'arrivée de la vague suivante en fin de vague."
+  ],
+  "pieges": [
+    "Frapper Malléfisk à petits coups sous 50 % de PV.",
+    "Les vagues qui s'enchaînent sans soin."
+  ],
+  "succes": [
+    {
+      "n": "Blitzkrieg",
+      "x": "Tuer Malléfisk en un seul tour."
+    },
+    {
+      "n": "Circulez",
+      "x": "Ne retirer aucun PM aux monstres."
+    },
+    {
+      "n": "Duo",
+      "x": "Deux personnages maximum (limite de tours à vérifier en jeu)."
+    }
+  ],
+  "acces": [
+    "Creuset des fortunés (Enutrosor), entrée en [-6,-2] ; une chasse au portail peut être nécessaire.",
+    "Le trousseau ne marche pas : Clef de la Fabrique (10 Or, Ficelle en Lin, Corde de Boursoin, Langue de Mimikado, Antenne de Trésantène, Corne de Berserkoffre, Pièce de Koffrefor).",
+    "Niveau conseillé 100."
+  ],
+  "src": "https://dofus.jeuxonline.info/article/13697/fabrique-mallefisk"
+}

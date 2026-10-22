@@ -1,0 +1,90 @@
+{
+  "dj": "Repaire du Kharnozor",
+  "boss": "Kharnozor",
+  "maj": "2026-10-22",
+  "essentiel": [
+    "Réflexe primitif : chaque attaque portée depuis sa zone de 2 cases déclenche une riposte Terre d'environ 250. Frappe-le à distance.",
+    "Don osseux : chaque Dragoss tué lui donne +10 % de PV max, +10 % de dommages finaux et +5 % de résistance dans l'élément du Dragoss.",
+    "Emplafonnement (en ligne jusqu'à 51 PO) : il fonce sur toi et te repousse de 6.",
+    "Il n'a que 3 PM et ne peut pas être déplacé : fuis-le ; Cri déchirant (7 cases) détruit les invocations."
+  ],
+  "mecaniques": [
+    {
+      "t": "Don osseux",
+      "x": "Plus tu tues de Dragoss avant lui, plus il devient fort : choisis ton ordre (succès Dernier = le réduire vite)."
+    },
+    {
+      "t": "Riposte",
+      "x": "Réflexe primitif : ~250 Terre par attaque reçue si l'attaquant est à 2 cases ou moins."
+    }
+  ],
+  "sorts": [
+    {
+      "n": "Emplafonnement",
+      "x": "En ligne 1-51 PO : s'approche, Terre, poussée de 6."
+    },
+    {
+      "n": "Cri déchirant",
+      "x": "7 cases autour de lui : Air doublé sur les invocations, -3 PA ; seulement si une invocation est présente."
+    },
+    {
+      "n": "Mort sûre",
+      "x": "Contact : Terre, Insoignable et Pesanteur 2 tours."
+    }
+  ],
+  "monstres": [
+    {
+      "n": "Dragoss Charbon",
+      "d": "haut",
+      "x": "Corps à corps Feu en ligne de 3 : gros dégâts."
+    },
+    {
+      "n": "Dragoss Protéiforme",
+      "d": "moyen",
+      "x": "Copie l'apparence d'un autre Dragoss ; booste ses alliés (3-10 PO)."
+    },
+    {
+      "n": "Dragoss Calcaire",
+      "d": "moyen",
+      "x": "Vole 1 PM et repousse."
+    },
+    {
+      "n": "Dragoss Argile",
+      "d": "bas",
+      "x": "Soutien : PA/PM et soins."
+    },
+    {
+      "n": "Dragoss Ardoise",
+      "d": "bas",
+      "x": "Soutien à moyenne portée, soins de 6 %."
+    }
+  ],
+  "strategie": [
+    "Joue à distance du Kharnozor et ne te laisse jamais bloquer à son contact.",
+    "Évite les invocations, ou garde-les hors de son Cri déchirant."
+  ],
+  "pieges": [
+    "Attaquer au corps à corps (riposte à chaque coup).",
+    "Tuer tous les Dragoss avant lui sans plan : il devient énorme."
+  ],
+  "succes": [
+    {
+      "n": "Dernier",
+      "x": "Le battre en dernier : il sera renforcé, réduis-le vite."
+    },
+    {
+      "n": "Circulez",
+      "x": "Ne retirer aucun PM : facile à fuir avec ses 3 PM."
+    },
+    {
+      "n": "Duo",
+      "x": "Deux personnages, moins de 20 tours."
+    }
+  ],
+  "acces": [
+    "Village des Dragoeufs, entrée en [-3,25] (zaap de la Plaine des Scarafeuilles en [-1,24]).",
+    "Clé : trousseau ou Clef du Repaire (Bois d'If, Seigle, coquilles de Dragoss Charbon, Ardoise, Protéiforme et Argile, Anguille).",
+    "Niveau conseillé 100 ; salle 5 : Kharnozor et 7 Dragoss."
+  ],
+  "src": "https://dofus.jeuxonline.info/article/14748/repaire-kharnozor"
+}
