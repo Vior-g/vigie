@@ -1,11 +1,11 @@
 {
  "schema": 2,
- "stamp": "2026-10-22T13:49:29.175Z",
+ "stamp": "2026-10-22T14:10:13.458Z",
  "files": {
   "songes.json": "7ee699e1fc11",
   "generated/dungeons.json": "29595f8ab097",
-  "generated/meta.json": "ef3a259eeb80",
-  "generated/monsters.json": "03ee6316dbe9",
+  "generated/meta.json": "acca1e7c1522",
+  "generated/monsters.json": "ba8f2e208954",
   "generated/spells.json": "ed7cf6976a6a",
   "generated/subareas.json": "48e4b8d2155a",
   "guides/antichambre-des-gloursons.json": "59f74474ed1f",
