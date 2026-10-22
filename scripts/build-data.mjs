@@ -323,8 +323,20 @@ async function main() {
       const id = levelFor(spellById.get(s), g.length);
       if (id && spells[id]) spellRefs.push(id);
     }
+    // Mise à l'échelle (Songes : le niveau des monstres suit l'étage) :
+    // grade de référence et ratio de PV par rapport à un monstre « standard ».
+    const ref = g[Math.min(Math.max(1, m.scaleGradeRef || g.length), g.length) - 1];
+    const ratio = (id) => {
+      for (const x of Array.isArray(m.characRatios) ? m.characRatios : []) {
+        if (Array.isArray(x) && x[0] === id) return x[1];
+        if (x && typeof x === 'object' && !Array.isArray(x) && (x.key === id || x.id === id)) return x.value ?? x.ratio;
+      }
+      return undefined;
+    };
+    const rpv = ratio(0);
     monsters[m.id] = {
       n: name,
+      sc: typeof rpv === 'number' && rpv > 0 ? [ref.level, ref.lifePoints, Math.round(rpv * 10000) / 10000] : undefined,
       lv: [first.level, last.level],
       pv: [first.lifePoints, last.lifePoints],
       pa: last.actionPoints,
