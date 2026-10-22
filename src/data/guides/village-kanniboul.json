@@ -1,0 +1,89 @@
+{
+  "dj": "Village Kanniboul",
+  "boss": "Kanniboul Ebil",
+  "maj": "2026-10-22",
+  "essentiel": [
+    "Le Kanniboul Ebil se soigne de 50 % des dommages qu'il subit : concentre-le en gros coups.",
+    "Sa poupée Astroy renvoie les dégâts sur une cible et gagne 50 puissance par tour.",
+    "Kanniboul Eth renvoie les dégâts reçus pendant 1 tour : ne le frappe pas sous cet effet.",
+    "Kanniboul Ark repousse de 5 cases et baisse les résistances."
+  ],
+  "mecaniques": [
+    {
+      "t": "Vol de vie passif",
+      "x": "Le boss se soigne de la moitié des dommages subis."
+    },
+    {
+      "t": "Poupée Astroy",
+      "x": "Invocation : renvoi de dégâts, +50 puissance chaque tour, peut téléporter quelqu'un tous les 4 tours."
+    }
+  ],
+  "sorts": [
+    {
+      "n": "Bouboule",
+      "x": "Dégâts Neutre jusqu'à 6 PO."
+    },
+    {
+      "n": "Invocation",
+      "x": "Poupée Astroy."
+    }
+  ],
+  "monstres": [
+    {
+      "n": "Kanniboul Eth",
+      "d": "haut",
+      "x": "Air 1-6 PO, vole 50 agilité, renvoie les dégâts 1 tour, +100 puissance."
+    },
+    {
+      "n": "Kanniboul Ark",
+      "d": "moyen",
+      "x": "Feu 1-6 PO, repousse de 5, -5 % résistances."
+    },
+    {
+      "n": "Kanniboul Sarbak",
+      "d": "moyen",
+      "x": "Terre + poison jusqu'à 6 PO, +3 PO."
+    },
+    {
+      "n": "Kanniboul Jav",
+      "d": "bas",
+      "x": "Eau 1-6 PO, repousse d'1, bouclier de 10 % PV."
+    },
+    {
+      "n": "Kanniboul Tam",
+      "d": "bas",
+      "x": "Neutre au contact ; boosts aléatoires (PM, fuite, puissance, tacle, PO)."
+    }
+  ],
+  "strategie": [
+    "Tue le Kanniboul Ebil en premier avec de gros coups (son vol de vie punit les petits).",
+    "Tiens compte de la poupée Astroy et de ses téléportations."
+  ],
+  "pieges": [
+    "Frapper le Kanniboul Eth pendant son renvoi.",
+    "Se placer dans l'axe d'Ark (poussée de 5)."
+  ],
+  "succes": [
+    {
+      "n": "Zombie",
+      "x": "Exactement 1 PM par tour (Libération aide contre le tacle)."
+    },
+    {
+      "n": "Premier",
+      "x": "Achever le Kanniboul Ebil en premier."
+    },
+    {
+      "n": "Rituel de Survie",
+      "x": "Un ennemi ne doit subir des dégâts que s'il est au contact d'au moins une entité."
+    },
+    {
+      "n": "Duo",
+      "x": "Deux personnages, moins de 20 tours."
+    }
+  ],
+  "acces": [
+    "Île de Moon ; lancé par Emma Tompouce, 8e donjon du second Tour du monde.",
+    "Clé : 2 Poupées Vaudou (Ark, Eth, Sarbak, Jav), 2 Viandes Ladre, 2 Carpes d'Iem, 2 Menthes Sauvages, 2 Houblons."
+  ],
+  "src": "https://guidactik.com/dofus/donjon-village-kanniboul-sur-dofus-unity-guide-et-astuces/"
+}

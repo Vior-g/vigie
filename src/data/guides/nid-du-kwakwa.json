@@ -1,0 +1,84 @@
+{
+  "dj": "Nid du Kwakwa",
+  "boss": "Kwakwa",
+  "maj": "2026-10-22",
+  "essentiel": [
+    "Les résistances du Kwakwa sont tirées au hasard à chaque combat : vérifie-les en jeu et couvre les 4 éléments.",
+    "Il booste PA, PM et puissance de tout son groupe et invoque des Kwaks ou des Bwaks.",
+    "Kwakoukas (0-7 PO) repousse de 4 cases.",
+    "Tue d'abord les Kwaks, Kwakeres et Bwaks, puis le Kwakwa."
+  ],
+  "mecaniques": [
+    {
+      "t": "Résistances aléatoires",
+      "x": "Tirées au début du combat. Vigie affiche celles des données du jeu : fie-toi à l'infobulle en combat."
+    },
+    {
+      "t": "Bwaks",
+      "x": "Bwakitori leur donne des PA en baissant leurs résistances ce tour-ci, puis ils en regagnent."
+    }
+  ],
+  "sorts": [
+    {
+      "n": "Kwamagueul",
+      "x": "PA, PM et puissance pour le Kwakwa et ses alliés."
+    },
+    {
+      "n": "Kwakalarme",
+      "x": "Invoque un Kwak ou un Bwak, +2 PA au Kwakwa."
+    },
+    {
+      "n": "Kwakoukas",
+      "x": "0-7 PO : Neutre et poussée de 4."
+    },
+    {
+      "n": "Wakpot",
+      "x": "1-3 PO : retire de la sagesse, vol de vie Neutre."
+    }
+  ],
+  "monstres": [
+    {
+      "n": "Kwakere",
+      "d": "moyen",
+      "x": "Fuyard, repousse de 4 ; vole de la puissance."
+    },
+    {
+      "n": "Kwak",
+      "d": "moyen",
+      "x": "Fuyard, poussée de 4, retire une caractéristique."
+    },
+    {
+      "n": "Bwak",
+      "d": "bas",
+      "x": "Dégâts élémentaires 1-10 PO ; peu dangereux."
+    }
+  ],
+  "strategie": [
+    "Équipe couvrant tous les éléments.",
+    "Nettoie les acolytes avant le Kwakwa, qui les booste."
+  ],
+  "pieges": [
+    "Les poussées de 4 cases te sortent de position.",
+    "Pour Zombie : attention aux tacles."
+  ],
+  "succes": [
+    {
+      "n": "Zombie",
+      "x": "Un seul PM par tour (hors invocations)."
+    },
+    {
+      "n": "Mains Propres",
+      "x": "Achever les ennemis par dégâts indirects (poisons, glyphes, invocations, pièges, poussée)."
+    },
+    {
+      "n": "Duo",
+      "x": "Deux personnages, moins de 20 tours."
+    }
+  ],
+  "acces": [
+    "Montagne des Craqueleurs, entrée en [-4,-7] (zaap de la Montagne des Craqueleurs).",
+    "Clé : trousseau, ou 5 Trèfles à 5 feuilles, 5 Bronze, 5 Bois de Noyer, une Plume de Kwak de chaque élément, 1 Viande Tendre.",
+    "Niveau conseillé 50."
+  ],
+  "src": "https://dofus.jeuxonline.info/article/13759/nid-kwawka"
+}

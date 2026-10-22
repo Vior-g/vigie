@@ -1,0 +1,89 @@
+{
+  "dj": "Refuge sylvestre",
+  "boss": "Rakoopeur",
+  "maj": "2026-10-22",
+  "essentiel": [
+    "Chaque coup des monstres applique 10 % de faiblesse dans son élément : évite de cumuler les faiblesses.",
+    "Le Rakoopeur frappe dans tous les éléments (6 PO) et applique une faiblesse dans chacun.",
+    "Il se téléporte jusqu'à 9 PO et se donne une barrière de 200 % de son niveau.",
+    "Joue à distance et repousse les monstres ; garde le Rakoopeur pour la fin."
+  ],
+  "mecaniques": [
+    {
+      "t": "Faiblesses élémentaires",
+      "x": "Les dégâts subis appliquent -10 % de résistance dans l'élément concerné ; ils se cumulent."
+    }
+  ],
+  "sorts": [
+    {
+      "n": "Attaque élémentaire",
+      "x": "Dégâts dans tous les éléments à 6 PO, faiblesse dans chacun."
+    },
+    {
+      "n": "Téléportation",
+      "x": "Jusqu'à 9 PO."
+    },
+    {
+      "n": "Barrière",
+      "x": "Bouclier de 200 % de son niveau."
+    }
+  ],
+  "monstres": [
+    {
+      "n": "Trankilou",
+      "d": "haut",
+      "x": "Feu 1-7 PO, +10 % critique, peut rendre insoignable."
+    },
+    {
+      "n": "Timongouste",
+      "d": "moyen",
+      "x": "Eau 1-5 PO qui attire ; donne 3 PA à un allié."
+    },
+    {
+      "n": "Thomondor",
+      "d": "moyen",
+      "x": "Air 1-7 PO qui repousse ; +2 PM."
+    },
+    {
+      "n": "Grolours",
+      "d": "moyen",
+      "x": "Neutre 1-4 PO ; partage ses dégâts subis avec les autres monstres."
+    },
+    {
+      "n": "Buffalourd",
+      "d": "bas",
+      "x": "Terre 1-3 PO, avance de 4 cases."
+    }
+  ],
+  "strategie": [
+    "Reste hors de portée et repousse les monstres.",
+    "Élimine les monstres un à un, puis le Rakoopeur."
+  ],
+  "pieges": [
+    "Commencer ton tour avec plus de deux faiblesses différentes (succès spécial raté et dégâts accrus).",
+    "Frapper le Grolours alors qu'il répartit ses dégâts."
+  ],
+  "succes": [
+    {
+      "n": "Dernier",
+      "x": "Achever le Rakoopeur en dernier."
+    },
+    {
+      "n": "Prudent",
+      "x": "Ne jamais finir son tour au contact d'un ennemi."
+    },
+    {
+      "n": "Vigilance forestière",
+      "x": "Ne pas cumuler plus de deux faiblesses élémentaires différentes au début de son tour."
+    },
+    {
+      "n": "Duo",
+      "x": "Deux personnages, moins de 20 tours."
+    }
+  ],
+  "acces": [
+    "9e donjon de la quête « Tour du monde ».",
+    "Clé : Pom de Pin, Fourrure de Timongouste, Plume de Thomondor, Griffe de Grolours, 6 Trèfles à 5 feuilles, 6 Kobalte, 6 Bois de Pin, 6 Avoine."
+  ],
+  "src": "https://guidactik.com/dofus/refuge-sylvestre-sur-dofus-unity-guide-et-astuces/"
+}

@@ -1,0 +1,79 @@
+{
+  "dj": "Grotte Hesque",
+  "boss": "Corailleur Magistral",
+  "maj": "2026-10-22",
+  "essentiel": [
+    "Le Corailleur Magistral tue en un coup un personnage à son contact (une seule victime par tour, jamais au tour 1).",
+    "Il retire 3 PM pour te garder à distance et frappe en Air à 1-5 PO (-30 agilité).",
+    "Les Palmifleurs peuvent retirer 100 % de résistance (1-8 PO) : tue-les tôt.",
+    "Retirer au moins 5 PA au Corailleur l'empêche de lancer son coup fatal."
+  ],
+  "mecaniques": [
+    {
+      "t": "Coup fatal",
+      "x": "Au contact, il tue en un coup (un seul personnage par tour, pas au premier tour). Reste hors de son contact ou retire-lui 5 PA."
+    }
+  ],
+  "sorts": [
+    {
+      "n": "Coup fatal",
+      "x": "Contact : tue la cible."
+    },
+    {
+      "n": "Retrait de PM",
+      "x": "-3 PM."
+    },
+    {
+      "n": "Sort Air",
+      "x": "1-5 PO, -30 agilité."
+    }
+  ],
+  "monstres": [
+    {
+      "n": "Palmifleur",
+      "d": "haut",
+      "x": "-100 % de résistance à 1-8 PO ; vol de vie Neutre à 1-2 PO."
+    },
+    {
+      "n": "Corailleur",
+      "d": "moyen",
+      "x": "Eau 0-10 PO, -10 % résistance Eau, retrait de PM."
+    },
+    {
+      "n": "Crustorail",
+      "d": "moyen",
+      "x": "+20 à 40 % de résistance Neutre aux alliés, Neutre avec boost de dommages."
+    }
+  ],
+  "strategie": [
+    "Au tour 1, tu peux commencer au contact du boss : il ne peut pas tuer ce tour-là.",
+    "Booste-toi au maximum avant le tour où tu attaques le Corailleur Magistral.",
+    "Élimine les Palmifleurs avant qu'ils ne retirent tes résistances."
+  ],
+  "pieges": [
+    "Rester au contact du Corailleur Magistral sans lui avoir retiré au moins 5 PA."
+  ],
+  "succes": [
+    {
+      "n": "Hardi",
+      "x": "Finir chaque tour au contact d'un ennemi."
+    },
+    {
+      "n": "Blitzkrieg",
+      "x": "Achever chaque ennemi avant le début de son tour."
+    },
+    {
+      "n": "Collé-serré",
+      "x": "Dès le tour 2, commencer chaque tour au contact du Corailleur Magistral et le tuer en dernier (retire-lui 5 PA)."
+    },
+    {
+      "n": "Duo",
+      "x": "Deux personnages, moins de 20 tours."
+    }
+  ],
+  "acces": [
+    "2e donjon de la quête « Tour du monde ».",
+    "Clé : Bulbe Kouraçao, Bulbe Malibout, Bulbe Passaoh, Bulbe Morito, 5 Trèfles à 5 feuilles, 5 Bronze, 5 Bois de Noyer, 4 Poissons Panés."
+  ],
+  "src": "https://guidactik.com/dofus/grotte-hesque-sur-dofus-unity-guide-et-astuces/"
+}

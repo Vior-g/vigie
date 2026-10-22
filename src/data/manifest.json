@@ -1,6 +1,6 @@
 {
  "schema": 2,
- "stamp": "2026-10-22T15:10:15.263Z",
+ "stamp": "2026-10-22T15:12:53.905Z",
  "files": {
   "songes.json": "7ee699e1fc11",
   "generated/dungeons.json": "29595f8ab097",
@@ -37,6 +37,7 @@
   "guides/centre-du-labyrinthe-du-minotoror.json": "82abb884586d",
   "guides/chambre-de-tal-kasha.json": "9503e4569480",
   "guides/chambre-des-malefices.json": "d154d44d3363",
+  "guides/chateau-du-wa-wabbit.json": "55a915d70728",
   "guides/chateau-ensable.json": "d25fab97ab2b",
   "guides/clairiegravere-du-checircne-mou.json": "eaf4f18aa4cf",
   "guides/cour-du-bouftou-royal.json": "d506aff0d955",
@@ -46,6 +47,9 @@
   "guides/demeure-des-esprits.json": "e916e5c05383",
   "guides/dojo-du-vent.json": "0e6f3948a980",
   "guides/donjon-de-la-mine-de-sakaiuml.json": "582fe3902303",
+  "guides/donjon-des-bworks.json": "ccb302b1b01a",
+  "guides/donjon-des-forgerons.json": "80e8e36046af",
+  "guides/donjon-des-larves.json": "b77d0dd9dd76",
   "guides/donjon-des-rats-du-chacircteau-damakna.json": "c4744fa87177",
   "guides/donjon-des-scarafeuilles.json": "78426df2942a",
   "guides/donjon-des-squelettes.json": "90d3a53e49d3",
@@ -62,6 +66,7 @@
   "guides/grange-du-tournesol-affame.json": "ae5e1f9216d9",
   "guides/grotte-de-kanigroula.json": "9d76b8be9f6c",
   "guides/grotte-du-bworker.json": "11793570b6cd",
+  "guides/grotte-hesque.json": "2b6a17f1bfc1",
   "guides/horologium-de-xlii.json": "bfa404ae70e8",
   "guides/hypogeacutee-de-lobsidiantre.json": "09aa16184f4c",
   "guides/laboratoire-de-nileza.json": "df6feec830b9",
@@ -74,12 +79,14 @@
   "guides/memoire-d-orukam.json": "bab6fe58d080",
   "guides/miausoleacutee-du-pounicheur.json": "dded3c9ff9e2",
   "guides/minotot.json": "4ef484ef5c0c",
+  "guides/nid-du-kwakwa.json": "36985ddfebcd",
   "guides/oeil-de-vortex.json": "baccc0e4f6dc",
   "guides/palais-de-dantineacutea.json": "a23c2ea7bd1c",
   "guides/palais-du-roi-nidas.json": "51f4f7eeee97",
   "guides/plateau-de-ush.json": "a1e5eebdb129",
   "guides/poste-de-controle-du-supervizoeuf.json": "6ef9759fbe2d",
   "guides/pyramide-dombre.json": "aedcf8a61457",
+  "guides/refuge-sylvestre.json": "0ceb0d0101dd",
   "guides/repaire-de-skeunk.json": "445fd7019722",
   "guides/ring-du-capitaine-ekarlatte.json": "58303377db82",
   "guides/rituel-de-kabahal.json": "d2ddaa648bca",
@@ -106,6 +113,7 @@
   "guides/vaisseau-du-capitaine-meno.json": "7002d7a47cb5",
   "guides/vallee-de-la-dame-des-eaux.json": "08af5a609aa8",
   "guides/ventre-de-la-baleine.json": "c53c2e84a63c",
+  "guides/village-kanniboul.json": "8f52b0136e3f",
   "guides/voliegravere-de-la-haute-truche.json": "addaf197b438"
  }
 }

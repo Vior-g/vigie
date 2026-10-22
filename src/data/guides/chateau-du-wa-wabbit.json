@@ -1,0 +1,93 @@
+{
+  "dj": "Château du Wa Wabbit",
+  "boss": "Wa Wabbit",
+  "maj": "2026-10-22",
+  "essentiel": [
+    "Le Wa Wabbit réduit de 200 les dégâts d'arme reçus : joue avec tes sorts.",
+    "Il frappe en Neutre jusqu'à 11 PO et invoque une Cawotte.",
+    "Tue d'abord les soigneurs : Grand Pa Wabbit (soins sans ligne de vue à 4 PO, retrait PA/PM en zone) et Wabbit.",
+    "Le Wo Wabbit repousse de 6 cases et invoque trois Tiwabbits."
+  ],
+  "mecaniques": [
+    {
+      "t": "Cawotte",
+      "x": "Le Wa Wabbit invoque une Cawotte ; quand une Cawotte Woyale est présente, seul le Wa Wabbit doit être frappé pour le succès spécial."
+    },
+    {
+      "t": "Poison Neutre",
+      "x": "Le Tiwabbit Kiafin empoisonne les ennemis qui infligent des dégâts Neutre."
+    }
+  ],
+  "sorts": [
+    {
+      "n": "Attaque Neutre",
+      "x": "Jusqu'à 11 PO."
+    },
+    {
+      "n": "Défense",
+      "x": "-200 dégâts d'arme reçus ; malus de résistances aux ennemis."
+    },
+    {
+      "n": "Invocation",
+      "x": "Cawotte."
+    }
+  ],
+  "monstres": [
+    {
+      "n": "Grand Pa Wabbit",
+      "d": "haut",
+      "x": "Soigne sans ligne de vue (4 PO), retire 1-2 PA et 2-3 PM en zone, Feu jusqu'à 7 PO."
+    },
+    {
+      "n": "Wo Wabbit",
+      "d": "haut",
+      "x": "Invoque Tiwabbit, Black Tiwabbit et Tiwabbit Kiafin ; Neutre qui repousse de 6."
+    },
+    {
+      "n": "Wabbit",
+      "d": "moyen",
+      "x": "Se soigne 20 % PV, booste PA, PM et PO."
+    },
+    {
+      "n": "Black Wabbit",
+      "d": "moyen",
+      "x": "Air jusqu'à 11 PO qui repousse d'1."
+    },
+    {
+      "n": "Tiwabbit Kiafin",
+      "d": "moyen",
+      "x": "Poison contre les dégâts Neutre ; repousse ; +20 fuite."
+    }
+  ],
+  "strategie": [
+    "Grand Pa Wabbit et Wabbit en premier, puis le Wo Wabbit avant qu'il n'invoque.",
+    "Évite le Neutre si un Tiwabbit Kiafin est en jeu."
+  ],
+  "pieges": [
+    "Les poussées du Wo Wabbit (6 cases) cassent ton placement.",
+    "Frapper un autre monstre pendant qu'une Cawotte Woyale est en jeu (succès spécial)."
+  ],
+  "succes": [
+    {
+      "n": "Hardi",
+      "x": "Finir chaque tour au contact d'un ennemi."
+    },
+    {
+      "n": "Blitzkrieg",
+      "x": "Achever chaque ennemi attaqué avant son tour."
+    },
+    {
+      "n": "Mené à la cawotte",
+      "x": "Quand une Cawotte Woyale est présente, seul le Wa Wabbit doit subir des dégâts (ou tuer la cawotte avant)."
+    },
+    {
+      "n": "Duo",
+      "x": "Deux personnages, moins de 20 tours."
+    }
+  ],
+  "acces": [
+    "Île des Wabbits (quête d'accès) ; lancé par Emma Tompouce, 9e donjon du second Tour du monde. Cocawottes pour revenir.",
+    "Clé : un morceau de clé du matin, du midi et du soir, 5 Bois de Chêne, 5 Kobalte, 5 Menthe Sauvage, 5 Houblon."
+  ],
+  "src": "https://guidactik.com/dofus/chateau-du-wa-wabbit-sur-dofus-unity-guide-et-astuces/"
+}

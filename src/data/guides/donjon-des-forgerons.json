@@ -1,0 +1,85 @@
+{
+  "dj": "Donjon des Forgerons",
+  "boss": "Coffre des Forgerons",
+  "maj": "2026-10-22",
+  "essentiel": [
+    "Le Coffre frappe plus fort quand ses PV baissent et se donne +30 dommages : achève-le dans le même tour où tu le descends.",
+    "Plan classique : entame tous les monstres sans les tuer, descends le Coffre, puis tue tout en un seul tour.",
+    "Au contact (1 PO), le Coffre retire 4 à 8 PA en critique.",
+    "Bandits et Boulangers retirent 1 PM à distance ; le Forgeron Sombre repousse de 2."
+  ],
+  "mecaniques": [
+    {
+      "t": "Coffre enragé",
+      "x": "Ses dégâts Terre dépendent de ses PV restants : presque mort, il devient très dangereux. Booste-toi au maximum et tue-le avant son tour suivant."
+    },
+    {
+      "t": "Tour final",
+      "x": "Le donjon se termine idéalement en un seul tour de burst : prépare boucliers et boosts."
+    }
+  ],
+  "sorts": [
+    {
+      "n": "Frappe Terre",
+      "x": "Plus forte quand ses PV sont bas ; +30 dommages au lanceur."
+    },
+    {
+      "n": "Coup au contact",
+      "x": "1 PO : dégâts Terre, retire 4 à 8 PA en critique."
+    }
+  ],
+  "monstres": [
+    {
+      "n": "Mineur Sombre",
+      "d": "moyen",
+      "x": "Retire des PA, booste les dommages ; Air en ligne 1-6 PO."
+    },
+    {
+      "n": "Bandit du clan des Roublards",
+      "d": "moyen",
+      "x": "Terre 1-9 PO qui retire 1 PM."
+    },
+    {
+      "n": "Boulanger Sombre",
+      "d": "moyen",
+      "x": "Feu 1-8 PO qui retire 1 PM."
+    },
+    {
+      "n": "Forgeron Sombre",
+      "d": "bas",
+      "x": "Réduction de dégâts, esquive PM ; repousse de 2 au contact."
+    }
+  ],
+  "strategie": [
+    "Abîme tout le monde sans achever, puis descends le Coffre.",
+    "Au tour décisif, booste ton équipe et tue tous les ennemis en un tour.",
+    "Une classe à boucliers aide beaucoup, surtout pour le succès spécial."
+  ],
+  "pieges": [
+    "Laisser le Coffre survivre à un tour avec peu de PV.",
+    "Premier et « Ouverture Facile » sont incompatibles."
+  ],
+  "succes": [
+    {
+      "n": "Premier",
+      "x": "Achever le Coffre en premier (incompatible avec le spécial)."
+    },
+    {
+      "n": "Nomade",
+      "x": "Utiliser tous ses PM à chaque tour."
+    },
+    {
+      "n": "Ouverture Facile",
+      "x": "N'achever les ennemis que lorsque le Coffre a moins de 50 % de PV, et le Coffre en dernier."
+    },
+    {
+      "n": "Duo",
+      "x": "Deux personnages, moins de 20 tours."
+    }
+  ],
+  "acces": [
+    "6e donjon de la quête « Tour du monde ».",
+    "Clé : Sceau Royal Contrefait, Bourse Suspecte, Graine de la Discorde, Chaînes Brisées, 5 Orge, 5 Bois de Châtaignier, 5 Cuivre, 5 Sauge."
+  ],
+  "src": "https://guidactik.com/dofus/donjon-des-forgerons-sur-dofus-unity-guide-et-astuces/"
+}

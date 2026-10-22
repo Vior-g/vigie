@@ -1,0 +1,82 @@
+{
+  "dj": "Donjon des Bworks",
+  "boss": "Bworkette",
+  "maj": "2026-10-22",
+  "essentiel": [
+    "La Bworkette se soigne de 50 % de ses PV (75 % en critique) et soigne plusieurs alliés : tue-la en premier.",
+    "Son sort Neutre fait double dégâts aux invocations.",
+    "Le Bwork Archer booste énormément ses alliés (60-70 dommages, 250-290 puissance en critique).",
+    "Le Bwork Mage invoque un Tofu Maléfique qui rend insoignable."
+  ],
+  "mecaniques": [
+    {
+      "t": "Soins massifs",
+      "x": "La Bworkette peut se rendre 50 % de ses PV : il faut la finir d'un coup."
+    }
+  ],
+  "sorts": [
+    {
+      "n": "Grand soin",
+      "x": "Soigne 50 % de ses PV (75 % en critique)."
+    },
+    {
+      "n": "Soin de groupe",
+      "x": "Soigne plusieurs cibles."
+    },
+    {
+      "n": "Sort Neutre",
+      "x": "Double dégâts sur les invocations."
+    },
+    {
+      "n": "Coup Terre (1 PO)",
+      "x": "Dégâts Terre et +1 dommage."
+    }
+  ],
+  "monstres": [
+    {
+      "n": "Bwork Archer",
+      "d": "haut",
+      "x": "Boosts de dommages et de puissance à 0-6 PO ; Air à 1-8 PO."
+    },
+    {
+      "n": "Bwork Mage",
+      "d": "moyen",
+      "x": "Invoque un Tofu Maléfique (insoignable) ; Feu 3-6 PO ; Air au contact qui repousse."
+    },
+    {
+      "n": "Bwork",
+      "d": "bas",
+      "x": "Corps à corps Neutre, repousse d'1 case, se booste."
+    }
+  ],
+  "strategie": [
+    "Concentre la Bworkette pour la finir avant qu'elle se soigne.",
+    "Garde les Bworks à distance ; donjon facile pour les joueurs Eau."
+  ],
+  "pieges": [
+    "Laisser la Bworkette rallonger le combat avec ses soins."
+  ],
+  "succes": [
+    {
+      "n": "Misanthrope",
+      "x": "Ne jamais finir son tour à côté d'un allié."
+    },
+    {
+      "n": "Premier",
+      "x": "Achever la Bworkette en premier."
+    },
+    {
+      "n": "Tombés sous le charme",
+      "x": "N'achever les ennemis qu'avec un personnage en état Insoignable : garde le Bwork Mage et son Tofu Maléfique en vie."
+    },
+    {
+      "n": "Duo",
+      "x": "Deux personnages, moins de 20 tours."
+    }
+  ],
+  "acces": [
+    "Lancé par Pat Akess en [5,0] (quête « Tour du monde »).",
+    "Clé : Slip de Bwork Archer, Poils de Barbe du Bwork Mage, Bière Bwork, 5 Bois de Noyer, 5 Bronze, 5 Trèfle à 5 feuilles, 5 Avoine."
+  ],
+  "src": "https://guidactik.com/dofus/donjon-des-bworks-sur-dofus-unity-guide-et-astuces"
+}

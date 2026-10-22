@@ -1,0 +1,90 @@
+{
+  "dj": "Donjon des Larves",
+  "boss": "Shin Larve",
+  "maj": "2026-10-22",
+  "essentiel": [
+    "Il faut être au moins 2 joueurs, sinon certaines salles ne s'ouvrent pas.",
+    "À partir du tour 2, Enlisement retire 6 PM aux joueurs et leur donne 4 PA : frappe la Shin Larve à ce moment-là.",
+    "Son sort Neutre retire 3 PA et repousse de 4 cases.",
+    "Les Larves Dorée, Émeraude et Rubis renvoient des dégâts."
+  ],
+  "mecaniques": [
+    {
+      "t": "Enlisement",
+      "x": "Dès le tour 2 : -6 PM et +4 PA pour les joueurs. Ne commence pas collé aux monstres."
+    },
+    {
+      "t": "Invocations",
+      "x": "Invoque une larve au hasard (14,28 % chacune)."
+    }
+  ],
+  "sorts": [
+    {
+      "n": "Enlisement",
+      "x": "-6 PM, +4 PA aux joueurs (dès le tour 2)."
+    },
+    {
+      "n": "Sort Neutre",
+      "x": "-3 PA et poussée de 4 cases."
+    }
+  ],
+  "monstres": [
+    {
+      "n": "Larve Dorée",
+      "d": "moyen",
+      "x": "Eau 1-6 PO qui retire 1 PA ; renvoi et réduction de dégâts."
+    },
+    {
+      "n": "Larve Émeraude",
+      "d": "moyen",
+      "x": "Eau 1-6 PO qui retire 1 PA ; désenvoûte ; renvoi."
+    },
+    {
+      "n": "Larve Saphir",
+      "d": "moyen",
+      "x": "Soigne ses alliés à 1-5 PO."
+    },
+    {
+      "n": "Larve Rubis",
+      "d": "bas",
+      "x": "Réduction et renvoi de dégâts."
+    }
+  ],
+  "strategie": [
+    "Place-toi à distance au départ : l'Enlisement t'empêchera de bouger.",
+    "Profite des PA bonus d'Enlisement pour frapper la Shin Larve."
+  ],
+  "pieges": [
+    "Taper une larve sous renvoi de dégâts.",
+    "Frapper autre chose que la Shin Larve pendant Enlisement (succès spécial)."
+  ],
+  "tours": [
+    {
+      "from": 2,
+      "level": "alerte",
+      "text": "Enlisement possible : -6 PM, +4 PA. Frappe la Shin Larve pendant ce tour."
+    }
+  ],
+  "succes": [
+    {
+      "n": "Prudent",
+      "x": "Ne jamais finir son tour au contact d'un ennemi."
+    },
+    {
+      "n": "Versatile",
+      "x": "Chaque action une seule fois par tour."
+    },
+    {
+      "n": "Enlisement larvaire",
+      "x": "Ne frapper que la Shin Larve pendant son Enlisement."
+    },
+    {
+      "n": "Duo",
+      "x": "Deux personnages, moins de 20 tours."
+    }
+  ],
+  "acces": [
+    "8e donjon de la quête « Tour du monde » ; 2 joueurs minimum."
+  ],
+  "src": "https://guidactik.com/dofus/donjon-des-larves-sur-dofus-unity-guide-et-astuces/"
+}
