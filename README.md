@@ -131,12 +131,12 @@ test/           tests unitaires + OCR sur captures simulées, visite guidée de 
 
 ## Publier une nouvelle version
 
-Le dépôt contient un workflow GitHub Actions (`.github/workflows/release.yml`) :
-
-- chaque push sur `main` lance les tests et construit Vigie (zip téléchargeable dans l'onglet **Actions**) ;
-- chaque tag `vX.Y.Z` fait la même chose puis publie une **Release** avec `Vigie-win-x64.zip`.
+Le dépôt contient un workflow GitHub Actions (`.github/workflows/release.yml`). À chaque push sur `main`, il lance les tests, construit Vigie et vérifie le paquet. Si la version de `package.json` n'a pas encore de Release, il la publie (tag `vX.Y.Z` créé par GitHub) avec `Vigie-win-x64.zip`.
 
 ```
-npm version patch      # 0.1.0 -> 0.1.1, crée le commit et le tag
-git push --follow-tags
+npm version patch --no-git-tag-version   # 0.1.1 -> 0.1.2
+git commit -am "0.1.2 : …"
+git push
 ```
+
+Un push sans changement de version reconstruit Vigie (zip dans l'onglet **Actions**) sans publier de Release.
