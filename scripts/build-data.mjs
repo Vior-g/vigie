@@ -138,7 +138,8 @@ function zoneText(z) {
 function renderTemplate(tpl, p1, p2, p3, names) {
   if (!tpl) return '';
   const params = { 1: p1, 2: p2, 3: p3 };
-  let s = tpl.replace(/\{~([^}]*)\}/g, (_m, inner) => {
+  let s = tpl.replace(/\{\{~([^}]*)\}\}|\{~([^}]*)\}/g, (_m, a, b) => {
+    const inner = a ?? b;
     const conds = [];
     let rest = inner;
     let m;
@@ -161,6 +162,29 @@ function renderTemplate(tpl, p1, p2, p3, names) {
     return String(v);
   });
   return s.replace(/\s+/g, ' ').replace(/\(\s*\)/g, '').trim();
+}
+
+/** Les descriptions de sorts de monstres sont souvent vides ou des notes internes. */
+function usefulDescription(d) {
+  const t = String(d || '').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+  if (t.length < 30 || /^\(.*\)$/.test(t)) return undefined;
+  return t;
+}
+
+/** Déclencheurs d'effets (sorts passifs, renvois…). 'I' = immédiat. */
+function triggerText(t) {
+  if (!t || t === 'I') return '';
+  const parts = String(t).split('|');
+  const label = (x) => {
+    if (x === 'TB') return 'en début de tour';
+    if (x === 'TE') return 'en fin de tour';
+    if (/^D/.test(x)) return 'quand il subit des dégâts';
+    if (/^M/.test(x)) return 'quand il se déplace';
+    if (x === 'X') return 'à sa mort';
+    return '';
+  };
+  const l = [...new Set(parts.map(label).filter(Boolean))];
+  return l.length ? l.join(' / ') : 'sous condition';
 }
 
 // ------------------------------------------------------------- Principal
@@ -228,13 +252,16 @@ async function main() {
   probe('effect-sample', effectsRaw.filter((e) => [96, 97, 98, 99, 100, 101, 116, 127, 5, 181, 950].includes(e.id)));
   const effectById = new Map(effectsRaw.map((e) => [e.id, e]));
   const states = await all('spell-states', { '$select': ['id', 'name'] }).catch(() => []);
+  probe('state-sample', states.slice(0, 5));
   const stateName = new Map(states.map((s) => [s.id, fr(s.name)]));
   const monsterName = new Map(monstersRaw.map((m) => [m.id, fr(m.name)]));
 
   function effectText(e) {
     const def = effectById.get(e.effectId);
     if (!def) return null;
-    if (def.showInTooltip === false || e.visibleInTooltip === false) return null;
+    // On se fie à la visibilité de l'effet dans le sort (le catalogue masque
+    // aussi les retraits PA/PM, poussées, invocations et états).
+    if (e.visibleInTooltip === false || e.forClientOnly) return null;
     const tpl = fr(def.description);
     if (!tpl || /^#1$/.test(tpl.trim())) return null;
     const names = {};
@@ -247,6 +274,8 @@ async function main() {
     const dur = e.duration > 0 ? `${e.duration} tour${e.duration > 1 ? 's' : ''}` : '';
     const extra = [zone, dur].filter(Boolean).join(', ');
     if (extra) txt += ` (${extra})`;
+    const trig = triggerText(e.triggers);
+    if (trig) txt = `${trig} : ${txt}`;
     return txt;
   }
 
@@ -261,7 +290,7 @@ async function main() {
     }
     spells[l.id] = {
       n: fr(s.name),
-      d: fr(s.description).replace(/<[^>]+>/g, '').trim() || undefined,
+      d: usefulDescription(fr(s.description)),
       pa: l.apCost,
       po: [l.minRange ?? 0, l.range ?? 0],
       mod: l.rangeCanBeBoosted ? 1 : undefined,
@@ -376,7 +405,7 @@ async function main() {
   console.log(JSON.stringify(meta, null, 1));
 }
 
-export { renderTemplate, zoneText };
+export { renderTemplate, zoneText, triggerText, usefulDescription };
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
   main().catch((e) => { console.error(e); process.exit(1); });
 }
