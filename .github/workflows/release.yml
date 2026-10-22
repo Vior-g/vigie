@@ -32,6 +32,13 @@ jobs:
       - name: Construire Vigie.exe
         run: npx electron-builder --win dir --x64 --publish never
 
+      - name: Vérifier le paquet hors du projet (OCR)
+        shell: pwsh
+        run: |
+          $iso = Join-Path $env:RUNNER_TEMP 'vigie-app'
+          Copy-Item -Recurse dist/win-unpacked/resources/app $iso
+          node test/smoke-packaged.js $iso
+
       - name: Zipper
         shell: pwsh
         run: |

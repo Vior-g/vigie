@@ -21,6 +21,19 @@ const Harebourg = require('../core/harebourg');
 
 if (!app.requestSingleInstanceLock()) { app.quit(); }
 
+// Un overlay ne doit jamais planter en plein combat : une erreur imprévue est
+// affichée dans la barre d'état du panneau au lieu d'une fenêtre d'erreur.
+function reportFatal(e) {
+  const msg = String(e && e.message ? e.message : e).split('\n')[0];
+  console.error('[vigie] erreur non interceptée', e);
+  try {
+    state.detection.error = msg;
+    broadcast();
+  } catch (_) { /* fenêtres pas encore prêtes */ }
+}
+process.on('uncaughtException', reportFatal);
+process.on('unhandledRejection', reportFatal);
+
 const ROOT = path.join(__dirname, '..');
 const BUILTIN_FICHES = path.join(ROOT, 'data', 'bosses');
 let USER_DIR; let USER_FICHES;

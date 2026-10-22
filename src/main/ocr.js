@@ -27,6 +27,9 @@ class Ocr {
         langPath: this.langPath(),
         cachePath: this.cacheDir,
         gzip: true,
+        // Sans ce gestionnaire, tesseract.js relance l'erreur du worker en
+        // exception non interceptée, ce qui fait planter tout le programme.
+        errorHandler: (e) => console.error('[vigie/ocr]', e),
       });
       await this.worker.setParameters({
         tessedit_pageseg_mode: PSM.SPARSE_TEXT,
@@ -34,6 +37,13 @@ class Ocr {
       });
       return this.worker;
     })();
+    // En cas d'échec, on retente plus tard (30 s) au lieu de rester bloqué.
+    const attempt = this.ready;
+    attempt.catch(() => {
+      setTimeout(() => { if (this.ready === attempt) this.ready = null; }, 30000);
+      if (this.worker) this.worker.terminate().catch(() => {});
+      this.worker = null;
+    });
     return this.ready;
   }
 
