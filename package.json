@@ -1,0 +1,53 @@
+{
+  "name": "vigie",
+  "productName": "Vigie",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Overlay d'aide aux combats de boss pour Dofus 3 (usage perso)",
+  "main": "src/main/main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "node test/run-tests.js --ocr",
+    "e2e": "electron test/e2e-main.js",
+    "dist": "electron-builder --win dir"
+  },
+  "author": "Loïc",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@tesseract.js-data/fra": "^1.0.0",
+    "tesseract.js": "^7.0.0"
+  },
+  "devDependencies": {
+    "electron": "^44.9.0",
+    "electron-builder": "^26.15.3",
+    "pngjs": "^7.0.0"
+  },
+  "build": {
+    "appId": "fr.loic.vigie",
+    "productName": "Vigie",
+    "asar": false,
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "src/**/*",
+      "assets/**/*",
+      "package.json",
+      "!node_modules/tesseract.js-core/tesseract-core.*",
+      "!node_modules/tesseract.js-core/tesseract-core-simd.*",
+      "!node_modules/tesseract.js-core/tesseract-core-relaxedsimd.*",
+      "!node_modules/@tesseract.js-data/fra/4.0.0/**"
+    ],
+    "win": {
+      "target": [
+        "dir"
+      ],
+      "icon": "assets/icon.png",
+      "signAndEditExecutable": false
+    },
+    "electronLanguages": [
+      "fr",
+      "en-US"
+    ]
+  }
+}

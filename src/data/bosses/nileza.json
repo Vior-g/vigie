@@ -1,0 +1,86 @@
+{
+  "id": "nileza",
+  "nom": "Nileza",
+  "donjon": "Laboratoire de Nileza",
+  "zone": "Frigost III",
+  "niveauDonjon": 200,
+  "dofusdbId": 3397,
+  "image": "https://api.dofusdb.fr/img/monsters/976.png",
+  "stats": {
+    "niveau": 220,
+    "pv": [13000, 19000],
+    "pa": 20,
+    "pm": 7,
+    "res": { "neutre": 14, "terre": 15, "feu": 16, "eau": 32, "air": 25 }
+  },
+  "detection": {
+    "alias": ["Laboratoire de Nileza", "Laboratoire", "Nileza"],
+    "coords": ["-59,-74"]
+  },
+  "essentiel": [
+    "Ne finis JAMAIS ton tour au contact d'un allié : il meurt (Chifouchimie). Les invocations ne comptent pas.",
+    "Chaque ligne de dégâts à distance sur Nileza le fait échanger de place avec toi, puis il renvoie 200 % des dégâts (air) à tout ce qui est à 2 PO de sa nouvelle case.",
+    "Astuce : place-toi à 2 PO ou moins des monstres groupés et frappe Nileza à distance : le renvoi les blesse. Jamais d'allié à 2 PO de toi à ce moment-là.",
+    "Pacifiste aux tours impairs pour qui est trop loin de lui (11, 9, 7 puis 5 PO). Reste proche pendant les tours pairs.",
+    "Pas d'invulnérabilité ici : la difficulté, c'est le placement."
+  ],
+  "mecaniques": [
+    { "titre": "Chifouchimie", "texte": "Un personnage qui termine son tour au contact d'un allié tue cet allié. Ne concerne pas les invocations." },
+    { "titre": "Ogavodra", "texte": "À chaque ligne de dégâts à distance, Nileza échange de place avec l'attaquant et laisse un glyphe rose (dégâts neutres, retrait de fuite et de tacle)." },
+    { "titre": "Molalité illéplochable", "texte": "Après une attaque à distance : 40 % d'érosion pendant 1 tour, et renvoi de 200 % des dégâts en air à toutes les entités à 2 PO de sa case d'arrivée (après l'échange)." },
+    { "titre": "Pacifiste par distance", "texte": "Au début de son tour, Nileza rend Pacifistes (2 tours, non désenvoûtable) les personnages trop loin : tour 3 au-delà de 11 PO, tour 5 au-delà de 9, tour 7 au-delà de 7, puis tours 9, 11, 13… au-delà de 5 (avec Insoignable dès le tour 9). Le guide cite aussi 12/10/8/6 PO : vérifie en jeu." },
+    { "titre": "Mélange instable", "texte": "Au début de son tour selon ses PV : 76-100 % Acide (+1 % dommages, -2 % résistances par attaque), 40-75 % Amer (+10 % soins, dégâts neutres quand il soigne), 0-39 % Aigre (+30 % critique, perd des PM à chaque critique)." }
+  ],
+  "sortsBoss": [
+    { "nom": "Fraction de molaire", "texte": "~550 eau + terre égale à 10 % des PV manquants, repousse de 3. En ligne jusqu'à 12 PO (modifiable), 2 fois par tour. Réduire sa PO limite ce sort." },
+    { "nom": "Glace sèche", "texte": "Échange de place avec la cible puis ~750 feu en croix. 2 PO sans ligne de vue, une fois par tour." },
+    { "nom": "Liqueur de Fée Ling", "texte": "Tour 1 puis tous les 3 tours, dure 2 tours : +300 dommages et soin de 5 % de ses PV max par ligne subie au corps à corps." }
+  ],
+  "monstres": [
+    { "nom": "Drosérâle", "danger": "haut", "texte": "Frappe en ligne et vole beaucoup de PM. Sporange mécanique : repousse de 2 (4 en CC) quand on frappe une cible affectée. À tuer en premier." },
+    { "nom": "Nessil", "danger": "haut", "texte": "Drako renvoie ~400 par ligne aux entités proches (Nileza aussi les subit s'il est dedans). À tuer avec le Drosérâle." },
+    { "nom": "Dodox", "danger": "moyen", "texte": "Téléportation à 3 PO ; frappé, il pose des boucliers sur les entités proches. Mêlée uniquement." },
+    { "nom": "Krakal", "danger": "moyen", "texte": "Attire en ligne, frappe au CàC, gagne des dommages quand on le pousse." },
+    { "nom": "Termystique", "danger": "moyen", "texte": "Poison : ~160 neutre par PM utilisé (ligne, 6 PO). Sérum renvoie ~900 eau et -3 PA au CàC." }
+  ],
+  "strategie": [
+    "Place-toi à 2 PO ou moins des monstres (groupés) et frappe Nileza à distance : il prend ta place et son renvoi touche les monstres.",
+    "Drosérâle et Nessil en premier. Un monstre sous Drako renvoie aussi des dégâts à Nileza.",
+    "Ne te place jamais à 2 PO d'un allié quand tu frappes Nileza, et ne finis jamais au contact d'un allié.",
+    "Frappe Nileza au corps à corps seulement hors Liqueur : tours 3, 6, 9…",
+    "Reste proche de lui pendant les tours pairs pour éviter le Pacifiste des tours impairs.",
+    "Garde-le hors de portée de Fraction de molaire, surtout quand il a peu de PV."
+  ],
+  "pieges": [
+    "Finir au contact d'un allié (mort instantanée de l'allié).",
+    "Frapper à distance avec un allié à 2 PO de toi (il prend 200 % de renvoi).",
+    "Le taper au CàC pendant Liqueur de Fée Ling (il se soigne)."
+  ],
+  "tours": [
+    { "from": 1, "every": 3, "level": "alerte", "text": "Liqueur de Fée Ling (2 tours) : ne le frappe pas au corps à corps." },
+    { "from": 3, "every": 3, "level": "info", "text": "Pas de Liqueur : fenêtre pour le frapper au corps à corps." },
+    { "from": 2, "to": 2, "level": "alerte", "text": "Au tour 3, Pacifiste au-delà de 11 PO : rapproche-toi de Nileza." },
+    { "from": 4, "to": 4, "level": "alerte", "text": "Au tour 5, Pacifiste au-delà de 9 PO : rapproche-toi de Nileza." },
+    { "from": 6, "to": 6, "level": "alerte", "text": "Au tour 7, Pacifiste au-delà de 7 PO : rapproche-toi de Nileza." },
+    { "from": 8, "every": 2, "level": "danger", "text": "Au prochain tour, Pacifiste + Insoignable au-delà de 5 PO : reste collé à Nileza." },
+    { "from": 1, "level": "danger", "text": "Ne finis pas ton tour au contact d'un allié." }
+  ],
+  "succes": [
+    { "nom": "Prudent", "texte": "Ne pas finir son tour au contact d'un ennemi. Risque faible, les monstres fuient." },
+    { "nom": "Dernier", "texte": "Tuer Nileza en dernier. Presque automatique grâce au renvoi." },
+    { "nom": "Spécial — Alchi-pludent", "texte": "Aucun allié ne doit être Pacifiste : reste dans la portée et tue Nileza vite, la distance tolérée diminue." },
+    { "nom": "Duo", "texte": "Vaincre tous les monstres à 2 personnages maximum en moins de 40 tours. Deux classes mobiles et puissantes ; Drosérâle et Nessil d'abord." }
+  ],
+  "acces": [
+    "Entrée : Jardins d'Hiver, map [-59,-74].",
+    "Prérequis : avoir vaincu le Glourséleste.",
+    "Clé : 2 Bave de Nessil, 2 Canine de Krakal, 2 Plume de Dodox, 2 Bractée de Drosérâle, 2 Viande Goûtue, 1 Poisskaille, 1 Perce-Neige, 1 Frostiz.",
+    "Le terminer valide « Il faut mettre un terme aux maîtres » (avec les 3 autres lieutenants) et ouvre la Tour de la Clepsydre.",
+    "Capture : pierre d'âme de puissance 1000."
+  ],
+  "sources": [
+    { "titre": "Dofus pour les Noobs — Laboratoire de Nileza", "url": "https://www.dofuspourlesnoobs.com/laboratoire-de-nileza.html" },
+    { "titre": "DofusDB — statistiques", "url": "https://dofusdb.fr/fr/database/monster/3397" }
+  ],
+  "maj": "2026-10-19"
+}

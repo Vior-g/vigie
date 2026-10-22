@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'">
+  <title>Vigie — calque</title>
+  <style>
+    html, body { margin: 0; height: 100%; overflow: hidden; background: transparent; user-select: none; }
+    canvas { position: fixed; inset: 0; width: 100vw; height: 100vh; }
+    body.interactive { background: rgba(8, 6, 10, 0.18); cursor: crosshair; }
+    .banner {
+      position: fixed; left: 50%; top: 18px; transform: translateX(-50%);
+      max-width: min(720px, 92vw); padding: 10px 16px; border-radius: 12px;
+      background: rgba(20, 17, 23, 0.92); border: 1px solid rgba(214, 177, 106, 0.45);
+      color: #ede7db; font: 13px/1.45 "Segoe UI", system-ui, sans-serif; text-align: center;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+    }
+    .banner b { color: #f0d495; }
+    .banner kbd { font: inherit; font-size: 11px; padding: 0 5px; border: 1px solid rgba(255,255,255,.25); border-bottom-width: 2px; border-radius: 5px; }
+  </style>
+</head>
+<body>
+  <canvas id="c"></canvas>
+  <div class="banner" id="banner" hidden></div>
+  <script src="../core/harebourg.js"></script>
+  <script src="minigrid.js"></script>
+  <script src="board.js"></script>
+</body>
+</html>

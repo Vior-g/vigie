@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; img-src 'self' data: https://api.dofusdb.fr; style-src 'self' 'unsafe-inline'; script-src 'self'">
+  <title>Vigie — panneau</title>
+  <link rel="stylesheet" href="panel.css">
+</head>
+<body>
+  <div class="shell" id="shell">
+    <header class="head">
+      <div class="portrait" id="portrait"></div>
+      <div class="titles">
+        <div class="boss" id="bossName">Vigie</div>
+        <div class="dungeon" id="dungeonName">Aide aux combats de boss</div>
+      </div>
+      <div class="actions">
+        <button class="icon" id="btnSettings" title="Réglages">⚙</button>
+        <button class="icon" id="btnCompact" title="Réduire / agrandir">▁</button>
+        <button class="icon" id="btnHide" title="Masquer (Ctrl+Alt+O)">✕</button>
+      </div>
+    </header>
+
+    <div class="status" id="status"></div>
+
+    <div class="searchbox">
+      <input id="search" type="search" placeholder="Chercher un boss ou un monstre…  (Ctrl+Alt+F)" autocomplete="off" spellcheck="false">
+      <div class="results" id="results" hidden></div>
+    </div>
+
+    <main id="main">
+      <section class="empty" id="empty">
+        <p>Aucun boss détecté pour l'instant.</p>
+        <p class="muted">Entre dans un donjon de Frigost III : la fiche s'ouvrira toute seule. Tu peux aussi en choisir une :</p>
+        <div class="quick" id="quick"></div>
+      </section>
+
+      <section id="fiche" hidden>
+        <div class="turnbar">
+          <span class="lbl">Tour</span>
+          <button class="step" id="turnMinus" title="Tour précédent (Ctrl+Alt+Maj+T)">‹</button>
+          <span class="turn" id="turnNum">1</span>
+          <button class="step" id="turnPlus" title="Tour suivant (Ctrl+Alt+T)">›</button>
+          <span class="parity" id="turnParity">impair</span>
+          <button class="ghost" id="turnReset" title="Recommencer au tour 1 (Ctrl+Alt+R)">↺</button>
+        </div>
+        <ul class="reminders" id="reminders"></ul>
+
+        <div class="stats" id="stats"></div>
+        <div class="res" id="res"></div>
+
+        <nav class="tabs" id="tabs"></nav>
+        <div class="tabbody" id="tabbody"></div>
+      </section>
+    </main>
+
+    <section class="sheet" id="settings" hidden></section>
+  </div>
+
+  <script src="../core/harebourg.js"></script>
+  <script src="../core/turns.js"></script>
+  <script src="minigrid.js"></script>
+  <script src="panel.js"></script>
+</body>
+</html>

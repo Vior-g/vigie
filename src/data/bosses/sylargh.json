@@ -1,0 +1,77 @@
+{
+  "id": "sylargh",
+  "nom": "Sylargh",
+  "donjon": "Transporteur de Sylargh",
+  "zone": "Frigost III",
+  "niveauDonjon": 200,
+  "dofusdbId": 3409,
+  "image": "https://api.dofusdb.fr/img/monsters/986.png",
+  "stats": {
+    "niveau": 220,
+    "pv": [13000, 19000],
+    "pa": 20,
+    "pm": 6,
+    "res": { "neutre": 14, "terre": 27, "feu": 16, "eau": 22, "air": 12 }
+  },
+  "detection": {
+    "alias": ["Transporteur de Sylargh", "Transporteur", "Sylargh"],
+    "coords": ["-52,-87"]
+  },
+  "essentiel": [
+    "Sylargh est Invulnérable et Lourd. Chaque monstre tué revient en Zombi (~10 % de ses PV), réinvoqué à 6 PO par le prochain monstre qui joue.",
+    "Pour lever l'invulnérabilité : tuer un Zombi pendant que Sylargh est entre 5 et 10 PO de lui (certaines sections disent 6 à 10 : vérifie en jeu).",
+    "La mort d'un Zombi (Zombidule) inflige ~1 200 feu dégressifs en cercle de 5 et achève les autres Zombis : tue toujours le PREMIER réinvoqué pour déclencher la chaîne.",
+    "Quand un Zombi meurt, les personnages à 90 % de PV ou plus deviennent Pacifistes 1 tour : garde tes PV sous 90 %.",
+    "Point faible : AIR (12 %)."
+  ],
+  "mecaniques": [
+    { "titre": "Réinvocation en Zombi", "texte": "Chaque monstre éliminé est réinvoqué à 6 PO de son invocateur, à environ 10 % de ses PV, sur la première case libre en tournant dans le sens horaire. Les Zombis sont indéplaçables 1 tour, gagnent +300 dommages 2 tours et ne jouent pas leur premier tour." },
+    { "titre": "Zombidule", "texte": "À la mort d'un Zombi : zone cercle de 5, ~1 200 feu dégressifs selon la distance, +100 dommages aux entités proches, et les autres Zombis meurent aussi. Si Sylargh est à bonne distance, il perd son invulnérabilité." },
+    { "titre": "Pacifiste", "texte": "À chaque mort de Zombi, les personnages à 90 % de PV ou plus deviennent Pacifistes pendant 1 tour." }
+  ],
+  "sortsBoss": [
+    { "nom": "Dégage de qualité", "texte": "Boost et poussée sur un allié de Sylargh. Ne reste pas dans la zone." },
+    { "nom": "Mortier", "texte": "Terre, + eau par ligne de dégâts de mêlée subie." },
+    { "nom": "Poinçon", "texte": "Air en vol de vie et retrait de fuite, à 1 PO." }
+  ],
+  "monstres": [
+    { "nom": "Mansordide", "danger": "haut", "texte": "Rotaplumes renvoie les dégâts à distance et soigne les alliés alignés. Engrenage de glace : érosion en zone. À tuer en premier ; ne le frappe jamais quand un allié est aligné avec lui." },
+    { "nom": "Mécanofoux", "danger": "haut", "texte": "Pétarade : eau + poussée en ligne sans ligne de vue jusqu'à 12 PO. Rotapousse (dommages de poussée), Dé grippant (-PA). Ne reste pas dans sa ligne. Deuxième cible." },
+    { "nom": "Brikoglours", "danger": "moyen", "texte": "Frappe fort à 2 PO et attire depuis 6 PO en ligne. Vol de vie selon ses PV manquants. Troisième cible." },
+    { "nom": "Kanimate", "danger": "moyen", "texte": "Arc éclectique renvoie l'attaquant à sa position précédente. Retrait de PO." },
+    { "nom": "Mérulor", "danger": "moyen", "texte": "Intercepte les dégâts (Vidange gardien), poussée et retrait de résistance de poussée." }
+  ],
+  "strategie": [
+    "Place Sylargh à gauche de la map, retire-lui PO et PM si possible et combats à distance.",
+    "Ordre : Mansordide → Mécanofoux → Brikoglours.",
+    "Tue toujours le premier monstre réinvoqué : la chaîne de Zombidule élimine les autres.",
+    "Avant d'achever un Zombi : PV de l'équipe sous 90 %, personne à moins de 5 PO de lui, et Sylargh à la bonne distance pour perdre son invulnérabilité.",
+    "Un retrait de PM est conseillé en Duo."
+  ],
+  "pieges": [
+    "Frapper le Mansordide quand un allié est aligné avec lui.",
+    "Rester dans la ligne du Mécanofoux ou dans la zone de Dégage de qualité.",
+    "Achever un Zombi avec un allié à moins de 5 PO (Zombidule)."
+  ],
+  "tours": [
+    { "from": 1, "level": "info", "text": "Avant de tuer un Zombi : équipe sous 90 % PV, personne à 5 PO, Sylargh à 5-10 PO du Zombi." }
+  ],
+  "succes": [
+    { "nom": "Misanthrope", "texte": "Ne jamais finir son tour au contact d'un allié (une invocation adjacente est permise)." },
+    { "nom": "Barbare", "texte": "Achever tous les ennemis et réinvocations à l'arme, de préférence à distance (arc, baguette)." },
+    { "nom": "Spécial — Brikolère", "texte": "Les Zombis ne doivent infliger aucun dégât : personne à 5 PO d'un Zombi quand il meurt." },
+    { "nom": "Duo", "texte": "Vaincre tous les monstres à 2 personnages maximum en moins de 40 tours. Retrait de PM conseillé." }
+  ],
+  "acces": [
+    "Entrée : Remparts à vent, map [-52,-87].",
+    "Prérequis : avoir vaincu le Glourséleste au moins une fois.",
+    "Clé : 1 Perce-Neige, 1 Poisskaille, 1 Frostiz, 2 Viande Goûtue, 2 Canine de Kanimate, 2 Bec de Mansordide, 2 Astragale de Mécanofoux, 2 Volve de Mérulor.",
+    "Entrer lance la quête « Il faut mettre un terme aux maîtres » (battre les 4 lieutenants).",
+    "Capture : pierre d'âme de puissance 1000."
+  ],
+  "sources": [
+    { "titre": "Dofus pour les Noobs — Transporteur de Sylargh", "url": "https://www.dofuspourlesnoobs.com/transporteur-de-sylargh.html" },
+    { "titre": "DofusDB — statistiques", "url": "https://dofusdb.fr/fr/database/monster/3409" }
+  ],
+  "maj": "2026-10-19"
+}

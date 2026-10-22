@@ -1,0 +1,90 @@
+{
+  "id": "comte-harebourg",
+  "nom": "Comte Harebourg",
+  "donjon": "Donjon du Comte Harebourg",
+  "zone": "Frigost III",
+  "niveauDonjon": 200,
+  "dofusdbId": 3416,
+  "image": "https://api.dofusdb.fr/img/monsters/993.png",
+  "outil": "harebourg",
+  "stats": {
+    "niveau": 220,
+    "pv": [13000, 20000],
+    "pa": 20,
+    "pm": 5,
+    "res": { "neutre": 14, "terre": 17, "feu": 16, "eau": 29, "air": 25 }
+  },
+  "detection": {
+    "alias": ["Donjon du Comte Harebourg", "Comte Harebourg", "Harebourg", "Tour de la Clepsydre"],
+    "coords": ["-59,-89"]
+  },
+  "essentiel": [
+    "Tes sorts sont déviés autour de toi (90° horaire, 90° anti-horaire ou 180°) selon ton % de PV en début de tour : regarde l'état affiché dans tes envoûtements.",
+    "Chaque ligne de dégâts que tu infliges au corps à corps décale ta confusion d'1/4 de tour anti-horaire (10 fois max par tour et par cible).",
+    "Le Comte n'est rendu vulnérable qu'aux tours PAIRS : il doit être téléporté (symétrie autour de toi) sur une case occupée par un allié ou un monstre, qui échange alors de place avec lui.",
+    "Tours IMPAIRS : le taper te téléporte toi, symétriquement par rapport à lui.",
+    "Si une téléportation tombe sur un obstacle, un trou ou hors de la map : toute l'équipe meurt. Vérifie la case d'arrivée avant de frapper.",
+    "Ne commence jamais ton tour dans son glyphe en croix (Mi-temps) : c'est la mort."
+  ],
+  "mecaniques": [
+    { "titre": "Confusion horaire", "texte": "Au début de chacun de tes tours, une confusion est tirée selon ton pourcentage de PV. Tout ce que tu lances (sorts et corps à corps) est tourné autour de ta case. Un sort dévié vers une case invalide ou sans ligne de vue est un échec critique ; au corps à corps, cela termine ton tour. Tes invocations contrôlées ne sont pas confuses." },
+    { "titre": "Corps à corps et confusion", "texte": "Chaque ligne de dégâts portée au corps à corps (sur un monstre ou sur le Comte) ajoute 1/4 de tour anti-horaire à ta confusion pour la suite du tour. Au-delà de 10 lignes par tour et par cible, la confusion ne bouge plus. Un sort à 2 lignes au CàC décale donc de 180°." },
+    { "titre": "Invulnérabilité", "texte": "Le Comte est invulnérable en permanence. On ne peut lui retirer cet état qu'aux tours pairs (2, 4, 6…) : en le frappant, il est téléporté symétriquement par rapport à l'attaquant ; si la case d'arrivée contient une entité (allié ou monstre), ils échangent de place et le Comte devient vulnérable pour un tour. L'allié échangé gagne +100 dommages pendant un tour. Depuis la 3.6, un état au-dessus du Comte indique qui sera téléporté." },
+    { "titre": "Tours impairs", "texte": "Frapper le Comte téléporte l'attaquant symétriquement par rapport au Comte (demi-tour autour de lui)." },
+    { "titre": "Échanges interdits", "texte": "Si la case d'arrivée est un obstacle, une case noire ou hors map, le combat est perdu (toute l'équipe meurt). Si l'échange se fait avec une invocation alliée, les alliés à 3 cases ou moins de la position initiale du Comte meurent." },
+    { "titre": "Mi-temps (glyphe)", "texte": "Au début de son tour, le Comte pose un glyphe en croix de taille 3, case centrale comprise (depuis la 3.5). Un allié qui commence son tour dedans meurt. Dure un tour." }
+  ],
+  "sortsBoss": [
+    { "nom": "Contretemps", "texte": "Frappe terre (~700) + une ligne eau liée à tes PV manquants. Portée 14 en ligne, sans ligne de vue. Si le Comte est vulnérable, la cible est renvoyée à sa case de début de tour." },
+    { "nom": "Jaquemart", "texte": "Seulement quand il est invulnérable : eau en vol de vie (~700) et retrait de 3 PA esquivables (4 en coup critique). Portée 4." },
+    { "nom": "Multicomte", "texte": "Seulement le tour après la perte de son invulnérabilité : feu (~500) en zone autour de lui et création d'illusions. Portée 6 en ligne ou en diagonale." }
+  ],
+  "monstres": [
+    { "nom": "Cycloïde", "danger": "haut", "texte": "Le plus pénible : retrait de PM, tacle, attirance, échange de place, renvoi à la case de début de tour. Cyclaustrophobe (zone de 6) au tour 1 puis tous les 3 tours. À tuer en premier." },
+    { "nom": "Sinistrofu", "danger": "haut", "texte": "Brumidité rend invisible en zone et renvoie les dégâts reçus à la zone. Prioritaire si vous êtes 6 ou plus." },
+    { "nom": "Nocturlabe", "danger": "moyen", "texte": "Renvoie 100 % des dégâts subis au corps à corps dans une zone : ne le tape pas au CàC. Tonnerre mécanique attire de 4 cases et rend insoignable un tour." },
+    { "nom": "Granduk", "danger": "moyen", "texte": "Avance vite, frappe à distance selon ses PV manquants, vole de l'intelligence. Hiboumerang échange de place avec la cible. Attention à son érosion en Duo." },
+    { "nom": "Strigide", "danger": "moyen", "texte": "Échange de place avec sa cible (peut isoler un allié). Stridicule : +6 PO dès le tour 1, relance 3 tours. À garder loin de la mêlée." }
+  ],
+  "salleBoss": "Salle du boss (1 à 4 joueurs) : Comte Harebourg, Granduk, Cycloïde, Nocturlabe. Un monstre s'ajoute par joueur au-delà de 4.",
+  "strategie": [
+    "Pour une première fois : tue tous les monstres avant le Comte.",
+    "Ordre : Cycloïde d'abord (ou Sinistrofu si 6 joueurs ou plus), puis le reste.",
+    "Privilégie les sorts en ligne ou en diagonale : ce sont les plus simples à « tourner » de tête.",
+    "Le Comte a 5 PM et frappe surtout en ligne : garde tes distances et guide-le avec une invocation placée à 5 PO, puis une autre plus loin chaque tour.",
+    "Au tour pair, aligne un allié de l'autre côté de toi pour l'échange, vérifie la case d'arrivée, puis frappe.",
+    "Une fois vulnérable, pose Stabilisation (ou un effet de pesanteur) sur le Comte pour qu'il ne bouge plus sous les coups, et surveille la case où il finit son tour (glyphe + Contretemps).",
+    "Composition conseillée par les guides : Pandawa, Zobal, Iop, Eniripsa."
+  ],
+  "pieges": [
+    "Commencer son tour dans la croix de Mi-temps.",
+    "Taper un Nocturlabe au corps à corps.",
+    "Oublier que chaque coup au CàC décale ta confusion.",
+    "Rendre le Comte vulnérable en l'échangeant avec une invocation (mort des alliés autour)."
+  ],
+  "tours": [
+    { "parity": "impair", "level": "info", "text": "Tour impair : frapper le Comte TE téléporte symétriquement par rapport à lui. Il reste invulnérable." },
+    { "parity": "pair", "level": "alerte", "text": "Tour pair : frapper le Comte LE téléporte symétriquement par rapport à toi. Échange avec un allié/monstre = vulnérable 1 tour." },
+    { "level": "danger", "text": "Avant chaque coup sur le Comte : la case d'arrivée de la téléportation doit être libre ou occupée par un allié/monstre (jamais obstacle, trou ou bord)." }
+  ],
+  "succes": [
+    { "nom": "Versatile", "texte": "Chaque action une seule fois par tour. Le Pandawa est gêné (porter et jeter comptent comme un seul sort)." },
+    { "nom": "Statue", "texte": "Finir chaque tour sur sa case de départ. Risques : attirance du Cycloïde et glyphe du Comte." },
+    { "nom": "Spécial — L'échec n'est pas une option", "texte": "Aucun dégât de mêlée aux ennemis. Méfie-toi des invocations et des bombes qui frappent au CàC." },
+    { "nom": "Duo", "texte": "Vaincre tous les monstres à 2 personnages maximum en moins de 40 tours (ex. Iop + Pandawa, Iop + Zobal, tapeur + Eniripsa)." }
+  ],
+  "acces": [
+    "Entrée : sommet de la Tour de la Clepsydre, map [-59,-89].",
+    "Prérequis : avoir vaincu Missiz Frizz, Sylargh, Klime et Nileza, et avoir la quête « On recherche le Comte Harebourg » (Baron d'Ouillard, [-68,-76]).",
+    "Clé : 1 Perce-Neige, 1 Poisskaille, 1 Frostiz, 2 Viande Goûtue, 2 Plume du Granduk, 2 Œil de Cycloïde, 2 Aile de Sinistrofu, 2 Aile de Nocturlabe.",
+    "Après la salle 4, Dorléans propose (si tu as déjà battu le Comte) de l'affronter seul ou avec un de ses lieutenants (Nileza, Klime, Missiz Frizz, Sylargh).",
+    "Capture : pierre d'âme de puissance 1000."
+  ],
+  "sources": [
+    { "titre": "Dofus pour les Noobs — Donjon du Comte Harebourg", "url": "https://www.dofuspourlesnoobs.com/donjon-du-comte-harebourg.html" },
+    { "titre": "Le Bazar de Papycha — table des confusions", "url": "https://papycha.fr/donjon-du-comte-harebourg/" },
+    { "titre": "JeuxOnLine — Donjon du Comte Harebourg", "url": "https://dofus.jeuxonline.info/article/13413/donjon-comte-harebourg" },
+    { "titre": "DofusDB — statistiques", "url": "https://dofusdb.fr/fr/database/monster/3416" }
+  ],
+  "maj": "2026-10-19"
+}

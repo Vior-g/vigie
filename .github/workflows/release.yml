@@ -1,0 +1,53 @@
+# Teste et construit Vigie pour Windows.
+# - À chaque push sur main : tests + build, zip disponible dans l'onglet Actions.
+# - À chaque tag vX.Y.Z : idem, puis publication d'une Release avec le zip.
+name: Build & Release
+
+on:
+  push:
+    branches: [main]
+    tags: ['v*']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Installer les dépendances
+        run: npm ci
+
+      - name: Tests (géométrie, fiches, reconnaissance, OCR)
+        run: npm test
+
+      - name: Construire Vigie.exe
+        run: npx electron-builder --win dir --x64 --publish never
+
+      - name: Zipper
+        shell: pwsh
+        run: |
+          Rename-Item dist/win-unpacked Vigie
+          Compress-Archive -Path dist/Vigie -DestinationPath dist/Vigie-win-x64.zip
+
+      - name: Garder le zip (onglet Actions)
+        uses: actions/upload-artifact@v4
+        with:
+          name: Vigie-win-x64
+          path: dist/Vigie-win-x64.zip
+          retention-days: 14
+
+      - name: Publier la Release
+        if: startsWith(github.ref, 'refs/tags/v')
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release create "${{ github.ref_name }}" dist/Vigie-win-x64.zip --title "Vigie ${{ github.ref_name }}" --generate-notes
