@@ -1,0 +1,90 @@
+{
+  "dj": "Grange du Tournesol Affamé",
+  "boss": "Tournesol Affamé",
+  "maj": "2026-10-22",
+  "essentiel": [
+    "Le Tournesol Affamé invoque jusqu'à 3 créatures des champs : tue ses invocations pour garder la main.",
+    "Goinfrage (contact, vol de vie Eau) augmente ses dégâts pendant 2 tours.",
+    "Élimine tôt le Pissenlit Diabolique (retire 2 PM) et la Rose Démoniaque (retire PA et PM).",
+    "La plupart des monstres frappent à distance : prévois soins et protections."
+  ],
+  "mecaniques": [
+    {
+      "t": "Invocations",
+      "x": "Appel des Champs invoque une créature des Champs (3 au total)."
+    },
+    {
+      "t": "Soins",
+      "x": "Soin Feuillu soigne ses alliés d'environ 20 PV dans un cercle de 2 cases."
+    }
+  ],
+  "sorts": [
+    {
+      "n": "Goinfrage",
+      "x": "Contact : vol de vie Eau, +dégâts 2 tours."
+    },
+    {
+      "n": "Appel des Champs",
+      "x": "Invoque un renfort (3 maximum)."
+    },
+    {
+      "n": "Soin Feuillu",
+      "x": "Cercle de 2 : soigne ses alliés."
+    }
+  ],
+  "monstres": [
+    {
+      "n": "Tournesol Sauvage",
+      "d": "haut",
+      "x": "Le plus dangereux à distance : Poison Sauvage (1-6 PO) blesse selon les PA utilisés ; Racine Pivotante Terre."
+    },
+    {
+      "n": "Pissenlit Diabolique",
+      "d": "haut",
+      "x": "Herbe Sauvage (1-5 PO) retire jusqu'à 2 PM."
+    },
+    {
+      "n": "Rose Démoniaque",
+      "d": "moyen",
+      "x": "Rose Épineuse au contact retire 1 PA et 1 PM ; reste à plus de 3 cases."
+    },
+    {
+      "n": "Épouvanteur",
+      "d": "moyen",
+      "x": "Protection des Champs (4 PO) attire de 3 cases ; reste à plus de 4 cases."
+    },
+    {
+      "n": "Gardienne Champêtre",
+      "d": "bas",
+      "x": "Soigne et booste ses alliés (cercle de 3)."
+    }
+  ],
+  "strategie": [
+    "Carte petite : vise des dégâts rapides sur le boss et ses plantes.",
+    "En duo : Pissenlit et Rose d'abord, puis les invocations du boss."
+  ],
+  "pieges": [
+    "Les attaques de zone rendent le jeu groupé risqué.",
+    "Ne laisse pas le Tournesol Sauvage profiter d'un bonus de portée."
+  ],
+  "succes": [
+    {
+      "n": "Premier",
+      "x": "Tuer le Tournesol Affamé en premier : dépend de son placement de départ."
+    },
+    {
+      "n": "Collant",
+      "x": "Finir chaque tour au contact d'un allié (au moins deux joueurs)."
+    },
+    {
+      "n": "Duo",
+      "x": "Deux personnages, moins de 20 tours."
+    }
+  ],
+  "acces": [
+    "Champs d'Astrub, atelier des Paysans en [7,-24] (zaap d'Astrub en [5,-18]).",
+    "Clé : trousseau, ou Clef des Champs (Fleur de Pissenlit Diabolique, Pétale de Rose Démoniaque, Langue d'Épouvanteur ×4, Orge ×4, Sauge ×4, Cuivre ×4, Bois de Châtaignier, Pétale de Tournesol Sauvage).",
+    "Niveau conseillé 20 ; 4 salles puis le boss."
+  ],
+  "src": "https://dofus.jeuxonline.info/article/13751/grange-tournesol-affame"
+}

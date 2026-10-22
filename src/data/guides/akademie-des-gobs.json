@@ -1,0 +1,90 @@
+{
+  "dj": "Akadémie des Gobs",
+  "boss": "Directeur Grunob",
+  "maj": "2026-10-22",
+  "essentiel": [
+    "Les monstres deviennent plus forts quand ils sont regroupés (passif de la zone) : disperse-les.",
+    "Grunob invoque Dagobert, qui lui donne de l'esquive PM tant qu'il vit.",
+    "Grunob donne 2 PM à ses alliés (zone en croix) et attire de 2 cases avec son sort Eau (1 à 6 PO).",
+    "Le Gobaliste augmente le tacle des alliés autour de sa cible et retire de la PO."
+  ],
+  "mecaniques": [
+    {
+      "t": "Force du nombre",
+      "x": "Passif de la zone : les monstres se renforcent quand ils sont groupés. À 4, chacun prend un monstre ; à 2, faites deux paquets de deux."
+    },
+    {
+      "t": "Dagobert",
+      "x": "Invocation de Grunob : bonus d'esquive PM au Directeur tant qu'elle est en vie."
+    }
+  ],
+  "sorts": [
+    {
+      "n": "Sort Eau (1-6 PO)",
+      "x": "Dégâts et attire la cible de 2 cases."
+    },
+    {
+      "n": "Boost de PM",
+      "x": "+2 PM aux alliés dans une zone en croix."
+    }
+  ],
+  "monstres": [
+    {
+      "n": "Gobaliste",
+      "d": "haut",
+      "x": "Sort Air 4-9 PO qui retire 1-2 PO ; sort Feu 1-7 PO qui augmente le tacle des alliés au contact de la cible."
+    },
+    {
+      "n": "Gobaladée",
+      "d": "moyen",
+      "x": "Bouclier de 120 à 160 PV sur lui-même ; vol de vie Eau 1-4 PO."
+    },
+    {
+      "n": "Gobet",
+      "d": "moyen",
+      "x": "Deux sorts Terre 1-4 PO, l'un repousse."
+    },
+    {
+      "n": "Gob-trotteur",
+      "d": "moyen",
+      "x": "Se téléporte à 3-4 PO ; sort Air qui augmente ses critiques."
+    },
+    {
+      "n": "Gobichon",
+      "d": "bas",
+      "x": "Avance de 3 cases avec un sort Terre ; Feu au contact."
+    }
+  ],
+  "strategie": [
+    "Sépare les monstres dès le début pour couper leur bonus de groupe.",
+    "Tue Dagobert si l'esquive PM du Directeur te gêne, puis concentre Grunob."
+  ],
+  "pieges": [
+    "Un Gobaliste à côté de ta cible te rend difficile à désengager (tacle).",
+    "Perdre des PM fait échouer Nomade."
+  ],
+  "succes": [
+    {
+      "n": "Nomade",
+      "x": "Utiliser tous ses PM à chaque tour."
+    },
+    {
+      "n": "Premier",
+      "x": "Vaincre le Directeur Grunob en premier."
+    },
+    {
+      "n": "Dirige mais mal rédige",
+      "x": "À partir du tour 2, les ennemis doivent commencer leur tour au contact d'un allié ou d'un ennemi."
+    },
+    {
+      "n": "Duo",
+      "x": "Deux personnages, moins de 20 tours."
+    }
+  ],
+  "acces": [
+    "Zone des Bworks ; 9e donjon de la quête « Tour du monde ».",
+    "Clé : Tambour de Gobaladée, Longue-vue de Gob-trotteur, Pic de Lance de Gobet, Bonnet de Gobaliste, 6 Avoine, 6 Bois de Noyer, 6 Poisson-Chaton, 6 Trèfle à 5 feuilles.",
+    "Un sort commun Feu, « Foudroiement de Grunob », est caché dans la salle 1."
+  ],
+  "src": "https://guidactik.com/dofus/l-akademie-des-gobs-sur-dofus-unity-guide-et-astuces"
+}

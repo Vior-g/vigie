@@ -1,0 +1,90 @@
+{
+  "dj": "Château Ensablé",
+  "boss": "Mob l'Éponge",
+  "maj": "2026-10-22",
+  "essentiel": [
+    "Mob l'Éponge réduit ta portée de 2 (Dégraissage, ligne de 8 cases) : il te force à te rapprocher des Pichons.",
+    "Il soigne ses alliés d'environ 60 PV autour de lui (2 cases) et réduit la durée de tes envoûtements.",
+    "Tue le Pichon Bleu en priorité : c'est le seul vrai danger à distance (retrait de PM).",
+    "Reste loin du Pichon Vert (gros coup Terre au contact + poussée)."
+  ],
+  "mecaniques": [
+    {
+      "t": "Retrait de portée",
+      "x": "Dégraissage : vol de vie Eau au contact et sur une ligne de 8 cases, -2 PO à la cible."
+    },
+    {
+      "t": "Soutien",
+      "x": "Régénération Spontanée soigne ses alliés (cercle de 2) ; Rinçage réduit la durée de tes envoûtements (cercle de 2)."
+    }
+  ],
+  "sorts": [
+    {
+      "n": "Dégraissage",
+      "x": "Vol de vie Eau en ligne (8 cases), -2 PO."
+    },
+    {
+      "n": "Rinçage",
+      "x": "Cercle de 2 : réduit la durée des envoûtements ennemis."
+    },
+    {
+      "n": "Régénération Spontanée",
+      "x": "Cercle de 2 : soigne ses alliés d'environ 60 PV."
+    }
+  ],
+  "monstres": [
+    {
+      "n": "Pichon Bleu",
+      "d": "haut",
+      "x": "Vaguelette : dégâts Eau à moyenne/longue portée, retire 1 PM ; Résistivité baisse Chance et résistances."
+    },
+    {
+      "n": "Pichon Vert",
+      "d": "haut",
+      "x": "Reflux : gros dégâts Terre au contact + poussée ; renforce ses alliés."
+    },
+    {
+      "n": "Pichon Kloune",
+      "d": "moyen",
+      "x": "Blag : dégâts Terre à courte portée + poison ; Klounerie renvoie des dégâts."
+    },
+    {
+      "n": "Pichon Orange",
+      "d": "moyen",
+      "x": "Sable Brûlant (Feu, croix) à moyenne portée ; soigne ses alliés. Reste à plus de 5 cases."
+    },
+    {
+      "n": "Pichon Blanc",
+      "d": "bas",
+      "x": "Inoffensif à distance ; au contact réduit esquive PM, agilité et tacle."
+    }
+  ],
+  "strategie": [
+    "Joue à distance et tue le Pichon Bleu d'abord.",
+    "Isole Mob l'Éponge de ses Pichons pour limiter ses soins, puis concentre-le."
+  ],
+  "pieges": [
+    "Le retrait de portée te pousse vers les Pichons : garde des sorts courte portée.",
+    "Ne termine pas ton tour au contact du Pichon Vert."
+  ],
+  "succes": [
+    {
+      "n": "Versatile",
+      "x": "Chaque sort une seule fois par tour (les invocations ne comptent pas)."
+    },
+    {
+      "n": "Anachorète",
+      "x": "Ne jamais finir son tour à côté d'un allié."
+    },
+    {
+      "n": "Duo",
+      "x": "Deux personnages, moins de 20 tours : tuer le Pichon Bleu tôt le rend facile."
+    }
+  ],
+  "acces": [
+    "Calanque d'Astrub, entrée en [13,-28] (zaap d'Astrub en [5,-18]).",
+    "Clé : trousseau, ou Clef du Château Ensablé (Sauge, Cuivre, Bois de Châtaignier ×4, Truite, Serviette de Plage, Nageoire de Compétition, Conque Marine, Crème à bronzer).",
+    "Niveau conseillé 20. Récompense : l'attitude « s'allonger »."
+  ],
+  "src": "https://dofus.jeuxonline.info/article/13373/chateau-ensable"
+}

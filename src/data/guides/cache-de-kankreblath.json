@@ -1,0 +1,97 @@
+{
+  "dj": "Cache de Kankreblath",
+  "boss": "Kankreblath",
+  "maj": "2026-10-22",
+  "essentiel": [
+    "Blathération : environ 50 Feu sur une ligne de 10 cases ; ne reste pas aligné avec Kankreblath.",
+    "Kankroulahoup (tous les 3 tours) : environ 60 Feu en cercle de 3 autour de lui et soigne ses alliés dans la zone.",
+    "Son sort aléatoire (tous les 3 tours) : invisibilité 2 tours, bond de 3 cases ou invocation d'un Vilinsekt.",
+    "Monstres faibles de loin, forts de près : garde tes distances et tue Pyrasites et Cafarchers d'abord."
+  ],
+  "mecaniques": [
+    {
+      "t": "Effets aléatoires",
+      "x": "Tous les 3 tours : invisibilité 2 tours, bond de 3 cases, ou invocation d'un Vilinsekt (1 à 6 PO, sans ligne de vue ; une seule à la fois)."
+    },
+    {
+      "t": "Soins de zone",
+      "x": "Kankroulahoup soigne Kankreblath et ses alliés proches de 40 à 70 PV."
+    },
+    {
+      "t": "Glyphes",
+      "x": "Le Céglumen pose des glyphes (cercle de 2, 3 tours) : dégâts Terre, -2 PM, -10 fuite."
+    }
+  ],
+  "sorts": [
+    {
+      "n": "Blathération",
+      "x": "Environ 50 Feu sur une ligne de 10 cases."
+    },
+    {
+      "n": "Kankroulahoup",
+      "x": "Environ 60 Feu en cercle de 3 + soins des alliés (relance 3)."
+    }
+  ],
+  "monstres": [
+    {
+      "n": "Pyrasite",
+      "d": "haut",
+      "x": "Souffle brûlant en cône (~70 Feu + poison cumulable) ; donne +50 puissance et +2 PM à toute son équipe pour 1 tour."
+    },
+    {
+      "n": "Cafarcher",
+      "d": "haut",
+      "x": "Tir de cure-dent 3-6 PO ; ~70 Feu au contact."
+    },
+    {
+      "n": "Céglumen",
+      "d": "moyen",
+      "x": "Glyphes qui retirent des PM ; attire au contact (1-4 PO)."
+    },
+    {
+      "n": "Sakarien",
+      "d": "moyen",
+      "x": "Frappe circulaire (cercle de 2) qui tue les invocations ; invoque jusqu'à 3 Poupoussières."
+    },
+    {
+      "n": "Mirgrillon",
+      "d": "moyen",
+      "x": "Corps à corps : ligne de 3 cases, retire 2 PA et repousse."
+    },
+    {
+      "n": "Poupoussière",
+      "d": "bas",
+      "x": "Dégâts autour d'elle et -1 PO, cumulable entre Poupoussières."
+    }
+  ],
+  "strategie": [
+    "Profite de la grande carte : les Cafarchers ont une portée limitée.",
+    "Tue d'abord Pyrasites et Cafarchers, puis Céglumens et Sakariens avant qu'ils n'arrivent au contact.",
+    "Si Kankreblath fonce sur toi, profites-en pour le tuer : il ne soignera plus son groupe.",
+    "Inutile de s'acharner sur son invocation si tu encaisses bien."
+  ],
+  "pieges": [
+    "Rester groupé face aux zones de Kankreblath, du Pyrasite et des glyphes.",
+    "Laisser le Sakarien près de tes invocations (il les tue)."
+  ],
+  "succes": [
+    {
+      "n": "Dernier",
+      "x": "Kankreblath doit mourir en dernier : il faut encaisser tout le groupe."
+    },
+    {
+      "n": "Collant",
+      "x": "Finir chaque tour au contact d'un allié (au moins deux au lancement)."
+    },
+    {
+      "n": "Duo",
+      "x": "Deux personnages, moins de 20 tours : Pyrasite ou Cafarcher d'abord, laisse venir le Mirgrillon ; des résistances Feu aident."
+    }
+  ],
+  "acces": [
+    "Planque des Vilinsekts (cartes cachées d'Astrub, Baguette Rikiki nécessaire), grenier de Kérubim en [6,-16] (zaap d'Astrub en [4,-19]).",
+    "Clé : trousseau, ou Clef de la Cache de Kankreblath (4 Trèfle à 5 feuilles, 4 Bronze, 4 Bois de Noyer, 4 Avoine, 4 Antennes de Vilinsekt).",
+    "Niveau conseillé 40."
+  ],
+  "src": "https://dofus.jeuxonline.info/article/13548/cache-kankreblath"
+}

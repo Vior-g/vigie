@@ -1,0 +1,91 @@
+{
+  "dj": "Cour du Bouftou Royal",
+  "boss": "Bouftou Royal",
+  "maj": "2026-10-22",
+  "essentiel": [
+    "Le Bouftou Royal soigne (environ 60 PV, 2 fois par tour au plus) et protège ses alliés (-30 % de dégâts subis) : tue-le en premier si tu peux.",
+    "Sa Morsure (contact) fait de gros dégâts Feu en vol de vie : il tape puis s'enfuit.",
+    "Le Bouftou Noir est le seul à frapper à distance (6 PO) et augmente tes dégâts subis de 20 %.",
+    "Concentre un monstre à la fois pour le tuer avant son tour."
+  ],
+  "mecaniques": [
+    {
+      "t": "Soutien du roi",
+      "x": "Guérison Bouftou soigne un allié (2 fois par tour max) ; Cuirasse Laineuse réduit de 30 % les dégâts subis par un allié."
+    },
+    {
+      "t": "Gueulement",
+      "x": "Le Bouftou donne +2 PM autour de lui : les groupes se déplacent vite."
+    }
+  ],
+  "sorts": [
+    {
+      "n": "Morsure du Bouftou Royal",
+      "x": "Contact : gros dégâts Feu, en partie en vol de vie."
+    },
+    {
+      "n": "Guérison Bouftou",
+      "x": "Soigne un allié d'environ 60 PV."
+    },
+    {
+      "n": "Cuirasse Laineuse",
+      "x": "Allié : -30 % de dégâts subis."
+    }
+  ],
+  "monstres": [
+    {
+      "n": "Bouftou Noir",
+      "d": "haut",
+      "x": "Seul tireur : Malveillance (+20 % de dégâts subis) et Secousses (Terre en croix) à 6 PO."
+    },
+    {
+      "n": "Chef de Guerre Bouftou",
+      "d": "moyen",
+      "x": "Augmente les dégâts d'un allié ; Morsure de Guerre (Eau) au contact."
+    },
+    {
+      "n": "Boufton Blanc",
+      "d": "moyen",
+      "x": "Bavouille (1-3 PO) retire jusqu'à 2 PA."
+    },
+    {
+      "n": "Boufton Noir",
+      "d": "moyen",
+      "x": "Crachouille (1-3 PO) retire jusqu'à 2 PM."
+    },
+    {
+      "n": "Bouftou",
+      "d": "bas",
+      "x": "Morsure au contact ; Gueulement donne des PM autour de lui."
+    }
+  ],
+  "strategie": [
+    "Place-toi pour toucher plusieurs monstres au premier tour, avant qu'ils ne se dispersent.",
+    "Tue le Bouftou Royal en premier si possible ; sinon le Bouftou Noir, puis les Chefs de Guerre.",
+    "Isolé, le Bouftou Royal fuit comme un Tofu : coince-le contre un bord."
+  ],
+  "pieges": [
+    "Ne finis pas ton tour au contact des Bouftous et Bouftons.",
+    "Évite les idoles qui donnent des PM aux monstres à bas niveau."
+  ],
+  "succes": [
+    {
+      "n": "Pusillanime",
+      "x": "Ne jamais finir son tour au contact d'un ennemi (un peu de fuite aide)."
+    },
+    {
+      "n": "Blitzkrieg",
+      "x": "Achever chaque monstre attaqué avant son tour de jeu."
+    },
+    {
+      "n": "Duo",
+      "x": "Deux personnages, moins de 20 tours."
+    }
+  ],
+  "acces": [
+    "Entrée en [2,-34], zaap en [1,-32].",
+    "Clé : trousseau, ou Clef de la Cour du Bouftou Royal (Corne de Boufton, Laine de Bouftou ×5, Orge ×5, Sauge ×5, Cuivre ×5, Bois de Châtaignier, Laine du Chef de Guerre Bouftou, Laine de Boufton Noir).",
+    "Niveau conseillé 30. Récompense : un Chacha en échange de laines."
+  ],
+  "src": "https://dofus.jeuxonline.info/article/13271/cour-bouftou-royal"
+}

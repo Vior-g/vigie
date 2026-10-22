@@ -1,0 +1,93 @@
+{
+  "dj": "Donjon des Tofus",
+  "boss": "Batofu",
+  "maj": "2026-10-22",
+  "essentiel": [
+    "Le Batofu invoque des Tofus Noirs et repousse (1 à 2 cases).",
+    "Le Tofu Noir vole 2 PM et inflige 20 % d'érosion.",
+    "Le Tofu Mutant se soigne (15-20 % PV) et prend PM et puissance ; il retire 4 à 6 PO au contact.",
+    "La Tofoune désenvoûte et soigne ses alliés : élimine-la tôt."
+  ],
+  "mecaniques": [
+    {
+      "t": "Renforts",
+      "x": "Le Batofu invoque des Tofus Noirs et le Tofu Ventripotent des Bomberfus."
+    },
+    {
+      "t": "Soutien",
+      "x": "Tofoune : soin + 2 PA, désenvoûtement et soin de 10 % PV à 6 PO, poison selon les PA utilisés."
+    }
+  ],
+  "sorts": [
+    {
+      "n": "Invocation de Tofu Noir",
+      "x": "Renfort qui vole des PM."
+    },
+    {
+      "n": "Sort Air (2 PO)",
+      "x": "Dégâts Air."
+    },
+    {
+      "n": "Poussées",
+      "x": "Neutre + poussée d'1 case ; poussée de 2 cases."
+    }
+  ],
+  "monstres": [
+    {
+      "n": "Tofoune",
+      "d": "haut",
+      "x": "Désenvoûte et soigne ; poison Neutre selon les PA utilisés."
+    },
+    {
+      "n": "Tofu Noir",
+      "d": "haut",
+      "x": "Eau 1-2 PO avec 20 % d'érosion ; vol de 2 PM."
+    },
+    {
+      "n": "Tofu Mutant",
+      "d": "moyen",
+      "x": "Retire 4 à 6 PO ; se soigne et prend PM et puissance."
+    },
+    {
+      "n": "Tofukaz",
+      "d": "moyen",
+      "x": "Invisible 2 tours ; Air au contact."
+    },
+    {
+      "n": "Tofu Ventripotent",
+      "d": "bas",
+      "x": "Invoque un Bomberfu ; se donne vitalité, agilité et PA."
+    }
+  ],
+  "strategie": [
+    "Tue la Tofoune puis les Tofus Noirs avant de finir le Batofu.",
+    "Pour Bécotam, aligne-toi sur tes cibles ou pousse-les (Cra…)."
+  ],
+  "pieges": [
+    "Le Tofu Mutant rallonge le combat s'il se soigne en boucle : concentre-le.",
+    "Statue peut beaucoup allonger le combat."
+  ],
+  "succes": [
+    {
+      "n": "Statue",
+      "x": "Finir chaque tour sur sa case de départ du tour."
+    },
+    {
+      "n": "Versatile",
+      "x": "Chaque action une seule fois par tour."
+    },
+    {
+      "n": "Bécotam",
+      "x": "N'infliger des dégâts qu'en ligne avec la cible."
+    },
+    {
+      "n": "Duo",
+      "x": "Deux personnages, moins de 20 tours."
+    }
+  ],
+  "acces": [
+    "Lancé par le Maître des clefs en [-6,-37].",
+    "Clé : Œuf de Tofu, Œil de Tofu Noir, Patte de Tofukaz, Dent de Tofu Mutant, 4 Bois de Noyer, 4 Bronze, 4 Trèfle à 5 feuilles, 4 Avoine."
+  ],
+  "src": "https://guidactik.com/dofus/donjon-des-tofus-sur-dofus-unity-guide-et-astuces/"
+}

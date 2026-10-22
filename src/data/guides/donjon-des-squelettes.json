@@ -1,0 +1,88 @@
+{
+  "dj": "Donjon des Squelettes",
+  "boss": "Chafer Rōnin",
+  "maj": "2026-10-22",
+  "essentiel": [
+    "Le Chafer Rōnin crée des illusions : utilise des sorts de zone pour toucher le vrai.",
+    "Trouver le vrai Rōnin fait disparaître ses illusions pour le tour.",
+    "Son poison Air fait plus mal à chaque PM utilisé ; ses illusions taclent.",
+    "Il applique la Pesanteur au contact et peut repousser de 5 cases."
+  ],
+  "mecaniques": [
+    {
+      "t": "Illusions",
+      "x": "Le Rōnin se dédouble ; les illusions peuvent tacler. Les sorts de zone et peu coûteux en PA aident à le démasquer."
+    },
+    {
+      "t": "Poison selon les PM",
+      "x": "Son poison Air inflige des dégâts selon les PM que tu utilises : bouge le moins possible quand tu en es victime."
+    }
+  ],
+  "sorts": [
+    {
+      "n": "Coup Air (contact)",
+      "x": "Dégâts Air et état Pesanteur."
+    },
+    {
+      "n": "Poison Air",
+      "x": "Dégâts selon les PM utilisés."
+    },
+    {
+      "n": "Poussée",
+      "x": "Repousse jusqu'à 5 cases, malus de résistance poussée."
+    }
+  ],
+  "monstres": [
+    {
+      "n": "Chafer Invisible",
+      "d": "haut",
+      "x": "Invisible 2 tours ; Terre au contact et de 1 à 5 PO."
+    },
+    {
+      "n": "Chafer Primitif",
+      "d": "moyen",
+      "x": "Réduit ses dégâts subis ; sort 1-6 PO qui retire fuite et résistance Eau et le fait avancer."
+    },
+    {
+      "n": "Rib",
+      "d": "moyen",
+      "x": "Renvoie des dommages (1-3 PO) ; Neutre au contact qui repousse de 2."
+    },
+    {
+      "n": "Chafer Fantassin",
+      "d": "bas",
+      "x": "Terre au contact uniquement."
+    }
+  ],
+  "strategie": [
+    "Place-toi près du Rōnin et tue-le au plus vite.",
+    "Arrose ses illusions avec des sorts de zone."
+  ],
+  "pieges": [
+    "Te faire tacler par une illusion (perte de PM, Nomade raté).",
+    "Courir sous poison Air : chaque PM te coûte des PV."
+  ],
+  "succes": [
+    {
+      "n": "Premier",
+      "x": "Achever le Chafer Rōnin en premier."
+    },
+    {
+      "n": "Nomade",
+      "x": "Utiliser tous ses PM à chaque tour."
+    },
+    {
+      "n": "Désillusion",
+      "x": "Aucune illusion du Rōnin présente au début de son tour."
+    },
+    {
+      "n": "Duo",
+      "x": "Deux personnages, moins de 20 tours."
+    }
+  ],
+  "acces": [
+    "Quête « Tour du monde » (3e donjon), lancée par le Maître des clefs en [-6,-37].",
+    "Clé : Os de Chafer, Côtes de Rib, Os Invisible du Chafer Invisible, Casque Cassé du Chafer, 4 Bois de Noyer, 4 Bronze, 4 Trèfle à 5 feuilles, 4 Avoine."
+  ],
+  "src": "https://guidactik.com/dofus/donjon-chafer-sur-dofus-unity-guide-et-astuces/"
+}

@@ -1,0 +1,88 @@
+{
+  "dj": "Donjon des Scarafeuilles",
+  "boss": "Scarabosse Doré",
+  "maj": "2026-10-22",
+  "essentiel": [
+    "Brouillard Empoisonné : -10 PO, -1 PA et -1 PM à tous ses adversaires ; prévois des sorts courte portée.",
+    "Le Scarabosse repousse tout ce qui est à son contact (Libération) et frappe dans tous les éléments à 1-3 PO.",
+    "Les Scarafeuilles ne frappent qu'à 1-2 PO : reste hors de portée et joue à distance.",
+    "Le Scarafeuille Noir rend son groupe invisible (zone de 2, 2 tours)."
+  ],
+  "mecaniques": [
+    {
+      "t": "Couleurs",
+      "x": "Chaque Scarafeuille (Rouge, Bleu, Blanc, Vert) frappe dans son élément et résiste fortement à cet élément : ne frappe pas un Scarafeuille de ton élément."
+    },
+    {
+      "t": "Invocations",
+      "x": "Le Scarabosse invoque des Scarafeuilles Immatures ; les Scarafeuilles invoquent des Flammèches de leur élément."
+    }
+  ],
+  "sorts": [
+    {
+      "n": "Picoti",
+      "x": "Dommages dans tous les éléments à 1-3 PO."
+    },
+    {
+      "n": "Brouillard Empoisonné",
+      "x": "-10 PO, -1 PA, -1 PM à tous ses adversaires."
+    },
+    {
+      "n": "Libération",
+      "x": "Repousse d'une case tout ce qui est à son contact."
+    },
+    {
+      "n": "Soin Feuillu",
+      "x": "Soigne ses alliés à 2 PO ou moins."
+    }
+  ],
+  "monstres": [
+    {
+      "n": "Scarafeuille Noir",
+      "d": "haut",
+      "x": "Rend lui et ses alliés proches invisibles 2 tours."
+    },
+    {
+      "n": "Scarafeuille Immature",
+      "d": "moyen",
+      "x": "Invocation : poison Terre 1-3 PO, soins, +3 à 4 PM."
+    },
+    {
+      "n": "Scarafeuille Rouge",
+      "d": "moyen",
+      "x": "Feu à 1-2 PO, résiste au Feu."
+    },
+    {
+      "n": "Scarafeuille Bleu",
+      "d": "moyen",
+      "x": "Eau à 1-2 PO, résiste à l'Eau."
+    }
+  ],
+  "strategie": [
+    "Joue à distance : la plupart des monstres ne frappent qu'au contact.",
+    "Frappe chaque Scarafeuille dans un élément qu'il ne résiste pas."
+  ],
+  "pieges": [
+    "Se laisser encercler au contact, surtout dans la salle du boss (7 Scarafeuilles).",
+    "Compter sur ta portée : le Brouillard la réduit de 10."
+  ],
+  "succes": [
+    {
+      "n": "Mains Propres",
+      "x": "Achever les monstres uniquement avec des dégâts indirects (poisons, pièges, invocations)."
+    },
+    {
+      "n": "Zombie",
+      "x": "Au plus une case de déplacement par tour."
+    },
+    {
+      "n": "Duo",
+      "x": "Deux personnages, moins de 20 tours."
+    }
+  ],
+  "acces": [
+    "Plaine des Scarafeuilles, entrée en [1,26] (zaap en [-1,24]).",
+    "Clé : trousseau ou Clef du Donjon des Scarafeuilles. Niveau conseillé 40."
+  ],
+  "src": "https://dofus.jeuxonline.info/article/13764/donjon-scarafeuilles"
+}

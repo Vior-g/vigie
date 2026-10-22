@@ -1,0 +1,102 @@
+{
+  "dj": "Maison Fantôme",
+  "boss": "Boostache",
+  "maj": "2026-10-22",
+  "essentiel": [
+    "Au début du combat, tout le monde passe Enraciné et Lourd : pas de poussée ni de porté.",
+    "Le Boostache ressuscite le dernier monstre mort.",
+    "Son invocation Ashi-magari retire 100 PM pendant 1 tour à tout ce qui est à son contact : ne la laisse pas venir sur toi.",
+    "Son seul sort de dégâts (Air) applique 30 % d'érosion ; il retire aussi 2 PA et repousse de 3."
+  ],
+  "mecaniques": [
+    {
+      "t": "États de départ",
+      "x": "Tous les combattants sont Enracinés et Lourds au début du combat."
+    },
+    {
+      "t": "Résurrection",
+      "x": "Le Boostache ramène le dernier monstre tué : enchaîne les morts ou garde-le pour la fin selon ton succès."
+    },
+    {
+      "t": "Ashi-magari",
+      "x": "Invoquée à 3 PO maximum ; -100 PM pendant 1 tour aux ennemis à son contact. Elle n'a qu'1 PM : des invocations mobiles peuvent encaisser l'effet à ta place."
+    }
+  ],
+  "sorts": [
+    {
+      "n": "Sort Air",
+      "x": "Dégâts + 30 % d'érosion."
+    },
+    {
+      "n": "Repousse",
+      "x": "-2 PA et poussée de 3 cases."
+    },
+    {
+      "n": "Résurrection",
+      "x": "Ramène le dernier monstre mort."
+    },
+    {
+      "n": "Ashi-magari",
+      "x": "Invocation qui bloque les PM au contact."
+    }
+  ],
+  "monstres": [
+    {
+      "n": "Tofu Maléfique",
+      "d": "haut",
+      "x": "20 % d'érosion et état Insoignable à 3 PO ; vol d'agilité et -tacle."
+    },
+    {
+      "n": "Kwoan",
+      "d": "moyen",
+      "x": "Retire 6 PO à une cible jusqu'à 20 PO."
+    },
+    {
+      "n": "Gargrouille",
+      "d": "moyen",
+      "x": "Air au contact qui retire de la puissance ; Feu sur 4 cases devant elle."
+    },
+    {
+      "n": "Vampire",
+      "d": "moyen",
+      "x": "Vol de vie Eau ; vole Force et Chance en zone ; se booste en puissance."
+    },
+    {
+      "n": "Boostache Prépubère",
+      "d": "bas",
+      "x": "Invisible avec réduction de dégâts ; soigne ses alliés au contact."
+    }
+  ],
+  "strategie": [
+    "Commence le plus loin possible du Boostache.",
+    "Utilise des invocations mobiles pour encaisser Ashi-magari.",
+    "Pour le succès Dernier : élimine ses monstres puis achève le Boostache."
+  ],
+  "pieges": [
+    "Finir ton tour au contact d'Ashi-magari : tu perds tous tes PM.",
+    "Laisser le Tofu Maléfique t'empêcher d'être soigné."
+  ],
+  "succes": [
+    {
+      "n": "Misanthrope",
+      "x": "Ne jamais finir son tour à côté d'un allié."
+    },
+    {
+      "n": "Dernier",
+      "x": "Tuer le Boostache en dernier."
+    },
+    {
+      "n": "Empêtrement d'esprit entêtant",
+      "x": "Ne tuer aucun Ashi-magari de tout le combat."
+    },
+    {
+      "n": "Duo",
+      "x": "Deux personnages, moins de 20 tours."
+    }
+  ],
+  "acces": [
+    "Lancé par Emma Tompouce en [1,-15].",
+    "Clé : Cuir de Gargrouille, Œil de Kwoan, Sang de Vampire, Aile de Tofu Maléfique, 4 Bois de Noyer, 4 Bronze, 4 Trèfle à 5 feuilles, 4 Avoine."
+  ],
+  "src": "https://guidactik.com/dofus/boostache-sur-dofus-unity-guide-et-astuces/"
+}

@@ -1,0 +1,96 @@
+{
+  "dj": "Crypte de Kardorim",
+  "boss": "Kardorim",
+  "maj": "2026-10-22",
+  "essentiel": [
+    "Presque tous les Chafers ne frappent qu'au corps à corps : garde tes distances ou frappe en reculant.",
+    "Kardorim donne +2 PM à ses alliés proches (Craquement d'Os, tous les 3 tours) : ne laisse pas le groupe te rattraper.",
+    "Élimine en priorité les Piquiers (+30 vitalité à tous, cumulable) et les Sergents (+50 puissance, cumulable).",
+    "Le Chafer Furtif devient invisible 2 tours : garde une idée de sa position."
+  ],
+  "mecaniques": [
+    {
+      "t": "Craquement d'Os",
+      "x": "+2 PM pendant 1 tour aux alliés dans un cercle de 2 cases autour de Kardorim (relance 3 tours). Il se l'applique aussi."
+    },
+    {
+      "t": "Appel de Kardorib",
+      "x": "Invoque un Kardorib au contact (un seul à la fois, relance 6 tours). Le Kardorib frappe au contact et repousse de 2 cases."
+    },
+    {
+      "t": "Bonus cumulables",
+      "x": "Euphorie malsaine des Piquiers (+30 vitalité max à tous leurs alliés, perdue à la mort du lanceur) et Frénésie des Sergents (+50 puissance 2 tours) se cumulent entre monstres."
+    }
+  ],
+  "sorts": [
+    {
+      "n": "Casse-crâne",
+      "x": "Environ 50 dommages Neutre au contact ; une fois par cible, mais plusieurs cibles par tour."
+    },
+    {
+      "n": "Craquement d'Os",
+      "x": "+2 PM aux alliés autour de lui pendant 1 tour."
+    },
+    {
+      "n": "Appel de Kardorib",
+      "x": "Invocation au contact, relance 6 tours."
+    }
+  ],
+  "monstres": [
+    {
+      "n": "Chafer Éclaireur",
+      "d": "haut",
+      "x": "Seul à tirer à distance (Flèche de Feu 2 à 7 PO) ; Flèches Critiques +40 % de critique 2 tours."
+    },
+    {
+      "n": "Chafer Piquier",
+      "d": "haut",
+      "x": "Empalement sur une ligne de 3 cases ; Euphorie malsaine donne +30 vitalité à tous ses alliés tant qu'il vit."
+    },
+    {
+      "n": "Sergent Chafer",
+      "d": "moyen",
+      "x": "Frénésie : +50 puissance aux alliés pendant 2 tours (relance 3)."
+    },
+    {
+      "n": "Chafer Furtif",
+      "d": "moyen",
+      "x": "Camouflage : invisible 2 tours (relance 5), reste invisible en frappant."
+    },
+    {
+      "n": "Kardorib",
+      "d": "bas",
+      "x": "Invocation de Kardorim : frappe au contact et repousse de 2 cases."
+    }
+  ],
+  "strategie": [
+    "Fonce sur Kardorim pour le tuer vite : sans lui, plus de PM bonus ni d'invocation.",
+    "Sinon, tue d'abord l'Éclaireur, puis les Piquiers et Sergents qui renforcent le groupe.",
+    "Recule en frappant : la plupart des monstres n'ont rien à distance."
+  ],
+  "pieges": [
+    "Ne t'aligne pas à 2-3 cases d'un Piquier ou d'un Chafer Débutant (ligne et Souffle Spectral).",
+    "À bas niveau, évite les idoles qui donnent des PM aux monstres."
+  ],
+  "succes": [
+    {
+      "n": "Zombie",
+      "x": "Utiliser au plus 1 PM par tour : ralentis les monstres, leurs tacles peuvent faire échouer le succès."
+    },
+    {
+      "n": "Premier",
+      "x": "Kardorim doit mourir en premier : fonce sur lui dès le placement."
+    },
+    {
+      "n": "Duo",
+      "x": "Deux personnages maximum, moins de 20 tours : tue Kardorim vite pour retirer son invocation."
+    }
+  ],
+  "acces": [
+    "Cimetière d'Incarnam, entrée en [5,-1] (zaap du Cimetière en [3,0]).",
+    "Clé : trousseau, ou Clef de la Crypte de Kardorim (5 Cendres Éternelles, 3 Reliques d'Incarnam).",
+    "Niveau conseillé 10 ; 5 salles, sortie à l'entrée après le boss."
+  ],
+  "note": "Source datant de 2016-2018 : les valeurs de dégâts peuvent avoir changé.",
+  "src": "https://dofus.jeuxonline.info/article/13985/crypte-kardorim"
+}
