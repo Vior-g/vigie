@@ -6,6 +6,7 @@ name: Build & Release
 on:
   push:
     branches: [main]
+    paths-ignore: ['scripts/**', 'data-probe/**', '.github/workflows/data.yml']
   workflow_dispatch:
 
 concurrency:
