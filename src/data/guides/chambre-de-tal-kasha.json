@@ -1,0 +1,114 @@
+{
+ "dj": "Chambre de Tal Kasha",
+ "boss": "Tal Kasha",
+ "maj": "20/07/2020",
+ "essentiel": [
+  "Ne reste jamais en ligne avec un monstre ou avec Tal Kasha, sinon elle peut te frapper via ses alliés.",
+  "Chaque coup sur un monstre affaiblit à distance le plus proche (dégâts à distance divisés par deux, -2PM). Frappe toujours le même monstre.",
+  "Tal Kasha reste invulnérable tant qu'elle n'a pas été posée sur 3 glyphes de 3 monstres différents.",
+  "Quand tu lui retires des PM, elle échange de place avec toi. Seul un pandawa porté évite cet échange.",
+  "Un monstre ressuscité passe son premier tour et perd 1PM."
+ ],
+ "mecaniques": [
+  {
+   "t": "Invulnérabilité de Tal Kasha",
+   "x": "Elle devient invulnérable avec Malédiction de la pyramide. Pour la lever, fais-la passer sur les glyphes laissés par 3 monstres différents. Son compteur affiche I, II ou III."
+  },
+  {
+   "t": "Maudification",
+   "x": "Tous les monstres la portent au début. Le monstre le plus proche du tien la reçoit quand tu le frappes. Évite les zones, qui peuvent l'appliquer à tous. Une poussée la retire."
+  },
+  {
+   "t": "Glyphes et résurrection",
+   "x": "Un monstre tué laisse un glyphe sur sa case, puis Tal Kasha le ressuscite au même endroit au tour suivant. Re-tuer un monstre déplace son glyphe, sans cumuler le malus de PM."
+  },
+  {
+   "t": "Échange de place au retrait PM",
+   "x": "Retirer des PM à Tal Kasha provoque un échange de place avec le lanceur, une fois par tour. Les sorts de stabilisation ne l'empêchent pas."
+  }
+ ],
+ "sorts": [
+  {
+   "n": "Malédiction de la pyramide",
+   "x": "Rend Tal Kasha invulnérable et réutilise les monstres à l'infini. Elle échange de place avec celui qui lui retire des PM."
+  },
+  {
+   "n": "Filature",
+   "x": "Feu 500, attire la cible de 4 cases. PO 5, en ligne uniquement avec ligne de vue."
+  },
+  {
+   "n": "Transe-Perse",
+   "x": "Neutre 1700 au corps à corps. Elle peut le lancer depuis n'importe lequel de ses alliés."
+  },
+  {
+   "n": "Cheveux partir de là",
+   "x": "Se téléporte jusqu'à 4 PO. Lancé seulement quand elle est vulnérable, avec une relance de 2 tours. Surveille le téléport au milieu de ton équipe."
+  }
+ ],
+ "monstres": [
+  {
+   "n": "Bandleth",
+   "d": "haut",
+   "x": "Morve érosive : pousser la Bandleth inflige érosion et un poison neutre de 100. Évite de la pousser et préfère porter, attirer ou repousser avec une invocation."
+  },
+  {
+   "n": "Chakanoubis",
+   "d": "haut",
+   "x": "Harcèlement de la pyramide retire PA et PM à distance infinie. Frappe-le au moins une fois par tour. Pyramide (eau 900) frappe au corps à corps après avoir été frappé."
+  },
+  {
+   "n": "Griffotep",
+   "d": "haut",
+   "x": "Ses sorts augmentent ses dégâts de poussée. Reste à distance et évite de te faire pousser contre un obstacle."
+  },
+  {
+   "n": "Momistik",
+   "d": "moyen",
+   "x": "Frappes élémentaires qui réduisent les dégâts du prochain sort de même élément. Grenattrition (neutre, zone ligne) applique pesanteur et affaibli."
+  },
+  {
+   "n": "Rykaon",
+   "d": "moyen",
+   "x": "Remplacement maudit et Sabrupt frappent à courte portée. Il reste inoffensif au-delà de 4 PO, mais il peut avancer en échangeant de place avec ses alliés."
+  }
+ ],
+ "strategie": [
+  "Prévois un Enutrof pour retirer des PM aux monstres, et un Crâ pour repousser Tal Kasha et les monstres trop proches.",
+  "Ne retire pas de PM directement à Tal Kasha, sinon elle changera de place avec toi.",
+  "Utilise l'Enutrof pour placer Tal Kasha sur les 3 glyphes de monstres différents.",
+  "Une fois vulnérable, tue-la à distance en gardant tes distances.",
+  "Érode les monstres au maximum pour qu'ils reviennent avec très peu de PV, puis élimine-les facilement.",
+  "Pour Chakanoubis, frappe-le une fois par tour afin d'éviter son retrait PA/PM."
+ ],
+ "pieges": [
+  "Pousser la Bandleth déclenche érosion et poison fort.",
+  "Frapper en zone peut appliquer la maudification à tous les monstres.",
+  "Après avoir frappé Chakanoubis, il gagne 10PM et peut lancer Pyramide sur toi.",
+  "Tal Kasha utilise Transe-Perse et Filature via ses alliés, donc reste hors des lignes."
+ ],
+ "tours": [],
+ "succes": [
+  {
+   "n": "Focus",
+   "x": "Chaque ennemi attaqué doit mourir avant d'en attaquer un autre. Érode les monstres un par un, puis tue-les en un coup. Une fois Tal Kasha entamée, ne touche plus aux monstres."
+  },
+  {
+   "n": "Statue",
+   "x": "Les alliés doivent finir leur tour sur la case de départ pendant tout le combat."
+  },
+  {
+   "n": "Spécial : Système pyramidal",
+   "x": "Aucun ennemi ne doit être ressuscité plus de deux fois. Garde les monstres à distance, place Tal Kasha sur leurs glyphes, puis tue-la vite une fois invulnérabilité levée."
+  },
+  {
+   "n": "Duo",
+   "x": "Vaincre tous les monstres avec 2 personnages maximum, en moins de 40 tours."
+  }
+ ],
+ "acces": [
+  "Entrée de la Pyramide maudite en [12,-77].",
+  "Deux portes : 4 personnages sur les dalles en [8,-78] et [14,-72], puis un levier actionné par le plus proche.",
+  "Porte en [11,-74] : vaincre Tabasma en [14,-75], qui utilise les sorts d'un Griffotep."
+ ],
+ "src": "https://www.dofuspourlesnoobs.com/chambre-de-tal-kasha.html"
+}

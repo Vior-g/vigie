@@ -1,0 +1,71 @@
+{
+ "dj": "Miausolée du Pounicheur",
+ "boss": "Pounicheur",
+ "maj": null,
+ "essentiel": [
+  "Donjon de dimension : une salle, 5 vagues.",
+  "Aligne les 3 puces sur le même état avant de frapper le boss.",
+  "Frapper le Pounicheur sans alignement renvoie 200% des dégâts à l'équipe.",
+  "Élimine vite les monstres de chaque vague."
+ ],
+ "mecaniques": [
+  {
+   "t": "Puces invulnérables",
+   "x": "Les trois puces bloquent les dégâts ; aligne leurs états pour frapper le boss."
+  },
+  {
+   "t": "États I, II, III",
+   "x": "Frapper une puce au CàC monte son état, baisse celui des deux autres et te repousse de 2."
+  },
+  {
+   "t": "Renvoi de dégâts",
+   "x": "Sans alignement, 200% de renvoi ; un coup mortel l'évite."
+  },
+  {
+   "t": "Pourrification",
+   "x": "Si les 3 puces ont le même état, le boss retire un tour d'effet à tes alliés."
+  }
+ ],
+ "sorts": [
+  {
+   "n": "Poulvérisation",
+   "x": "Neutre autour du boss, repousse de 4."
+  }
+ ],
+ "monstres": [
+  {
+   "n": "Monstre à Morzerk",
+   "d": "haut",
+   "x": "Gagne de la puissance à chaque coup reçu."
+  },
+  {
+   "n": "Pikbul",
+   "d": "haut",
+   "x": "Ectoparasite immobilise et redirige tes dégâts."
+  },
+  {
+   "n": "Monstre à Secouage",
+   "d": "moyen",
+   "x": "-50% de dégâts finaux un tour."
+  }
+ ],
+ "strategie": [
+  "Élimine les vagues vite.",
+  "Frappe les puces au CàC jusqu'à les aligner.",
+  "Frappe le boss quand elles sont alignées."
+ ],
+ "pieges": [
+  "Frapper le boss sans alignement."
+ ],
+ "tours": [],
+ "succes": [
+  {
+   "n": "Sac à pupuces",
+   "x": "Chaque puce ne change d'état qu'une fois par tour global."
+  }
+ ],
+ "acces": [
+  "Dimension Ecaflipus [3,-9], clé : larve pétrifiée (Collecteur Ekah [-1,-6])."
+ ],
+ "src": "https://www.dofuspourlesnoobs.com/miausoleacutee-du-pounicheur.html"
+}

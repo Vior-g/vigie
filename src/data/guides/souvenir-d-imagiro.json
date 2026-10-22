@@ -1,0 +1,115 @@
+{
+ "dj": "Souvenir d'Imagiro",
+ "boss": "Reine Amirukam",
+ "maj": "26/03/2024",
+ "essentiel": [
+  "Enchaîne les coups sur la Reine dès le tour 1 pour invoquer le Roi Imagami.",
+  "Reste hors des glyphes du Brouillard d'Encre pour éviter les 900 dégâts terre.",
+  "Tue vite les Shinlam ou garde-les à distance pour limiter leurs dégâts.",
+  "Évite les lignes et diagonales de la Reine pour limiter ses poisons cumulables.",
+  "Tue les homologues de papier avant leur quatrième tour, sinon leur invocateur redevient normal."
+ ],
+ "mecaniques": [
+  {
+   "t": "Vagues",
+   "x": "Une vague qui arrive est invulnérable pendant 1 tour, donc attends ce tour avant de frapper."
+  },
+  {
+   "t": "Forme Lotus des monstres",
+   "x": "À 10% PV, un monstre devient invulnérable et enraciné 4 tours, puis invoque son homologue de papier."
+  },
+  {
+   "t": "Seuils de la Reine",
+   "x": "À 75, 50 et 25% PV, la Reine devient Lotus 5 tours et invoque le Roi Imagami."
+  },
+  {
+   "t": "Glyphe noir",
+   "x": "Il élimine les monstres de papier dedans quand la Reine reprend forme normale. Il rétrécit à chaque seuil."
+  },
+  {
+   "t": "Portage Pandawa",
+   "x": "Un Pandawa peut porter un monstre Lotus, mais celui-ci reste enraciné et ne peut être poussé."
+  }
+ ],
+ "sorts": [
+  {
+   "n": "Brouillard d'Encre",
+   "x": "Pose des glyphes sur les ennemis tous les 3 tours, puis inflige 900 dégâts terre au tour suivant."
+  },
+  {
+   "n": "Getsuga Tenshō",
+   "x": "Inflige 600 dégâts feu et applique un état aléatoire : Intacleur, Pesanteur ou Insoignable."
+  },
+  {
+   "n": "Toner Deubraiste",
+   "x": "Inflige 500 dégâts eau, pose un poison et augmente les dégâts subis de 5% pendant 5 tours."
+  }
+ ],
+ "monstres": [
+  {
+   "n": "Fugokam",
+   "d": "haut",
+   "x": "Probablement le plus dangereux, surtout à bas PV. Il peut infliger 2000 dégâts par tour."
+  },
+  {
+   "n": "Tsunam",
+   "d": "haut",
+   "x": "Gagne de plus en plus de PM et peut échanger de place. Pèse sur lui pour bloquer son échange."
+  },
+  {
+   "n": "Shinlam",
+   "d": "haut",
+   "x": "Ses dégâts augmentent avec le temps et il peut éroder. Tue-le vite ou reste loin."
+  },
+  {
+   "n": "Mabram",
+   "d": "moyen",
+   "x": "Invoque un kinkutsubram au corps à corps. Il est peu dangereux, il passe après les précédents."
+  }
+ ],
+ "strategie": [
+  "Frappe la Reine dès le tour 1 pour atteindre son premier seuil et invoquer le Roi.",
+  "Fais invoquer le Roi par le personnage le plus proche de la Reine, idéalement le premier en initiative.",
+  "Utilise les sorts du Roi pour frapper un maximum d'ennemis, et donne-lui des PM si possible.",
+  "À chaque seuil, place les monstres de papier dans le glyphe de la Reine pour les éliminer.",
+  "Focus dans l'ordre Fugokam, Tsunam, Shinlam, Mabram, Rokoram, et tue la Reine après son troisième seuil."
+ ],
+ "pieges": [
+  "Ne reste pas sur les glyphes du Brouillard d'Encre, qui infligent de lourds dégâts terre.",
+  "Les poisons de la Reine durent 5 tours et se cumulent, donc évite sa ligne et ses diagonales.",
+  "Un homologue non tué avant le quatrième tour ramène son monstre en forme normale."
+ ],
+ "tours": [
+  {
+   "from": 1,
+   "every": 3,
+   "to": null,
+   "parity": null,
+   "level": "danger",
+   "text": "Brouillard d'Encre : glyphes posés, puis dégâts terre au tour suivant de la Reine."
+  }
+ ],
+ "succes": [
+  {
+   "n": "Prudent",
+   "x": "Ne finis jamais ton tour à côté d'un ennemi."
+  },
+  {
+   "n": "Mains propres",
+   "x": "Achève ennemis et Reine sans dégâts directs, uniquement par pièges, glyphes, poisons ou invocations."
+  },
+  {
+   "n": "Spécial",
+   "x": "Un allié doit tuer le Roi Imagami avant la sortie de Lotus de la Reine."
+  },
+  {
+   "n": "Trio",
+   "x": "Vaincre tous les monstres à 3 personnages maximum, en moins de 80 tours."
+  }
+ ],
+ "acces": [
+  "Entrée dans le Royaume d'encre en case [2,0], accessible via les quêtes de Pandala.",
+  "Le trousseau de clé et la téléportation ne fonctionnent pas pour ce donjon."
+ ],
+ "src": "https://www.dofuspourlesnoobs.com/souvenir-d-imagiro.html"
+}

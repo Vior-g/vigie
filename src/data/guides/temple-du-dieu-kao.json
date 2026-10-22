@@ -1,0 +1,74 @@
+{
+ "dj": "Temple du dieu Kao",
+ "boss": "Prêtresse du dieu Kao",
+ "maj": "25/04/2025",
+ "essentiel": [
+  "Chaque monstre invoque un Éclat Kao : -50% de dégâts subis pour lui, et la Prêtresse reste invulnérable tant qu'un éclat vit.",
+  "Tue 3 éclats pour rendre la Prêtresse vulnérable.",
+  "Frapper un éclat au corps à corps te met en Chocolathée, qui renforce les sorts des monstres.",
+  "Tue les éclats en un coup, au poison ou via une invocation pour éviter la Chocolathée.",
+  "Les poisons ignorent la réduction de dégâts."
+ ],
+ "mecaniques": [
+  {
+   "t": "Éclat Kao",
+   "x": "Réduit de 50% les dégâts subis par son monstre et lui donne un bonus. Perd son bonus de PV après 1 tour, meurt au bout de 2 tours."
+  },
+  {
+   "t": "Vulnérabilité de la Prêtresse",
+   "x": "Il faut tuer 3 éclats. Chaque éclat tué la fait passer Forastero, Trinitario puis Criollo, qui boostent ses dégâts. Un éclat mort seul ne compte pas toujours."
+  },
+  {
+   "t": "Chocolathée",
+   "x": "État reçu en frappant un éclat au corps à corps ; il renforce les sorts des monstres."
+  }
+ ],
+ "sorts": [
+  {
+   "n": "Cloches du Kao",
+   "x": "Aux tours impairs, touche tous les ennemis ; +50 dégâts par perso en Chocolathée."
+  }
+ ],
+ "monstres": [],
+ "strategie": [
+  "Élimine les monstres d'abord (sauf succès Premier) en limitant les persos en Chocolathée.",
+  "Tue un éclat par tour jusqu'au tour 3 pour le full succès.",
+  "Achève ensuite la Prêtresse."
+ ],
+ "pieges": [
+  "Frapper un éclat au CàC sans le tuer.",
+  "Laisser des persos en Chocolathée avant un tour impair (Cloches du Kao)."
+ ],
+ "tours": [
+  {
+   "from": 1,
+   "every": 2,
+   "to": null,
+   "parity": "impair",
+   "level": "alerte",
+   "text": "Cloches du Kao : frappe tous les ennemis, plus fort pour chaque perso en Chocolathée."
+  }
+ ],
+ "succes": [
+  {
+   "n": "Chrono",
+   "x": "Vaincre les monstres en moins de 9 tours."
+  },
+  {
+   "n": "Premier",
+   "x": "Achever la Prêtresse en premier."
+  },
+  {
+   "n": "Liberté",
+   "x": "Ne retirer aucun PM ni PO."
+  },
+  {
+   "n": "Spécial",
+   "x": "Aucun éclat sur le terrain quand un ennemi meurt."
+  }
+ ],
+ "acces": [
+  "Île de Pwâk, disponible pendant l'événement Pwâk."
+ ],
+ "src": "https://www.dofuspourlesnoobs.com/temple-du-dieu-kao.html"
+}

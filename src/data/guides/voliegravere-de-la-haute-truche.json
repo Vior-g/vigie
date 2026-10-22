@@ -1,0 +1,34 @@
+{
+ "dj": "Volière de la Haute Truche",
+ "boss": "Haute Truche",
+ "maj": null,
+ "essentiel": [
+  "Un coup de corps à corps sur la Haute Truche la rend invulnérable 2 tours : frappe-la à distance.",
+  "Pour le succès, déplace les ennemis avant de leur infliger des dégâts."
+ ],
+ "mecaniques": [
+  {
+   "t": "Invulnérabilité",
+   "x": "Un coup de corps à corps la rend invulnérable 2 tours."
+  }
+ ],
+ "sorts": [],
+ "monstres": [],
+ "strategie": [
+  "Évite les armes de corps à corps contre la Haute Truche."
+ ],
+ "pieges": [
+  "Frapper la Haute Truche au corps à corps."
+ ],
+ "tours": [],
+ "succes": [
+  {
+   "n": "Truchement",
+   "x": "Déplacer les ennemis avant de leur infliger des dégâts."
+  }
+ ],
+ "acces": [
+  "Cirque de Cania en [-10,-44], parle à Orno Tolig."
+ ],
+ "src": "https://www.dofuspourlesnoobs.com/voliegravere-de-la-haute-truche.html"
+}

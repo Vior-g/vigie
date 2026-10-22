@@ -1,0 +1,136 @@
+{
+ "dj": "Temple de Koutoulou",
+ "boss": "Koutoulou",
+ "maj": "05/10/2026",
+ "essentiel": [
+  "Ne finis jamais ton tour en ligne de vue du Koutoulou.",
+  "Surveille tes états de Folie : à Folie 10, ton personnage meurt.",
+  "Focus le Klûtiste en premier, puis le Li-Fo, puis le Shokkoth.",
+  "Dès Folie 2, reste à au moins 3PO de tes alliés quand tu tapes un monstre.",
+  "Garde le Shokkoth loin de toi pour éviter ses doubles.",
+  "Les poisons ne font pas échanger de place, utilise-les sans crainte."
+ ],
+ "mecaniques": [
+  {
+   "t": "Horreur Cosmique",
+   "x": "Chaque dégât direct sur un ennemi t'échange avec l'entité la plus proche. Deux échanges avec le même ennemi le rendent invulnérable. Deux échanges avec le même allié te donnent une Folie. Limite de 10 par tour."
+  },
+  {
+   "t": "États de Folie",
+   "x": "Tu perds 1 Folie au début de ton tour. Folie 2 : tes sorts touchent aussi tes alliés dans 2PO. Folie 4 : soins reçus x50%. Folie 6 : dommages subis x100%. Folie 10 : mort. Taper un allié lui retire 1 Folie."
+  },
+  {
+   "t": "Vacillement de l'Univers",
+   "x": "Dès le tour 2, au début de son tour, le Koutoulou ramène au corps à corps tous les personnages dans sa ligne de vue. Finir ton tour en ligne de vue donne aussi une Folie."
+  },
+  {
+   "t": "Permutation Inquiétante",
+   "x": "Dès le tour 2, le Koutoulou échange de place avec 2 monstres alliés par tour, jusqu'à 6PO et sans ligne de vue. Cela lui permet de venir te frapper plus vite."
+  },
+  {
+   "t": "Pesanteur, Enraciné, Indéplaçable",
+   "x": "Ces états bloquent les échanges forcés et les téléportations. Pose Pesanteur sur le Koutoulou ou sur les monstres proches de toi."
+  }
+ ],
+ "sorts": [
+  {
+   "n": "Frappe Koutonienne",
+   "x": "Frappe 1300 en terre, uniquement au corps à corps. Ajoute une Folie. Lançable 4 fois par tour, 2 fois par cible."
+  },
+  {
+   "n": "Permutation Inquiétante",
+   "x": "Échange de place avec un allié jusqu'à 6PO sans ligne de vue, à partir du tour 2."
+  },
+  {
+   "n": "Vacillement de l'Univers",
+   "x": "Au début de son tour, téléporte au corps à corps les personnages en ligne de vue."
+  }
+ ],
+ "monstres": [
+  {
+   "n": "Klûtiste",
+   "d": "haut",
+   "x": "Folle Cacophonie frappe 700 en feu et ajoute une Folie. Mélopée retire 4PM. Il est faible à la terre et doit tomber en premier."
+  },
+  {
+   "n": "Li-Fo",
+   "d": "haut",
+   "x": "Ponction Morbide vole 1000 de vitalité et ajoute une Folie. Dès le tour 2, il peut copier un monstre à 3PO. Éloigne-le des autres."
+  },
+  {
+   "n": "Shokkoth",
+   "d": "haut",
+   "x": "Triangle Dément crée des doubles de tes personnages qui augmentent tes Folies. Reste à plus de 5PO de lui."
+  },
+  {
+   "n": "Grofond",
+   "d": "moyen",
+   "x": "Sphère Corrosive frappe 450 en terre sur zone, applique Pesanteur et ajoute une Folie."
+  },
+  {
+   "n": "N'yalg",
+   "d": "moyen",
+   "x": "Enfouissement attire les personnages et ajoute une Folie. Expulsion Miasmatique crée un glyphe qui réduit tes dégâts de 25%."
+  }
+ ],
+ "strategie": [
+  "Tue le Klûtiste dès le début, idéalement avant le tour 2 du Li-Fo.",
+  "Dès le tour 2, éloigne le Li-Fo des autres monstres pour qu'il ne puisse pas les copier.",
+  "Garde le Shokkoth à plus de 5PO de tes personnages, ou retire-lui des PM.",
+  "Tue ensuite le Li-Fo puis le Shokkoth.",
+  "Place une invocation devant le Koutoulou en fin de tour pour bloquer sa ligne de vue.",
+  "Quand seul le Koutoulou reste, reste à plus de 6PM de lui et hors de sa ligne de vue."
+ ],
+ "pieges": [
+  "Taper deux fois le même ennemi le rend invulnérable pour un tour.",
+  "Finir ton tour en ligne de vue du Koutoulou ajoute une Folie.",
+  "Taper un allié alors que tu es en Folie 2 ou plus lui inflige des dégâts.",
+  "Les sorts à plusieurs lignes de dégâts font échanger de place plusieurs fois."
+ ],
+ "tours": [
+  {
+   "from": 1,
+   "every": 1,
+   "to": 1,
+   "parity": null,
+   "level": "info",
+   "text": "Le Koutoulou ne fait rien au tour 1, il avance seulement avec ses PM."
+  },
+  {
+   "from": 2,
+   "every": 1,
+   "to": null,
+   "parity": null,
+   "level": "alerte",
+   "text": "À partir du tour 2, le Li-Fo peut copier un monstre et le Koutoulou peut téléporter tes personnages et permuter avec ses alliés."
+  }
+ ],
+ "succes": [
+  {
+   "n": "Prudent",
+   "x": "Ne finis jamais ton tour au corps à corps d'un monstre. Ce succès est presque offert avec le donjon."
+  },
+  {
+   "n": "Hardi",
+   "x": "Finis ton tour adjacent à un ennemi. Le guide conseille un Pandawa avec beaucoup de fuite pour bloquer le Li-Fo et porter un autre personnage."
+  },
+  {
+   "n": "Spécial : Chaises musicales",
+   "x": "Un ennemi doit échanger avec un allié au moins une fois entre deux de ses tours. Le butin 4 est conseillé, car le butin 5 ajoute un N'yalg invocateur."
+  },
+  {
+   "n": "Duo",
+   "x": "Avec 2 personnages maximum et moins de 40 tours. Un Sram avec poisons et invisibilité est la stratégie la plus connue."
+  },
+  {
+   "n": "Score 200",
+   "x": "Composition basée sur le corps à corps, avec Yoche et Hulhu magistrale et majeure. Tape au càc et prévois des personnages robustes."
+  }
+ ],
+ "acces": [
+  "Entrée du donjon dans les Abysses de Sufokia, en [27,26].",
+  "L'entrée des Abysses se trouve dans le Palais de Sufokia, en [23,24].",
+  "La clef se fabrique avec des ressources marines : écume de mer, patelle, quisnoa, salikrone, bois d'Aquajou, tentacules et œils de monstres."
+ ],
+ "src": "https://www.dofuspourlesnoobs.com/temple-de-koutoulou.html"
+}

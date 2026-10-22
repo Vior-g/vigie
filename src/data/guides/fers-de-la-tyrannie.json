@@ -1,0 +1,123 @@
+{
+ "dj": "Fers de la Tyrannie",
+ "boss": "Servitude",
+ "maj": "26/03/2024",
+ "essentiel": [
+  "Tape Servitude seulement avec un état Traître, sinon il renvoie 200% des dégâts.",
+  "Élimine chaque Armécréante dès son invocation, sinon tu seras vite submergé.",
+  "Touche au moins une fois chaque Armécréante par tour pour éviter les Iopprimés.",
+  "Avant 1 PV, applique l'état Insoignable et un poison pour le finir en phase 3.",
+  "Focus l'Ecaptif avant son tour 4, car il gagne alors 3 PM et 100% de dommages."
+ ],
+ "mecaniques": [
+  {
+   "t": "Armécréantes",
+   "x": "Invoquées à chaque tour impair dès le tour 1, six maximum, à 2 PO de Servitude."
+  },
+  {
+   "t": "Renvoi Traître",
+   "x": "Servitude renvoie 200% des dégâts ; l'état Traître 1 s'obtient en finissant sur un glyphe blanc."
+  },
+  {
+   "t": "Incrémenter Traître",
+   "x": "Tape un allié pour monter l'état jusqu'à 5 ; chaque ligne sur Servitude consomme un niveau."
+  },
+  {
+   "t": "Phases",
+   "x": "Phase 2 à 50% PV avec monture ; à 1 PV, rollback de la map et soin de 25% PV."
+  },
+  {
+   "t": "Rollback Armécréantes",
+   "x": "Pesanteur, Enraciné ou Indéplaçable bloquent leur rollback ; un débuff peut retirer ces états."
+  }
+ ],
+ "sorts": [
+  {
+   "n": "Trahison",
+   "x": "Force une cible Traître à taper son allié le plus proche dans un élément aléatoire."
+  },
+  {
+   "n": "Tyrannie",
+   "x": "Inflige 900 de dégâts eau, retire 1 PA dans un cercle de rayon 2 autour de lui."
+  },
+  {
+   "n": "Asservissement",
+   "x": "Attire la cible de 9 cases ; en phase 2, vole 1 PM et inflige 650 de dégâts air."
+  }
+ ],
+ "monstres": [
+  {
+   "n": "Armécréante",
+   "d": "haut",
+   "x": "Élimine-la dès l'invocation ; elle résiste moins à l'eau, avec 15% seulement."
+  },
+  {
+   "n": "Ecaptif",
+   "d": "haut",
+   "x": "Focus avant le tour 4 ; il applique beaucoup d'érosion, garde tes distances."
+  },
+  {
+   "n": "Gentyran",
+   "d": "moyen",
+   "x": "Fait mal et soigne ses alliés ; absent en butin 4, il est le second danger."
+  },
+  {
+   "n": "Boularbin",
+   "d": "moyen",
+   "x": "Renfortiche donne 100% de résistances ; frappe-le trois fois pour retirer l'effet."
+  }
+ ],
+ "strategie": [
+  "Tue l'Armécréante invoquée à chaque tour impair avant de toucher un autre monstre.",
+  "Focus d'abord les Ecaptif, puis Gentyran et Boularbin ; garde le Tambourreau pour la fin.",
+  "Ne tape pas le Tambourreau tôt, car ses boosts de Décadance grandissent quand ses PV baissent.",
+  "Accumule des états Traître avec des sorts peu coûteux en PA, puis focus Servitude.",
+  "À 1 PV, applique Insoignable et un poison ; Servitude meurt au début de son tour."
+ ],
+ "pieges": [
+  "Ne consomme pas ton dernier état Traître sans pouvoir le réincrémenter, car tu devras repasser sur un glyphe.",
+  "Le Boularbin peut renforcer le monstre que tu focus ; garde-le loin ou finis-le vite.",
+  "Sans Insoignable, Servitude récupère 25% PV au rollback, et tu devras tout reprendre."
+ ],
+ "tours": [
+  {
+   "from": 1,
+   "every": 2,
+   "to": null,
+   "parity": "impair",
+   "level": "alerte",
+   "text": "Servitude invoque une Armécréante à chaque tour impair ; élimine-la rapidement."
+  },
+  {
+   "from": 4,
+   "every": 1,
+   "to": 4,
+   "parity": null,
+   "level": "danger",
+   "text": "Au tour 4, l'Ecaptif gagne 3 PM et 100% de dommages ; élimine-le avant."
+  }
+ ],
+ "succes": [
+  {
+   "n": "Focus",
+   "x": "Achève chaque ennemi attaqué avant d'en attaquer un autre."
+  },
+  {
+   "n": "Versatile",
+   "x": "Chaque action ne peut être utilisée qu'une fois par tour par allié."
+  },
+  {
+   "n": "Spécial (Bain de foule)",
+   "x": "Ne jamais achever les Armécréantes ; tape-les chaque tour sans les tuer."
+  },
+  {
+   "n": "Duo",
+   "x": "Vaincre tous les monstres avec 2 personnages maximum en moins de 40 tours."
+  }
+ ],
+ "acces": [
+  "Entrée dans la Galère de Servitude en [4,-3].",
+  "Clé à fabriquer ; zone des 4 Cavaliers via Arche de Vili [15,-20], faille Mine Hable [10,-19]."
+ ],
+ "src": "https://www.dofuspourlesnoobs.com/fers-de-la-tyrannie.html"
+}

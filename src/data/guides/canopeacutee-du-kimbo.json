@@ -1,0 +1,79 @@
+{
+ "dj": "Canopée du Kimbo",
+ "boss": "Kimbo",
+ "maj": "22/04/2025",
+ "essentiel": [
+  "Kimbo a 400% de résistances partout : il faut retirer deux éléments liés.",
+  "Choisis un duo Terre/Eau ou Air/Feu et garde-le toute la phase.",
+  "Commencer ton tour sur un glyphe du disciple retire ces résistances (et peut tuer).",
+  "Le neutre n'active rien ; un nouvel état remplace le précédent.",
+  "La première fois, élimine les monstres sans toucher Kimbo."
+ ],
+ "mecaniques": [
+  {
+   "t": "Invulnérabilité",
+   "x": "400% de résistances ; se retirent via le duo d'éléments choisi."
+  },
+  {
+   "t": "États",
+   "x": "Terre ou Eau le met en état impair ; Air ou Feu en état pair."
+  },
+  {
+   "t": "Glyphes",
+   "x": "Le disciple pose des glyphes selon la parité ; y commencer ton tour retire 400% de résistances choisies pendant 1 tour."
+  },
+  {
+   "t": "Disciple",
+   "x": "Déplace-le d'un nombre impair de cases pour réactiver ses glyphes."
+  }
+ ],
+ "sorts": [
+  {
+   "n": "Furie du Kimbo",
+   "x": "Air, repousse de 2, au corps à corps."
+  },
+  {
+   "n": "Téléportation du Kimbo",
+   "x": "Jusqu'à 8 cases, sans ligne de vue."
+  }
+ ],
+ "monstres": [
+  {
+   "n": "Kaskargo",
+   "d": "haut",
+   "x": "Pose des glyphes et y coopère un ennemi."
+  },
+  {
+   "n": "Bitouf aérien",
+   "d": "haut",
+   "x": "Pousse de 3 cases."
+  },
+  {
+   "n": "Meupette Choh",
+   "d": "moyen",
+   "x": "N'aligne pas tes persos (zone)."
+  }
+ ],
+ "strategie": [
+  "Élimine les monstres sans toucher Kimbo.",
+  "Choisis ton duo d'éléments.",
+  "Frappe Kimbo dans un élément du duo pour activer l'état.",
+  "Place-toi à distance paire/impaire du disciple selon l'état.",
+  "Finis ton tour sur un glyphe puis frappe Kimbo."
+ ],
+ "pieges": [
+  "Bitouf et Kaskargo peuvent te pousser sur un glyphe.",
+  "Un disciple qui bouge change l'emplacement des glyphes."
+ ],
+ "tours": [],
+ "succes": [
+  {
+   "n": "Une paire d'impairs",
+   "x": "Chaque ennemi doit subir un glyphe du disciple avant de prendre des dégâts."
+  }
+ ],
+ "acces": [
+  "Feuillage de l'arbre Hakam, en [-54,16]."
+ ],
+ "src": "https://www.dofuspourlesnoobs.com/canopeacutee-du-kimbo.html"
+}

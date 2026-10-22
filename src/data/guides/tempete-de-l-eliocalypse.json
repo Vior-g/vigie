@@ -1,0 +1,122 @@
+{
+ "dj": "Tempête de l'Eliocalypse",
+ "boss": "Les 4 Cavaliers de l'Eliocalypse",
+ "maj": "08/07/2024",
+ "essentiel": [
+  "Soigne tes personnages qui frappent pour retirer la Peau Pourrissante, sinon tes dégâts chutent de 90%.",
+  "Ne laisse jamais mourir le personnage qui a invoqué le Feu Primordial, sinon tu perds immédiatement.",
+  "Ordre de focus : Corruption, puis Servitude, puis Misère, Guerre en dernier.",
+  "Choisis un tank rapide pour invoquer le Feu Primordial, il boostera tout ton groupe.",
+  "Garde toujours au moins un état Traître pour continuer à frapper Servitude."
+ ],
+ "mecaniques": [
+  {
+   "t": "Invulnérabilité de Guerre",
+   "x": "Guerre ne devient vulnérable que lorsqu'elle reste seule sur le terrain."
+  },
+  {
+   "t": "Kissiphrot et maladies",
+   "x": "Soigne un allié en mêlée avec l'ennemi visé pour retirer Kissiphrot ; les maladies demandent trois soins."
+  },
+  {
+   "t": "Renvoi de Servitude",
+   "x": "Servitude renvoie 200% des dégâts ; frappe-le avec des états Traître obtenus sur ses glyphes blancs."
+  },
+  {
+   "t": "Attirance de Misère",
+   "x": "Misère attire tes personnages au début de son tour et quand elle subit des dégâts, selon ses PV."
+  },
+  {
+   "t": "Feu Primordial",
+   "x": "Il inflige environ 750 dégâts neutres chaque tour et peut être tapé une fois par tour pour booster."
+  }
+ ],
+ "sorts": [
+  {
+   "n": "Domestication",
+   "x": "Armécréante : téléporte le personnage visé à sa case de début de tour à la fin de son tour."
+  },
+  {
+   "n": "Dahkma",
+   "x": "Misère : rend la cible invulnérable, la renvoie au début de son tour, avec malus de 100 PA et PM."
+  },
+  {
+   "n": "Échange de place",
+   "x": "Corruption : échange sa place avec un de tes personnages, dangereux s'il n'est pas en Pesanteur."
+  }
+ ],
+ "monstres": [
+  {
+   "n": "Ferrailleur",
+   "d": "haut",
+   "x": "À éliminer en priorité avec 5 personnages ou plus, avant les cavaliers."
+  },
+  {
+   "n": "Olgoth",
+   "d": "haut",
+   "x": "À éliminer en priorité avec 5 personnages ou plus, avant les cavaliers."
+  },
+  {
+   "n": "Armécréante",
+   "d": "haut",
+   "x": "Achève-la vite, elle n'a pas Kissiphrot et tes boosts suffisent."
+  }
+ ],
+ "strategie": [
+  "Retire la Peau Pourrissante en soignant une fois chaque personnage qui doit frapper.",
+  "Retire Kissiphrot de la cible en soignant un allié en mêlée, puis élimine-la rapidement.",
+  "Mets Corruption en Pesanteur dès qu'il descend, puis élimine-le en un à deux tours.",
+  "Frappe Servitude avec tes états Traître, sans jamais consommer ton dernier, jusqu'à 1 PV.",
+  "Éloigne Misère, puis affronte Guerre en éliminant ses armes avant qu'elle ne rejoue."
+ ],
+ "pieges": [
+  "Si Servitude tombe à 1 PV, il revient au début du combat et se soigne de 25%.",
+  "Un glyphe ennemi sous le Feu Primordial lui donne l'état Traître, inutile.",
+  "La Brutalyte renvoie une partie des dégâts dans un rayon de 3 cases ; soigne le porteur 3 fois."
+ ],
+ "tours": [
+  {
+   "from": 1,
+   "every": 2,
+   "to": null,
+   "parity": null,
+   "level": "alerte",
+   "text": "Servitude invoque une Armécréante au premier tour puis tous les deux tours."
+  },
+  {
+   "from": 2,
+   "every": 2,
+   "to": null,
+   "parity": null,
+   "level": "info",
+   "text": "Servitude pose un glyphe blanc à chaque tour pair pour donner l'état Traître."
+  },
+  {
+   "from": 2,
+   "every": 1,
+   "to": null,
+   "parity": null,
+   "level": "alerte",
+   "text": "La Peau Pourrissante te retire 10% de tes PV actuels à chaque fin de tour."
+  }
+ ],
+ "succes": [
+  {
+   "n": "Liberté",
+   "x": "Ne retire aucun PM ni PO aux adversaires pendant tout le combat."
+  },
+  {
+   "n": "Hardi",
+   "x": "Finis chaque tour au contact d'un ennemi, en évitant les rollbacks des Armécréantes."
+  },
+  {
+   "n": "Quatuor",
+   "x": "Vaincs tous les monstres avec 4 personnages maximum en moins de 40 tours."
+  }
+ ],
+ "acces": [
+  "Vaincre les 4 cavaliers dans leur donjon respectif avant d'entrer.",
+  "Sanctuaire du dernier espoir en [15,-20] via le zaap de l'Arche de Vili, puis l'appareil menant à Martalo."
+ ],
+ "src": "https://www.dofuspourlesnoobs.com/tempete-de-l-eliocalypse.html"
+}

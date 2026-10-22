@@ -1,0 +1,115 @@
+{
+ "dj": "Sanctuaire de Torkélonia",
+ "boss": "Torkélonia",
+ "maj": "05/10/2026",
+ "essentiel": [
+  "Ne tue jamais un monstre pendant la Pleine lune ni le Premier croissant.",
+  "Un monstre tué pendant un cycle donne son bonus à tous les autres, sans fin.",
+  "Tue l'Alashasss en premier pour couper les soins de l'équipe.",
+  "Garde Torkélonia pour la fin si tu vises le succès Dernier.",
+  "Ne force pas le cadran avec la Lunorbe si tu vises le succès Spécial."
+ ],
+ "mecaniques": [
+  {
+   "t": "Invulnérabilité",
+   "x": "Monstres et Boss sont protégés par la Lunorbe. Une ligne de dégâts depuis le glyphe la retire."
+  },
+  {
+   "t": "Glyphe bleu",
+   "x": "Il tourne d'une case à chaque tour. Un monstre qui le traverse récupère 10% de ses PV max."
+  },
+  {
+   "t": "Cadran lunaire",
+   "x": "Huit phases, de la Nouvelle lune au Dernier croissant. Une ligne de dégâts sur la Lunorbe le fait avancer."
+  },
+  {
+   "t": "Parade lunaire",
+   "x": "Au tour complet du cadran, tu perds aléatoirement 1 PM ou 1 PA, en permanence."
+  },
+  {
+   "t": "Pleine lune",
+   "x": "Renvoie 200 dégâts aux attaquants. Tuer un monstre ici est très risqué."
+  }
+ ],
+ "sorts": [
+  {
+   "n": "Ricochet sacré",
+   "x": "900 dégâts eau qui rebondissent sur le plus proche. Retire 2 PA si la cible est en Cible lunaire."
+  },
+  {
+   "n": "Faisceau lunaire",
+   "x": "600 dégâts feu en ligne et diagonale, portée infinie."
+  },
+  {
+   "n": "Goutte lunaire",
+   "x": "600 dégâts eau, zone changeante : carré, croix puis cône. Malus d'érosion si Cible lunaire."
+  }
+ ],
+ "monstres": [
+  {
+   "n": "Alashasss",
+   "d": "haut",
+   "x": "Soigne énormément ses alliés. Tue-le en premier, idéalement dès le tour 1."
+  },
+  {
+   "n": "Caïguille",
+   "d": "haut",
+   "x": "Retire PM et PA. Garde-le loin et tue-le après l'Alashasss si possible."
+  },
+  {
+   "n": "Kashkaille",
+   "d": "haut",
+   "x": "Attire au corps à corps. Son Poison pétrifiant peut te téléporter en fin de tour."
+  },
+  {
+   "n": "Cronnibal",
+   "d": "moyen",
+   "x": "Vol de vie. Sa Rage nocturne booste ses dégâts au corps à corps pendant un tour."
+  }
+ ],
+ "strategie": [
+  "Bloque Torkélonia avec un tank, pandawa ou panda, et garde les autres monstres à distance.",
+  "Tue l'Alashasss d'abord, si possible dès le tour 1 pour éviter les longues attentes.",
+  "Place-toi sur le glyphe bleu, fais une ligne de dégâts, puis frappe avec un sort peu coûteux en PA.",
+  "Tue les monstres pendant des cycles peu contraignants, jamais pendant la Pleine lune.",
+  "Achève Torkélonia en dernier si tu vises le succès Dernier."
+ ],
+ "pieges": [
+  "Tuer un monstre pendant la Pleine lune ou le Premier croissant booste tous les autres à vie.",
+  "Sortir du glyphe bleu rend l'invulnérabilité, qui revient aussi en fin de ton tour.",
+  "Celui qui tue Torkélonia est OS, sauf en Nouvelle lune ou en Pleine lune."
+ ],
+ "tours": [
+  {
+   "from": 1,
+   "every": 1,
+   "to": 4,
+   "parity": null,
+   "level": "danger",
+   "text": "Pour le succès Statue, Torkélonia doit être tuée au tour 4 maximum."
+  }
+ ],
+ "succes": [
+  {
+   "n": "Dernier",
+   "x": "Tuer Torkélonia en dernier, après tous les autres monstres."
+  },
+  {
+   "n": "Statue",
+   "x": "Alliés finissent chaque tour sur leur case de départ, et Torkélonia tombe au tour 4 max."
+  },
+  {
+   "n": "Spécial (Lunatique)",
+   "x": "Tuer chaque ennemi en Nouvelle lune ou Pleine lune, sans forcer le cadran."
+  },
+  {
+   "n": "Duo",
+   "x": "Vaincre tous les monstres avec 2 personnages maximum, en moins de 40 tours."
+  }
+ ],
+ "acces": [
+  "Île de Crocuzko, en [-84,-16].",
+  "Avoir terminé la quête « Perdu dans le temps »."
+ ],
+ "src": "https://www.dofuspourlesnoobs.com/sanctuaire-de-torkelonia.html"
+}

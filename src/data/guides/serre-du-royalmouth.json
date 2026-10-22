@@ -1,0 +1,79 @@
+{
+ "dj": "Serre du Royalmouth",
+ "boss": "Royalmouth",
+ "maj": "21/06/2026",
+ "essentiel": [
+  "Le Royalmouth est invulnérable dès le début (Inimouth).",
+  "Le pousser lève son invulnérabilité jusqu'à ton prochain tour (+4 PM cumulables pour lui).",
+  "Ne lui fais jamais de dommages de poussée : ils tuent les persos alignés avec lui.",
+  "Il invoque un monstre au tour 1, puis tous les 3 tours."
+ ],
+ "mecaniques": [
+  {
+   "t": "Invulnérabilité",
+   "x": "La pousser la désactive pendant un tour."
+  },
+  {
+   "t": "Dommages de poussée",
+   "x": "Tuent les personnages alignés avec lui et donnent +100 dégâts à ses alliés 1 tour."
+  },
+  {
+   "t": "Invocations",
+   "x": "Bonus selon le monstre invoqué, malus permanent quand il meurt."
+  }
+ ],
+ "sorts": [
+  {
+   "n": "Regroupmouth",
+   "x": "Attire en croix de 3, -1 PM, 400 eau."
+  },
+  {
+   "n": "Lichemouth",
+   "x": "450 feu en vol de vie en croix de 1 autour de lui."
+  }
+ ],
+ "monstres": [
+  {
+   "n": "Koudblouze",
+   "d": "haut",
+   "x": "Baisse tes résistances de 50%."
+  },
+  {
+   "n": "Boufbaffe",
+   "d": "haut",
+   "x": "270 neutre et vol de PM, ligne 7 PO."
+  },
+  {
+   "n": "Moursure",
+   "d": "haut",
+   "x": "Vole de l'agilité au CàC."
+  }
+ ],
+ "strategie": [
+  "Un perso pousse le Royalmouth, les autres le frappent sans le déplacer.",
+  "Gère les invocations."
+ ],
+ "pieges": [
+  "Dégâts de poussée sur le boss ou un allié poussé contre lui."
+ ],
+ "tours": [
+  {
+   "from": 1,
+   "every": 3,
+   "to": null,
+   "parity": null,
+   "level": "alerte",
+   "text": "Le Royalmouth invoque un monstre."
+  }
+ ],
+ "succes": [
+  {
+   "n": "Parcimonie royale",
+   "x": "Un allié pousse le boss, les autres le frappent sans le déplacer."
+  }
+ ],
+ "acces": [
+  "Champs de glace en [-84,-49], skis de tremble achetés en [-82,-46]."
+ ],
+ "src": "https://www.dofuspourlesnoobs.com/serre-du-royalmouth.html"
+}

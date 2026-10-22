@@ -1,0 +1,123 @@
+{
+ "dj": "Poste de contrôle du Supervizœuf",
+ "boss": "Supervizoeuf",
+ "maj": null,
+ "essentiel": [
+  "Tu ne peux pas blesser le Supervizoeuf tant qu'il reste invulnérable.",
+  "Fais exploser 4 Zoeufs dans sa zone pour le rendre vulnérable.",
+  "Reste loin des zones d'explosion des Kabombz, des Zoeufs et du Supervizoeuf.",
+  "Le Toubibz et son Zoeuf soignent en zone : garde-les loin de tes alliés.",
+  "5 vagues : élimine-les vite pour ne pas être débordé."
+ ],
+ "mecaniques": [
+  {
+   "t": "Invulnérabilité",
+   "x": "Tu lèves cette protection en faisant exploser des Zoeufs près de lui."
+  },
+  {
+   "t": "État Zoeuf'd",
+   "x": "Chaque Zoeuf explosé dans sa zone ajoute un état ; à 4, il devient vulnérable."
+  },
+  {
+   "t": "Phase 2",
+   "x": "Il gagne 20% de critique et 10% de dommages finaux, sans pouvoir être mis en pesanteur."
+  },
+  {
+   "t": "Vagues",
+   "x": "Une vague tous les 5 tours, invulnérable un tour ; les vagues 2+ ont 25% de PV en moins."
+  },
+  {
+   "t": "Saisons",
+   "x": "Naissance, Chasse et Repos modifient les dégâts, les zones et le délai d'éclosion des Zoeufs."
+  }
+ ],
+ "sorts": [
+  {
+   "n": "Bzélan",
+   "x": "Se téléporte et inflige 450 dégâts terre en zone autour de son arrivée."
+  },
+  {
+   "n": "Bzovolution",
+   "x": "Fait éclore immédiatement un Zoeuf ciblé."
+  },
+  {
+   "n": "Clonabz",
+   "x": "Phase 2 : crée un double qui explose après 2 tours (500 dégâts feu)."
+  }
+ ],
+ "monstres": [
+  {
+   "n": "Kamikabz",
+   "d": "haut",
+   "x": "Rush en ligne jusqu'à 8PO ; focus-le vite et cache-toi derrière des obstacles."
+  },
+  {
+   "n": "Balebz",
+   "d": "haut",
+   "x": "Échange de place avec l'entité la plus proche avant de mourir."
+  },
+  {
+   "n": "Toubibz",
+   "d": "moyen",
+   "x": "Rend insoignable un tour ; débuffe cet état pour te soigner."
+  },
+  {
+   "n": "Quadrabz",
+   "d": "moyen",
+   "x": "Son explosion en anneau touche la zone autour de lui."
+  }
+ ],
+ "strategie": [
+  "Garde plusieurs Kabombz en vie pour récupérer des Zoeufs.",
+  "Place tes invocations près des monstres pour qu'ils invoquent leurs Zoeufs.",
+  "Élimine chaque Zoeuf proche du Supervizoeuf pour monter son état Zoeuf'd.",
+  "Une fois vulnérable, focus-le : il se téléporte sur le plus proche chaque tour.",
+  "Ne prends pas de retard sur les vagues."
+ ],
+ "pieges": [
+  "Le Balebz échange de place avant d'exploser.",
+  "La mort du Supervizoeuf inflige 1 000 dégâts en cercle de taille 3.",
+  "Le double du Supervizoeuf explose pour 500 dégâts feu."
+ ],
+ "tours": [
+  {
+   "from": 1,
+   "every": 5,
+   "to": 21,
+   "parity": null,
+   "level": "info",
+   "text": "Nouvelle vague de monstres."
+  },
+  {
+   "from": 2,
+   "every": 4,
+   "to": null,
+   "parity": null,
+   "level": "alerte",
+   "text": "Le Supervizoeuf peut invoquer des Kabombz."
+  }
+ ],
+ "succes": [
+  {
+   "n": "Conquérant",
+   "x": "Finir son tour sur la case d'un ennemi tué."
+  },
+  {
+   "n": "Collant",
+   "x": "Finir son tour adjacent à un allié."
+  },
+  {
+   "n": "Bombzerman",
+   "x": "Rendre le Supervizoeuf vulnérable avant le tour 6."
+  },
+  {
+   "n": "Duo",
+   "x": "2 persos maximum, en moins de 60 tours."
+  }
+ ],
+ "acces": [
+  "Toorbz Boorbz d'Osavora, case [24,23].",
+  "Baguette Rikiki requise, sauf quête « Un problème de taille » faite."
+ ],
+ "src": "https://www.dofuspourlesnoobs.com/poste-de-controle-du-supervizoeuf.html"
+}

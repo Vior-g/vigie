@@ -1,0 +1,64 @@
+{
+ "dj": "Bambusaie de Damadrya",
+ "boss": "Damadrya",
+ "maj": null,
+ "essentiel": [
+  "Combat simple : frappe le boss.",
+  "Évite les explosions de bourgeons (20 PM, 80 dégâts au contact).",
+  "Le Sangsuc draine chaque perso en fin de tour : prévois des soins.",
+  "Ne finis pas au contact de Damadrya (le Sangsuc la soigne)."
+ ],
+ "mecaniques": [
+  {
+   "t": "Sangsuc",
+   "x": "20% d'érosion, 50 dégâts en fin de tour, soigne Damadrya si tu finis au CàC."
+  },
+  {
+   "t": "Bourgeons",
+   "x": "20 PM, explosent à ton contact (80 dégâts)."
+  },
+  {
+   "t": "Bouclier",
+   "x": "Si Damadrya est full PV, le Sangsuc lui donne un bouclier."
+  }
+ ],
+ "sorts": [
+  {
+   "n": "Urticaire",
+   "x": "100 dégâts en ligne à 2PO, -50 puissance."
+  }
+ ],
+ "monstres": [
+  {
+   "n": "Grenufar",
+   "d": "haut",
+   "x": "Se soigne d'environ 450 PV."
+  },
+  {
+   "n": "Floristile",
+   "d": "haut",
+   "x": "120 en zone : ne reste pas groupé."
+  }
+ ],
+ "strategie": [
+  "Tue Damadrya en priorité."
+ ],
+ "pieges": [
+  "Les bourgeons sont difficiles à éviter si le combat dure."
+ ],
+ "tours": [],
+ "succes": [
+  {
+   "n": "Spécial",
+   "x": "Aucun allié ne subit plus d'une explosion de bourgeon."
+  },
+  {
+   "n": "Duo",
+   "x": "2 persos max, moins de 20 tours."
+  }
+ ],
+ "acces": [
+  "Plantala, [26,-30]."
+ ],
+ "src": "https://www.dofuspourlesnoobs.com/bambusaie-de-damadrya.html"
+}

@@ -1,0 +1,53 @@
+{
+ "dj": "Repaire de Sphincter Cell",
+ "boss": "Sphincter Cell",
+ "maj": null,
+ "essentiel": [
+  "Le Cell a 200% de résistances : lève-les avec des tortues.",
+  "Immobilise le Cell avant de placer les tortues.",
+  "Tue d'abord le Rat Noir et le Rat Blanc.",
+  "Ne te place jamais au contact d'une tortue (Kawabunga)."
+ ],
+ "mecaniques": [
+  {
+   "t": "Tortues",
+   "x": "Rouge feu, jaune air, verte terre, bleue eau : -200% pendant 2 tours si une tortue est au CàC du Cell et un allié au CàC de la tortue."
+  },
+  {
+   "t": "Immobilisation",
+   "x": "Pesanteur, corruption, 0 PM pour bloquer le Cell."
+  }
+ ],
+ "sorts": [],
+ "monstres": [
+  {
+   "n": "Rat Noir",
+   "d": "haut",
+   "x": "Poison mortel : tue-le en premier."
+  },
+  {
+   "n": "Rat Blanc",
+   "d": "haut",
+   "x": "Gagne 50% de résistance dans ton élément."
+  }
+ ],
+ "strategie": [
+  "Rat Noir et Rat Blanc d'abord.",
+  "Place une tortue au CàC du Cell et un allié au CàC de la tortue.",
+  "Frappe le Cell dans l'élément de la tortue."
+ ],
+ "pieges": [
+  "Un allié au contact d'une tortue subit Kawabunga."
+ ],
+ "tours": [],
+ "succes": [
+  {
+   "n": "Pizwa quatre couleurs",
+   "x": "Aucun allié ne subit Kawabunga."
+  }
+ ],
+ "acces": [
+  "Souterrains du Château d'Amakna [5,-8], parle à Aperirel."
+ ],
+ "src": "https://www.dofuspourlesnoobs.com/donjon-des-rats-du-chacircteau-damakna.html"
+}

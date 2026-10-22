@@ -1,0 +1,82 @@
+{
+ "dj": "Mégalithe de Fraktale",
+ "boss": "Fraktale",
+ "maj": null,
+ "essentiel": [
+  "Tue vite les monstres pour éviter d'affronter dix ennemis ou plus.",
+  "Surveille en permanence le sens de rotation de l'Auroraire.",
+  "Ne frappe jamais une cible si un allié se trouve à 2 PO d'elle.",
+  "En sens anti-horaire, tes frappes soignent ennemis et alliés (icône cœur)."
+ ],
+ "mecaniques": [
+  {
+   "t": "Fragmentation",
+   "x": "Dégâts subis x70% en permanence ; une partie revient dans 2 PO, alliés compris."
+  },
+  {
+   "t": "Auroraire et sens",
+   "x": "Au-dessus de 50% de vie, elle avance si le boss est à plus de 4 PO, sinon elle recule."
+  },
+  {
+   "t": "Sens horaire et anti-horaire",
+   "x": "Horaire : tes frappes touchent tous les monstres. Anti-horaire : elles soignent."
+  },
+  {
+   "t": "Vagues",
+   "x": "Cinq vagues ; la suivante arrive après un délai, sauf si tu tues la précédente."
+  }
+ ],
+ "sorts": [],
+ "monstres": [
+  {
+   "n": "Xélomorphe Massassine",
+   "d": "haut",
+   "x": "Rapproche sa cible puis la tue au corps à corps."
+  },
+  {
+   "n": "Xélomorphe Cercle de lumière",
+   "d": "haut",
+   "x": "Rend vulnérable (x150%) ; ne reste pas groupé."
+  },
+  {
+   "n": "Xélomorphe Attaque surprise",
+   "d": "moyen",
+   "x": "Quiconque le frappe se soigne."
+  },
+  {
+   "n": "Xélomorphe Eklatlatête",
+   "d": "moyen",
+   "x": "Pousse de 6 cases."
+  }
+ ],
+ "strategie": [
+  "Repère l'Auroraire sur la case I au premier tour.",
+  "Vérifie la vie du boss et sa distance à l'Auroraire avant chaque tour.",
+  "Tue vite chaque vague.",
+  "Adapte tes frappes au sens de rotation."
+ ],
+ "pieges": [
+  "Frapper près d'un allié lui renvoie des dégâts.",
+  "Laisser les vagues s'accumuler."
+ ],
+ "tours": [
+  {
+   "from": 6,
+   "every": 5,
+   "to": 21,
+   "parity": null,
+   "level": "alerte",
+   "text": "Nouvelle vague (sauf si tu as tué la précédente avant)."
+  }
+ ],
+ "succes": [
+  {
+   "n": "L'heure tourne",
+   "x": "Aucun ennemi ne doit en blesser un autre."
+  }
+ ],
+ "acces": [
+  "Chemins d'hier du Xélorium [7,3], parle à Hypéria Gritch (clé obligatoire)."
+ ],
+ "src": "https://www.dofuspourlesnoobs.com/meacutegalithe-de-fraktale.html"
+}

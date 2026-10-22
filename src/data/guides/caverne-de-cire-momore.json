@@ -1,0 +1,77 @@
+{
+ "dj": "Caverne de Cire Momore",
+ "boss": "Cire Momore",
+ "maj": "11/02/2023",
+ "essentiel": [
+  "Reste hors de sa ligne de vue pour limiter les dégâts et la perte de PM.",
+  "Prévois au moins 40% de résistance feu pour encaisser Triste Cire.",
+  "Compense le malus de soin de 50% avec protection, soin sur frappe ou vol de vie.",
+  "Élimine-le avant le début du tour 25, sinon il tue toute ton équipe.",
+  "N'invoque rien à moins de 3PO de lui : il l'élimine et se renforce."
+ ],
+ "mecaniques": [
+  {
+   "t": "Invulnérabilité",
+   "x": "Il ne perd cet état que pour le joueur dont c'est le tour, s'il reste à 2PO ou moins."
+  },
+  {
+   "t": "Âmes Hurlantes",
+   "x": "Y entrer coûte 1PM et ajoute Pesanteur (phase 1) ou Indéplaçable (phase 2). Sortir de la zone rend le PM."
+  },
+  {
+   "t": "Seuil à 80% PV",
+   "x": "Il renforce ses sorts et lance Métal Hurlant : bouclier, résistances et soins pendant 3 tours, relancé tous les 4."
+  },
+  {
+   "t": "Épée de Damoclès",
+   "x": "Chaque allié reçoit un effet de mort différée à 24 tours ; il les élimine tous au tour 25."
+  },
+  {
+   "t": "Passifs",
+   "x": "Chaque coup de mêlée réduit son tacle de 10 et augmente la fuite de l'attaquant de 20 ; il attire aussi à distance."
+  }
+ ],
+ "sorts": [
+  {
+   "n": "Âmespiration",
+   "x": "OS toute entité dans un cercle de rayon 2 au début de son tour, puis il se renforce et se soigne."
+  },
+  {
+   "n": "Fatalité",
+   "x": "Attire de 3 cases, inflige des dégâts air, retire 2PM esquivables (8 en phase 2)."
+  },
+  {
+   "n": "Triste Cire",
+   "x": "Dégâts feu en vol de vie avec poison ; en phase 2, zone rayon 2, malus de soin et Pesanteur."
+  }
+ ],
+ "monstres": [],
+ "strategie": [
+  "Place un tank à 11PO en ligne de vue, les autres cachés derrière un bloc.",
+  "Sinon, fais alterner le tank derrière un obstacle pour le faire avancer de 2 cases.",
+  "Les frappeurs approchent à 2PO, frappent, puis retournent se cacher derrière le bloc.",
+  "Utilise Stabilisation du Pandawa pour le détacler et le frapper en mêlée.",
+  "Frappe au maximum et élimine-le avant le début du tour 25."
+ ],
+ "pieges": [
+  "Ne pose pas d'invocations à moins de 3PO de lui.",
+  "Bouquet d'escampette te fait perdre tout le butin du combat.",
+  "L'état Intaclable ne permet pas de fuir une mêlée avec lui."
+ ],
+ "tours": [
+  {
+   "from": 25,
+   "every": 1,
+   "to": 25,
+   "parity": null,
+   "level": "danger",
+   "text": "Au début du tour 25, il OS toute ton équipe : élimine-le avant."
+  }
+ ],
+ "succes": [],
+ "acces": [
+  "Termine la quête « Pour que la flamme vacille », puis fabrique la clé à l'Enclume des Marteaux-Aigris (Galeries d'Ereboria [33,-63]).",
+  "Offre la Fleur de Cendrepierre au Craqueboule devant l'entrée en [36,-70]."
+ ],
+ "src": "https://www.dofuspourlesnoobs.com/caverne-de-cire-momore.html"
+}

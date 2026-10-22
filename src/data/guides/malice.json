@@ -1,0 +1,53 @@
+{
+ "dj": "Malice",
+ "boss": "Malice",
+ "maj": null,
+ "essentiel": [
+  "Malice n'est disponible que pendant Halouine.",
+  "Il faut être au minimum 4 personnages.",
+  "Malice est invulnérable : tu ne pourras jamais la frapper.",
+  "Tu dois être le dernier survivant, seul dans le combat avant le tour 15.",
+  "Tous les personnages sont soignés au début du combat."
+ ],
+ "mecaniques": [
+  {
+   "t": "Invulnérabilité",
+   "x": "La plupart des alliés sont invulnérables, seuls un ou deux sont vulnérables."
+  },
+  {
+   "t": "Transfert de vulnérabilité",
+   "x": "Frapper un allié vulnérable le rend invulnérable avec +200 puissance, cumulable. Un autre devient vulnérable."
+  }
+ ],
+ "sorts": [],
+ "monstres": [],
+ "strategie": [
+  "Forme une équipe de quatre personnages.",
+  "Frappe uniquement les alliés vulnérables pour éliminer progressivement tes adversaires.",
+  "Vérifie que tu es seul dans le combat avant le tour 15."
+ ],
+ "pieges": [
+  "Ne pas être seul avant le tour 15 fait perdre tout le monde."
+ ],
+ "tours": [
+  {
+   "from": 1,
+   "every": 1,
+   "to": 14,
+   "parity": null,
+   "level": "danger",
+   "text": "Tu dois être seul dans le combat avant le tour 15, sinon tout le monde perd."
+  }
+ ],
+ "succes": [
+  {
+   "n": "Bouh !",
+   "x": "Avoir terminé tous les succès liés à Halouine."
+  }
+ ],
+ "acces": [
+  "Dédale du Dark Vlad, pendant Halouine.",
+  "PNJ Malice et Chaudron en [-1,20]."
+ ],
+ "src": "https://www.dofuspourlesnoobs.com/malice.html"
+}

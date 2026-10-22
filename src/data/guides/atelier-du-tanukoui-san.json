@@ -1,0 +1,83 @@
+{
+ "dj": "Atelier du Tanukouï San",
+ "boss": "Tanukouï San",
+ "maj": "26/03/2024",
+ "essentiel": [
+  "Sors les Tanukis de leur glyphe pour lever leur invulnérabilité.",
+  "Frappe en mêlée pour repousser de 2 cases, à distance pour attirer de 2 cases.",
+  "Passe chaque palier X.5 avant son tour pour éviter son soin d'environ 1300 PV.",
+  "Éloigne les monstres les uns des autres (glyphes qui se chevauchent)."
+ ],
+ "mecaniques": [
+  {
+   "t": "Invulnérabilité",
+   "x": "Un Tanuki sur son glyphe en fin de tour devient invulnérable."
+  },
+  {
+   "t": "Lever l'invulnérabilité",
+   "x": "Sors-le de son glyphe sans qu'il entre dans celui d'un autre monstre."
+  },
+  {
+   "t": "Phases du boss",
+   "x": "Trois phases ; chaque X.5 non passé le soigne d'environ 1300 PV."
+  },
+  {
+   "t": "Glyphe du boss",
+   "x": "Carré 7x7 en phase I, damier de rayon 6 en phase II, étoile infinie en phase III."
+  }
+ ],
+ "sorts": [
+  {
+   "n": "Casse-noisette",
+   "x": "200 terre, -200 puissance, 4 PO."
+  },
+  {
+   "n": "Boulodrome",
+   "x": "Repousse de 4 (phase 2)."
+  },
+  {
+   "n": "Tibagin",
+   "x": "Téléportation, 200 feu, désenvoûte (phase 3)."
+  }
+ ],
+ "monstres": [
+  {
+   "n": "Transpompoko",
+   "d": "haut",
+   "x": "Échange de place, retire 100 PA (cesse si la cible subit des dégâts)."
+  },
+  {
+   "n": "Shinibaru",
+   "d": "moyen",
+   "x": "Doubles : repère le vrai (il ne pose pas de glyphe ce tour)."
+  }
+ ],
+ "strategie": [
+  "Éloigne monstres et boss.",
+  "Élimine les monstres d'abord (sauf succès Premier).",
+  "Prévois 400-500 dégâts de plus pour passer chaque X.5."
+ ],
+ "pieges": [
+  "Un Tanuki dans le glyphe d'un compère reste invulnérable.",
+  "Un X.5 non passé le soigne."
+ ],
+ "tours": [],
+ "succes": [
+  {
+   "n": "Statue",
+   "x": "Finir chaque tour sur sa case de départ."
+  },
+  {
+   "n": "Spécial",
+   "x": "Un ennemi déplacé au plus une fois par tour global."
+  },
+  {
+   "n": "Duo",
+   "x": "2 persos max, moins de 20 tours."
+  }
+ ],
+ "acces": [
+  "Terrdala, position [26,-24]."
+ ],
+ "src": "https://www.dofuspourlesnoobs.com/atelier-du-tanukoui-san.html"
+}

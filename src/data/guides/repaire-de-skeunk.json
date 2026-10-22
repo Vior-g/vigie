@@ -1,0 +1,73 @@
+{
+ "dj": "Repaire de Skeunk",
+ "boss": "Skeunk",
+ "maj": null,
+ "essentiel": [
+  "Tue la Poupée Affamée en premier, sinon elle ressuscite tous les monstres.",
+  "Nourris-la d'invocations (2 max par tour) ou booste-la en PA : à 8 PA elle explose.",
+  "Reste loin de la Poupée mortelle au corps à corps (OS).",
+  "Rubise te transforme en totem : 0 PA, 0 PM."
+ ],
+ "mecaniques": [
+  {
+   "t": "Poupée Affamée",
+   "x": "Reconstitue les monstres à chaque tour ; dès le tour 1 elle peut manger les invocations (3.6)."
+  },
+  {
+   "t": "Explosion",
+   "x": "À 8 PA, elle explose en feu ; tue ensuite Saphira."
+  }
+ ],
+ "sorts": [],
+ "monstres": [
+  {
+   "n": "Poupée mortelle",
+   "d": "haut",
+   "x": "Invoquée par Diamantine, OS au corps à corps."
+  },
+  {
+   "n": "Rubise",
+   "d": "haut",
+   "x": "Pousse, transforme en totem : priorité."
+  },
+  {
+   "n": "Émeraude",
+   "d": "moyen",
+   "x": "Ses poupées ont 90% de résistances sauf en air."
+  },
+  {
+   "n": "Saphira",
+   "d": "moyen",
+   "x": "Retire des PA, devient invisible."
+  }
+ ],
+ "strategie": [
+  "Fais exploser la Poupée Affamée.",
+  "Tue Rubise et Diamantine ensuite.",
+  "Garde tes distances avec la Poupée mortelle."
+ ],
+ "pieges": [
+  "Laisser la Poupée Affamée vivante.",
+  "Toucher le Skeunk par erreur en zone (succès)."
+ ],
+ "tours": [
+  {
+   "from": 1,
+   "every": 1,
+   "to": null,
+   "parity": null,
+   "level": "danger",
+   "text": "La Poupée Affamée mange tes invocations et reconstitue les monstres."
+  }
+ ],
+ "succes": [
+  {
+   "n": "Les fans et les enfants d'abord",
+   "x": "Achever les Sadidas désignées dans l'ordre avant tout dégât au Skeunk."
+  }
+ ],
+ "acces": [
+  "Vallée de la Morh'Kitu en [-20,10], parle à Kakolak."
+ ],
+ "src": "https://www.dofuspourlesnoobs.com/repaire-de-skeunk.html"
+}

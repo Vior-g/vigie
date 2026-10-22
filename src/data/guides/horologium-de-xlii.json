@@ -1,0 +1,95 @@
+{
+ "dj": "Horologium de XLII",
+ "boss": "XLII",
+ "maj": "01/10/2022",
+ "essentiel": [
+  "Tue XLII avant la 12e heure, sinon tes dégâts chutent fortement.",
+  "Reste à plus de 3 PO de XLII pour éviter d'être mis Pacifiste.",
+  "Ne frappe jamais l'Auroraire : tu serais téléporté sans dégâts.",
+  "Tue vite les monstres pour éviter d'affronter dix ennemis.",
+  "Ne repousse XLII que si aucun de ses alliés ne peut te rejoindre."
+ ],
+ "mecaniques": [
+  {
+   "t": "Vagues",
+   "x": "Tuer une vague lance la suivante, invulnérable pendant 1 tour."
+  },
+  {
+   "t": "Auroraire",
+   "x": "Avance d'une heure à chaque tour d'un allié. Invulnérable et indéplaçable."
+  },
+  {
+   "t": "Rage Mahal",
+   "x": "Chaque ligne de dégâts subie donne un bonus ou malus aux monstres selon qu'ils sont au-dessus ou sous 50% PV."
+  },
+  {
+   "t": "Dérèglement",
+   "x": "Si tu déplaces XLII, il peut échanger de place avec un allié."
+  },
+  {
+   "t": "Lourd",
+   "x": "XLII est Lourd tout le combat et n'a pas d'invulnérabilité."
+  }
+ ],
+ "sorts": [
+  {
+   "n": "Coquetterie",
+   "x": "500 air en cercle de rayon 2, réduit la durée de tes effets."
+  },
+  {
+   "n": "Souffle démoniaque",
+   "x": "650 eau, Pacifiste 1 tour, à 3 PO sans ligne de vue, 3 fois par tour."
+  },
+  {
+   "n": "Dérèglement",
+   "x": "Échange avec un allié à portée infinie, 2 fois par tour, en état Dérèglement."
+  }
+ ],
+ "monstres": [
+  {
+   "n": "Trantroa",
+   "d": "haut",
+   "x": "Le plus dangereux. Sous 50% PV, frappe-le avec une attaque forte à une ligne, en terre."
+  },
+  {
+   "n": "Trezz",
+   "d": "moyen",
+   "x": "Sous 50% PV, il gagne 50 Puissance par ligne reçue."
+  },
+  {
+   "n": "Seith",
+   "d": "moyen",
+   "x": "Au-dessus de 50% PV il attire ; en dessous il gagne des critiques."
+  },
+  {
+   "n": "Vindeux",
+   "d": "moyen",
+   "x": "Sous 50% PV, tes dégâts se répartissent autour de lui."
+  }
+ ],
+ "strategie": [
+  "De la 12e à la 5e heure, booste-toi.",
+  "À partir de la 6e heure, élimine les monstres, surtout le Trantroa.",
+  "Vers la 9e-10e heure, entame XLII pour le finir avant la 12e.",
+  "XLII mort, l'Auroraire disparaît : enchaîne les vagues."
+ ],
+ "pieges": [
+  "Frapper XLII de trop près te met Pacifiste.",
+  "Repousser XLII sans éloigner ses alliés lui permet de revenir via Dérèglement."
+ ],
+ "tours": [],
+ "succes": [
+  {
+   "n": "Spécial",
+   "x": "Achever chaque vague avant la suivante et tuer XLII avant la 12e heure."
+  },
+  {
+   "n": "Barbare",
+   "x": "Aucun de tes personnages ne doit être Pacifiste."
+  }
+ ],
+ "acces": [
+  "Dimension Xélorium, Jour présent en [7,-2], par recherche de portail."
+ ],
+ "src": "https://www.dofuspourlesnoobs.com/horologium-de-xlii.html"
+}

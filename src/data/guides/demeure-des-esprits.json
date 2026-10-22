@@ -1,0 +1,109 @@
+{
+ "dj": "Demeure des Esprits",
+ "boss": "Koumiho",
+ "maj": "26/03/2024",
+ "essentiel": [
+  "Koumiho reste invulnérable tant que tu ne tues pas ses deux Kitsounebi dans le même tour.",
+  "Ne tue jamais un Kitsounebi si tu ne peux pas tuer l'autre avant son tour.",
+  "Utilise la Lanterne pour retirer les effets gênants des monstres.",
+  "Retire le Negai du Madura avant de le frapper.",
+  "Contre Retraite : descends Koumiho à 55-60 % PV, puis tue-le au tour suivant."
+ ],
+ "mecaniques": [
+  {
+   "t": "Invulnérabilité",
+   "x": "Tue ses deux Kitsounebi dans le même tour pour la lever."
+  },
+  {
+   "t": "Kitsounebi",
+   "x": "Invisibles dès le tour 2 ; leur glyphe bleu révèle leur position."
+  },
+  {
+   "t": "Lanterne",
+   "x": "Retire Hitomi du Madura après Negai et 2 boosts au Tsume-bozu."
+  },
+  {
+   "t": "Vulnérabilité",
+   "x": "Une fois vulnérable, Koumiho gagne 20 % de dégâts au corps à corps."
+  },
+  {
+   "t": "Renvoi du Madura",
+   "x": "Hitomi réduit tes dégâts de 30 % et en renvoie environ 40 %."
+  }
+ ],
+ "sorts": [
+  {
+   "n": "Retraite",
+   "x": "Sous 50 % PV : invisible et pacifiste, puis soin et bouclier au tour suivant."
+  },
+  {
+   "n": "Supāku",
+   "x": "400 air en vol de vie en cercle de rayon 2, portée 2."
+  }
+ ],
+ "monstres": [
+  {
+   "n": "Madura",
+   "d": "haut",
+   "x": "Retire Hitomi avec la Lanterne après Negai, avant de le frapper."
+  },
+  {
+   "n": "Tsume-bozu",
+   "d": "haut",
+   "x": "Focus-le en premier à plus de 4 personnages."
+  },
+  {
+   "n": "Bakazako",
+   "d": "moyen",
+   "x": "Lanterne sur ses copies Kopi avant de les frapper."
+  },
+  {
+   "n": "Onigori",
+   "d": "moyen",
+   "x": "Ses glyphes Kimon peuvent être réorientés par la Lanterne."
+  }
+ ],
+ "strategie": [
+  "Élimine d'abord les monstres accompagnants.",
+  "Retire le Negai du Madura avec la Lanterne.",
+  "Tue les deux Kitsounebi dans le même tour.",
+  "Une fois Koumiho vulnérable, concentre tes dégâts à distance."
+ ],
+ "pieges": [
+  "Tuer un seul Kitsounebi inflige de très lourds dégâts air à son tueur.",
+  "Rendre Koumiho insoignable n'empêche pas son bouclier de 2600."
+ ],
+ "tours": [
+  {
+   "from": 2,
+   "every": 1,
+   "to": 2,
+   "parity": null,
+   "level": "alerte",
+   "text": "Les Kitsounebi deviennent invisibles : repère-les avec les glyphes bleus."
+  }
+ ],
+ "succes": [
+  {
+   "n": "Focus",
+   "x": "Achever chaque ennemi attaqué avant d'en attaquer un autre."
+  },
+  {
+   "n": "Premier",
+   "x": "Vaincre Koumiho en premier."
+  },
+  {
+   "n": "Spécial",
+   "x": "Aucun allié n'utilise la Lanterne."
+  },
+  {
+   "n": "Duo",
+   "x": "2 persos max, moins de 20 tours."
+  }
+ ],
+ "acces": [
+  "Mont des Tombeaux en [39,-44], via Grobe.",
+  "Sort Lanterne : Danaba Retzu en [36,-40] contre 4 Étoffes de Samouraï fantôme."
+ ],
+ "src": "https://www.dofuspourlesnoobs.com/demeure-des-esprits.html"
+}

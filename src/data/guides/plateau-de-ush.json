@@ -1,0 +1,80 @@
+{
+ "dj": "Plateau de Ush",
+ "boss": "Ush Galesh",
+ "maj": null,
+ "essentiel": [
+  "Donjon de dimension : une salle, 5 vagues à enchaîner.",
+  "Élimine vite les monstres pour ne pas affronter dix ennemis.",
+  "Sur les Ush, alterne attaques à distance et au corps à corps.",
+  "Deux frappes à distance d'affilée sur un Ush ne font aucun dégât."
+ ],
+ "mecaniques": [
+  {
+   "t": "Vagues",
+   "x": "Le boss est là dès le début ; la vague suivante arrive après un délai ou dès que tu vides la précédente."
+  },
+  {
+   "t": "Matoumorphose",
+   "x": "Chaque monstre applique cet état au plus proche ; à la mort du porteur, il passe au monstre le plus proche."
+  },
+  {
+   "t": "Partage des dégâts",
+   "x": "Les deux Ush se partagent les dégâts, divisés par deux."
+  },
+  {
+   "t": "Alternance rouge/noir",
+   "x": "Chaque coup change l'état de l'Ush : rouge = corps à corps, noir = distance."
+  }
+ ],
+ "sorts": [
+  {
+   "n": "Éclair Rouge",
+   "x": "Ligne à 12 PO, 300 feu et -15% de résistance 1 tour."
+  },
+  {
+   "n": "Frappe Noire",
+   "x": "Corps à corps, 250 terre, retire 3 PM."
+  },
+  {
+   "n": "Pulsation Malsaine",
+   "x": "Rouge : 300 feu au CàC et repousse de 3 ; noir : 300 neutre et attire."
+  }
+ ],
+ "monstres": [
+  {
+   "n": "Chasquatch",
+   "d": "haut",
+   "x": "Soigne les joueurs proches lors de leur premier coup."
+  },
+  {
+   "n": "Chargus",
+   "d": "haut",
+   "x": "Ses doubles reviennent après 4 tours."
+  },
+  {
+   "n": "Chacrebleu",
+   "d": "moyen",
+   "x": "Attire en ligne et -20 fuite."
+  }
+ ],
+ "strategie": [
+  "Tue vite les monstres de chaque vague.",
+  "Frappe Ush au corps à corps s'il est rouge, à distance s'il est noir.",
+  "Ne frappe pas deux fois à distance d'affilée."
+ ],
+ "pieges": [
+  "Laisser les vagues s'accumuler.",
+  "Griffe à un Pouce, en Matoumorphose, tue au corps à corps."
+ ],
+ "tours": [],
+ "succes": [
+  {
+   "n": "Duel et pique (spécial)",
+   "x": "Chaque ennemi ne subit qu'une ligne de dégâts par tour."
+  }
+ ],
+ "acces": [
+  "Lande Poilue en [7,-3], Ecaflipus : parle à Chalfred avec la Clé du Plateau de Ush."
+ ],
+ "src": "https://www.dofuspourlesnoobs.com/plateau-de-ush.html"
+}

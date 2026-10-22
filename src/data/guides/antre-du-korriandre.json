@@ -1,0 +1,101 @@
+{
+ "dj": "Antre du Korriandre",
+ "boss": "Korriandre",
+ "maj": null,
+ "essentiel": [
+  "Le Korriandre reste invulnérable tant que la Sporakne ne finit pas son tour sur un glyphe.",
+  "Pose un glyphe à chaque début de tour.",
+  "Retire des PM à la Sporakne en la frappant, jusqu'à 3 au total.",
+  "Évite de subir des dégâts sous Hairpay : chaque coup inflige 450 air."
+ ],
+ "mecaniques": [
+  {
+   "t": "Invulnérabilité",
+   "x": "Invulnérable au départ, il invoque une Sporakne dès le premier tour."
+  },
+  {
+   "t": "Lever l'invulnérabilité",
+   "x": "Fais finir la Sporakne son tour sur un glyphe posé par un personnage."
+  },
+  {
+   "t": "Glyphes",
+   "x": "Ils blessent ceux qui commencent ou finissent leur tour dessus, et disparaissent si leur auteur meurt."
+  },
+  {
+   "t": "Sporakne",
+   "x": "5 PM, en perd 1 par dégât subi (3 max), repousse sa ligne si on la déplace."
+  },
+  {
+   "t": "Après levée",
+   "x": "Il gagne 1 PM, 200 puissance et Riraule (téléportation tous les deux tours)."
+  }
+ ],
+ "sorts": [
+  {
+   "n": "Hairpay",
+   "x": "450 dégâts air en vol de vie à chaque dégât subi par la cible, 6 PO en ligne."
+  },
+  {
+   "n": "Loute",
+   "x": "Dégâts eau selon ses PV manquants + 550, -50 fuite, attire de 3 cases."
+  },
+  {
+   "n": "Paixe",
+   "x": "Invoque une Sporakne quand il est invulnérable, relance 3 tours."
+  }
+ ],
+ "monstres": [
+  {
+   "n": "Dramanite",
+   "d": "haut",
+   "x": "Poison de 130 par PA utilisé : ne frappe pas quand tu es empoisonné."
+  },
+  {
+   "n": "Fongeur",
+   "d": "haut",
+   "x": "Frappe toute l'équipe, plus fort quand sa vitalité est basse."
+  },
+  {
+   "n": "Abrazif",
+   "d": "moyen",
+   "x": "Invoque une motte qui frappe fort toute l'équipe."
+  },
+  {
+   "n": "Fistulor",
+   "d": "moyen",
+   "x": "Vole des PV au CàC et en diagonale."
+  }
+ ],
+ "strategie": [
+  "Frappe la Sporakne pour lui retirer des PM.",
+  "Pose tes glyphes en début de tour.",
+  "Place la Sporakne à 0 PM sur un glyphe pour lever l'invulnérabilité.",
+  "Retire la PO des monstres pour réduire leurs dégâts.",
+  "Après la levée, surveille Riraule et évite ses lignes."
+ ],
+ "pieges": [
+  "Chaque dégât sous Hairpay déclenche 450 air.",
+  "Si tu élimines la Sporakne, elle revient après 3 tours.",
+  "Loute attire de 3 cases : vérifie ta position."
+ ],
+ "tours": [
+  {
+   "from": 1,
+   "every": 1,
+   "to": 1,
+   "parity": null,
+   "level": "info",
+   "text": "Le Korriandre invoque une Sporakne au premier tour."
+  }
+ ],
+ "succes": [
+  {
+   "n": "Pas dans mes pattes",
+   "x": "Finir son tour à plus de 3 PO de tout allié."
+  }
+ ],
+ "acces": [
+  "Forêt pétrifiée [-73,-69], parle à Sylvie Barbe."
+ ],
+ "src": "https://www.dofuspourlesnoobs.com/antre-du-korriandre.html"
+}

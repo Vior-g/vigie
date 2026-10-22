@@ -1,0 +1,106 @@
+{
+ "dj": "Chambre des maléfices",
+ "boss": "Belladone",
+ "maj": null,
+ "essentiel": [
+  "Reste hors de la ligne de vue des monstres, ou à 4 PO ou moins d'eux.",
+  "Empêche les monstres de se téléporter sur toi, ils deviennent surboostés.",
+  "Élimine le Caméliache en priorité, c'est le monstre le plus dangereux.",
+  "Évite de frapper un monstre marqué d'une flamèche avec un petit 2.",
+  "Garde un monstre en vie pour préparer l'arrivée de Belladone."
+ ],
+ "mecaniques": [
+  {
+   "t": "Invulnérabilité",
+   "x": "Belladone reste invulnérable sur son îlot tant que tu n'as pas tué tous les monstres."
+  },
+  {
+   "t": "Ensorcellement",
+   "x": "Chaque monstre tué renforce ses sorts, jusqu'à Ensorcellement III au maximum."
+  },
+  {
+   "t": "Détection des Protecteurs",
+   "x": "Un monstre qui te voit à plus de 4 PO se téléporte sur toi et gagne des bonus."
+  },
+  {
+   "t": "Seuil de 50 %",
+   "x": "À 50 % de PV, Belladone retourne sur son îlot et réinvoque les monstres éliminés."
+  },
+  {
+   "t": "Glyphe de l'îlot",
+   "x": "Le glyphe noir laissé sur son îlot OS quiconque tente d'y aller."
+  }
+ ],
+ "sorts": [
+  {
+   "n": "Ensorcellement explosif",
+   "x": "Un monstre échange de place avec ton attaquant, puis inflige des dégâts feu en zone plus tard."
+  },
+  {
+   "n": "Maléfice immobile",
+   "x": "Retire 100 PM, échange de place avec toi et pose un glyphe qui OS en fin de tour."
+  },
+  {
+   "n": "Téléportation enivrante",
+   "x": "Se téléporte au contact de ta cible la plus éloignée, frappe 1080 air, applique 30 % d'érosion."
+  }
+ ],
+ "monstres": [
+  {
+   "n": "Caméliache",
+   "d": "haut",
+   "x": "Focus-le en premier, pousse et se téléporte ; applique-lui Pesanteur si possible."
+  },
+  {
+   "n": "Coquelicogne",
+   "d": "moyen",
+   "x": "Ne laisse aucune invocation en ligne avec lui, son Poing aqueux attire tes personnages."
+  },
+  {
+   "n": "Armuguet",
+   "d": "moyen",
+   "x": "Désenvoûte son Partage Épineux avant de le cibler, sinon il gagne de la vitalité."
+  },
+  {
+   "n": "Statulipe",
+   "d": "moyen",
+   "x": "Occupe-toi de lui en butin 5 ou plus, à cause de son glyphe."
+  }
+ ],
+ "strategie": [
+  "Tacle les monstres avec un Pandawa tank, ou retire-leur un maximum de PM.",
+  "Cache tes autres personnages hors des lignes de vue, derrière les obstacles.",
+  "Élimine le Caméliache, puis le monstre qui n'a pas l'Ensorcellement explosif.",
+  "Laisse un monstre en vie pour te soigner et te booster avant l'arrivée de Belladone.",
+  "Tape Belladone jusqu'à 50 %, puis élimine à nouveau les monstres réinvoqués."
+ ],
+ "pieges": [
+  "Ne laisse aucun personnage en ligne de vue de Belladone quand elle est sur son îlot.",
+  "Ne pousse pas le monstre marqué d'une flamèche, il gagnerait 3 PM.",
+  "Ne termine jamais ton tour sur le glyphe posé par Maléfice immobile."
+ ],
+ "tours": [],
+ "succes": [
+  {
+   "n": "Collant",
+   "x": "Termine ton tour adjacent à un autre allié, les invocations ne comptent pas."
+  },
+  {
+   "n": "Mains propres",
+   "x": "Achève les ennemis sans dégâts directs ; poisons, glyphes et pièges sont autorisés."
+  },
+  {
+   "n": "Spécial : Cible facile",
+   "x": "Le personnage désigné doit finir en ligne de vue de Belladone sans jamais mourir."
+  },
+  {
+   "n": "Duo",
+   "x": "Vaincre tous les monstres à deux personnages maximum, en moins de 40 tours."
+  }
+ ],
+ "acces": [
+  "Archipel de Valonia, zone d'Ephedrya, en [29,-88].",
+  "Bateau vers Ephedrya en [38,-76]."
+ ],
+ "src": "https://www.dofuspourlesnoobs.com/chambre-des-malefices.html"
+}

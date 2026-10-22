@@ -1,0 +1,126 @@
+{
+ "dj": "Rituel de Kabahal",
+ "boss": "Kabahal",
+ "maj": "26/03/2024",
+ "essentiel": [
+  "Kabahal est invulnérable : seuls les Bras démoniaques peuvent lui infliger des dégâts.",
+  "Chaque tour pair, place un perso sur une rune pour contrôler les Bras au tour suivant.",
+  "Garde Kabahal près des Bras, idéalement à 5PO de deux Bras, pour le frapper deux fois.",
+  "Évite de finir aligné avec un Bras ou une rune, Ratafia Putride pourrait t'attirer dessus.",
+  "Si les cinq Bras sont invoqués, Kabahal invoque Ch'Tyx qui élimine ton équipe ; occupe une rune."
+ ],
+ "mecaniques": [
+  {
+   "t": "Invulnérabilité",
+   "x": "Kabahal ne craint que les Bras ; prends leur contrôle pour le frapper deux fois par tour."
+  },
+  {
+   "t": "Instabilité chaotique",
+   "x": "Chaque coup retire 5% de résistance à l'élément frappé et lui en donne une autre au hasard."
+  },
+  {
+   "t": "Glyphes et Bras",
+   "x": "Les monstres posent des runes ; un Bras apparaît au tour suivant et frappe ceux qui entrent dans son glyphe."
+  },
+  {
+   "t": "Liaison dangereuse",
+   "x": "Reste sur une rune jusqu'au tour du monstre pour prendre les Bras, en subissant 300 dégâts feu."
+  },
+  {
+   "t": "Ch'Tyx",
+   "x": "Si Kabahal invoque les cinq Bras, il invoque Ch'Tyx qui tue toute ton équipe à son tour."
+  }
+ ],
+ "sorts": [
+  {
+   "n": "Offrande au Chaos",
+   "x": "Mêlée uniquement ; 650 air et 650 feu, Insoignable 1 tour, et les ennemis se soignent de la cible."
+  },
+  {
+   "n": "Ratafia Putride",
+   "x": "Poison air de 500, soins reçus réduits de 50 %, attire la cible vers un Bras aligné, 12PO."
+  },
+  {
+   "n": "Oeil du Nocher",
+   "x": "Dès le tour 2, à 1PO : retire 6PO et 30 d'esquive PM aux ennemis en cône ; relance de 3 tours."
+  }
+ ],
+ "monstres": [
+  {
+   "n": "Eninferno",
+   "d": "haut",
+   "x": "Le plus dangereux : tue-le en premier, la pesanteur bloque sa coopération."
+  },
+  {
+   "n": "Krâradia",
+   "d": "moyen",
+   "x": "Fuyard à grande portée qui grignote tes PV ; tue-le en deuxième."
+  },
+  {
+   "n": "Bwariok",
+   "d": "moyen",
+   "x": "Lourds dégâts en mêlée ; garde-le à distance et tue-le en dernier, un Pandawa peut le bloquer."
+  }
+ ],
+ "strategie": [
+  "Frappe Kabahal dès le tour 1 tout en éliminant les monstres.",
+  "Prends le contrôle des Bras au plus vite et place Kabahal entre deux Bras.",
+  "Utilise un Pandawa pour le tacler à 5PO de deux Bras.",
+  "Tue l'Eninferno, puis le Krâradia, puis le Bwariok.",
+  "Quand il ne reste que Kabahal, garde-le près des Bras et loin de tes persos."
+ ],
+ "pieges": [
+  "Ne reste pas aligné avec un Bras ou une rune, Ratafia Putride pourrait t'attirer dessus.",
+  "Évite les sorts non neutres et les poussées sur Kabahal, il peut gagner de la résistance neutre.",
+  "Ne laisse pas cinq Bras s'installer sans occuper une rune."
+ ],
+ "tours": [
+  {
+   "from": 1,
+   "every": 2,
+   "to": null,
+   "parity": "impair",
+   "level": "info",
+   "text": "Tours impairs : contrôle les Bras et frappe Kabahal deux fois."
+  },
+  {
+   "from": 2,
+   "every": 2,
+   "to": null,
+   "parity": "pair",
+   "level": "alerte",
+   "text": "Tours pairs : place un perso sur une rune pour prendre les Bras au tour suivant."
+  },
+  {
+   "from": 5,
+   "every": 2,
+   "to": null,
+   "parity": null,
+   "level": "alerte",
+   "text": "Dès le tour 5, deux runes noires invoquent des monstres aux tours 6, 8, etc."
+  }
+ ],
+ "succes": [
+  {
+   "n": "Hardi",
+   "x": "Tes alliés finissent leur tour sur une case adjacente à un ennemi."
+  },
+  {
+   "n": "Mains propres",
+   "x": "Achève les ennemis sans dégâts directs ; poisons, glyphes et poussées sont permis."
+  },
+  {
+   "n": "Spécial Gros Bras",
+   "x": "Achève les monstres uniquement avec les Bras démoniaques."
+  },
+  {
+   "n": "Duo",
+   "x": "Vaincre tous les monstres à deux persos maximum, en moins de 20 tours."
+  }
+ ],
+ "acces": [
+  "Entrée dans le Pandamonium en [43,-57].",
+  "Quêtes liées : Le chant du Pandamonium, Un vrai petit garçon, Les totems de Maïmane."
+ ],
+ "src": "https://www.dofuspourlesnoobs.com/rituel-de-kabahal.html"
+}

@@ -1,0 +1,106 @@
+{
+ "dj": "Bataille de l'Aurore Pourpre",
+ "boss": "Éternel Conflit",
+ "maj": "12/04/2024",
+ "essentiel": [
+  "Tue le Bonraphin ou le Brâklotin pour lever l'invulnérabilité correspondante du boss.",
+  "Termine ton tour en ligne de vue d'un ennemi tant qu'un monstre reste vivant.",
+  "Monte les états Colère et Haine jusqu'à 10 pour faire passer le boss en état X.",
+  "Joue à distance : repousse le boss et retire-lui des PM.",
+  "Tue le Maléfisto puis le Diabélial en premier."
+ ],
+ "mecaniques": [
+  {
+   "t": "Invulnérabilités",
+   "x": "Le Bonraphin bloque la distance, le Brâklotin la mêlée. Les tuer les lève, puis ils sont réinvoqués 2 tours plus tard."
+  },
+  {
+   "t": "États Colère et Haine",
+   "x": "Chaque frappe ou sort des diablotins fait monter les états du boss. À 10/10, il passe en état X."
+  },
+  {
+   "t": "État X",
+   "x": "Le boss tue les diablotins, devient vulnérable 2 tours, gagne 9000 de bouclier et perd son seuil de 4000 PV."
+  },
+  {
+   "t": "Cauchemar des Ravageurs",
+   "x": "Monstre de 17000 PV invoqué par le modificateur ou l'état X. Il reste un à deux tours sur le terrain."
+  },
+  {
+   "t": "Ahcos",
+   "x": "Chaque monstre reçoit au début du combat un buff aléatoire parmi six, actif pendant tout le combat."
+  }
+ ],
+ "sorts": [
+  {
+   "n": "Poing de la Cité Sombre",
+   "x": "900 de dégâts feu, repousse de 4 cases, uniquement au corps à corps."
+  },
+  {
+   "n": "Massacre de l'Aurore Pourpre",
+   "x": "Bondit jusqu'à 3PO, relance 4 tours, applique lourd et indéplaçable."
+  },
+  {
+   "n": "Poing de la Cité Blanche",
+   "x": "500 de dégâts eau et 10% d'érosion. Portée et dégâts augmentent avec ses états Colère."
+  }
+ ],
+ "monstres": [
+  {
+   "n": "Maléfisto",
+   "d": "haut",
+   "x": "Élimine-le en premier, ses poisons sont très contraignants."
+  },
+  {
+   "n": "Diabélial",
+   "d": "haut",
+   "x": "Inflige de gros dégâts, à éliminer tôt avec le Maléfisto."
+  },
+  {
+   "n": "Démoloch",
+   "d": "moyen",
+   "x": "Soigne et invoque des copies. À partir de 5 joueurs, focus-le après le Maléfisto."
+  },
+  {
+   "n": "Brutasmodan",
+   "d": "moyen",
+   "x": "Son Uppercut Abyssal frappe plus fort quand il a peu de PV."
+  }
+ ],
+ "strategie": [
+  "Élimine d'abord le Maléfisto puis le Diabélial, les plus dangereux.",
+  "Garde le boss et ses diablotins à distance grâce aux repoussées et aux retraits de PM.",
+  "À partir de 5 joueurs, focus le Démoloch juste après le Maléfisto.",
+  "Finis chaque tour en ligne de vue d'un ennemi tant que des monstres vivent.",
+  "Retire des PM au boss avant l'état X, puis achève-le ou temporise ses deux tours."
+ ],
+ "pieges": [
+  "Invoquer les deux Fantômes le même tour fait apparaître le Cauchemar.",
+  "Ne place pas d'invocations près du boss, Massacre pourrait les cibler.",
+  "Déferlante Chaotique donne 2PM au monstre, reste attentif aux buffs Ahcos."
+ ],
+ "tours": [],
+ "succes": [
+  {
+   "n": "Zombie",
+   "x": "Utilise exactement un PM par tour. Plus simple en butin 6 ou plus."
+  },
+  {
+   "n": "Premier",
+   "x": "Achève le boss en premier, via mur de bombes, réseau Sram ou combo Eliotrope-Iop."
+  },
+  {
+   "n": "Spécial",
+   "x": "Ne tue ni le Bonraphin ni le Brâklotin. Le boss ne passe en état X qu'une fois."
+  },
+  {
+   "n": "Duo",
+   "x": "Vaincre tous les monstres à deux personnages maximum en moins de 40 tours."
+  }
+ ],
+ "acces": [
+  "Fabrique la clé, puis rends-toi au donjon à pied (téléportation et trousseau inutilisables).",
+  "Entrée en zone Cauchemar des Ravageurs [1,0], après la quête Le poids de son regard."
+ ],
+ "src": "https://www.dofuspourlesnoobs.com/bataille-de-l-aurore-pourpre.html"
+}

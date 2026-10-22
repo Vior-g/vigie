@@ -1,0 +1,114 @@
+{
+ "dj": "Bastion des Marteaux-Aigris",
+ "boss": "Barbéryl Clochecuivre",
+ "maj": "22/04/2025",
+ "essentiel": [
+  "Retire l'état Clochecuivre dès qu'un perso l'obtient, en frappant Barbéryl en mêlée.",
+  "Ne la pousse pas si tu veux la focus, elle gagne des résistances à chaque poussée.",
+  "Reste loin des monstres pour limiter leurs états Nimpatience.",
+  "Ne pose pas d'invocations près des monstres, ça accélère leur Nimpatience.",
+  "Pesanteur ou Enraciné empêchent l'échange de place de Clochecuivre."
+ ],
+ "mecaniques": [
+  {
+   "t": "Nimpatience",
+   "x": "Chaque ligne de dégâts subie ajoute un état, 2 max par tour, 5 au total, sans retour possible."
+  },
+  {
+   "t": "Clochecuivre",
+   "x": "Le premier perso blessé pendant le tour reçoit l'état, puis échange avec elle et perd 100PM."
+  },
+  {
+   "t": "Levée de Clochecuivre",
+   "x": "Un coup de mêlée sur Barbéryl retire l'état, y compris celui d'une invocation."
+  },
+  {
+   "t": "Nindécence",
+   "x": "Débloquée en Nimpatience III (une fois), puis en V (une fois par tour) : elle élimine un perso en mêlée."
+  },
+  {
+   "t": "Blocage",
+   "x": "Pesanteur, Enraciné ou Indéplaçable annulent l'échange de place et la perte de PM."
+  }
+ ],
+ "sorts": [
+  {
+   "n": "Nimparabilité",
+   "x": "Frappe l'eau en vol de vie, vole 1PM, 8PO, jusqu'à 4 fois par tour."
+  },
+  {
+   "n": "Ninfernal",
+   "x": "Se téléporte sur une case et frappe la terre en anneau, de 3 à 6PO, dès le tour 2."
+  },
+  {
+   "n": "Ninvasion",
+   "x": "S'attire sur la cible, applique 15% d'érosion 2 tours, en ligne de 2 à 5PO."
+  }
+ ],
+ "monstres": [
+  {
+   "n": "Marthos",
+   "d": "haut",
+   "x": "Ninsipide touche une ligne infinie et peut poser Clochecuivre à distance, bloque-le."
+  },
+  {
+   "n": "Sanglirok",
+   "d": "haut",
+   "x": "Ninspiration partage les dégâts et échange de place, garde-le loin de Barbéryl."
+  },
+  {
+   "n": "Boufronde",
+   "d": "moyen",
+   "x": "Son glyphe marron peut devenir gênant, surtout en butin 5 ou plus."
+  },
+  {
+   "n": "Blindur",
+   "d": "moyen",
+   "x": "Sa téléportation peut l'amener en mêlée, en butin 5 ou plus."
+  }
+ ],
+ "strategie": [
+  "Vise Barbéryl en premier, idéalement dès le tour 2, avant Nimpatience III.",
+  "Évite le Sanglirok près d'elle et bloque sa ligne de vue.",
+  "Pour le succès Dernier, élimine d'abord les monstres à distance avec du retrait PM.",
+  "Une fois les monstres morts, finis Barbéryl à distance en lui retirant ses PM."
+ ],
+ "pieges": [
+  "Repousser Barbéryl lui donne des résistances cumulables.",
+  "Une invocation proche d'un monstre accélère sa Nimpatience.",
+  "Ninsipide peut poser Clochecuivre même si tu restes à distance."
+ ],
+ "tours": [
+  {
+   "from": 2,
+   "every": 2,
+   "to": null,
+   "parity": null,
+   "level": "alerte",
+   "text": "Ninfernal disponible : Barbéryl peut se téléporter jusqu'à 6 cases."
+  }
+ ],
+ "succes": [
+  {
+   "n": "Dernier",
+   "x": "Barbéryl doit tomber en dernier, retrait PM conseillé."
+  },
+  {
+   "n": "Versatile",
+   "x": "Chaque allié utilise une même action une seule fois par tour."
+  },
+  {
+   "n": "Spécial Antioxydant",
+   "x": "Aucun ennemi n'atteint l'état Nimpatience V."
+  },
+  {
+   "n": "Duo",
+   "x": "Vaincre tous les monstres à 2 persos maximum en moins de 20 tours."
+  }
+ ],
+ "acces": [
+  "Galeries d'Ereboria en [32,-64], via la quête L'île maudite.",
+  "Bateau vers Ereboria en [36,-76], puis les galeries en [33,-70]."
+ ],
+ "src": "https://www.dofuspourlesnoobs.com/bastion-des-marteaux-aigris.html"
+}

@@ -1,0 +1,47 @@
+{
+ "dj": "Goulet du Rasboul",
+ "boss": "Silf le Rasboul Majeur",
+ "maj": null,
+ "essentiel": [
+  "Silf a 200% de résistances partout.",
+  "Retire (ou ajoute) des PA à Silf jusqu'à 14 PA pour activer Hololole.",
+  "Frappe toujours dans le même élément, jamais avec un CàC multi-élément.",
+  "Tue les Rasbouls Mineurs au fur et à mesure."
+ ],
+ "mecaniques": [
+  {
+   "t": "Retrait de PA",
+   "x": "Chaque PA retiré lui en rend 1 ; il part de 8 PA."
+  },
+  {
+   "t": "Hololole",
+   "x": "À 14 PA, pendant 2 tours, chaque coup dans un élément lui retire 50% de résistance dans cet élément."
+  },
+  {
+   "t": "Invocations",
+   "x": "Jusqu'à 2 Rasbouls Mineurs par tour, qui soignent."
+  }
+ ],
+ "sorts": [],
+ "monstres": [],
+ "strategie": [
+  "Tue les accompagnants.",
+  "Monte Silf à 14 PA.",
+  "Frappe 4 fois dans le même élément avec des sorts peu coûteux."
+ ],
+ "pieges": [
+  "Changer d'élément.",
+  "Laisser s'accumuler les Rasbouls Mineurs."
+ ],
+ "tours": [],
+ "succes": [
+  {
+   "n": "Ras le boule",
+   "x": "Jamais plus de 2 Rasbouls Mineurs au début du tour de Silf."
+  }
+ ],
+ "acces": [
+  "[-51,9], parle à Razbitume."
+ ],
+ "src": "https://www.dofuspourlesnoobs.com/goulet-du-rasboul.html"
+}

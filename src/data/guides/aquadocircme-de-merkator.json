@@ -1,0 +1,123 @@
+{
+ "dj": "Aquadôme de Merkator",
+ "boss": "Merkator",
+ "maj": "04/10/2025",
+ "essentiel": [
+  "Tape Merkator en mêlée, car il réduit de 50% les dégâts à distance.",
+  "Tue l'Eskoglyphe en premier, son boost PM gêne ton équipe.",
+  "Ne reste jamais en ligne avec Merkator les tours impairs à partir du tour 3.",
+  "Retirer des PM aux monstres te coûte des dégâts, donc protège-toi d'abord.",
+  "Ne tape pas Merkator sous Baphe Thysca sans être sûr d'éviter Sondage de Bronze."
+ ],
+ "mecaniques": [
+  {
+   "t": "Mer Kantile",
+   "x": "Merkator réduit de 50% les dégâts à distance et gagne 2% de dommages finaux à chaque attaque à distance subie."
+  },
+  {
+   "t": "Indéplaçable",
+   "x": "Merkator et tous les monstres sont indéplaçables, seul l'effet Mer Cure peut les bouger."
+  },
+  {
+   "t": "Mer Veille",
+   "x": "Retirer des PM à un monstre te coûte environ 500 dégâts feu en vol de vie."
+  },
+  {
+   "t": "Mer Cure",
+   "x": "Frapper un allié à l'arme le repousse, frapper un monstre en mêlée repousse alliés et ennemis."
+  },
+  {
+   "t": "Marée Descendante",
+   "x": "Au début de son tour, Merkator attire les personnages en ligne jusqu'à 12PO et leur retire 4PM."
+  }
+ ],
+ "sorts": [
+  {
+   "n": "Baphe Thysca",
+   "x": "Chaque dégât subi booste Sondage de Bronze de 30, jusqu'à 5 fois, et lance Marée Descendante le tour suivant."
+  },
+  {
+   "n": "Sondage de Bronze",
+   "x": "950 dégâts terre en ligne de 5 cases, à portée 3PO maximum en ligne."
+  },
+  {
+   "n": "Torpillage de Glace",
+   "x": "1100 dégâts eau en mêlée, divise la vitalité par deux pour 1 tour et applique Pesanteur."
+  }
+ ],
+ "monstres": [
+  {
+   "n": "Eskoglyphe",
+   "d": "haut",
+   "x": "Ses alliés gagnent des PM si tu le touches à distance, donc tue-le vite ou en mêlée."
+  },
+  {
+   "n": "Harpo",
+   "d": "haut",
+   "x": "Reste hors de sa ligne de vue ou à moins de 5PO quand Moule Chote est boosté."
+  },
+  {
+   "n": "Pikoleur",
+   "d": "haut",
+   "x": "Ses coups touchent presque toute la carte selon ses PV manquants, tue-le avant son tour."
+  },
+  {
+   "n": "Cyclophandre",
+   "d": "moyen",
+   "x": "C'est le monstre le moins dangereux, laisse-le pour la fin."
+  }
+ ],
+ "strategie": [
+  "Tue d'abord les monstres, en commençant par l'Eskoglyphe.",
+  "Enchaîne avec le Harpo, en évitant Moule Chote au tour 3.",
+  "Achève le Cyclophandre en dernier, car il est le plus faible.",
+  "Éloigne-toi de Merkator et évite sa ligne les tours impairs.",
+  "Finis Merkator en mêlée pour aller vite, ou à distance si tu préfères lentement."
+ ],
+ "pieges": [
+  "Taper l'Eskoglyphe à distance booste ses alliés en PM.",
+  "Taper Merkator sous Baphe Thysca augmente Sondage de Bronze de 30 à chaque coup.",
+  "Rester en ligne avec Merkator les tours impairs te retire 4PM et t'attire."
+ ],
+ "tours": [
+  {
+   "from": 3,
+   "every": 2,
+   "to": null,
+   "parity": "impair",
+   "level": "danger",
+   "text": "Évite la ligne de Merkator, il attire et retire 4PM les tours impairs."
+  },
+  {
+   "from": 3,
+   "every": 1,
+   "to": 3,
+   "parity": null,
+   "level": "alerte",
+   "text": "Au tour 3, Moule Chote du Harpo est boosté, reste hors de portée ou de vue."
+  }
+ ],
+ "succes": [
+  {
+   "n": "Dernier",
+   "x": "Achève Merkator en dernier, après tous les monstres."
+  },
+  {
+   "n": "Mystique",
+   "x": "Alliés uniquement en sorts de dégâts ou soins, sans armes de corps à corps."
+  },
+  {
+   "n": "Spécial",
+   "x": "Chaque allié termine ou commence son tour en ligne d'un ennemi."
+  },
+  {
+   "n": "Duo",
+   "x": "Vaincre tous les monstres à 2 personnages maximum, en moins de 40 tours."
+  }
+ ],
+ "acces": [
+  "Entrée dans la base Abyssale, en [21,18].",
+  "Clé à fabriquer avec des ressources récupérées sur les monstres du donjon."
+ ],
+ "src": "https://www.dofuspourlesnoobs.com/aquadocircme-de-merkator.html"
+}

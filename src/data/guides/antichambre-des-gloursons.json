@@ -1,0 +1,83 @@
+{
+ "dj": "Antichambre des Gloursons",
+ "boss": "Glourséleste",
+ "maj": null,
+ "essentiel": [
+  "Tout dommage de poussée t'élimine : surveille le Glourmand.",
+  "Ne retire ni PM ni PO au Glourséleste et ne le déplace jamais, sinon il ressuscite des monstres.",
+  "Frappe-le au corps à corps pour lever son invulnérabilité pendant ton tour.",
+  "Garde-le pour la fin et évite de lui retirer des PA."
+ ],
+ "mecaniques": [
+  {
+   "t": "Invulnérabilité",
+   "x": "Se lève seulement pour le tour du personnage qui frappe au corps à corps ; le premier coup ne fait rien."
+  },
+  {
+   "t": "Résurrection",
+   "x": "Frapper le Glouragan pendant qu'il attire le boss fait ressusciter ses alliés morts."
+  },
+  {
+   "t": "Repoussée",
+   "x": "Tout ce qui est en ligne à 4 PO est repoussé de 4 cases ; un obstacle te tue."
+  },
+  {
+   "t": "État Résuglours",
+   "x": "Retrait de PM, de PO ou déplacement le font basculer dans cet état."
+  },
+  {
+   "t": "Puissance",
+   "x": "Ses coups au corps à corps infligent 10 % de ses PV manquants."
+  }
+ ],
+ "sorts": [
+  {
+   "n": "Taclours",
+   "x": "Si l'esquive d'un monstre échoue, tu meurs ainsi que tes alliés au corps à corps de ce monstre."
+  }
+ ],
+ "monstres": [
+  {
+   "n": "Glourmand",
+   "d": "haut",
+   "x": "Se booste de 1000 dégâts de poussée à chaque coup reçu ; désenvoûte-le."
+  },
+  {
+   "n": "Méliglours",
+   "d": "haut",
+   "x": "Sacrifie ses alliés et les booste ; tue-le en premier."
+  },
+  {
+   "n": "Glouragan",
+   "d": "moyen",
+   "x": "Attire ce qui est en ligne ; ne le frappe pas tant qu'il attire le boss."
+  },
+  {
+   "n": "Apériglours",
+   "d": "moyen",
+   "x": "Soigne les monstres voisins si tu l'attaques au corps à corps."
+  }
+ ],
+ "strategie": [
+  "Lance un Pandawasta au fond de la map pour occuper les monstres.",
+  "Élimine d'abord le Glourmand et le Méliglours.",
+  "Tue le Glouragan, le Boulglours et les Apériglours sans toucher le boss.",
+  "Reboost, protège ton équipe, puis frappe le Glourséleste au corps à corps."
+ ],
+ "pieges": [
+  "Un Glourmand boosté peut éliminer plusieurs personnages d'un coup.",
+  "Frapper le Glouragan en ligne avec le boss fait ressusciter ses alliés.",
+  "Retirer des PM ou PO au boss le fait entrer en Résuglours."
+ ],
+ "tours": [],
+ "succes": [
+  {
+   "n": "Complaisance gloursonne",
+   "x": "Aucun retrait de PM, PA, PO ni déplacement des ennemis par tes alliés."
+  }
+ ],
+ "acces": [
+  "Mont Torrideau en [-63,-75], parle à Willy."
+ ],
+ "src": "https://www.dofuspourlesnoobs.com/antichambre-des-gloursons.html"
+}

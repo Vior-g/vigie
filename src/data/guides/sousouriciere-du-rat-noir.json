@@ -1,0 +1,56 @@
+{
+ "dj": "Sousouricière du Rat Noir",
+ "boss": "Rat Noir",
+ "maj": null,
+ "essentiel": [
+  "Ne soigne jamais la cible sous Peste Noire (dégâts Air énormes).",
+  "Reste à distance du Rat Noir (Kackitu en mêlée).",
+  "Évite terre et neutre : il y résiste et Kackisoigne soigne ses alliés.",
+  "Frappe en feu et air, ses faiblesses.",
+  "Le vol de vie n'est pas un soin."
+ ],
+ "mecaniques": [
+  {
+   "t": "Peste Noire",
+   "x": "Soigner la cible lui inflige 50% des PV actuels du Rat Noir en Air."
+  },
+  {
+   "t": "Kackitu",
+   "x": "En mêlée : la cible qui subit terre ou neutre meurt."
+  },
+  {
+   "t": "Kackisoigne",
+   "x": "Soigne entièrement un allié qui subit terre ou neutre."
+  }
+ ],
+ "sorts": [],
+ "monstres": [
+  {
+   "n": "Rate Atinée",
+   "d": "haut",
+   "x": "Soigne et frappe en zone."
+  },
+  {
+   "n": "Rate Iboisée",
+   "d": "haut",
+   "x": "Forte en mêlée."
+  }
+ ],
+ "strategie": [
+  "À distance, en feu et air."
+ ],
+ "pieges": [
+  "Soigner une cible sous Peste Noire."
+ ],
+ "tours": [],
+ "succes": [
+  {
+   "n": "Spécial (Rat-trapage)",
+   "x": "Le Rat Noir ne subit aucun dégât avant la mort des autres."
+  }
+ ],
+ "acces": [
+  "Entrailles de Brâkmar [-28,37]."
+ ],
+ "src": "https://www.dofuspourlesnoobs.com/sousouriciere-du-rat-noir.html"
+}

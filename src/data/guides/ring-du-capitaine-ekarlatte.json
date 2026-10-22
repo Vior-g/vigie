@@ -1,0 +1,40 @@
+{
+ "dj": "Ring du Capitaine Ekarlatte",
+ "boss": "Capitaine Ekarlatte",
+ "maj": null,
+ "essentiel": [
+  "Une salle, cinq vagues : élimine-les vite.",
+  "Élimine le Capitaine Ekarlatte en premier (attirances, échanges, téléportations).",
+  "Garde 2 PM tant que le Tromblion est vivant."
+ ],
+ "mecaniques": [
+  {
+   "t": "Vagues",
+   "x": "Tuer une vague avant son délai lance la suivante."
+  },
+  {
+   "t": "Piège Tromblion",
+   "x": "Te pousse de deux cases."
+  }
+ ],
+ "sorts": [],
+ "monstres": [],
+ "strategie": [
+  "Focus Ekarlatte.",
+  "Tue vite chaque vague."
+ ],
+ "pieges": [
+  "Le Tromblion te repousse."
+ ],
+ "tours": [],
+ "succes": [
+  {
+   "n": "Sortie de ring",
+   "x": "Finir chaque tour sur sa cellule de départ."
+  }
+ ],
+ "acces": [
+  "Srambad, Ruelles des Eaux-Suaires [6,3]."
+ ],
+ "src": "https://www.dofuspourlesnoobs.com/ring-du-capitaine-ekarlatte.html"
+}

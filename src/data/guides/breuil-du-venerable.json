@@ -1,0 +1,123 @@
+{
+ "dj": "Breuil du Vénérable",
+ "boss": "Vénérable Endormi",
+ "maj": "13/10/2026",
+ "essentiel": [
+  "Ne tape jamais un monstre à 3PO ou moins du Vénérable, sinon il se réveille.",
+  "Élimine les cinq vagues avant de t'attaquer au Vénérable Endormi.",
+  "Élimine la Monture pour lever l'invulnérabilité du Vénérable.",
+  "Sans dégâts, les monstres passent en Alerte tous les deux tours.",
+  "Reste hors de la ligne de vue du Vénérable, surtout quand il se réveille."
+ ],
+ "mecaniques": [
+  {
+   "t": "Invulnérabilité",
+   "x": "Le Vénérable reste invulnérable tant que sa Monture est vivante."
+  },
+  {
+   "t": "État Apathique",
+   "x": "Les monstres perdent 80% de PM et ne lancent pas de sorts. Ils se soignent de 10% par tour."
+  },
+  {
+   "t": "État Alerté",
+   "x": "Un monstre Alerté réveille le Vénérable s'il est à 3PO ou moins. Il se rendort après 2 tours."
+  },
+  {
+   "t": "Bébés",
+   "x": "Un Zarbivore Apathique invoque un bébé. Un seul bébé apparaît par tour dans le combat."
+  },
+  {
+   "t": "Phase 2",
+   "x": "À 16 000 PV, le Vénérable passe en phase 2 et gagne Gare au Gorille jusqu'à la fin."
+  }
+ ],
+ "sorts": [
+  {
+   "n": "Cri Vénérable",
+   "x": "650 dégâts air en vol de vie aux ennemis en ligne de vue, repousse de 4 cases."
+  },
+  {
+   "n": "Primartèlement",
+   "x": "700 dégâts terre à tous tes personnages et invocations, puis les attire de 4 cases."
+  },
+  {
+   "n": "Saut Impérieux",
+   "x": "Se téléporte sur la case ciblée et inflige 800 dégâts terre en cercle de taille 2."
+  }
+ ],
+ "monstres": [
+  {
+   "n": "Gyrafor",
+   "d": "haut",
+   "x": "Tape à distance sans ligne de vue et retire PO et critiques. Garde-le loin."
+  },
+  {
+   "n": "Gropotam",
+   "d": "moyen",
+   "x": "Retire critiques et dégâts critiques."
+  },
+  {
+   "n": "Brutapir",
+   "d": "moyen",
+   "x": "Repousse et soigne ses alliés, frappe fort au corps à corps."
+  },
+  {
+   "n": "Amphibouc",
+   "d": "moyen",
+   "x": "Se téléporte et frappe en zone."
+  }
+ ],
+ "strategie": [
+  "Isole un monstre à plus de 3PO des autres et élimine-le.",
+  "Éloigne les monstres du Vénérable avec du retrait PM et des sorts de déplacement.",
+  "Tape en zone quand plusieurs monstres sont regroupés.",
+  "Élimine la Monture avec le personnage qui joue juste après le Vénérable.",
+  "Retire 16 000 PV au Vénérable pour atteindre son seuil de phase 2."
+ ],
+ "pieges": [
+  "Éliminer un monstre dont le bébé est à 3PO ou moins réveille le Vénérable.",
+  "Le Cri Vénérable touche tout ce qui est en ligne de vue : cache-toi derrière un obstacle.",
+  "Le Primartèlement attire tout le terrain : ne reste pas groupé autour du Vénérable."
+ ],
+ "tours": [
+  {
+   "from": 1,
+   "every": 5,
+   "to": 21,
+   "parity": null,
+   "level": "info",
+   "text": "Nouvelle vague, invulnérable pendant son premier tour."
+  },
+  {
+   "from": 3,
+   "every": 4,
+   "to": null,
+   "parity": null,
+   "level": "alerte",
+   "text": "Les monstres Apathiques passent en Alerté (cycle de 4 tours)."
+  }
+ ],
+ "succes": [
+  {
+   "n": "Premier",
+   "x": "Achever le Vénérable Endormi en premier."
+  },
+  {
+   "n": "Hardi",
+   "x": "Terminer son tour à côté d'un ennemi."
+  },
+  {
+   "n": "Spécial",
+   "x": "Achever le Vénérable Endormi en dernier."
+  },
+  {
+   "n": "Trio",
+   "x": "Vaincre tous les monstres avec 3 personnages maximum en moins de 80 tours."
+  }
+ ],
+ "acces": [
+  "Portail de la Tour des Voyageurs en [-22,-24] pour rejoindre Osavora.",
+  "Entrée dans la Réserve Touffue d'Osavora en [6,9]."
+ ],
+ "src": "https://www.dofuspourlesnoobs.com/breuil-du-venerable.html"
+}

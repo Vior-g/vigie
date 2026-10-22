@@ -1,0 +1,85 @@
+{
+ "dj": "Clairière du Chêne Mou",
+ "boss": "Chêne Mou",
+ "maj": null,
+ "essentiel": [
+  "Tue le Chêne Mou en priorité : ses branches restent invulnérables tant qu'il vit.",
+  "Privilégie les dégâts Eau et Air.",
+  "Surveille les soins de la Branche Soignante avant de te déplacer.",
+  "Gère les invocations de la Branche Invocatrice dès qu'elles apparaissent."
+ ],
+ "mecaniques": [
+  {
+   "t": "Invulnérabilité",
+   "x": "Les branches et leurs invocations sont invulnérables jusqu'à la mort du Chêne Mou."
+  },
+  {
+   "t": "Soins par déplacement",
+   "x": "Un perso envoûté par la Branche Soignante soigne l'ennemi le plus proche après chaque déplacement."
+  },
+  {
+   "t": "Invocations",
+   "x": "La Branche Invocatrice invoque un monstre tous les deux tours."
+  }
+ ],
+ "sorts": [
+  {
+   "n": "Tornade de Branches",
+   "x": "400 air, repousse de 2 en cercle de taille 2 autour de lui."
+  },
+  {
+   "n": "Écorçage",
+   "x": "450 eau à 10 PO, vole 2 PM."
+  },
+  {
+   "n": "Branchele-Bas",
+   "x": "Échange sa position avec un allié."
+  }
+ ],
+ "monstres": [
+  {
+   "n": "Branche Soignante",
+   "d": "haut",
+   "x": "Soigne fortement."
+  },
+  {
+   "n": "Branche Invocatrice",
+   "d": "haut",
+   "x": "Invoque tous les deux tours et retire 2 PA."
+  },
+  {
+   "n": "Abrakne Sombre Irascible",
+   "d": "moyen",
+   "x": "Retire des résistances et désenvoûte."
+  }
+ ],
+ "strategie": [
+  "Élimine les accompagnants jusqu'à ne laisser que branches et Chêne Mou.",
+  "Focus le Chêne Mou en lui retirant des PM.",
+  "Tue ensuite les branches."
+ ],
+ "pieges": [
+  "Finir ton tour en ligne avec le Chêne Mou : il attire et frappe fort.",
+  "Laisser les invocations s'accumuler."
+ ],
+ "tours": [
+  {
+   "from": 1,
+   "every": 2,
+   "to": null,
+   "parity": null,
+   "level": "alerte",
+   "text": "Nouvelle invocation de la Branche Invocatrice."
+  }
+ ],
+ "succes": [
+  {
+   "n": "Enchaînemou",
+   "x": "Chaque allié doit finir son tour aligné avec un ennemi."
+  }
+ ],
+ "acces": [
+  "Forêt Sombre en [-14,-13], parle à Josette Taplane."
+ ],
+ "src": "https://www.dofuspourlesnoobs.com/clairiegravere-du-checircne-mou.html"
+}

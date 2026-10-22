@@ -1,0 +1,71 @@
+{
+ "dj": "Caverne d'El Piko",
+ "boss": "El Piko",
+ "maj": null,
+ "essentiel": [
+  "Tu renvoies 50 dégâts par ligne subie, tout le combat.",
+  "Chaque tour d'El Piko, un état Tactique A à D est tiré.",
+  "Ne termine jamais ton tour à côté d'un allié (Guerillero).",
+  "Tue les Lévitos en priorité.",
+  "Reste à distance."
+ ],
+ "mecaniques": [
+  {
+   "t": "Guerillero",
+   "x": "Finir ton tour à côté d'un perso lui inflige 110 dégâts."
+  },
+  {
+   "t": "États Tactique",
+   "x": "A : 10% de résistances. B : tacle/fuite. C : esquive PA/PM. D : 100 puissance."
+  }
+ ],
+ "sorts": [
+  {
+   "n": "Bamba",
+   "x": "Vole 1 PA, 1 PM, 2 PO ou 100 vitalité selon l'état, 7 PO."
+  },
+  {
+   "n": "Pikak",
+   "x": "300 dégâts dans l'élément de l'état, mêlée."
+  },
+  {
+   "n": "Piképik",
+   "x": "220 en vol de vie et poison, 12 PO."
+  }
+ ],
+ "monstres": [
+  {
+   "n": "Lévito",
+   "d": "haut",
+   "x": "Retire PA et PM : tue-le en premier."
+  },
+  {
+   "n": "Cactanus",
+   "d": "moyen",
+   "x": "Renvoie 30% des dégâts de mêlée."
+  }
+ ],
+ "strategie": [
+  "Lévitos d'abord, puis les autres.",
+  "Joue à distance.",
+  "El Piko seul à la fin."
+ ],
+ "pieges": [
+  "Finir à côté d'un allié."
+ ],
+ "tours": [],
+ "succes": [
+  {
+   "n": "Spécial Guerilla",
+   "x": "Ne jamais blesser un allié avec Guerillero."
+  },
+  {
+   "n": "Duo",
+   "x": "2 persos max, moins de 20 tours."
+  }
+ ],
+ "acces": [
+  "Saharach, nord du Territoire Cacterre, [15,-65]."
+ ],
+ "src": "https://www.dofuspourlesnoobs.com/caverne-d-el-piko.html"
+}

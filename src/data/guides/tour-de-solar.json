@@ -1,0 +1,138 @@
+{
+ "dj": "Tour de Solar",
+ "boss": "Solar",
+ "maj": "05/10/2026",
+ "essentiel": [
+  "Lance Nécronyx sur chaque monstre avant de le tuer, sinon il ressuscite et joue son tour.",
+  "Ne laisse jamais Solar mourir sans Nécronyx actif, sinon tout ton groupe est OS.",
+  "Solar n'est vulnérable que dans son état Nadir, il est invulnérable avant.",
+  "Solar renvoie les dégâts sur les cases voisines : attention à tes alliés au corps à corps.",
+  "Nécronyx ne fait avancer Solar que d'un état à la fois et ne fait plus passer ton tour depuis la 3.7."
+ ],
+ "mecaniques": [
+  {
+   "t": "Pyrozomb",
+   "x": "Chaque monstre ressuscite le prochain monstre tué. Ils renvoient les dégâts en carré de taille 1 et infligent des dégâts terre en cercle de taille 2 à leur mort."
+  },
+  {
+   "t": "Cycle solaire",
+   "x": "Solar enchaîne Aurore (tours 1 à 3), Zénith (4 à 6), Crépuscule (7 à 9), puis Nadir dès le tour 10."
+  },
+  {
+   "t": "Invulnérabilité",
+   "x": "Solar est invulnérable en Aurore, Zénith et Crépuscule. Seul Nadir le rend vulnérable, et Nécronyx le fait passer d'un état au suivant."
+  },
+  {
+   "t": "Glyphes de bordure",
+   "x": "Un glyphe au bord de la carte agit selon l'état de Solar quand tu commences ton tour dessus : -300 puissance, érosion, -2PA ou -4PO."
+  }
+ ],
+ "sorts": [
+  {
+   "n": "Éruption Solaire",
+   "x": "En Zénith : 800 feu sur tous tes persos (1200 avec Pesanteur) et -6PO pendant 1 tour."
+  },
+  {
+   "n": "Coucher de Soleil",
+   "x": "En Crépuscule : -4PM pendant 1 tour, avec Pesanteur, Indéplaçable et Lourd, en ligne jusqu'à 3PO."
+  },
+  {
+   "n": "Démons de Minuit",
+   "x": "En Nadir : 150 air en croix, poison air de 54 par PA utilisé pendant 2 tours, portée 12PO."
+  },
+  {
+   "n": "Lève-tôt",
+   "x": "En Aurore : bouclier de 1300 pour ses alliés en croix de 5PO, et 1200 terre sur tes ennemis."
+  }
+ ],
+ "monstres": [
+  {
+   "n": "Moribombe",
+   "d": "haut",
+   "x": "Grenade Collante augmente les dégâts que tu subis (50%, jusqu'à 150% en Audace). Tue-le en priorité."
+  },
+  {
+   "n": "Klémort",
+   "d": "moyen",
+   "x": "Magmagique réduit ses dégâts de moitié mais retire du tacle. Frappe-le au corps à corps ou désenvoûte-le."
+  },
+  {
+   "n": "Halbardent",
+   "d": "moyen",
+   "x": "Geoassaut frappe environ 430 terre et inflige 30% d'érosion pendant 2 tours."
+  },
+  {
+   "n": "Trépavois",
+   "d": "moyen",
+   "x": "Charge au Bouclier frappe environ 400 terre en zone carré de 3 cases. Avancée Inexorable le rend invulnérable à distance et indéplaçable."
+  }
+ ],
+ "strategie": [
+  "Tank les autres monstres au corps à corps et laisse Solar tranquille au début.",
+  "Élimine le Moribombe en premier, puis enchaîne sur les autres monstres.",
+  "Lance Nécronyx sur un monstre juste avant de le tuer pour bloquer sa résurrection.",
+  "Entame Solar sans Nécronyx en évitant le renvoi de dégâts sur tes alliés.",
+  "Réapplique Nécronyx au tour 3 pour qu'il soit en Nadir au tour 4.",
+  "En Nadir, finis-le en un tour si tu peux ; sinon entame-le au maximum puis applique Nécronyx au tour 5 et finis-le."
+ ],
+ "pieges": [
+  "Nécronyx sur Solar ou un Calciné t'inflige 20% d'érosion supplémentaire pendant 3 tours.",
+  "Si Solar meurt sans Nécronyx, tout le groupe est OS et tu perds le combat.",
+  "Solar ressuscité perd son Nécronyx : réapplique-le avant de tuer le monstre qui l'a ressuscité.",
+  "Si tu ne finis pas Solar en Nadir avant son tour, il repasse en Aurore et redevient invulnérable."
+ ],
+ "tours": [
+  {
+   "from": 1,
+   "every": 1,
+   "to": 3,
+   "parity": null,
+   "level": "info",
+   "text": "Aurore : Solar soigne et esquive, et tes persos gagnent +1PA."
+  },
+  {
+   "from": 4,
+   "every": 1,
+   "to": 6,
+   "parity": null,
+   "level": "alerte",
+   "text": "Zénith : tu perds 6PO, tes persos gagnent +2PA, Solar devient lourd et intaclable."
+  },
+  {
+   "from": 7,
+   "every": 1,
+   "to": 9,
+   "parity": null,
+   "level": "alerte",
+   "text": "Crépuscule : tu perds 1PA à chaque tour."
+  },
+  {
+   "from": 10,
+   "every": 1,
+   "to": null,
+   "parity": null,
+   "level": "danger",
+   "text": "Nadir : Solar devient vulnérable, mais tu perds 2PA. C'est le seul moment où tu peux le frapper."
+  }
+ ],
+ "succes": [
+  {
+   "n": "La mort sait attendre (spécial)",
+   "x": "Tue Solar en premier, avec Nécronyx actif à sa mort. Aucun ennemi ne doit avoir Nécronyx avant la mort de Solar. Tank les autres monstres."
+  },
+  {
+   "n": "Expédition de l'Audace",
+   "x": "Tue tous les monstres avant Solar, Moribombe d'abord. Passe Solar en Crépuscule avec Nécronyx, puis finis-le au tour suivant pour profiter du bonus de 3PA."
+  },
+  {
+   "n": "Expédition de la Bravoure",
+   "x": "Joue avec peu de persos et invoque peu, car les glyphes se cumulent. Évite de finir ton tour sur un glyphe et utilise Nécronyx en Zénith."
+  }
+ ],
+ "acces": [
+  "Entrée aux Marches Magmatiques en [-31,15].",
+  "Terminer la quête La colère des dieux pour accéder aux Marches Magmatiques.",
+  "Posséder le sort Nécronyx, obtenu via la quête L'arme fatale."
+ ],
+ "src": "https://www.dofuspourlesnoobs.com/tour-de-solar.html"
+}

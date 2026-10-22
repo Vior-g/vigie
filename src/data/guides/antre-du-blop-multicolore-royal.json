@@ -1,0 +1,66 @@
+{
+ "dj": "Antre du Blop Multicolore Royal",
+ "boss": "Blop Multicolore Royal",
+ "maj": null,
+ "essentiel": [
+  "Le Multicolore a 100% de résistances : tuer un Blop Royal retire la résistance de son élément.",
+  "Reste loin des Blops Royaux : ils frappent jusqu'à 6PO, 2 fois par tour.",
+  "Ne finis jamais ton tour dans un glyphe blanc : mort immédiate.",
+  "Prévois des sorts dans les 4 éléments."
+ ],
+ "mecaniques": [
+  {
+   "t": "Résistances",
+   "x": "Tuer un Blop Royal retire la résistance de son élément au Multicolore."
+  },
+  {
+   "t": "Poison et insoignable",
+   "x": "Tous les 3 tours, poison sur tous les persos et insoignable 1 tour."
+  },
+  {
+   "t": "Glyphes blancs",
+   "x": "Posés par les Blops invoqués : -2PM, OS si tu finis ton tour dedans."
+  }
+ ],
+ "sorts": [
+  {
+   "n": "Blopoutrage Royal",
+   "x": "250 dans chaque élément en vol de vie, vole 2PM, 6PO."
+  },
+  {
+   "n": "Blopagation",
+   "x": "Insoignable 1 tour et poison de 160 par élément."
+  }
+ ],
+ "monstres": [
+  {
+   "n": "Blops Royaux",
+   "d": "haut",
+   "x": "1000 dégâts, 2 fois par tour à 6PO."
+  },
+  {
+   "n": "Gloutoblop",
+   "d": "haut",
+   "x": "Peut OS en mêlée."
+  }
+ ],
+ "strategie": [
+  "Retire la PO des Blops Royaux.",
+  "Tue-les un par un.",
+  "Évite toujours les glyphes blancs."
+ ],
+ "pieges": [
+  "Finir son tour dans un glyphe blanc."
+ ],
+ "tours": [],
+ "succes": [
+  {
+   "n": "Touche pas à mes blops",
+   "x": "Attaquer uniquement le Multicolore jusqu'à sa mort."
+  }
+ ],
+ "acces": [
+  "Clé au Lac de Cania [-7,-43] ; entrée via le Clos des Blops (Bibiblop)."
+ ],
+ "src": "https://www.dofuspourlesnoobs.com/antre-du-blop-multicolore-royal.html"
+}

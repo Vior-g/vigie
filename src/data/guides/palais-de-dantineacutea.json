@@ -1,0 +1,131 @@
+{
+ "dj": "Palais de Dantinéa",
+ "boss": "Dantinéa",
+ "maj": "05/10/2026",
+ "essentiel": [
+  "Chaque personnage est lié à un Grokillage : tant qu'il vit, tu frappes à 50 % et tu perds 1PM par tour.",
+  "Élimine d'abord les Grokillages des personnages qui frappent le plus fort.",
+  "Dès le tour 6, puis tous les 5 tours, Dantinéa relance des Grokillages. Un Grokillage encore vivant expose son personnage lié à un OS.",
+  "Tue le Tryde en priorité : il gagne de la puissance tant qu'il reste invisible.",
+  "Ne termine jamais ton tour dans la ligne de vue de la Poulpée, ni en mêlée avec le Tourthon."
+ ],
+ "mecaniques": [
+  {
+   "t": "Grokillages liés",
+   "x": "Dantinéa invoque autant de Grokillages (1000 PV) que de personnages. Chaque personnage est lié à l'un d'eux selon son placement. Tant que ce Grokillage vit, ses dégâts sont réduits de moitié sur tous les ennemis."
+  },
+  {
+   "t": "Cycle de 5 tours",
+   "x": "Tous les 5 tours, Dantinéa OS ses Grokillages restants et les personnages liés encore vivants, puis réinvoque de nouveaux Grokillages. Le cycle recommence."
+  },
+  {
+   "t": "Renvoi de dégâts",
+   "x": "Le Tourthon renvoie 50 % des dégâts à un attaquant Insoignable. Un allié Insoignable doit donc éviter de le frapper."
+  },
+  {
+   "t": "Invisibilité du Tryde",
+   "x": "Au début de chaque tour, le Tryde devient invisible et gagne 100 de puissance cumulable. Seuls des dégâts le rendent visible, et ceux-ci remettent sa puissance à 0."
+  },
+  {
+   "t": "Séduction Abyssale",
+   "x": "La Poulpée rend Insoignable un personnage qui finit son tour dans sa ligne de vue. Si cela se répète, il perd 100PM en plus."
+  }
+ ],
+ "sorts": [
+  {
+   "n": "Pacte Maléfique",
+   "x": "Invoque les Grokillages. Au début de chaque tour, frappe 600 eau les personnages alignés avec un Grokillage."
+  },
+  {
+   "n": "Siphon d'Âme",
+   "x": "Frappe 1000 neutre en vol de vie, jusqu'à 3PO, 2 fois par tour."
+  },
+  {
+   "n": "Danse Tentaculaire",
+   "x": "Frappe 600 terre et 600 air en zone cercle de rayon 2 autour d'elle."
+  },
+  {
+   "n": "Cooquillation",
+   "x": "Échange sa place avec un Grokillage jusqu'à 6PO sans ligne de vue. Disponible à partir du tour 2, puis tous les 2 tours."
+  }
+ ],
+ "monstres": [
+  {
+   "n": "Tryde",
+   "d": "haut",
+   "x": "Invisible à chaque tour, il se téléporte en mêlée derrière sa cible et pose un piège en croix. Repère-le et tue-le vite."
+  },
+  {
+   "n": "Rilur",
+   "d": "haut",
+   "x": "Ses sorts posent des glyphes jaunes (Pesanteur + feu). Fuis-le si tu es Affaibli, car il peut t'OS à faible portée."
+  },
+  {
+   "n": "Poulpée",
+   "d": "haut",
+   "x": "Son effet continu rend Insoignable puis retire 100PM. Reste hors de sa ligne de vue et évite de t'aligner avec elle."
+  },
+  {
+   "n": "Tourthon",
+   "d": "moyen",
+   "x": "Attire de 4 cases à longue portée. Son sort en mêlée met Pacifiste. Ne finis jamais en mêlée avec lui."
+  },
+  {
+   "n": "Diondin",
+   "d": "moyen",
+   "x": "Son sort à 4PO en ligne frappe le feu et repousse de 4 cases, ce qui fait mal aux Pacifistes. Évite de rester en ligne avec lui."
+  }
+ ],
+ "strategie": [
+  "Avant le combat, utilise le schéma des placements pour savoir quel Grokillage est lié à quel personnage.",
+  "Dès le début, élimine les Grokillages des personnages les plus forts pour les libérer.",
+  "Vise d'abord le Tryde, idéalement en un seul tour une fois repéré.",
+  "Ensuite, occupe-toi du Rilur, puis du Diondin, en gardant tes distances.",
+  "Avant le tour 6, élimine les Grokillages restants des personnages qui n'en ont plus besoin pour éviter un OS.",
+  "Vise tous les monstres avant le tour 6, puis Dantinéa avant son tour 11 si possible, en restant à distance."
+ ],
+ "pieges": [
+  "Glyphes jaunes du Rilur : ils mettent Pesanteur et frappent le feu. Ne passe pas dessus.",
+  "Piège en croix du Tryde : une fois dedans, tu es attiré au centre et tu ne peux en sortir qu'avec une téléportation ou un état d'immobilité.",
+  "Ligne du Diondin : à 4PO, sa poussée est dangereuse pour les Pacifistes qui subissent des dégâts de poussée.",
+  "Allié Insoignable : frapper le Tourthon lui renvoie 50 % des dégâts."
+ ],
+ "tours": [
+  {
+   "from": 6,
+   "every": 5,
+   "to": null,
+   "parity": null,
+   "level": "alerte",
+   "text": "Dantinéa OS les Grokillages vivants et leurs personnages liés, puis réinvoque des Grokillages. Élimine-les avant le tour suivant."
+  },
+  {
+   "from": 2,
+   "every": 2,
+   "to": null,
+   "parity": null,
+   "level": "info",
+   "text": "Dantinéa peut échanger sa place avec un Grokillage. Garde-la à distance ou place-toi pour que cela ne te gêne pas."
+  }
+ ],
+ "succes": [
+  {
+   "n": "Chasse aux coquillages",
+   "x": "Chaque personnage ne peut toucher que son propre Grokillage (le n°1 pour le personnage n°1, etc.). Ils apparaissent aux tours 1, 6, etc. Un Grokillage vivant au tour 6 tue son personnage lié."
+  },
+  {
+   "n": "Expédition de l'Audace",
+   "x": "Les Grokillages sont invulnérables. Chaque personnage doit finir son tour au contact de son Grokillage. Utilise tes PM ou des poussées/attirances pour y arriver. Le Tryde peut t'immobiliser, donc repère-le vite."
+  },
+  {
+   "n": "Expédition de la Bravoure",
+   "x": "Les Grokillages ont 50 % de vitalité en plus et partagent leurs dégâts. Dantinéa gagne 100 de puissance à chaque tour. Tue les Grokillages avant le tour 6 pour éviter les OS."
+  }
+ ],
+ "acces": [
+  "Entrée dans la zone Domaine des Trithons, Profondeurs de Sufokia, en [19,26]. Accès aux profondeurs depuis Sufokia en [23,24].",
+  "Clé à fabriquer avec : écume de mer, patelle, quisnoa, salikrone, bois d'Aquajou, 2 tridents de Tryde, 2 encres de Poulpée, 2 lanternes de Tourthon.",
+  "Quêtes liées : Reine de beauté, Mississitudes et Les totems de Maïmane. Le boss ne peut pas être capturé."
+ ],
+ "src": "https://www.dofuspourlesnoobs.com/palais-de-dantineacutea.html"
+}

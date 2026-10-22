@@ -1,0 +1,119 @@
+{
+ "dj": "Tour de Bethel",
+ "boss": "Bethel Akarna",
+ "maj": "05/10/2026",
+ "essentiel": [
+  "Lance Nécronyx sur chaque monstre avant de le tuer, et sur Bethel dès le tour 1.",
+  "Termine chaque tour à 6PO ou moins d'un monstre à partir du tour 2.",
+  "Pousse le Dagon une fois par tour pour le garder inébranlable.",
+  "Bethel perd Nécronyx après 3 tours : réapplique-le au tour 4.",
+  "Le Monolithe ignore les attaques à distance : frappe-le au corps à corps."
+ ],
+ "mecaniques": [
+  {
+   "t": "Aquazomb",
+   "x": "Les monstres se ressuscitent entre eux ; sans monstre à 6PO, ils gagnent 2PM et 1PO."
+  },
+  {
+   "t": "Nécronyx",
+   "x": "Un monstre ressuscité sous Nécronyx ne joue plus ses tours, sans passer le tien."
+  },
+  {
+   "t": "Invulnérabilité de Bethel",
+   "x": "Éliminer le Monolithe en mêlée réinvoque le Dagon dans ton camp, seul capable de frapper Bethel."
+  },
+  {
+   "t": "Glyphe de bord",
+   "x": "Le pourtour de la map inflige -100PM et pesanteur si tu marches dessus."
+  },
+  {
+   "t": "Dagon inébranlable",
+   "x": "Le pousser le rend inébranlable un tour et l'empêche de s'attirer sur toi."
+  }
+ ],
+ "sorts": [
+  {
+   "n": "Contrat Indicible",
+   "x": "Invoque Monolithe et Dagon ; Bethel et Dagon sont invulnérables, le Monolithe à distance."
+  },
+  {
+   "n": "Pantang",
+   "x": "Frappe l'air d'environ 500 à 800, portée de 1 à 12PO."
+  },
+  {
+   "n": "Offrande Monolithique",
+   "x": "Invoque des tentacules à ton contact et renforce Bethel de 300 puissance, tous les 3 tours."
+  }
+ ],
+ "monstres": [
+  {
+   "n": "Hydraire",
+   "d": "haut",
+   "x": "Son piège d'eau inflige environ 400 à qui marche dessus ; évite ces cases."
+  },
+  {
+   "n": "Tournoyé",
+   "d": "haut",
+   "x": "Se téléporte sur 7 cases et augmente de 20% les dégâts subis ; surveille sa cible."
+  },
+  {
+   "n": "Profondeurs Marines",
+   "d": "moyen",
+   "x": "Au-delà de 9PO, tes personnages subissent -4PO pendant 2 tours ; reste proche."
+  },
+  {
+   "n": "Cumul des Mandales",
+   "d": "moyen",
+   "x": "Frappe la terre autour de lui et applique -200 résistance poussée pendant 2 tours."
+  }
+ ],
+ "strategie": [
+  "Tour 1 : applique Nécronyx à Bethel et bloque-le avec ton personnage tank.",
+  "Pousse le Dagon à chaque tour pour le garder inébranlable et hors de portée.",
+  "Frappe le Monolithe au corps à corps jusqu'à sa mort.",
+  "Fais frapper Bethel par le Dagon de ton camp en mêlée, en le boostant.",
+  "Replace Bethel tous les deux tours et garde Nécronyx actif jusqu'à sa mort."
+ ],
+ "pieges": [
+  "Oublier Nécronyx sur Bethel le laisse te repousser dans le glyphe de bord.",
+  "Finir ton tour à plus de 6PO d'un monstre déclenche Aquazomb.",
+  "Bethel mourant sans Nécronyx fait perdre tout le combat."
+ ],
+ "tours": [
+  {
+   "from": 1,
+   "every": 1,
+   "to": 1,
+   "parity": null,
+   "level": "info",
+   "text": "Applique Nécronyx sur Bethel et bloque-le avec ton tank."
+  },
+  {
+   "from": 2,
+   "every": 1,
+   "to": null,
+   "parity": null,
+   "level": "alerte",
+   "text": "Termine ton tour à 6PO ou moins d'un monstre, sinon Aquazomb se déclenche."
+  },
+  {
+   "from": 4,
+   "every": 3,
+   "to": null,
+   "parity": null,
+   "level": "danger",
+   "text": "Réapplique Nécronyx sur Bethel, qui le perd au tour de ton lanceur."
+  }
+ ],
+ "succes": [
+  {
+   "n": "La mort sait attendre",
+   "x": "Aucun ennemi ne reçoit Nécronyx avant la mort de Bethel."
+  }
+ ],
+ "acces": [
+  "Entre dans les Épaves Silencieuses en [-48,-82].",
+  "Termine la quête « La colère des dieux » pour accéder aux Épaves Silencieuses."
+ ],
+ "src": "https://www.dofuspourlesnoobs.com/tour-de-bethel.html"
+}

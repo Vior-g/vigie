@@ -1,0 +1,93 @@
+{
+ "dj": "Donjon de la mine de Sakaï",
+ "boss": "Grolloum",
+ "maj": "12/04/2024",
+ "essentiel": [
+  "Grolloum est invulnérable dès le début ; tu dois le rendre vulnérable via un Zombi.",
+  "Ne retire jamais ses PM le tour avant de le rendre vulnérable.",
+  "Tu n'as que le tour de vulnérabilité pour le tuer, idéalement avant son tour.",
+  "Frappe dans l'élément eau pour aller vite.",
+  "Ne reste jamais en ligne avec un Gobus, et évite les mêlées des monstres."
+ ],
+ "mecaniques": [
+  {
+   "t": "Invulnérabilité",
+   "x": "Tu la lèves en tuant le Zombi ayant l'effet Instant, au contact de Grolloum."
+  },
+  {
+   "t": "Résurrection",
+   "x": "Tous les 2 tours, Grolloum ressuscite le dernier monstre mort en Zombi, s'il y a des personnages près de lui."
+  },
+  {
+   "t": "Gelée blanche",
+   "x": "Booste le Zombi et lui donne Instant pour 1 tour ; sa mort lève l'invulnérabilité si Grolloum est en mêlée."
+  },
+  {
+   "t": "Durée de vulnérabilité",
+   "x": "Jusqu'au début du prochain tour du personnage qui l'a activée ; réduis les PV du Zombi au maximum."
+  },
+  {
+   "t": "Retrait PM",
+   "x": "Lui retirer des PM lui donne 8000 résistances par élément pendant 1 tour."
+  }
+ ],
+ "sorts": [
+  {
+   "n": "Cycle",
+   "x": "Ressuscite le dernier monstre mort en Zombi, avec plus de PV selon le nombre de personnages."
+  },
+  {
+   "n": "Gelée blanche",
+   "x": "Booste un Zombi de 200 dommages et lui donne Instant."
+  },
+  {
+   "n": "Banquise",
+   "x": "Frappe l'eau en ligne de 5 et soigne Grolloum de 1500 PV par personnage touché quand il est invulnérable."
+  }
+ ],
+ "monstres": [
+  {
+   "n": "Gobus",
+   "d": "haut",
+   "x": "Ne reste jamais en ligne avec lui ; place une invocation en ligne pour l'éliminer."
+  },
+  {
+   "n": "Perkü",
+   "d": "haut",
+   "x": "Ne soigne pas un personnage empoisonné à l'eau."
+  },
+  {
+   "n": "Marôdeur",
+   "d": "moyen",
+   "x": "Reste à distance ; ne le frappe pas en mêlée s'il peut esquiver."
+  },
+  {
+   "n": "Courtilieur",
+   "d": "moyen",
+   "x": "Évite sa mêlée et ne reste pas en ligne avec lui pour ne pas être attiré."
+  }
+ ],
+ "strategie": [
+  "Élimine les monstres en veillant à ce que Grolloum ressuscite le Gobus.",
+  "Rapproche le Zombi de Grolloum et réduis ses PV au maximum.",
+  "Attends que Gelée blanche soit appliquée au Zombi.",
+  "Tue le Zombi au contact de Grolloum avec le moins de PA possible.",
+  "Élimine Grolloum en un tour, idéalement avant son propre tour."
+ ],
+ "pieges": [
+  "Ne retire pas de PM à Grolloum juste avant de le rendre vulnérable.",
+  "Ne reste jamais en ligne avec un Gobus, même pour le tuer."
+ ],
+ "tours": [],
+ "succes": [
+  {
+   "n": "On voulait l'autre",
+   "x": "Ne déplace pas les Zombis ; déplace Grolloum au contact du monstre ressuscité."
+  }
+ ],
+ "acces": [
+  "Bateau vers Sakaï à Madrestam en [12,-3] ou transporteur frigostien.",
+  "Entrée dans la Forêt enneigée de Sakaï, en [-52,-45]."
+ ],
+ "src": "https://www.dofuspourlesnoobs.com/donjon-de-la-mine-de-sakaiuml.html"
+}

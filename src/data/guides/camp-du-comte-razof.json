@@ -1,0 +1,115 @@
+{
+ "dj": "Camp du Comte Razof",
+ "boss": "Comte Razof",
+ "maj": null,
+ "essentiel": [
+  "Élimine le Viandargh en premier, c'est le monstre le plus dangereux.",
+  "La Minikrone est invulnérable : seul Razof peut la tuer, en mêlée.",
+  "Si la Minikrone meurt, tous tes persos perdent 20% de résistance et 2PA pour le combat.",
+  "Garde tes invocations en vie et hors de sa ligne de vue pour lui retirer ses résistances.",
+  "Pousse la Minikrone hors du glyphe noir avant la fin de son tour."
+ ],
+ "mecaniques": [
+  {
+   "t": "Minikrone invulnérable",
+   "x": "Seul Razof la tue avec Trophée de Chasse, en mêlée, à partir du tour 2."
+  },
+  {
+   "t": "État Piégé",
+   "x": "Marcher sur le piège Éblouissant du Nemroz touche aussi les alliés proches, pour 2 tours."
+  },
+  {
+   "t": "Résistances du Comte",
+   "x": "Il perd 20% de résistances par invocation non statique vivante à la fin de son tour, pour 1 tour."
+  },
+  {
+   "t": "Mort Impure",
+   "x": "Si la Minikrone meurt, tous les personnages perdent 20% de résistance et 2PA pour le combat."
+  },
+  {
+   "t": "Glyphe noir",
+   "x": "Si la Minikrone finit son tour dessus, les alliés perdent 2PM et subissent 50% d'érosion."
+  }
+ ],
+ "sorts": [
+  {
+   "n": "Archi-Pelle",
+   "x": "500 eau à 6PO, retire 20 fuite, révèle les invisibles et fait riposter les touchés."
+  },
+  {
+   "n": "Pelliste",
+   "x": "700 terre jusqu'à 15PO, retire 6PM, applique Affaibli et Pesanteur pour 1 tour."
+  },
+  {
+   "n": "Trophée de Chasse",
+   "x": "En mêlée, Razof détruit une invocation ennemie et gagne 1PM et 200 puissance."
+  }
+ ],
+ "monstres": [
+  {
+   "n": "Viandargh",
+   "d": "haut",
+   "x": "Attire et retire de la puissance ; élimine-le en premier."
+  },
+  {
+   "n": "Crâmbo",
+   "d": "haut",
+   "x": "Premier Sang frappe très fort les cibles à 100% PV ; reste hors de sa ligne de vue."
+  },
+  {
+   "n": "Nemroz",
+   "d": "moyen",
+   "x": "Ses pièges Éblouissants sont pénibles ; à éliminer en dernier."
+  },
+  {
+   "n": "Chevrotine",
+   "d": "moyen",
+   "x": "Son Chienchien retire 100PM ; garde-toi à distance de lui."
+  }
+ ],
+ "strategie": [
+  "Élimine d'abord le Viandargh, puis les autres monstres.",
+  "Fais tacler Razof par un tank d'environ 150 de Tacle, sans invoquer avec lui.",
+  "Invoque un maximum, dispersé et caché derrière des obstacles.",
+  "À chaque fin de tour de Razof, ses résistances baissent : profite-en pour le frapper.",
+  "Sans tacleur, retire-lui PM et PO en gardant tout le monde à distance."
+ ],
+ "pieges": [
+  "Piège Éblouissant du Nemroz : invisible, 1 case, déclenche l'état Piégé.",
+  "Piège Érosif : glyphe vert de rayon 2, inflige 450 feu au début du tour.",
+  "Glyphe noir de la Minikrone : pousse-la hors du glyphe avant la fin de son tour."
+ ],
+ "tours": [
+  {
+   "from": 2,
+   "every": 1,
+   "to": null,
+   "parity": null,
+   "level": "info",
+   "text": "Dès le tour 2, Razof peut éliminer la Minikrone en mêlée (Trophée de Chasse)."
+  }
+ ],
+ "succes": [
+  {
+   "n": "Liberté",
+   "x": "Ne retire aucun PM ni PO aux ennemis pendant tout le combat."
+  },
+  {
+   "n": "Premier",
+   "x": "Achève Razof en premier, idéalement dès le tour 2 ou 3."
+  },
+  {
+   "n": "Spécial",
+   "x": "Aucune invocation alliée ne doit être achevée par un ennemi, Minikrone comprise."
+  },
+  {
+   "n": "Duo",
+   "x": "Vaincre tous les monstres à 2 personnages maximum, en moins de 20 tours."
+  }
+ ],
+ "acces": [
+  "Île de Nimotopia en [-68,30] ; Muldobus depuis [-28,-31].",
+  "Le Muldobus exige la quête « À plus dans l'muldobus »."
+ ],
+ "src": "https://www.dofuspourlesnoobs.com/camp-du-comte-razof.html"
+}

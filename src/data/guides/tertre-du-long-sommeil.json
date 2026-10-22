@@ -1,0 +1,90 @@
+{
+ "dj": "Tertre du long sommeil",
+ "boss": "Hell Mina",
+ "maj": "28/02/2023",
+ "essentiel": [
+  "Chaque monstre devient invisible et invoque un Malterego à son premier tour.",
+  "Chaque début de tour, Hell Mina t'impose un élément à utiliser.",
+  "La sixième attaque dans l'élément imposé rend Hell Mina vulnérable.",
+  "Tue des monstres avant leur premier tour pour empêcher leurs invocations.",
+  "Ne finis pas ton tour près d'un mur (poussées)."
+ ],
+ "mecaniques": [
+  {
+   "t": "Invulnérabilité",
+   "x": "Monte sa Rage jusqu'à VI pour la lever."
+  },
+  {
+   "t": "Rage élémentaire",
+   "x": "Attaquer dans l'élément imposé monte la Rage ; sinon tu subis 500 dégâts."
+  },
+  {
+   "t": "Malterego",
+   "x": "Copie du monstre avec moins de PV et de résistances."
+  },
+  {
+   "t": "Mort du Malterego",
+   "x": "L'invocateur redevient visible, perd 3PM et 40% de résistance."
+  },
+  {
+   "t": "Vulnérabilité",
+   "x": "Hell Mina gagne 3PM, 40% de dommages finaux et 50% de critique pour le reste du combat."
+  }
+ ],
+ "sorts": [
+  {
+   "n": "Bond maléfique",
+   "x": "Téléportation, 280 feu, 20% d'érosion, repousse autour."
+  },
+  {
+   "n": "Fatalité",
+   "x": "300 feu, attire de 4 cases."
+  },
+  {
+   "n": "Extermination Iopesque",
+   "x": "200 terre, repousse de 6, en mêlée."
+  }
+ ],
+ "monstres": [
+  {
+   "n": "Maltrio",
+   "d": "haut",
+   "x": "Focus-le en premier."
+  },
+  {
+   "n": "Malalfa",
+   "d": "haut",
+   "x": "Tue-le avant qu'il invoque."
+  },
+  {
+   "n": "Malzerb",
+   "d": "moyen",
+   "x": "IA fuyarde."
+  }
+ ],
+ "strategie": [
+  "Tue les monstres tout en montant la Rage.",
+  "Utilise toujours l'élément imposé, même dans le vide.",
+  "Une fois les monstres morts, monte la Rage puis frappe fort.",
+  "Privilégie eau et air (31% de résistance feu)."
+ ],
+ "pieges": [
+  "Glyphe Maltérant : -6PO et 275 feu.",
+  "Piège Maléchant : croix d'eau."
+ ],
+ "tours": [],
+ "succes": [
+  {
+   "n": "Spécial : Hellémentaire",
+   "x": "Frapper Hell Mina dans l'élément désigné jusqu'à sa vulnérabilité."
+  },
+  {
+   "n": "Duo",
+   "x": "2 persos max, moins de 20 tours."
+  }
+ ],
+ "acces": [
+  "Dédale du Dark Vlad, en [-3,19], après « Un pendule pour guider ses pas »."
+ ],
+ "src": "https://www.dofuspourlesnoobs.com/tertre-du-long-sommeil.html"
+}

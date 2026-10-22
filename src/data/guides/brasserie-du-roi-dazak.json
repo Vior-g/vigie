@@ -1,0 +1,131 @@
+{
+ "dj": "Brasserie du roi Dazak",
+ "boss": "Dazak Martegel",
+ "maj": "08/06/2020",
+ "essentiel": [
+  "Tue le Tanklume avant qu'il passe en Nimpatience 3, ou laisse-le frapper un perso pour ne pas le faire monter.",
+  "Garde Dazak à distance : repousse-le, retire-lui des PM et ne le laisse pas te toucher au corps à corps.",
+  "Ne reste jamais en ligne avec le Boufbos, son seul sort de frappe passe uniquement en ligne.",
+  "Anticipe le bond Ninfiltration de Dazak (5 cases) à partir du tour 2, puis tous les 2 tours.",
+  "Désenvoûte Nintrépidité à partir du tour 3 pour retirer le boost de 2PM aux monstres.",
+  "Pendant les 2 tours qui suivent sa Nimpatience 3, pousse ou attire Dazak pour lui retirer des résistances."
+ ],
+ "mecaniques": [
+  {
+   "t": "Nimpatience",
+   "x": "Un monstre monte d'un niveau à chaque tour où il ne peut frapper aucun personnage. Une invocation ne compte pas. Au niveau 3, il gagne un bonus ou un nouveau sort, puis ses niveaux repartent à 0 après l'avoir lancé."
+  },
+  {
+   "t": "Résistances de Dazak",
+   "x": "Il dépasse 100% de résistances partout. Chaque poussée ou attirance lui retire 5%, mais pousser contre un obstacle lui en rend 10%. Entre deux cycles, il ne se remet pas à fond."
+  },
+  {
+   "t": "Ninrmure du Tanklume",
+   "x": "Il échange de place avec un allié et intercepte ses dégâts pendant 1 tour. Laisse-le l'utiliser pour frapper les autres monstres en zone à sa place."
+  }
+ ],
+ "sorts": [
+  {
+   "n": "Empalement royal",
+   "x": "Coup de càc en neutre, 40% d'érosion pendant 2 tours et -10% de résistance permanent. Lancé 2 fois par tour maximum."
+  },
+  {
+   "n": "Ninfiltration",
+   "x": "Bond de 5 cases puis coup en air qui retire 4PM esquivables autour de sa case d'arrivée. Portée 5PO en ligne, relance 2 tours."
+  },
+  {
+   "n": "Nintrépidité",
+   "x": "Boost ses alliés de 2PM et 1500 de bouclier pour 1 tour, à partir du tour 3 puis tous les 2 tours. Désenvoûte-le."
+  },
+  {
+   "n": "Nimpatience 3 de Dazak",
+   "x": "Gagne 3PM et +150% de dommages infligés pendant 2 tours."
+  }
+ ],
+ "monstres": [
+  {
+   "n": "Tanklume",
+   "d": "haut",
+   "x": "Le plus dur à tuer. Tue-le avant Nimpatience 3, sinon Ninfluence ramène tes ennemis à son càc."
+  },
+  {
+   "n": "Boufbos",
+   "d": "haut",
+   "x": "Frappe lourde uniquement en ligne, à partir de 3PO. Taclé, il ne peut plus rien faire."
+  },
+  {
+   "n": "Vatenbière",
+   "d": "haut",
+   "x": "En Nimpatience 3, Nimplantation retire 100PM à tous tes ennemis pendant 1 tour."
+  },
+  {
+   "n": "Kasrok",
+   "d": "moyen",
+   "x": "Marteau pillon en zone autour de lui, retire 4PA esquivables. En Nimpatience 3 : 7PA, dégâts doublés, zone de rayon 5."
+  },
+  {
+   "n": "Barbélier",
+   "d": "moyen",
+   "x": "Coup de cornes au càc. En Nimpatience 3, retire environ 25% de ta vitalité et frappe deux fois plus fort."
+  }
+ ],
+ "strategie": [
+  "Focus le Tanklume en premier et laisse-le sacrifier les autres monstres pour le toucher en zone.",
+  "Garde Dazak à distance, repousse-le au fond de la map et retire-lui des PM à chaque tour.",
+  "Une fois le Tanklume mort, tue les autres monstres en restant loin de Dazak et hors des lignes du Boufbos.",
+  "Quand Dazak est seul, reste hors de sa portée et attends sa Nimpatience 3.",
+  "Pendant les 2 tours qui suivent, pousse-le ou attire-le pour lui retirer des résistances, puis recommence."
+ ],
+ "pieges": [
+  "Ninfiltration : prévois 5 cases de sécurité en plus quand il peut bondir.",
+  "Le Boufbos ne frappe qu'en ligne : cache-toi derrière un obstacle ou évite de t'aligner avec lui.",
+  "Un Tanklume en Nimpatience 3 téléporte tes 4 ennemis les plus proches à son càc.",
+  "Dazak ne retrouve pas toutes ses résistances entre deux cycles de Nimpatience 3."
+ ],
+ "tours": [
+  {
+   "from": 2,
+   "every": 2,
+   "to": null,
+   "parity": "pair",
+   "level": "alerte",
+   "text": "Ninfiltration de Dazak disponible : garde 5 cases de sécurité en plus."
+  },
+  {
+   "from": 3,
+   "every": 2,
+   "to": null,
+   "parity": "impair",
+   "level": "alerte",
+   "text": "Nintrépidité : désenvoûte-la pour retirer le boost de 2PM aux monstres."
+  }
+ ],
+ "succes": [
+  {
+   "n": "Premier",
+   "x": "Dazak Martegel doit mourir en premier. Utilise un tank pour garder les monstres, ou retire-leur des PM, ou passe par la vitalité d'un Iop sans tuer les autres trop vite."
+  },
+  {
+   "n": "Liberté",
+   "x": "Ne retire jamais de PM ni de PO aux adversaires. Prends les variantes de tes sorts de retrait et repousse Dazak à distance."
+  },
+  {
+   "n": "Spécial",
+   "x": "Achève les ennemis seulement en Nimpatience III. Empêche-les de te frapper pendant 3 tours, et élimine Dazak dans cet état."
+  },
+  {
+   "n": "Duo",
+   "x": "Vaincre tous les monstres avec 2 personnages maximum en moins de 40 tours. Stratégie conseillée : Crâ avec balise tactique et tank full stuff."
+  },
+  {
+   "n": "Score 200",
+   "x": "Demande des compositions d'idoles précises, à distance ou avec tank. Le Tanklume doit tomber tôt, et le Boufbos ne doit jamais te toucher."
+  }
+ ],
+ "acces": [
+  "Frigost II : entrée dans le Royaume des Martegel en [-62,-70].",
+  "Il faut avoir terminé la quête « Frappez, ami, et entrez » pour accéder au Royaume des Martegel.",
+  "Clé : 1 Perce-Neige, 1 Poisskaille, 1 Frostiz, 2 Viande Goûtue, 2 Jambière de Kasrok, 2 Dent de Vatenbière, 2 Fronde de Boufbos, 2 Poils de barbe de Barbélier."
+ ],
+ "src": "https://www.dofuspourlesnoobs.com/brasserie-du-roi-dazak.html"
+}

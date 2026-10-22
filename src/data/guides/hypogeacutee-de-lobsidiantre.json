@@ -1,0 +1,89 @@
+{
+ "dj": "Hypogée de l'Obsidiantre",
+ "boss": "Obsidiantre",
+ "maj": "15/04/2018",
+ "essentiel": [
+  "Pousse un allié contre l'Obsidiantre pour lever son invulnérabilité (3 tours).",
+  "Avant le tour 5, mets tes persos à 1-7PO de la Pougnette ou tue-la.",
+  "La Pougnette renvoie 150 dégâts à chaque frappe."
+ ],
+ "mecaniques": [
+  {
+   "t": "Invulnérabilité",
+   "x": "Pousser un allié contre lui le rend vulnérable 3 tours."
+  },
+  {
+   "t": "Pougnette",
+   "x": "Invoquée tous les 3 tours ; Lourde."
+  },
+  {
+   "t": "Pikette",
+   "x": "La Pougnette explose au tour 5 et tue les ennemis à plus de 7PO."
+  },
+  {
+   "t": "Tikette",
+   "x": "La Pougnette renvoie 150 dégâts à chaque frappe."
+  }
+ ],
+ "sorts": [
+  {
+   "n": "Objection",
+   "x": "500 feu en ligne jusqu'à 10PO."
+  },
+  {
+   "n": "Scie licate",
+   "x": "Échange de position jusqu'à 3PO, 100 à 500 terre selon ses PV manquants."
+  },
+  {
+   "n": "Objurgation",
+   "x": "Soigne 2000PV et booste si tu pousses un monstre près de lui."
+  }
+ ],
+ "monstres": [
+  {
+   "n": "Crapture",
+   "d": "haut",
+   "x": "Frappe 300 eau environ 3 tours après son lancer."
+  },
+  {
+   "n": "Prothon",
+   "d": "haut",
+   "x": "260 air au CàC et affaiblit."
+  },
+  {
+   "n": "Daimocritique",
+   "d": "moyen",
+   "x": "Ressuscite le dernier monstre mort à 10% PV."
+  }
+ ],
+ "strategie": [
+  "Pousse un allié contre l'Obsidiantre pour le rendre vulnérable.",
+  "Profite des 3 tours pour frapper fort.",
+  "Gère la Pougnette avant le tour 5."
+ ],
+ "pieges": [
+  "Pousser une invocation ou le boss sur un allié ne lève pas l'invulnérabilité.",
+  "Personne à plus de 7PO de la Pougnette au tour 5."
+ ],
+ "tours": [
+  {
+   "from": 5,
+   "every": 1,
+   "to": 5,
+   "parity": null,
+   "level": "danger",
+   "text": "La Pougnette explose : elle tue les persos à plus de 7PO."
+  }
+ ],
+ "succes": [
+  {
+   "n": "À son hypogée",
+   "x": "Ne jamais attirer ni pousser les ennemis."
+  }
+ ],
+ "acces": [
+  "Larmes d'Ouronigride en [-71,-83].",
+  "Avoir fait l'Épave du Grolandais violent."
+ ],
+ "src": "https://www.dofuspourlesnoobs.com/hypogeacutee-de-lobsidiantre.html"
+}

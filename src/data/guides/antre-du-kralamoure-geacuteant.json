@@ -1,0 +1,115 @@
+{
+ "dj": "Antre du Kralamoure Géant",
+ "boss": "Kralamoure Géant",
+ "maj": "13/10/2026",
+ "essentiel": [
+  "Il faut 49 personnes : 48 sur les dalles des 4 salles, puis 1 sur la dalle d'entrée.",
+  "Le Krala a 900% de résistances : frappe-le dans chaque élément pour invoquer les tentacules.",
+  "Ne lance aucun débuff sur le Krala, sinon ses résistances reviennent.",
+  "Le Krala n'attaque qu'avec une ligne de vue : protège tes lignes.",
+  "Au tour 7, ses résistances tombent : tue-le en un tour."
+ ],
+ "mecaniques": [
+  {
+   "t": "Invulnérabilité",
+   "x": "Ses 900% de résistances tombent si tu le frappes dans chaque élément."
+  },
+  {
+   "t": "Ordre des tentacules",
+   "x": "Eau, feu, terre puis air : Quaternaire, Tertiaire, Secondaire puis Primaire."
+  },
+  {
+   "t": "Placement",
+   "x": "Bloque les trois premiers tentacules autour d'un Pandawasta ; Primaire devant le Krala."
+  },
+  {
+   "t": "Vulnérabilité",
+   "x": "Au tour 7, il perd ses résistances 1 tour ; les tentacules gagnent 1000 vitalité et 2PM."
+  }
+ ],
+ "sorts": [
+  {
+   "n": "Tourbe écrasante",
+   "x": "Pesanteur infinie sur tout le monde, +1000 sagesse au Krala pour 6 tours."
+  },
+  {
+   "n": "Kracheau immobilisant",
+   "x": "Désenvoûte et frappe 450 feu ; poison qui retire tes PM si tu es soigné."
+  }
+ ],
+ "monstres": [
+  {
+   "n": "Roissingue",
+   "d": "haut",
+   "x": "Retire 7PM esquivables ; retire soins et agilité en croix."
+  },
+  {
+   "n": "Ouassingue",
+   "d": "moyen",
+   "x": "Redirige les dégâts de ses alliés vers lui pendant 2 tours."
+  }
+ ],
+ "strategie": [
+  "Tours 1 à 4 : frappe eau, feu, terre puis air.",
+  "Place Quaternaire, Tertiaire et Secondaire autour d'un Pandawasta ; Primaire devant le Krala.",
+  "Tours 5 et 6 : fais gober une invocation au Primaire, puis fais-la frapper.",
+  "Tour 7 : tue le Krala en un tour."
+ ],
+ "pieges": [
+  "Un tentacule au contact de ton équipe permet au Krala de t'attaquer au corps à corps.",
+  "Un débuff sur le Krala oblige à tout recommencer."
+ ],
+ "tours": [
+  {
+   "from": 1,
+   "every": 1,
+   "to": 1,
+   "parity": null,
+   "level": "info",
+   "text": "Frappe l'eau (tentacule Quaternaire)."
+  },
+  {
+   "from": 2,
+   "every": 1,
+   "to": 2,
+   "parity": null,
+   "level": "info",
+   "text": "Frappe le feu (tentacule Tertiaire)."
+  },
+  {
+   "from": 3,
+   "every": 1,
+   "to": 3,
+   "parity": null,
+   "level": "info",
+   "text": "Frappe la terre (tentacule Secondaire)."
+  },
+  {
+   "from": 4,
+   "every": 1,
+   "to": 4,
+   "parity": null,
+   "level": "info",
+   "text": "Frappe l'air (tentacule Primaire)."
+  },
+  {
+   "from": 7,
+   "every": 1,
+   "to": 7,
+   "parity": null,
+   "level": "danger",
+   "text": "Le Krala perd ses résistances 1 tour : tue-le maintenant."
+  }
+ ],
+ "succes": [
+  {
+   "n": "Un projet tentaculaire",
+   "x": "Ne jamais finir ton tour en ligne d'un allié."
+  }
+ ],
+ "acces": [
+  "Tourbière nauséabonde, en [-60,-8].",
+  "Quêtes « Le Gardien du Pont de la Mort » et « La vengeance de Peggy la Porkass »."
+ ],
+ "src": "https://www.dofuspourlesnoobs.com/antre-du-kralamoure-geacuteant.html"
+}

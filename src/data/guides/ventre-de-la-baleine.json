@@ -1,0 +1,123 @@
+{
+ "dj": "Ventre de la Baleine",
+ "boss": "Protozorreur",
+ "maj": "05/10/2026",
+ "essentiel": [
+  "Les Krobes et le Protozorreur sont invulnérables : frappe-les pour toucher la Malamibe qui encaisse les dégâts.",
+  "Si la Malamibe survit 2 tours complets, elle attaque tout le monde et tu perds le combat.",
+  "Fais entrer le Protozorreur dans le glyphe violet au moins une fois tous les 2 tours.",
+  "Ne soigne pas pendant 3 tours pour faire mourir le Tabacille.",
+  "Garde la Virustine à 0 PM sans jamais la déplacer."
+ ],
+ "mecaniques": [
+  {
+   "t": "Dislocation et Malamibe",
+   "x": "La Malamibe a 2000 PV par perso vivant. Frapper un Krobe lui inflige les dégâts normaux, mais la frapper directement subit -50%. Chaque mort de perso lui retire 2000 PV. Elle revient à chaque élimination, invoquée par le prochain ennemi."
+  },
+  {
+   "t": "Restauration",
+   "x": "Pour tuer un Krobe, remplis sa condition pendant 3 tours d'affilée (6 pour le Protozorreur). Un tour raté remet le compteur à zéro."
+  },
+  {
+   "t": "Glyphe et attirance",
+   "x": "Un glyphe violet apparaît sous un perso qui subit des dégâts et inflige 550 dégâts air à qui marche dessus. Le Protozorreur est attiré seulement par le premier coup reçu dans son tour, si tu es aligné avec lui."
+  },
+  {
+   "t": "État Infection",
+   "x": "En entrant dans le glyphe, le Protozorreur passe en Infection pour 3 tours, gagne 2PM et réinitialise ses effets. Il meurt après 6 tours d'affilée, mais au 6e tour seulement à la fin de son propre tour."
+  }
+ ],
+ "sorts": [
+  {
+   "n": "Jet Proto",
+   "x": "500 dégâts air, +5 à chaque lancer hors Infection. En Infection, il attire la cible à son contact. Portée 10 PO en ligne."
+  },
+  {
+   "n": "Électrocution",
+   "x": "1000 dégâts feu. Retire 6PM hors Infection, 6PA en Infection. Portée 2 PO sans ligne de vue."
+  },
+  {
+   "n": "Infection",
+   "x": "Hors Infection : érosion 20% sur tous les ennemis et repousse de 3 cases. En Infection : dégâts eau selon 50% des PV érodés, et attire tout le monde de 3 cases."
+  }
+ ],
+ "monstres": [
+  {
+   "n": "Tabacille",
+   "d": "haut",
+   "x": "Son échange de place avec la Virustine réinitialise l'Infection et redonne ses PM. Garde-le loin d'elle et élimine-le en priorité."
+  },
+  {
+   "n": "Bacterrib",
+   "d": "haut",
+   "x": "Ne garde aucun ennemi à 5PO ou moins de lui au début de son tour. Élimine-la tôt."
+  },
+  {
+   "n": "Virustine",
+   "d": "haut",
+   "x": "Ne la déplace pas et ne lui retire pas de PM. Pousse-la 7 fois contre un obstacle pour la mettre à 0 PM."
+  },
+  {
+   "n": "Verminocule",
+   "d": "moyen",
+   "x": "Garde un perso à son contact 3 tours. Son jet d'acide inflige 1050 dégâts neutre en mêlée. S'en occuper après le Tabacille."
+  },
+  {
+   "n": "Pataugerme",
+   "d": "moyen",
+   "x": "Frappe-le dans les 4 éléments à chaque tour pendant 3 tours. Laisse-le pour la fin."
+  }
+ ],
+ "strategie": [
+  "Prends un Enutrof avec un bon retrait PM (190) et l'initiative pour poser l'Infection tous les 2 tours.",
+  "Élimine d'abord Tabacille et Bacterrib, puis Virustine, Verminocule et Pataugerme.",
+  "Retire les PM du Protozorreur, du Tabacille et du Verminocule à chaque tour.",
+  "Quand seul le Protozorreur reste, l'Enutrof se tape au lancer de pièce, attire le boss dans le glyphe avec Tamisage, puis retire ses PM avec Pelle de Jugement et Maladresse.",
+  "Alternative : un tank avec 81 de fuite se laisse frapper, crée les glyphes et attire le boss à chaque tour en ligne.",
+  "Tape la Malamibe avec les autres persos à chaque tour, avant ses 2 tours."
+ ],
+ "pieges": [
+  "Jet Proto gagne +5 à chaque lancer hors Infection : évite d'être touché par lui.",
+  "Si tu tapes un allié pendant le tour où le boss lance Infection, aucun glyphe n'apparaît.",
+  "Un perso qui joue trop tard dans l'ordre d'initiative empêche les autres de frapper le boss.",
+  "Le Protozorreur peut encore jouer au 6e tour : continue à le sécuriser en retirant ses PM."
+ ],
+ "tours": [
+  {
+   "from": 3,
+   "every": 3,
+   "to": null,
+   "parity": null,
+   "level": "alerte",
+   "text": "Le Protozorreur relance Infection à partir du tour 3, puis toutes les 3 tours. Prépare le glyphe avant."
+  }
+ ],
+ "succes": [
+  {
+   "n": "Barbare",
+   "x": "Frappe un allié au corps à corps en lui infligeant des dégâts, jamais un Krobe ni le boss. L'Arc en Racine d'Abraknyde aide."
+  },
+  {
+   "n": "Statue",
+   "x": "Tes persos doivent finir leur tour sur la même case. Compose avec Enutrof (initiative), Pandawa et Eliotrope."
+  },
+  {
+   "n": "Spécial",
+   "x": "Tue la Malamibe avant son prochain tour. Un personnage mort lui retire 2000 PV. Tue le boss en 6 tours."
+  },
+  {
+   "n": "Duo",
+   "x": "Vaincre tous les monstres à 2 persos maximum en moins de 40 tours. Enutrof ou Pandawa avec une autre classe."
+  },
+  {
+   "n": "Score 200",
+   "x": "Idoles interdites listées dans le guide. Ne te fais jamais toucher par Jet Proto et tue le Verminocule en dernier."
+  }
+ ],
+ "acces": [
+  "Entrée sur le Roc des Salbatroces en [-85,-59].",
+  "Accès par bateau depuis le Port de givre de Frigost en [-84,-40].",
+  "Pour capturer le boss, prévois une pierre d'âme de puissance 1000."
+ ],
+ "src": "https://www.dofuspourlesnoobs.com/ventre-de-la-baleine.html"
+}

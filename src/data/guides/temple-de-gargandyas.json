@@ -1,0 +1,99 @@
+{
+ "dj": "Temple de Gargandyas",
+ "boss": "Gargandyas",
+ "maj": "09/12/2025",
+ "essentiel": [
+  "Accès du vendredi 19h au lundi 8h, avec 5 victoires par week-end.",
+  "Dépose l'offrande de ressource de saison sur l'autel avant chaque tentative.",
+  "Gargandyas t'attaque en phases 1 à 3, puis combat à tes côtés en phase 4.",
+  "Reste dans le glyphe Bénidyas avant son tour, sinon tu seras mis OS.",
+  "La fuite compte comme victoire, une fois, quand Gargandyas est vulnérable."
+ ],
+ "mecaniques": [
+  {
+   "t": "Invulnérabilité",
+   "x": "Élimine les monstres invoqués pour le rendre vulnérable pendant 2 tours."
+  },
+  {
+   "t": "Glyphe Bénidyas",
+   "x": "Placez-vous tous dans le glyphe bleu de la cible avant son prochain tour, sinon OS."
+  },
+  {
+   "t": "Phases",
+   "x": "Phase 1 : seuil 50 000 PV. Phase 2 : seuil 1 000 PV. Phase 3 : détruis la Corruption du Graogarm."
+  },
+  {
+   "t": "Glyphes rouges",
+   "x": "Les coups de patte sont annoncés par un glyphe rouge ; ne termine pas ton tour dedans."
+  }
+ ],
+ "sorts": [
+  {
+   "n": "Rafale Bestiale",
+   "x": "Griffe repoussant de 7 cases : 500 dégâts air et -20% résistances pendant 3 tours."
+  },
+  {
+   "n": "Gargameha",
+   "x": "Sur les 3 cases devant lui : 500 dégâts dans 4 éléments et retire 1 tour d'envoûtement."
+  },
+  {
+   "n": "Sceaux Telluriques",
+   "x": "Enferme un personnage entre 4 sceaux : 600 dégâts terre et Pesanteur pendant 1 tour."
+  }
+ ],
+ "monstres": [
+  {
+   "n": "Kabombz",
+   "d": "haut",
+   "x": "Les Zoeufs éclosent après 2 tours : élimine-les vite et reste loin des explosions."
+  },
+  {
+   "n": "Vénérable Endormi",
+   "d": "haut",
+   "x": "Érode-le et réduis ses soins ; quand il s'endort, il attire et se soigne de 25%."
+  },
+  {
+   "n": "Déchireuse",
+   "d": "haut",
+   "x": "Focus très rapidement, c'est l'un des boss les plus coriaces de la phase 4."
+  },
+  {
+   "n": "Supervizoeuf",
+   "d": "moyen",
+   "x": "Ne te colle jamais au personnage le plus proche de lui ; élimine-le en un tour."
+  }
+ ],
+ "strategie": [
+  "Phase 1 : place tout le groupe dans le glyphe bleu avant le tour suivant de Gargandyas.",
+  "Élimine les monstres pour le rendre vulnérable, puis frappe-le jusqu'à son seuil de 50 000 PV.",
+  "Phases 2 et 3 : repousse les monstres vers la gauche et anticipe la Rafale Bestiale.",
+  "Phase 3 : tiens les monstres à distance, la Corruption disparaît à son troisième tour.",
+  "Phase 4 : focus le boss et place les monstres dans les zones de dégâts de Gargandyas."
+ ],
+ "pieges": [
+  "Terminer ton tour dans un glyphe rouge te met OS.",
+  "Après la phase 3, la fuite n'est plus possible une fois la Corruption disparue.",
+  "Un réveil sans seuil atteint retire 3 tours d'envoûtement et inflige 1 000 terre et 1 000 neutre."
+ ],
+ "tours": [
+  {
+   "from": 2,
+   "every": 2,
+   "to": null,
+   "parity": null,
+   "level": "danger",
+   "text": "Gargameha sur les 3 cases devant lui, et Rafale Bestiale (alterne gauche/droite), tous les 2 tours."
+  }
+ ],
+ "succes": [
+  {
+   "n": "Titanomachine",
+   "x": "Être 1er du classement hebdomadaire du serveur."
+  }
+ ],
+ "acces": [
+  "Ouvert du vendredi 19h au lundi 8h, avec 5 victoires maximum par week-end.",
+  "L'offrande de la saison se dépose sur l'autel, en quantité croissante à chaque tentative."
+ ],
+ "src": "https://www.dofuspourlesnoobs.com/temple-de-gargandyas.html"
+}

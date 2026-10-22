@@ -1,0 +1,91 @@
+{
+ "dj": "Manoir des Katrepat",
+ "boss": "Anerice la Shushess",
+ "maj": "16/11/2019",
+ "essentiel": [
+  "Anerice subit 90% de dégâts en moins tout le combat : tue tous les autres monstres d'abord.",
+  "Chaque coup sur un monstre (1 fois par tour) fait avancer les autres d'une case vers toi : focus un seul monstre.",
+  "Les goules subissent 150% de dégâts en plus, et chaque goule augmente les dégâts subis par Anerice.",
+  "L'érosion réduit ses PV max malgré sa réduction de dégâts : érode-la à distance.",
+  "Ne laisse aucun perso à 14 PO ou moins d'Anerice."
+ ],
+ "mecaniques": [
+  {
+   "t": "Marche des goules",
+   "x": "Frapper un monstre (une fois par tour) fait avancer les autres d'une case vers toi."
+  },
+  {
+   "t": "Résilience vampyrique",
+   "x": "Anerice réduit de 90% les dégâts subis pendant tout le combat."
+  },
+  {
+   "t": "Goulification",
+   "x": "Transforme les cibles en goules : +150% de dégâts subis. À 3 goules ou plus, tes dégâts sur Anerice redeviennent normaux."
+  },
+  {
+   "t": "Appétit sanguinaire",
+   "x": "Dès le tour 2 puis tous les 3 tours, les monstres gagnent +2 PM et +50% de dégâts."
+  }
+ ],
+ "sorts": [],
+ "monstres": [
+  {
+   "n": "Kérigoule",
+   "d": "haut",
+   "x": "Partage les dégâts entre tous les monstres dès le tour 2. Tue-la en premier."
+  },
+  {
+   "n": "Goultime",
+   "d": "haut",
+   "x": "Le plus gros frappeur, soigne en zone. Reste loin de lui."
+  },
+  {
+   "n": "Gouligane",
+   "d": "moyen",
+   "x": "Peut rendre Pacifiste et retirer des PA. Retire-lui sa PO."
+  }
+ ],
+ "strategie": [
+  "Tue la Kérigoule avant le tour 2.",
+  "Focus les monstres un par un pour limiter les rapprochements.",
+  "Garde Anerice à distance et érode-la.",
+  "Profite des goules pour augmenter les dégâts sur Anerice."
+ ],
+ "pieges": [
+  "Ne frappe pas un monstre en étant dans sa ligne : tu seras attiré.",
+  "N'invoque pas près des monstres que tu focus.",
+  "Garde tes alliés hors de la zone du Goultime."
+ ],
+ "tours": [
+  {
+   "from": 2,
+   "every": 3,
+   "to": null,
+   "parity": null,
+   "level": "alerte",
+   "text": "Appétit sanguinaire : les monstres gagnent +2 PM et +50% de dégâts."
+  }
+ ],
+ "succes": [
+  {
+   "n": "Prudent",
+   "x": "Ne jamais finir son tour au contact d'un ennemi."
+  },
+  {
+   "n": "Premier",
+   "x": "Tuer Anerice en premier (goule au tour 4 ou Vitalité du Iop)."
+  },
+  {
+   "n": "Spécial",
+   "x": "Chaque combattant doit être goulifié au moins une fois."
+  },
+  {
+   "n": "Duo",
+   "x": "2 persos max, moins de 40 tours. Un Crâ qui kite autour de la map."
+  }
+ ],
+ "acces": [
+  "Terres Désacrées en [-14,25] (le guide cite aussi les Landes de Sidimote : vérifie en jeu)."
+ ],
+ "src": "https://www.dofuspourlesnoobs.com/manoir-des-katrepat.html"
+}

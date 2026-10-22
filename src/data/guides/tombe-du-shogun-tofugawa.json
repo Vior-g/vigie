@@ -1,0 +1,107 @@
+{
+ "dj": "Tombe du Shogun Tofugawa",
+ "boss": "Shogun Tofugawa",
+ "maj": null,
+ "essentiel": [
+  "Il faut la Lanterne des Spiritueurs, sinon le Shogun reste invulnérable.",
+  "La Lanterne lève son invulnérabilité pendant 2 tours seulement.",
+  "Tue d'abord le Tambouraï, puis les autres accompagnateurs.",
+  "Garde les Kabushido loin de toi."
+ ],
+ "mecaniques": [
+  {
+   "t": "Invulnérabilité",
+   "x": "Seule la Lanterne peut retirer cet état."
+  },
+  {
+   "t": "Lever l'invulnérabilité",
+   "x": "Invoque la lanterne ou lance-la sur toi quand le Boss est dans un rayon 3."
+  },
+  {
+   "t": "Brume Spectrale",
+   "x": "Après le délock, toute entité hors du glyphe de la lanterne devient invisible 2 tours."
+  },
+  {
+   "t": "Malédiction du Dark Vlad",
+   "x": "Les monstres sont intaclables ; la lanterne lève cet état 1 tour et les repousse de 4."
+  },
+  {
+   "t": "Glyphe de la lanterne",
+   "x": "Monstres et Boss ne peuvent pas y entrer."
+  }
+ ],
+ "sorts": [
+  {
+   "n": "Aspiration du Yokomaïnu",
+   "x": "Attire de 6 cases, 150 air et 150 feu, retire 1 tour d'envoûtements."
+  },
+  {
+   "n": "Shin Kûdaigyoku",
+   "x": "300 air en cercle de rayon 2, repousse de 2."
+  }
+ ],
+ "monstres": [
+  {
+   "n": "Kabushido",
+   "d": "haut",
+   "x": "Très dangereux au CàC : garde-les à distance."
+  },
+  {
+   "n": "Tsukinochi",
+   "d": "haut",
+   "x": "Alterne attirance et repoussée selon la lune."
+  },
+  {
+   "n": "Tambouraï",
+   "d": "moyen",
+   "x": "Invoque et donne des PM : élimine-le en priorité."
+  }
+ ],
+ "strategie": [
+  "Tue le Tambouraï en premier.",
+  "Garde les Kabushido à distance, un seul à la fois.",
+  "Élimine les accompagnateurs avant le Shogun.",
+  "Bloque le Shogun contre un mur ou un allié avant la lanterne.",
+  "Achève-le avant la fin des 2 tours."
+ ],
+ "pieges": [
+  "Le Shogun sortant du glyphe devient invisible.",
+  "Sans la Lanterne, impossible de le vaincre."
+ ],
+ "tours": [
+  {
+   "from": 1,
+   "every": 2,
+   "to": null,
+   "parity": "impair",
+   "level": "info",
+   "text": "Tsukinochi en lune ascendante : attire de 2 cases, +3 PO."
+  },
+  {
+   "from": 2,
+   "every": 2,
+   "to": null,
+   "parity": "pair",
+   "level": "info",
+   "text": "Tsukinochi en lune descendante : repousse de 2 cases."
+  }
+ ],
+ "succes": [
+  {
+   "n": "Premier",
+   "x": "Achève le Shogun en premier."
+  },
+  {
+   "n": "Spécial",
+   "x": "Aucun ennemi hors Shogun ne doit subir la Lanterne."
+  },
+  {
+   "n": "Duo",
+   "x": "2 persos max, moins de 20 tours."
+  }
+ ],
+ "acces": [
+  "Cimetière de Grobe en [36,-44], bateau en [27,-27]."
+ ],
+ "src": "https://www.dofuspourlesnoobs.com/tombe-du-shogun-tofugawa.html"
+}

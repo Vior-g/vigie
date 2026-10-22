@@ -1,0 +1,91 @@
+{
+ "dj": "Minotot",
+ "boss": "Minotot",
+ "maj": "25/09/2022",
+ "essentiel": [
+  "Élimine le Minotot en premier, avant le tour 4.",
+  "Écarte-toi du Minotot aux tours 4, 7 et 10 (Destinos).",
+  "Garde le Minotot à distance pour limiter le vol de PA.",
+  "Débuffe Motivatos vers 13-14 PA pour éviter Kitos.",
+  "Frappe en eau et air, ses points faibles."
+ ],
+ "mecaniques": [
+  {
+   "t": "Seuil de Kitos",
+   "x": "Kitos se lance à 15 PA : limite la durée de vie du Minotot."
+  },
+  {
+   "t": "Débuff",
+   "x": "Destinos et Motivatos sont débuffables."
+  }
+ ],
+ "sorts": [
+  {
+   "n": "Destinos",
+   "x": "Transforme en tofu, -100 PA 3 tours, poison de 400 feu par tour, repousse de 5."
+  },
+  {
+   "n": "Mythos",
+   "x": "400 dégâts aléatoires et vole 2 PA, ligne jusqu'à 4 PO."
+  },
+  {
+   "n": "Kitos",
+   "x": "Soigne le Minotot et ses alliés de 2000 PV par tour pendant 3 tours."
+  }
+ ],
+ "monstres": [
+  {
+   "n": "Minotoror",
+   "d": "haut",
+   "x": "Très fort au CàC, repousse de 6 : reste à distance."
+  },
+  {
+   "n": "Scaratos",
+   "d": "haut",
+   "x": "Résistances, dommages retournés, boost PA."
+  },
+  {
+   "n": "Mominotor",
+   "d": "moyen",
+   "x": "Attire en ligne, supprime les invocations."
+  }
+ ],
+ "strategie": [
+  "Focus le Minotot en eau/air.",
+  "Garde-le à distance.",
+  "Débuffe Motivatos à 13-14 PA.",
+  "Éloigne-toi aux tours 4, 7, 10."
+ ],
+ "pieges": [
+  "Rester proche du Minotot aux tours 4, 7 et 10.",
+  "Laisser le Minotot atteindre 15 PA."
+ ],
+ "tours": [
+  {
+   "from": 1,
+   "every": 3,
+   "to": null,
+   "parity": null,
+   "level": "danger",
+   "text": "Destinos (tours 1, 4, 7, 10…) : éloigne-toi du Minotot."
+  }
+ ],
+ "succes": [
+  {
+   "n": "Circulez !",
+   "x": "Aucun retrait PM."
+  },
+  {
+   "n": "Premier",
+   "x": "Achever le Minotot en premier."
+  },
+  {
+   "n": "Spécial (Tofu-phobie)",
+   "x": "Aucun allié ne doit subir Destinos."
+  }
+ ],
+ "acces": [
+  "Île du Minotoror en [-42,-17], après avoir vaincu le Minotoror."
+ ],
+ "src": "https://www.dofuspourlesnoobs.com/minotot.html"
+}

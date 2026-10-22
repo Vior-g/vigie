@@ -1,0 +1,119 @@
+{
+ "dj": "Vaisseau du Capitaine Meno",
+ "boss": "Capitaine Meno",
+ "maj": "05/10/2026",
+ "essentiel": [
+  "Survis le plus longtemps possible, c'est le coeur du combat.",
+  "Meno réduit tes dégâts de moitié, sauf les poisons.",
+  "Chaque dégât infligé à tes persos soigne Meno.",
+  "Ne mets pas deux persos sur glyphe alignés à 5PO ou moins.",
+  "Soigne la cible d'Éclair Obscur pour lui retirer Conducteur."
+ ],
+ "mecaniques": [
+  {
+   "t": "Mutation instable",
+   "x": "Au début de son tour, chaque monstre prend un état selon ses PV : 76-100% rien, 51-75% I, 26-50% II, 0-25% III. Pour l'enlever, pousse-le sans dégâts de poussée."
+  },
+  {
+   "t": "Invulnérabilité",
+   "x": "Les monstres de départ et invoqués sont invulnérables. Ils perdent 25% de PV max par tour et meurent après 4 tours. Ils perdent aussi 1PM."
+  },
+  {
+   "t": "Glyphes Crystalisation",
+   "x": "Au début du tour de Meno, chaque glyphe occupé inflige 1300 feu aux persos alignés jusqu'à 5PO. Un perso sur glyphe gagne 1000 de bouclier pour un tour."
+  },
+  {
+   "t": "Réduction et bonus",
+   "x": "Meno réduit les dégâts reçus de 50%. Chaque perso gagne 20% de dégâts finaux à chaque tour, sans limite de cumul."
+  }
+ ],
+ "sorts": [
+  {
+   "n": "Matière Volatile",
+   "x": "500 dégâts air jusqu'à 4PO sans ligne de vue, 1 fois par tour."
+  },
+  {
+   "n": "Crystalisation",
+   "x": "500 dégâts eau et pose un glyphe permanent sous la cible, jusqu'à 10PO, 2 fois par tour."
+  }
+ ],
+ "monstres": [
+  {
+   "n": "Crabe Yoloniste",
+   "d": "haut",
+   "x": "En Mutation III, Yolosouage attire de loin et Pince Écrasante frappe fort au corps à corps. Repousse-le tôt, surtout s'il est bas en PV."
+  },
+  {
+   "n": "Mantaze",
+   "d": "haut",
+   "x": "Foudre Marine frappe fort les persos en Conducteur. Soigne les cibles d'Éclair Obscur pour l'enlever."
+  },
+  {
+   "n": "Mol Husk",
+   "d": "moyen",
+   "x": "Peu de dégâts, mais Bave Acide retire des PA à longue distance."
+  },
+  {
+   "n": "Gambaf",
+   "d": "moyen",
+   "x": "Pas Chassé Frontal repousse de 4 cases. Garde-le à distance."
+  },
+  {
+   "n": "Tilamproie",
+   "d": "moyen",
+   "x": "Piège Parasite te l'amène en mêlée si tu déclenches le piège."
+  }
+ ],
+ "strategie": [
+  "Garde les monstres à distance avec retrait PM et poussées.",
+  "Place tes persos en diagonale les uns des autres, sur des glyphes.",
+  "Tape Meno à chaque tour libre, en privilégiant les poisons.",
+  "Érode Meno si possible, car l'érosion ignore la réduction de dégâts.",
+  "Laisse Meno te frapper pour obtenir glyphes et bouclier.",
+  "Prévois une dizaine de tours pour venir à bout de Meno."
+ ],
+ "pieges": [
+  "Piège Parasite du Tilamproie : évite de marcher sur les cases diagonales piégées.",
+  "Foudre Marine de la Mantaze ne touche que les persos en Conducteur.",
+  "Traînée Collante du Mol Husk pose un glyphe qui retire PM et vitalité.",
+  "Yolosouage du Crabe en Mutation III attire les persos de loin."
+ ],
+ "tours": [
+  {
+   "from": 2,
+   "every": 1,
+   "to": null,
+   "parity": null,
+   "level": "info",
+   "text": "Meno invoque 2 monstres par tour, 3 en butin 5+."
+  }
+ ],
+ "succes": [
+  {
+   "n": "Blitzkrieg",
+   "x": "Achève chaque ennemi attaqué avant son tour. Ne touche pas Meno trop tôt. Éliotrope + Iop tient une quinzaine de tours."
+  },
+  {
+   "n": "Prudent",
+   "x": "Ne finis jamais ton tour à côté d'un ennemi. Attention au Piège Parasite lancé à 5PO."
+  },
+  {
+   "n": "Spécial",
+   "x": "Finis chaque tour en ligne d'un allié. Les glyphes deviennent difficiles à utiliser, sauf à plus de 6PO d'un allié."
+  },
+  {
+   "n": "Score 200",
+   "x": "Bloque Meno dans un coin avec des persos en mêlée. Les autres gardent les monstres sans sorts de dégâts."
+  },
+  {
+   "n": "Duo",
+   "x": "Deux persos max, en moins de 40 tours. Féca avec Pavois ou Sram avec Brume conviennent."
+  }
+ ],
+ "acces": [
+  "Entrée dans la Ville submergée des profondeurs de Sufokia, en [24,27].",
+  "Accès aux profondeurs à Sufokia, en [23,24].",
+  "Quêtes liées : Piège de crystal, Une voix de crystal, Les totems de Maïmane."
+ ],
+ "src": "https://www.dofuspourlesnoobs.com/vaisseau-du-capitaine-meno.html"
+}

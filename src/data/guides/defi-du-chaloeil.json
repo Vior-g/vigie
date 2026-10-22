@@ -1,0 +1,134 @@
+{
+ "dj": "Défi du Chalœil",
+ "boss": "Chaloeil",
+ "maj": "29/06/2023",
+ "essentiel": [
+  "Une seule salle, mais cinq vagues de monstres à éliminer.",
+  "Tue vite chaque vague : si elle tombe avant son délai, la suivante arrive aussitôt.",
+  "Le Chaloeil reste invulnérable jusqu'au tour 21, inutile de le viser avant.",
+  "Garde-le loin sur une case Dé 6 dans un coin, et retire-lui des PM.",
+  "Élimine en priorité les Cavaliers Chanceux, très dangereux au corps à corps."
+ ],
+ "mecaniques": [
+  {
+   "t": "Vagues",
+   "x": "Chaque vague compte autant de monstres que de combattants et reste invulnérable un tour à son arrivée."
+  },
+  {
+   "t": "Invulnérabilité",
+   "x": "Impossible à retirer autrement que par la survie : elle tombe automatiquement au tour 21."
+  },
+  {
+   "t": "Jeu des Dés",
+   "x": "Chaque case vaut de 1 à 6 ; le Chaloeil invoque des Dés (2000 PV) et des glyphes soignants selon sa case finale."
+  },
+  {
+   "t": "Routourne",
+   "x": "Les monstres du Grand Jeu reçoivent un bonus différent à chaque tour, sur un cycle de 3 tours."
+  },
+  {
+   "t": "Dégâts d'état",
+   "x": "Dès le tour 2, chaque monstre sauf le Chaloeil inflige 450 aux joueurs de même état de Dé."
+  }
+ ],
+ "sorts": [
+  {
+   "n": "Farce et Attrape",
+   "x": "Échange de place avec un allié ou un ennemi ; sur un ennemi, 1000 de Terre et Pesanteur."
+  },
+  {
+   "n": "Toilette Ecaflip",
+   "x": "Frappe 1000 d'Eau en ligne jusqu'à 2 PO, repousse de 3 cases et retire 4 PM."
+  },
+  {
+   "n": "Gros Yeux",
+   "x": "Aux tours 3, 6, 9… : boost selon l'état de Dé, par exemple 600 puissance sur Dé 6."
+  }
+ ],
+ "monstres": [
+  {
+   "n": "Cavalier Chanceux",
+   "d": "haut",
+   "x": "Ses dommages de poussée sont énormes ; retire-lui des PM et élimine-le vite."
+  },
+  {
+   "n": "Soldat de Fortune",
+   "d": "moyen",
+   "x": "Il frappe à distance et gêne ; cible-le après les Cavaliers."
+  },
+  {
+   "n": "Roi Joueur",
+   "d": "moyen",
+   "x": "Ses dégâts à retardement s'accumulent ; surveille-le sur la durée."
+  }
+ ],
+ "strategie": [
+  "Place le Chaloeil dans un coin, sur une case Dé 6, loin du spawn des vagues.",
+  "Retire-lui environ 200 de retrait PM pour qu'il reste bloqué sur place.",
+  "Garde tes personnages à distance et éloigne les monstres du Chaloeil.",
+  "Élimine vite les Cavaliers Chanceux, puis les autres monstres de chaque vague.",
+  "Au tour 21, nettoie la vague 5, puis frappe le Chaloeil en finissant sur des glyphes blancs."
+ ],
+ "pieges": [
+  "Le Chaloeil se téléporte à 6 PO sans ligne de vue : garde ses alentours libres.",
+  "Sur Dé 6 avant les tours 23, 26, 29 ou 32, il gagne 600 puissance au tour suivant.",
+  "La vague 5 au tour 21 est risquée : le Chaloeil devient mobile avec 200 esquive PM."
+ ],
+ "tours": [
+  {
+   "from": 1,
+   "every": 5,
+   "to": 21,
+   "parity": null,
+   "level": "alerte",
+   "text": "Nouvelle vague aux tours 1, 6, 11, 16 et 21, invulnérable un tour à l'arrivée."
+  },
+  {
+   "from": 2,
+   "every": 1,
+   "to": null,
+   "parity": null,
+   "level": "danger",
+   "text": "Dès le tour 2 : érosion de 20 % et frappe de 450 sur les joueurs du même Dé."
+  },
+  {
+   "from": 3,
+   "every": 3,
+   "to": null,
+   "parity": null,
+   "level": "alerte",
+   "text": "Gros Yeux du Chaloeil : boosts selon son état de Dé."
+  },
+  {
+   "from": 21,
+   "every": 1,
+   "to": 21,
+   "parity": null,
+   "level": "danger",
+   "text": "Le Chaloeil devient vulnérable : +200 esquive PM et état Inébranlable."
+  }
+ ],
+ "succes": [
+  {
+   "n": "Liberté",
+   "x": "Aucun retrait de PM ni de PO ; un tank Pandawa attire le Chaloeil."
+  },
+  {
+   "n": "Prudent",
+   "x": "Aucun allié ne finit son tour adjacent à un Dé."
+  },
+  {
+   "n": "Spécial",
+   "x": "Chaque combattant finit son tour sur la case numérotée de son départ."
+  },
+  {
+   "n": "Trio",
+   "x": "Vaincre tout le monde avec 3 personnages maximum, en moins de 80 tours."
+  }
+ ],
+ "acces": [
+  "Dimension Ecaflipus en [-9,-22], atteinte par recherche de portail, pas par trousseau.",
+  "Clé : recette complète, dont la Carte du Grand Jeu achetée 3 Orichor à Ecaflipus [-1,-6]."
+ ],
+ "src": "https://www.dofuspourlesnoobs.com/defi-du-chaloeil.html"
+}

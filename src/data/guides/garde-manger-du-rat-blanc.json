@@ -1,0 +1,69 @@
+{
+ "dj": "Garde-manger du Rat Blanc",
+ "boss": "Rat Blanc",
+ "maj": null,
+ "essentiel": [
+  "Rascasse lui donne 50% de résistance à chaque élément que tu frappes (immunité au 2e coup).",
+  "Débuffe le Rat Blanc pour retirer ses résistances.",
+  "Peste Blanche désenvoûte la cible si elle est soignée."
+ ],
+ "mecaniques": [
+  {
+   "t": "Rascasse",
+   "x": "+50% de résistance dans l'élément frappé à chaque coup."
+  },
+  {
+   "t": "Peste Blanche",
+   "x": "Chaque soin reçu par la cible retire tous ses envoûtements."
+  }
+ ],
+ "sorts": [
+  {
+   "n": "Rapierre",
+   "x": "180 feu en vol de vie, mêlée."
+  },
+  {
+   "n": "Ravage",
+   "x": "200 terre en ligne de 3, mêlée."
+  }
+ ],
+ "monstres": [
+  {
+   "n": "Aloevée Rat",
+   "d": "haut",
+   "x": "Soigne ses alliés."
+  },
+  {
+   "n": "Capoei Rat",
+   "d": "haut",
+   "x": "Fort en mêlée ; perd la moitié de ses résistances au tour 4."
+  }
+ ],
+ "strategie": [
+  "Débuffe le Rat Blanc dès qu'il lance Rascasse.",
+  "Éloigne-le de l'Aloevée Rat."
+ ],
+ "pieges": [
+  "Être soigné sous Peste Blanche."
+ ],
+ "tours": [
+  {
+   "from": 4,
+   "every": 1,
+   "to": 4,
+   "parity": null,
+   "level": "alerte",
+   "text": "Le Capoei Rat perd la moitié de ses résistances 2 tours."
+  }
+ ],
+ "succes": [
+  {
+   "n": "Spécial",
+   "x": "Frapper chaque ennemi au moins une fois entre chacun de ses tours."
+  }
+ ],
+ "acces": [
+  "Canaux méphitiques (égouts de Bonta) [-34,-59]."
+ ],
+ "src": "https://www.dofuspourlesnoobs.com/garde-manger-du-rat-blanc.html"
+}

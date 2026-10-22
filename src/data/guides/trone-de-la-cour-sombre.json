@@ -1,0 +1,111 @@
+{
+ "dj": "Trône de la Cour Sombre",
+ "boss": "Reine des Voleurs",
+ "maj": null,
+ "essentiel": [
+  "Le trousseau de clés et la téléportation de groupe ne marchent pas en dimension, cherche un portail.",
+  "Tue vite les monstres d'une vague pour déclencher la suivante plus tôt.",
+  "Une vague est invulnérable pendant son premier tour, ne perds pas de temps sur elle.",
+  "Chaque bombe présente réduit de 10% les dégâts que tu infliges à la Reine.",
+  "Place tes personnages en auto-win pour ne jamais mourir des Bonbombes."
+ ],
+ "mecaniques": [
+  {
+   "t": "Vagues",
+   "x": "Cinq vagues au total ; vider une vague tôt lance la suivante, invulnérable un tour."
+  },
+  {
+   "t": "Bonbombes",
+   "x": "Chaque tour, tu invoques une bombe ; rouge elle tue les alignés, bleue elle les soigne."
+  },
+  {
+   "t": "Brume",
+   "x": "La Reine se cache dans un glyphe, seulement sur 3 cases possibles, à 33% chacune."
+  },
+  {
+   "t": "Mort en sursis",
+   "x": "Une cible meurt dans 6 tours, sauf soin par Bonbombe bleue ou mort de la Reine."
+  }
+ ],
+ "sorts": [
+  {
+   "n": "Coup Critique",
+   "x": "Au càc, environ 900 eau et poison de PM ; en critique, environ 1500 tous éléments."
+  },
+  {
+   "n": "Mort en Sursis",
+   "x": "Attire une cible puis échange de place avec elle ; la cible meurt sans soin."
+  },
+  {
+   "n": "Brume",
+   "x": "Glyphe noir de rayon 3 rendant invisibles la Reine et les monstres ; lançable dès le tour 4."
+  }
+ ],
+ "monstres": [
+  {
+   "n": "Magouille",
+   "d": "haut",
+   "x": "Retire-lui sa portée, sinon son Crâmes te pousse à 0 PM au mauvais endroit."
+  },
+  {
+   "n": "Terristocrate",
+   "d": "haut",
+   "x": "Retire-lui ses PM et tue-le vite pour éviter sa Bombe Illicale au càc."
+  },
+  {
+   "n": "Mâchassin",
+   "d": "moyen",
+   "x": "Ses pièges Piège à Le Ours font très mal ; évite de marcher dedans."
+  },
+  {
+   "n": "Bourôliste",
+   "d": "moyen",
+   "x": "Peu dangereux à distance, mais il frappe fort au càc ; ne le laisse pas s'approcher."
+  }
+ ],
+ "strategie": [
+  "Adopte le placement auto-win pour que les Bonbombes ne tuent jamais tes personnages.",
+  "Tue vite le Terristocrate de la vague 1, puis frappe la Reine des Voleurs.",
+  "Vague 2 : retire la portée de la Magouille et nettoie tranquillement, la Reine doit tomber.",
+  "Vague 4 : focus le Terristocrate, puis les Magouilles ; garde les Crâmes en tête.",
+  "Vague 5 : retire la portée de la Magouille restante, puis tue le reste de la vague."
+ ],
+ "pieges": [
+  "Ne laisse jamais un Terristocrate poser sa Bombe Illicale à ton càc.",
+  "Évite de taper un monstre sous Avertissement sans le finir avant ton tour suivant.",
+  "Ne laisse pas la Reine t'attirer ou échanger de place, surtout en auto-win."
+ ],
+ "tours": [
+  {
+   "from": 4,
+   "every": 3,
+   "to": null,
+   "parity": null,
+   "level": "info",
+   "text": "La Brume peut être lancée dès le tour 4, puis relancée environ tous les 3 tours."
+  }
+ ],
+ "succes": [
+  {
+   "n": "Collant",
+   "x": "Finir ton tour sur une case adjacente à celle d'un allié."
+  },
+  {
+   "n": "Premier",
+   "x": "Achever la Reine des Voleurs avant tous les autres monstres."
+  },
+  {
+   "n": "Spécial",
+   "x": "Ne jamais être soigné par une Bonbombe bleue pendant le combat."
+  },
+  {
+   "n": "Trio",
+   "x": "Vaincre tous les monstres avec 3 personnages maximum en moins de 80 tours."
+  }
+ ],
+ "acces": [
+  "Entrée dans la dimension Srambad en case [8,-4].",
+  "Chasse au portail lancée à la Tour des Voyageurs, en case [-22,-24]."
+ ],
+ "src": "https://www.dofuspourlesnoobs.com/trone-de-la-cour-sombre.html"
+}

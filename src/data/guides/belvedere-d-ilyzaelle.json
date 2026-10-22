@@ -1,0 +1,140 @@
+{
+ "dj": "Belvédère d'Ilyzaelle",
+ "boss": "Ilyzaelle",
+ "maj": null,
+ "essentiel": [
+  "Garde les monstres et Ilyzaelle à distance et ne te laisse jamais toucher : son Lance de l'effroi te rend pacifiste.",
+  "Équipe-toi le moins possible en critique, car Ilyzaelle a 250 de résistance critique.",
+  "N'érode pas Ilyzaelle : baisser ses PV max t'oblige à taper plus fort pour atteindre 75% et 50%.",
+  "Déplacer un monstre ou lui retirer des PM te donne l'état Brûlure : surveille qui le porte.",
+  "À partir du tour 3, tous les 3 tours, Vers les ténèbres t'attire : reste derrière un bloc ou une cawotte.",
+  "Ne la soigne pas quand elle est dans ton camp : elle reste considérée comme ennemie et tu devras taper plus fort."
+ ],
+ "mecaniques": [
+  {
+   "t": "État Brûlure",
+   "x": "Tu l'obtiens quand tu déplaces un monstre ou lui retires des PM. Le premier monstre qui joue consomme l'état et lance son sort spécial sur toi."
+  },
+  {
+   "t": "Phases et PV",
+   "x": "Elle passe dans ton camp à 75% de PV, puis à 50%, pendant 2 tours. Ses PV de départ vont de 42 000 (4 persos ou moins) à 60 000 (8 persos)."
+  },
+  {
+   "t": "Glyphe orange",
+   "x": "Dans le glyphe, tes dégâts sont +400% et les dégâts que tu subis baissent de 30%. Les monstres y prennent 15 000 de dégâts neutres et gagnent 2PM pendant l'effet."
+  },
+  {
+   "t": "Invulnérabilité",
+   "x": "Elle reste invulnérable 1 tour après la fin du glyphe. Frappe-la dès qu'elle redevient vulnérable."
+  },
+  {
+   "t": "Victoire",
+   "x": "Après la 2e phase, survis 2 tours : elle tue tous les monstres. S'il ne reste aucun monstre, le combat continue, donc garde-en un en vie."
+  }
+ ],
+ "sorts": [
+  {
+   "n": "Hantâme",
+   "x": "Se téléporte sur une case à 3PO max, inflige 1800 de feu dans un rayon de 2 et applique 40% d'érosion pendant 2 tours. Pas au tour 1."
+  },
+  {
+   "n": "Lance de l'effroi",
+   "x": "Inflige 1500 de feu et met pacifiste 1 tour, à 4PO max, 3 fois par tour. Reste hors de sa portée."
+  },
+  {
+   "n": "Vers les ténèbres",
+   "x": "Attire tous les persos de 10 cases en ligne vers elle, dès le tour 3, avec une relance de 3 tours. Mets-toi derrière un obstacle."
+  }
+ ],
+ "monstres": [
+  {
+   "n": "Ectorche",
+   "d": "haut",
+   "x": "Combustion spontanée : 1100 de feu en croix, PO infinie sans ligne de vue. Éloigne-toi des alliés en Brûlure."
+  },
+  {
+   "n": "Crâme",
+   "d": "haut",
+   "x": "Lance lumière : te renvoie à ta case de début de tour et augmente tes dégâts subis de 150% pendant 2 tours."
+  },
+  {
+   "n": "Esprigné",
+   "d": "haut",
+   "x": "Bouillie : 1500 d'eau, insoignable 1 tour, à 8PO en ligne, 3 fois par tour. Ses dégâts baissent avec les PM qu'il a utilisés."
+  },
+  {
+   "n": "Chause",
+   "d": "moyen",
+   "x": "Son Flâmi partage ses dégâts avec un allié, Ilyzaelle compris. Garde-la loin d'elle en phase 2."
+  },
+  {
+   "n": "Feutôme",
+   "d": "moyen",
+   "x": "Revenant : s'attire sur toi en ligne et vole 4PM. Il peut te coller au corps à corps."
+  }
+ ],
+ "strategie": [
+  "Tape Ilyzaelle dès le tour 1 tout en gardant monstres et elle à distance, et booste-toi.",
+  "Au tour 2, vise 75% de PV en fin de tour. Sinon, continue au tour 3.",
+  "Quand elle est dans ton camp, utilise le glyphe pour tuer les monstres trop proches et prépare tes boosts pour la phase 2.",
+  "Quand le glyphe disparaît, repousse-la, retire-lui des PM et garde les monstres loin.",
+  "Quand elle est vulnérable, frappe-la jusqu'à 50% de PV en restant hors de portée de ses sorts.",
+  "Une fois dans ton camp pour la seconde fois, survis 2 tours en ralentissant ou tuant les mobs, avec trêve, retraite anticipée ou invisibilité."
+ ],
+ "pieges": [
+  "Un Ectorche peut te toucher à PO infinie si un allié en Brûlure est à 3PO ou moins en ligne.",
+  "Soigner Ilyzaelle quand elle est dans ton camp la remonte, ce qui t'oblige à taper encore plus fort.",
+  "Une Chause proche d'Ilyzaelle en phase 2 partage des dégâts avec elle.",
+  "Ne l'érode pas : chaque PV max retiré rallonge les dégâts nécessaires pour atteindre les seuils."
+ ],
+ "tours": [
+  {
+   "from": 1,
+   "every": 1,
+   "to": 2,
+   "parity": null,
+   "level": "info",
+   "text": "Tape Ilyzaelle dès le tour 1. Au tour 2, vise 75% de PV en fin de tour."
+  },
+  {
+   "from": 2,
+   "every": 1,
+   "to": null,
+   "parity": null,
+   "level": "alerte",
+   "text": "Hantâme est lançable à partir du tour 2, une fois par tour."
+  },
+  {
+   "from": 3,
+   "every": 3,
+   "to": null,
+   "parity": null,
+   "level": "danger",
+   "text": "Vers les ténèbres : reste derrière un obstacle, car elle attire tout le monde."
+  }
+ ],
+ "succes": [
+  {
+   "n": "Liberté",
+   "x": "Ne retire jamais PM ni PO aux adversaires. Repousse-les ou encaisse les coups, mais reste hors de portée du Lance de l'effroi."
+  },
+  {
+   "n": "Focus",
+   "x": "Achève un ennemi avant d'en attaquer un autre. Les sorts de retrait de PM ou de poussée ne doivent faire aucun dégât. Un Panda joué juste avant le Crâme aide beaucoup."
+  },
+  {
+   "n": "Spécial : Aux portes d'Externam",
+   "x": "Achève Ilyzaelle avant la vague 3 (tour 10). Passe son premier seuil au tour 1 ou au plus tard au tour 2."
+  },
+  {
+   "n": "Duo",
+   "x": "Deux persos maximum et moins de 40 tours. Avec un Sram et une autre classe, pose des pièges pour bloquer les monstres."
+  }
+ ],
+ "acces": [
+  "Entrée sur Frigost III, en [-73,-76].",
+  "Clé : 2 Viande Goûtue, 1 Salikrone, 1 Quisnoa, 1 Patelle, 2 Œil de Feutôme, 2 Fragment d'Ectorche, 2 Pince de Crâme, 2 Restes d'Esprigné.",
+  "Quêtes liées : Fée d'hiver (Bontarien) ou Lettre à Ilyz (Brâkmarien), ainsi que L'avis de la Mort, Une dernière volonté et Les totems de Maïmane."
+ ],
+ "src": "https://www.dofuspourlesnoobs.com/belvedere-d-ilyzaelle.html"
+}

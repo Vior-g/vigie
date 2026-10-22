@@ -1,0 +1,88 @@
+{
+ "dj": "Fabrique de foux d'artifice",
+ "boss": "Founoroshi",
+ "maj": "05/10/2026",
+ "essentiel": [
+  "Le Founoroshi et ses monstres sont invulnérables : éteins les 8 feux de la map.",
+  "Marche dans un glyphe noir pour gagner « Extinction des feux » avant chaque extinction.",
+  "Chaque extinction te fait perdre l'état : reprends-le pour le feu suivant.",
+  "Une fois les feux éteints, tue le Founoroshi en premier."
+ ],
+ "mecaniques": [
+  {
+   "t": "Invulnérabilité",
+   "x": "Levée quand les 8 feux sont éteints."
+  },
+  {
+   "t": "Extinction des feux",
+   "x": "Gagnée sur un glyphe noir ; -3 PO et -20 esquive PA/PM ; non cumulable."
+  },
+  {
+   "t": "Feux",
+   "x": "Marche sur le glyphe marron à droite d'un feu avec l'état pour l'éteindre."
+  },
+  {
+   "t": "Rallumage",
+   "x": "8 tours après la première extinction, un feu se rallume."
+  },
+  {
+   "t": "Vulnérabilité",
+   "x": "Tu gagnes 15% de dégâts par tour ; chaque feu éteint booste le Founoroshi 4 tours."
+  }
+ ],
+ "sorts": [
+  {
+   "n": "Fumée alourdissante",
+   "x": "400 dégâts, -2 PM, 4 à 10 PO."
+  },
+  {
+   "n": "Fumée aveuglante",
+   "x": "400 dégâts, -3 PO, 4 à 10 PO."
+  },
+  {
+   "n": "Pétard volant",
+   "x": "Enraciné, lourd, indéplaçable, +2 PM et invisible 1 tour."
+  }
+ ],
+ "monstres": [
+  {
+   "n": "Couleuvrine",
+   "d": "haut",
+   "x": "Glyphe qui retire 3 PA."
+  },
+  {
+   "n": "Pétard",
+   "d": "haut",
+   "x": "Glyphe d'érosion 30%."
+  },
+  {
+   "n": "Acroboule",
+   "d": "haut",
+   "x": "300 eau à ceux à son contact."
+  }
+ ],
+ "strategie": [
+  "Prends des classes mobiles (6 PM).",
+  "Glyphe noir → glyphe marron, un feu à la fois.",
+  "Dès le premier feu éteint, tu as 8 tours pour finir et tuer le Founoroshi."
+ ],
+ "pieges": [
+  "Les glyphes noirs disparaissent au début du tour du Founoroshi.",
+  "L'état n'éteint qu'un seul feu."
+ ],
+ "tours": [],
+ "succes": [
+  {
+   "n": "Spécial : Raviver la flamme",
+   "x": "Aucun feu ne doit se rallumer."
+  },
+  {
+   "n": "Duo",
+   "x": "2 persos max, moins de 20 tours."
+  }
+ ],
+ "acces": [
+  "Feudala, en [14,-32]."
+ ],
+ "src": "https://www.dofuspourlesnoobs.com/fabrique-de-foux-d-artifice.html"
+}

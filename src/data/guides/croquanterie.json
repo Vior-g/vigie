@@ -1,0 +1,68 @@
+{
+ "dj": "Croquanterie",
+ "boss": "Croqueleur",
+ "maj": "07/04/2026",
+ "essentiel": [
+  "Tue d'abord tous les monstres, garde le Croqueleur pour la fin.",
+  "Frappe le Croqueleur dans l'élément demandé, puis pousse-le pour qu'il invoque sa pépite.",
+  "Tue chaque pépite dans le délai, sinon elle disparaît.",
+  "Frappe les pépites en mêlée (elles résistent à distance).",
+  "Le combat se termine à la mort de la quatrième pépite."
+ ],
+ "mecaniques": [
+  {
+   "t": "Invulnérabilité",
+   "x": "Le Croqueleur reste invulnérable ; chaque pépite tuée lui retire 25% de ses PV max."
+  },
+  {
+   "t": "États élémentaires",
+   "x": "Feu : Fondu, air : Soufflé, eau : Lavé, terre/neutre : Brisé (1 tour)."
+  },
+  {
+   "t": "Poussée",
+   "x": "Chaque poussée lui donne 1PA et 1PM (4 max) et retire 20 puissance."
+  }
+ ],
+ "sorts": [
+  {
+   "n": "Croustichoc",
+   "x": "150 dégâts, élément et effet selon la pépite."
+  },
+  {
+   "n": "Total Impwâkt",
+   "x": "230 en zone, repoussée ou malus selon la phase."
+  }
+ ],
+ "monstres": [
+  {
+   "n": "Glycémie",
+   "d": "haut",
+   "x": "Feu en croix diagonale et érosion."
+  },
+  {
+   "n": "Kakoalak",
+   "d": "haut",
+   "x": "180 neutre, réduit ton esquive PM."
+  }
+ ],
+ "strategie": [
+  "Tue tous les monstres.",
+  "Feu puis poussée : tue la pépite en mêlée.",
+  "Puis air, eau, terre/neutre."
+ ],
+ "pieges": [
+  "Frapper les pépites à distance.",
+  "Laisser une pépite expirer."
+ ],
+ "tours": [],
+ "succes": [
+  {
+   "n": "Spécial",
+   "x": "Ne subir que des dégâts de mêlée."
+  }
+ ],
+ "acces": [
+  "Île de Pwâk [-1,-7], pendant l'événement Pwâk."
+ ],
+ "src": "https://www.dofuspourlesnoobs.com/croquanterie.html"
+}

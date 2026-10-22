@@ -1,0 +1,110 @@
+{
+ "dj": "Autel de la Déchireuse",
+ "boss": "La Déchireuse",
+ "maj": null,
+ "essentiel": [
+  "Ne reste jamais en ligne de vue de la Déchireuse au début de son tour.",
+  "Retire vite son invulnérabilité en utilisant le monstre lié à la saison.",
+  "Chaque allié en ligne avec elle lui donne 1PM pour le reste du combat.",
+  "Réduis ses soins avant la phase 2, car elle est inérodable.",
+  "En phase 2, achève-la d'un coup avant qu'elle ne rejoue."
+ ],
+ "mecaniques": [
+  {
+   "t": "Invulnérabilité",
+   "x": "Elle reste invulnérable jusqu'à ce que tu exploites l'Autel de la Chasse selon la saison."
+  },
+  {
+   "t": "OS",
+   "x": "Elle se téléporte sur le plus proche en ligne de vue ; deux touches sur le même perso le tuent."
+  },
+  {
+   "t": "Autel de la Chasse",
+   "x": "Il copie les sorts des monstres du tour et les rejoue sur l'entité la plus proche."
+  },
+  {
+   "t": "Réaction saisonnière",
+   "x": "Après 5 lignes de dégâts, chaque monstre déclenche un effet propre à la saison."
+  },
+  {
+   "t": "Phase 2 (Barbarisme)",
+   "x": "À 1 PV, la Déchireuse récupère tous ses PV et change ses sorts."
+  }
+ ],
+ "sorts": [
+  {
+   "n": "Brutank",
+   "x": "300 eau et 300 feu en zone ; partage les dégâts avec ses alliés, débuffable."
+  },
+  {
+   "n": "Hémorasoir",
+   "x": "500 feu ; poison de 90 feu par PM que la cible utilise pendant son tour."
+  },
+  {
+   "n": "Musculot",
+   "x": "Phase 2 : 500 eau et 500 feu en zone autour d'elle ; vole 500 vitalité aux touchés."
+  }
+ ],
+ "monstres": [
+  {
+   "n": "Voracle",
+   "d": "haut",
+   "x": "Frappe fort à distance et soigne ses alliés ; retire-lui sa portée."
+  },
+  {
+   "n": "Ébourifauve",
+   "d": "haut",
+   "x": "Attire, vole des PM et frappe fort ; évite les invocations proches de lui."
+  },
+  {
+   "n": "Domptueuse",
+   "d": "moyen",
+   "x": "Échange de place et applique une vulnérabilité ; surveille son Martignasse."
+  }
+ ],
+ "strategie": [
+  "Place-toi hors de la ligne de vue de la Déchireuse dès le début du combat.",
+  "Débloque son invulnérabilité au tour 2 selon la saison.",
+  "Réduis ses soins et retire-lui des PM pour limiter ses déplacements.",
+  "Élimine-la en phase 1 ou prépare un burst pour la phase 2.",
+  "Garde les monstres à distance et retire la portée du Voracle."
+ ],
+ "pieges": [
+  "Martignasse de la Domptueuse t'échange de place ; surveille l'effet de fin de tour.",
+  "Hémorasoir coûte cher en PM utilisés ; limite tes déplacements ou débuffe-le.",
+  "Ne place pas d'invocation près de l'Ébourifauve."
+ ],
+ "tours": [
+  {
+   "from": 1,
+   "every": 5,
+   "to": 21,
+   "parity": null,
+   "level": "info",
+   "text": "Nouvelle vague d'ennemis ; ses monstres sont invulnérables pendant leur premier tour."
+  }
+ ],
+ "succes": [
+  {
+   "n": "Nomade",
+   "x": "Utiliser tous ses PM à chaque tour, sans jamais se faire tacler."
+  },
+  {
+   "n": "En ligne de mire",
+   "x": "Finir chaque tour en ligne de vue d'au moins un ennemi."
+  },
+  {
+   "n": "Autelière",
+   "x": "Aucun monstre hors Déchireuse ne doit être l'entité la plus proche de l'Autel."
+  },
+  {
+   "n": "Trio",
+   "x": "Vaincre tous les monstres avec 3 personnages max, en moins de 80 tours."
+  }
+ ],
+ "acces": [
+  "Village Rhoarim d'Osavora, case [12,2].",
+  "Portail de la Tour des Voyageurs, case [-22,-24]."
+ ],
+ "src": "https://www.dofuspourlesnoobs.com/autel-de-la-dechireuse.html"
+}

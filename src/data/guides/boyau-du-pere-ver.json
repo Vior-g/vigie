@@ -1,0 +1,128 @@
+{
+ "dj": "Boyau du Père Ver",
+ "boss": "Père Ver",
+ "maj": null,
+ "essentiel": [
+  "Tape le Père Ver uniquement en mêlée : il est invulnérable à distance.",
+  "Élimine d'abord les monstres (sauf succès Premier).",
+  "Évite la ligne de vue des monstres que tu tues : chaque mort inflige 500 feu.",
+  "Tant que le Père Ver vit, chaque déplacement te coûte environ 200 eau.",
+  "Focus le Trémorse, la menace la plus dangereuse."
+ ],
+ "mecaniques": [
+  {
+   "t": "Invulnérabilité",
+   "x": "Le Père Ver ignore les dégâts à distance : frappe-le en mêlée."
+  },
+  {
+   "t": "Partage de dégâts",
+   "x": "Paternalisme partage ses dégâts avec un monstre ; tes coups sur ce monstre sont réduits de moitié."
+  },
+  {
+   "t": "États des monstres",
+   "x": "Masticroc, Trémorse et Morsquale sont Inébranlables et Lourds."
+  },
+  {
+   "t": "Glyphes",
+   "x": "Ton glyphe marron te soigne de 15 % si tu finis ton tour dessus."
+  },
+  {
+   "t": "Renvois",
+   "x": "Chaque monstre mort inflige 500 feu aux personnages en ligne de vue ; le Père Ver se soigne de 20 %."
+  }
+ ],
+ "sorts": [
+  {
+   "n": "Bien vu l'Aveugle",
+   "x": "+2 PM et +200 Puissance à un monstre 1 tour."
+  },
+  {
+   "n": "Coup d'Oeil",
+   "x": "Neutre sur tes persos et poison selon les PM utilisés."
+  },
+  {
+   "n": "Paternalisme",
+   "x": "Partage ses dégâts avec un monstre et le soigne de 10 % PV max."
+  }
+ ],
+ "monstres": [
+  {
+   "n": "Trémorse",
+   "d": "haut",
+   "x": "Focus-le en premier, avant le tour 2."
+  },
+  {
+   "n": "Morsquale",
+   "d": "moyen",
+   "x": "Gagne de la puissance à chaque dégât subi."
+  },
+  {
+   "n": "Cycloporth",
+   "d": "moyen",
+   "x": "Son glyphe rouge inflige 500 feu et retire 6 PM."
+  },
+  {
+   "n": "Masticroc",
+   "d": "moyen",
+   "x": "Invisible ; Gueule des Sables le révèle à 1 PO."
+  }
+ ],
+ "strategie": [
+  "Focus le Trémorse au tour 1.",
+  "Élimine les monstres un par un en bloquant leur ligne de vue.",
+  "Une fois seul, tape le Père Ver en mêlée."
+ ],
+ "pieges": [
+  "Frapper le monstre partagé ne compte qu'à moitié.",
+  "Abuser des PM sous Coup d'Oeil.",
+  "Tuer un monstre sans bloquer sa ligne de vue."
+ ],
+ "tours": [
+  {
+   "from": 1,
+   "every": 1,
+   "to": 1,
+   "parity": null,
+   "level": "info",
+   "text": "Pas de partage de dégâts au tour 1 : focus le Trémorse."
+  },
+  {
+   "from": 1,
+   "every": 2,
+   "to": null,
+   "parity": "impair",
+   "level": "danger",
+   "text": "Coup d'Oeil frappe tous tes persos : limite tes PM."
+  },
+  {
+   "from": 2,
+   "every": 4,
+   "to": null,
+   "parity": null,
+   "level": "danger",
+   "text": "Cycloporth se retourne 2 tours : glyphe rouge, enracinement, perte de PM."
+  }
+ ],
+ "succes": [
+  {
+   "n": "Premier",
+   "x": "Achever le Père Ver en premier."
+  },
+  {
+   "n": "Zombie",
+   "x": "Un seul PM par tour."
+  },
+  {
+   "n": "Spécial : On ne touche pas",
+   "x": "Finir chaque tour en diagonale d'un ennemi."
+  },
+  {
+   "n": "Duo",
+   "x": "2 persos, moins de 20 tours."
+  }
+ ],
+ "acces": [
+  "Île de Saharach en [7,-70], Gorge des Vents Hurlants."
+ ],
+ "src": "https://www.dofuspourlesnoobs.com/boyau-du-pere-ver.html"
+}

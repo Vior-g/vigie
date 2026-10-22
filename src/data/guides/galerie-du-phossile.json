@@ -1,0 +1,109 @@
+{
+ "dj": "Galerie du Phossile",
+ "boss": "Phossile",
+ "maj": "21/06/2026",
+ "essentiel": [
+  "Donjon de dimension : une salle, 5 vagues.",
+  "Élimine le Phossile en priorité, idéalement avant le tour 5.",
+  "Joue à distance et garde tes personnages à moins de 8PO du Phossile.",
+  "Si le Phossile vit au tour 4, éloigne tout le monde à plus de 3PO."
+ ],
+ "mecaniques": [
+  {
+   "t": "Vagues",
+   "x": "Une vague tous les 5 tours, ou plus tôt ; invulnérable 1 tour."
+  },
+  {
+   "t": "Abîme",
+   "x": "Dès le tour 5 puis tous les 4 tours, OS les personnages à 3PO ou moins."
+  },
+  {
+   "t": "Centrage",
+   "x": "Les ennemis à plus de 8PO gagnent 1PM et du bouclier quand tu finis ton tour."
+  },
+  {
+   "t": "Glyphiphi",
+   "x": "Un perso poussé ou attiré laisse un glyphe rouge : +30% de dégâts subis 3 tours."
+  },
+  {
+   "t": "Appel à l'aide",
+   "x": "Le glyphe du Phorrêveur réduit de 50% les dégâts subis."
+  }
+ ],
+ "sorts": [
+  {
+   "n": "Épicentre",
+   "x": "300 eau, attire de 2 cases, ligne jusqu'à 7PO."
+  },
+  {
+   "n": "Bain de lave",
+   "x": "Environ 450 feu en marteau, mêlée."
+  },
+  {
+   "n": "Roc Phorreur",
+   "x": "300 terre, repousse de 2, ligne sans vue jusqu'à 5PO."
+  }
+ ],
+ "monstres": [
+  {
+   "n": "Père Phorreur",
+   "d": "haut",
+   "x": "T'échange de place : pense à Pesanteur."
+  },
+  {
+   "n": "Phorrêveur",
+   "d": "haut",
+   "x": "Son glyphe réduit tes dégâts de 50%."
+  },
+  {
+   "n": "Mère Veilleuse",
+   "d": "moyen",
+   "x": "Soigne 10% des PV max autour d'elle."
+  }
+ ],
+ "strategie": [
+  "Place-toi à moins de 8PO du Phossile.",
+  "Tape à distance et tue le Phossile en premier, avant le tour 5.",
+  "Achève ensuite les vagues."
+ ],
+ "pieges": [
+  "Rester à 3PO ou moins au tour 5 (Abîme).",
+  "Frapper une cible dans le glyphe Appel à l'aide."
+ ],
+ "tours": [
+  {
+   "from": 5,
+   "every": 4,
+   "to": null,
+   "parity": null,
+   "level": "danger",
+   "text": "Abîme : OS des personnages à 3PO ou moins du Phossile."
+  },
+  {
+   "from": 6,
+   "every": 5,
+   "to": 21,
+   "parity": null,
+   "level": "alerte",
+   "text": "Nouvelle vague, invulnérable 1 tour."
+  }
+ ],
+ "succes": [
+  {
+   "n": "Liberté",
+   "x": "Aucun retrait PM ni PO."
+  },
+  {
+   "n": "Spécial (Diagonale du vide)",
+   "x": "Ne finis jamais en diagonale d'un ennemi ou d'un allié."
+  },
+  {
+   "n": "Duo",
+   "x": "2 persos max, moins de 30 tours."
+  }
+ ],
+ "acces": [
+  "Dimension Enutrosor, Creuset des Fortunés [-2,-3], par portail."
+ ],
+ "src": "https://www.dofuspourlesnoobs.com/galerie-du-phossile.html"
+}

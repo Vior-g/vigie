@@ -1,0 +1,110 @@
+{
+ "dj": "Palais du roi Nidas",
+ "boss": "Roi Nidas",
+ "maj": "21/06/2026",
+ "essentiel": [
+  "Le trousseau de clés et la téléportation de groupe ne marchent pas en dimension, cherche un portail.",
+  "Tue vite chaque vague pour éviter d'affronter dix monstres ou plus à la fois.",
+  "Privilégie une équipe à distance avec entraves plutôt que des tanks.",
+  "Ne laisse aucun allié à 2 PO du Nidas pendant Zizanie.",
+  "Surveille le Barbétoal quand il lance Super saillant, ses dégâts grimpent à chaque coup."
+ ],
+ "mecaniques": [
+  {
+   "t": "Vagues",
+   "x": "Une nouvelle vague arrive tous les 5 tours, aux tours 1, 6, 11, 16 et 21."
+  },
+  {
+   "t": "Invulnérabilité",
+   "x": "Une vague est invulnérable un tour à son arrivée. Ses monstres restent intouchables jusqu'à avoir joué leur premier tour."
+  },
+  {
+   "t": "Points de vie",
+   "x": "Vague 1 : 6600 PV par monstre. Vagues suivantes : 4950 PV. Le Nidas a 15 000 à 22 000 PV."
+  },
+  {
+   "t": "Puissance cyclique",
+   "x": "Ennemis +50 % de vitalité. Alliés gagnent +25 % de dégâts par tour dès le second tour, remis à zéro tous les 5 tours."
+  },
+  {
+   "t": "Boubourse",
+   "x": "Au seuil de 1 PV, elle devient alliée 2 tours, puis retourne au contact du Nidas en boostant les monstres."
+  }
+ ],
+ "sorts": [
+  {
+   "n": "Attrape-mutin",
+   "x": "Attire ta cible de 6 cases et échange sa place avec le Nidas. Utilisable dès son deuxième tour."
+  },
+  {
+   "n": "Confusion",
+   "x": "Zone de rayon 2 qui applique Zizanie. Au tour suivant, les touchés frappent autour d'eux."
+  },
+  {
+   "n": "Liquidation",
+   "x": "Frappe feu, puis second coup d'eau égal à 20 % des PV érodés du Nidas, en croix diagonale."
+  }
+ ],
+ "monstres": [
+  {
+   "n": "Lévitrof",
+   "d": "haut",
+   "x": "Frappe-le avant son prochain tour si Reflets placides te cible. Garde-le hors de portée."
+  },
+  {
+   "n": "Barbétoal",
+   "d": "moyen",
+   "x": "Évite de te faire frapper plusieurs fois, ses dégâts augmentent à chaque coup."
+  },
+  {
+   "n": "Kamastérisk",
+   "d": "moyen",
+   "x": "Partoutatice attire les cibles en ligne et applique pesanteur. Ralentis-le avec des sorts de pesanteur."
+  },
+  {
+   "n": "Piloztère",
+   "d": "moyen",
+   "x": "Concentre-toi dessus jusqu'à sa mort et évite les sorts de zone."
+  }
+ ],
+ "strategie": [
+  "Compose une équipe à distance, riche en entraves PM et PO.",
+  "Tue chaque vague vite pour éviter l'accumulation de monstres.",
+  "Frappe le Nidas en premier avec des éléments hors terre (il résiste à 42 % en terre).",
+  "Garde tes personnages à distance du Nidas pour limiter ses zones."
+ ],
+ "pieges": [
+  "Reflets placides du Lévitrof te tue si personne ne le frappe avant ton prochain tour.",
+  "Zizanie inflige des dégâts à tes alliés proches si l'un d'eux reste à 2 PO du Nidas.",
+  "Boubourse en camp ennemi booste les monstres de 200 puissance, le Nidas de 300."
+ ],
+ "tours": [
+  {
+   "from": 1,
+   "every": 5,
+   "to": 21,
+   "parity": null,
+   "level": "info",
+   "text": "Arrivée d'une nouvelle vague, invulnérable pendant un tour."
+  }
+ ],
+ "succes": [
+  {
+   "n": "Premier",
+   "x": "Achève le Roi Nidas en premier."
+  },
+  {
+   "n": "Statue",
+   "x": "Termine chaque tour sur la case de départ, tout le combat."
+  },
+  {
+   "n": "Spécial (Pingrerie)",
+   "x": "Frappe uniquement en ligne ou en diagonale de la cible."
+  }
+ ],
+ "acces": [
+  "Entrée à Enutrosor en [-5,-5], donjon de dimension.",
+  "Trouve un portail via une chasse lancée à la Tour des Voyageurs en [-22,-24]."
+ ],
+ "src": "https://www.dofuspourlesnoobs.com/palais-du-roi-nidas.html"
+}

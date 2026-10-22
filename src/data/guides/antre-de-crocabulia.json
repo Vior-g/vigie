@@ -1,0 +1,90 @@
+{
+ "dj": "Antre de Crocabulia",
+ "boss": "Crocabulia",
+ "maj": "21/06/2026",
+ "essentiel": [
+  "Une seule coquille vit à la fois.",
+  "Élimine vite les coquilles Soigneuse et Protectrice.",
+  "Ignore les coquilles Brutale et Véloce : elles expirent seules.",
+  "Achève toujours une coquille à plus de 8 PO de tes personnages.",
+  "Les monstres d'abord, la Crocabulia en dernier."
+ ],
+ "mecaniques": [
+  {
+   "t": "Coquilles",
+   "x": "Une coquille environ tous les 4 tours ; elle meurt seule après 4 tours."
+  },
+  {
+   "t": "Coup quillesque",
+   "x": "Tuer une coquille avant sa fin inflige dégâts et malus dans un rayon de 8."
+  },
+  {
+   "t": "Renforcement",
+   "x": "Chaque coquille vivante booste les monstres et la Crocabulia."
+  },
+  {
+   "t": "Glyphe de Souffle",
+   "x": "Le glyphe rouge blesse ceux qui finissent leur tour dedans."
+  }
+ ],
+ "sorts": [
+  {
+   "n": "Souffle",
+   "x": "Feu en ligne puis en cône, laisse un glyphe rouge 2 tours."
+  },
+  {
+   "n": "Crokenjambe",
+   "x": "Repousse de 3 cases."
+  },
+  {
+   "n": "Crokabriole",
+   "x": "Échange de place et 350 terre."
+  }
+ ],
+ "monstres": [
+  {
+   "n": "Dragmatique",
+   "d": "haut",
+   "x": "Sa Pression magmatique fixe la violence de son éruption."
+  },
+  {
+   "n": "Dragacé",
+   "d": "moyen",
+   "x": "Te téléporte près de lui."
+  }
+ ],
+ "strategie": [
+  "Regarde quelle coquille apparaît au tour 1.",
+  "Soigneuse ou Protectrice : tue-la depuis plus de 8 PO.",
+  "Brutale ou Véloce : ignore-la.",
+  "Monstres puis Crocabulia."
+ ],
+ "pieges": [
+  "Achever une coquille près de tes persos.",
+  "Rester dans le glyphe rouge."
+ ],
+ "tours": [
+  {
+   "from": 1,
+   "every": 4,
+   "to": null,
+   "parity": null,
+   "level": "info",
+   "text": "Nouvelle coquille possible."
+  }
+ ],
+ "succes": [
+  {
+   "n": "En cassant des œufs",
+   "x": "Achever chaque coquille avant son 3e tour sans subir d'explosion."
+  },
+  {
+   "n": "Duo",
+   "x": "2 persos max, moins de 20 tours."
+  }
+ ],
+ "acces": [
+  "Sanctuaire des Dragoeufs (Amakna), via le Kanojedo et Ziho."
+ ],
+ "src": "https://www.dofuspourlesnoobs.com/antre-de-crocabulia.html"
+}

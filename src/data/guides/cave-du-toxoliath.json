@@ -1,0 +1,107 @@
+{
+ "dj": "Cave du Toxoliath",
+ "boss": "Toxoliath",
+ "maj": "10/02/2022",
+ "essentiel": [
+  "Tue le Toxoliath avant le tour 6 pour éviter Poison Volatile.",
+  "N'utilise aucun PM après l'avoir frappé : 700 dégâts par PM.",
+  "Désenvoûte le poison Toxmose (il reste actif pour le tour en cours).",
+  "Pousse la Lucrane avant de la frapper pour retirer Carapace Gardée.",
+  "Élimine les Éperfide en priorité."
+ ],
+ "mecaniques": [
+  {
+   "t": "Vagues",
+   "x": "Cinq vagues, chacune invulnérable 1 tour à son arrivée."
+  },
+  {
+   "t": "Toxmose",
+   "x": "Frapper le Toxoliath inflige un poison eau de 700 par PM utilisé, 2 tours."
+  },
+  {
+   "t": "Venin Salvateur",
+   "x": "Cible +50% de dégâts subis, perd un envoûtement par dégât."
+  },
+  {
+   "t": "Glyphe Poison Volatile",
+   "x": "Zone de taille 8 : +50% de dégâts subis pendant 2 tours."
+  },
+  {
+   "t": "Carapace Gardée",
+   "x": "La Lucrane renvoie 50% des dégâts ; la pousser retire l'effet."
+  }
+ ],
+ "sorts": [
+  {
+   "n": "Poison Volatile",
+   "x": "Dès le tour 6 : -2 PA, poison feu de 350 et glyphe de dégâts subis."
+  },
+  {
+   "n": "Vile Ruse",
+   "x": "400 air et poison air de 350 pendant 5 tours, portée 7."
+  }
+ ],
+ "monstres": [
+  {
+   "n": "Éperfide",
+   "d": "haut",
+   "x": "Dégâts élevés, longue portée, retrait PA/PM : tue-les en premier."
+  },
+  {
+   "n": "Scoliopode",
+   "d": "moyen",
+   "x": "Vole des PM et rend Insoignable."
+  },
+  {
+   "n": "Morfrelon",
+   "d": "moyen",
+   "x": "Reste loin ; retire-lui sa portée."
+  }
+ ],
+ "strategie": [
+  "Joue à distance avec retrait de PM et repoussées.",
+  "Élimine d'abord les Éperfide.",
+  "Pousse la Lucrane avant de la frapper.",
+  "Tue le Toxoliath avant le tour 6, sans bouger après l'avoir frappé."
+ ],
+ "pieges": [
+  "Utiliser des PM après avoir frappé le Toxoliath.",
+  "Rester dans le glyphe Poison Volatile."
+ ],
+ "tours": [
+  {
+   "from": 1,
+   "every": 5,
+   "to": 21,
+   "parity": null,
+   "level": "info",
+   "text": "Nouvelle vague (ou plus tôt si la précédente est finie)."
+  },
+  {
+   "from": 6,
+   "every": 4,
+   "to": null,
+   "parity": null,
+   "level": "danger",
+   "text": "Poison Volatile possible."
+  }
+ ],
+ "succes": [
+  {
+   "n": "Circulez",
+   "x": "Aucun retrait de PM aux adversaires."
+  },
+  {
+   "n": "Spécial (Relation toxique)",
+   "x": "Éliminer le Toxoliath en dernier, après les 5 vagues."
+  },
+  {
+   "n": "Duo",
+   "x": "2 persos max, moins de 40 tours."
+  }
+ ],
+ "acces": [
+  "Dimension Srambad, case [8,8], par recherche de portail."
+ ],
+ "src": "https://www.dofuspourlesnoobs.com/cave-du-toxoliath.html"
+}

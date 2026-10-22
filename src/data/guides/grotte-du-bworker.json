@@ -1,0 +1,82 @@
+{
+ "dj": "Grotte du Bworker",
+ "boss": "Bworker",
+ "maj": "19/08/2018",
+ "essentiel": [
+  "Le Bworker ne frappe qu'au corps à corps : garde-le toujours à distance.",
+  "Élimine vite les flammèches, elles frappent environ 1000 dès le premier tour.",
+  "Disperse tes personnages pour éviter de perdre trop de PA d'un coup.",
+  "Au-dessus de 50% PV, frappe-le au corps à corps ; en dessous, à distance."
+ ],
+ "mecaniques": [
+  {
+   "t": "Invulnérable à distance",
+   "x": "Au-dessus de 50% de PV, il gagne 4PA ; seul le corps à corps le touche."
+  },
+  {
+   "t": "Seuil de 50%",
+   "x": "Il devient invulnérable un tour complet : recule-le et retire-lui des PM."
+  },
+  {
+   "t": "Invulnérable en mêlée",
+   "x": "Sous 50% de PV, il gagne 4PM et l'état intaclable : finis-le à distance."
+  },
+  {
+   "t": "Soutien des monstres",
+   "x": "Le Cybwork absorbe ses dégâts et la Mama le soigne."
+  }
+ ],
+ "sorts": [
+  {
+   "n": "Correction Bwork",
+   "x": "Neutre selon ses PV manquants, 30% (45% cc), au corps à corps."
+  },
+  {
+   "n": "Sanction Bwork",
+   "x": "Frappe neutre de 2400 au corps à corps : reste hors de portée."
+  }
+ ],
+ "monstres": [
+  {
+   "n": "Élémentaire d'Air",
+   "d": "haut",
+   "x": "Sa flammèche attire et frappe fort : tue-la vite."
+  },
+  {
+   "n": "Élémentaire de Feu",
+   "d": "haut",
+   "x": "Sa Poussière retire beaucoup de PA : disperse-toi."
+  },
+  {
+   "n": "Mama Bwork",
+   "d": "haut",
+   "x": "Soigne ses alliés : isole-la."
+  },
+  {
+   "n": "Cybwork",
+   "d": "moyen",
+   "x": "Partage les dégâts du Boss : frappe-le en zone avec lui."
+  }
+ ],
+ "strategie": [
+  "Ralentis le Bworker avec du retrait PM à chaque tour.",
+  "Achève les autres monstres pendant qu'il avance.",
+  "Repousse-le dès qu'il se rapproche.",
+  "Sinon, bloque-le dans un coin avec un allié à fort tacle."
+ ],
+ "pieges": [
+  "Les flammèches frappent fort dès le tour 1.",
+  "La Poussière Temporelle retire beaucoup de PA si tu as peu d'esquive."
+ ],
+ "tours": [],
+ "succes": [
+  {
+   "n": "Baston équitable",
+   "x": "Aucun retrait PM, PA, PO ni déplacement des ennemis. Élimine le Bworker tour 1."
+  }
+ ],
+ "acces": [
+  "Gisgoul en [-15,14]."
+ ],
+ "src": "https://www.dofuspourlesnoobs.com/grotte-du-bworker.html"
+}

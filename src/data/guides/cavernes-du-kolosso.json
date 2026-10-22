@@ -1,0 +1,98 @@
+{
+ "dj": "Cavernes du Kolosso",
+ "boss": "Kolosso",
+ "maj": null,
+ "essentiel": [
+  "Dès le départ, tes alliés subissent -10 000 aux soins, impossible à retirer.",
+  "Élimine le Professeur Xa en premier pour limiter les soins.",
+  "Une invocation qui inflige des dégâts au Kolosso le rend vulnérable un tour.",
+  "Ne frappe pas le Kolosso au corps à corps sans raison : il gagne 10% de dommages par coup.",
+  "Réunis les 4 reliques avant d'affronter le Kolosso."
+ ],
+ "mecaniques": [
+  {
+   "t": "Invulnérabilité",
+   "x": "Le Kolosso est lourd. Une invocation qui lui inflige des dégâts le rend vulnérable un tour."
+  },
+  {
+   "t": "Mort de Xa",
+   "x": "Quand le Professeur Xa tombe, le Kolosso gagne 1 PM, 200 puissance et grossit."
+  },
+  {
+   "t": "Soins ennemis",
+   "x": "Un monstre touché soigne tes personnages dans un cercle de 5 autour de lui."
+  },
+  {
+   "t": "Insoignable",
+   "x": "Seul sur le terrain, le Kolosso peut appliquer l'état insoignable à 3 PO en ligne."
+  },
+  {
+   "t": "Baikal",
+   "x": "Le Kolosso gagne 10% de dommages finaux à chaque coup de mêlée subi."
+  }
+ ],
+ "sorts": [
+  {
+   "n": "Razepoutine",
+   "x": "Gros dégâts terre en triangle vers la cible au CàC, plus forts quand il a peu de PV."
+  },
+  {
+   "n": "Xalactite",
+   "x": "350 eau en vol de vie et -30% de fuite (40% en CC) un tour, seulement si Xa est mort."
+  }
+ ],
+ "monstres": [
+  {
+   "n": "Blérice",
+   "d": "haut",
+   "x": "Ne le frappe pas au CàC sous Frostiz : il retire 100 PM à toute ton équipe."
+  },
+  {
+   "n": "Croleur",
+   "d": "haut",
+   "x": "Ne le frappe pas au CàC sous fugue : il devient invisible et recule."
+  },
+  {
+   "n": "Blérom",
+   "d": "moyen",
+   "x": "S'il a Toxin, fuir son CàC le fait se reconstituer."
+  },
+  {
+   "n": "Fleuro",
+   "d": "moyen",
+   "x": "Malus de dégâts et état Brûlie, qui te vole des PV au CàC."
+  }
+ ],
+ "strategie": [
+  "Réunis les 4 reliques dans les salles 1 à 4.",
+  "Élimine le Professeur Xa en priorité.",
+  "Utilise une invocation pour toucher le Kolosso et le rendre vulnérable.",
+  "Frappe-le fort pendant son tour de vulnérabilité."
+ ],
+ "pieges": [
+  "Le sort Kirbili de Xa soigne tes alliés à chaque coup reçu par un monstre.",
+  "Un monstre touché soigne tes alliés à 5 PO, donc isole-les.",
+  "Soigner une invocation fait échouer le succès."
+ ],
+ "tours": [
+  {
+   "from": 1,
+   "every": 2,
+   "to": null,
+   "parity": "impair",
+   "level": "alerte",
+   "text": "Xa lance Kirbili aux tours impairs : anticipe les soins de tes alliés."
+  }
+ ],
+ "succes": [
+  {
+   "n": "Alliés passés au futur",
+   "x": "Aucun allié ni invocation ne doit recevoir de soin pendant le combat."
+  }
+ ],
+ "acces": [
+  "Crocs de verre en [-61,-69].",
+  "Clé : quête « Un remède à tous les maux »."
+ ],
+ "src": "https://www.dofuspourlesnoobs.com/cavernes-du-kolosso.html"
+}

@@ -1,0 +1,101 @@
+{
+ "dj": "Trône de Sang",
+ "boss": "Guerre",
+ "maj": "21/01/2026",
+ "essentiel": [
+  "Tue tous les monstres avant que Guerre monte sur sa monture.",
+  "Guerre reste invulnérable tant qu'il reste un monstre vivant.",
+  "Tue chaque arme invoquée avant que Guerre rejoue, sinon elle se renforce.",
+  "Garde tes personnages hors de portée des armes avant chaque seuil de PV.",
+  "Hors Bravoure, Guerre est peu dangereuse, mais elle reste indéplaçable."
+ ],
+ "mecaniques": [
+  {
+   "t": "Invulnérabilité",
+   "x": "Guerre ne craint rien tant que ses monstres vivent. Tue-les tous pour la rendre vulnérable."
+  },
+  {
+   "t": "Bravoure",
+   "x": "Une fois vulnérable, elle met une cible en état Brave deux tours, relancé tous les trois tours."
+  },
+  {
+   "t": "Armes invoquées",
+   "x": "Une arme apparaît à chaque palier de 20% de PV, et ses PV se bloquent pendant l'invocation."
+  },
+  {
+   "t": "Boosts des armes",
+   "x": "Tuer une arme après le tour de Guerre lui donne résistances, PM et soins, cumulables."
+  },
+  {
+   "t": "Célérité",
+   "x": "Guerre échange de place avec un personnage ou une arme. Échanger avec un personnage laisse un glyphe de 1000 feu."
+  }
+ ],
+ "sorts": [
+  {
+   "n": "Arsenal",
+   "x": "Lancé au début, il rend Guerre indéplaçable et invoque ses armes selon ses PV."
+  },
+  {
+   "n": "Bravoure",
+   "x": "Met Guerre et une cible en Brave deux tours. Portée 3 PO sans ligne de vue, relance tous les 3 tours."
+  },
+  {
+   "n": "Célérité",
+   "x": "Échange de place avec une arme ou un personnage, impossible en état Brave. Portée infinie sans ligne de vue."
+  }
+ ],
+ "monstres": [
+  {
+   "n": "Trancharnier",
+   "d": "haut",
+   "x": "Tue-le en premier, il se téléporte près de toi et retire des PA."
+  },
+  {
+   "n": "Olgoth",
+   "d": "haut",
+   "x": "Invulnérable au corps à corps au-dessus de la moitié de ses PV. Tape-le à distance jusqu'à 2750 PV, puis finis-le au corps à corps."
+  },
+  {
+   "n": "Ravalame",
+   "d": "moyen",
+   "x": "Sa Frappe cardinale peut toucher jusqu'à 4 personnages. Tue-le en dernier."
+  }
+ ],
+ "strategie": [
+  "Tue le Trancharnier, puis l'Olgoth (à distance jusqu'à 2750 PV), puis le Ravalame.",
+  "Quand Guerre monte sur sa monture, un personnage devient Brave. Tiens-le à distance des armes.",
+  "À 4 joueurs, descends Guerre aux paliers 17600, 13200, 8800 et 4400 PV, tes persos hors de portée.",
+  "Tue chaque arme avant que Guerre rejoue, sinon ses boosts s'accumulent.",
+  "Au dernier palier, ignore le Morgenstern et concentre-toi sur Guerre."
+ ],
+ "pieges": [
+  "Laisser une arme vivante jusqu'au tour de Guerre : résistances, PM et soins cumulés.",
+  "Frapper Guerre sans être le personnage Brave : tu deviens pacifiste après un coup.",
+  "Rester dans la zone des armes, surtout l'Épée Géante et sa zone en étoile de taille 5."
+ ],
+ "tours": [],
+ "succes": [
+  {
+   "n": "Zombie",
+   "x": "Utilise exactement un PM par tour, avec 80/90 de fuite ou des téléportations."
+  },
+  {
+   "n": "Misanthrope",
+   "x": "Ne termine jamais ton tour à côté d'un allié ou d'une invocation."
+  },
+  {
+   "n": "Spécial : Arsenal total",
+   "x": "Aucune arme de Guerre ne doit être achevée ou déplacée par un allié."
+  },
+  {
+   "n": "Duo",
+   "x": "Vaincre tous les monstres avec 2 personnages maximum, en moins de 40 tours."
+  }
+ ],
+ "acces": [
+  "Entrée dans la zone Blessures de Guerre, en [4,-2].",
+  "Zaap Arche de Vili en [15,-20], accessible par la faille de la Mine Hable en [10,-19]."
+ ],
+ "src": "https://www.dofuspourlesnoobs.com/trone-de-sang.html"
+}

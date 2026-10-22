@@ -1,0 +1,117 @@
+{
+ "dj": "Maison du Papa Nowel",
+ "boss": "Père Fwetar",
+ "maj": "01/12/2022",
+ "essentiel": [
+  "Ne retire jamais de PM au Père Fwetar : chaque tentative lui en donne 1 de plus.",
+  "Élimine la peluche Wabbit en priorité, elle soigne énormément.",
+  "Surveille chaque Poutch Ingball : avec deux boosts de PA il lance Tuerie (OS).",
+  "Reste à moins de 7 cases pour bloquer Fwetage, hors de sa ligne d'attirance.",
+  "Finis-le vers 35% PV, avant qu'il ne se reconstitue."
+ ],
+ "mecaniques": [
+  {
+   "t": "Retrait PM interdit",
+   "x": "Chaque tentative de retrait PM lui donne 1PM, cumulable. Repousse-le plutôt."
+  },
+  {
+   "t": "Invocation du Poutch",
+   "x": "Au tour 1 puis tous les 3 tours : 2 chances sur 3 d'une marionnette, sinon 2PA au Poutch."
+  },
+  {
+   "t": "Tuerie",
+   "x": "Un Poutch boosté à 4PA lance Tuerie, qui OS tous tes personnages."
+  },
+  {
+   "t": "Fwetage",
+   "x": "700 dans un élément aléatoire, sans ligne de vue, seulement à 8PO ou plus."
+  },
+  {
+   "t": "Reconstitution",
+   "x": "Vers 30% PV, il se soigne et booste les monstres pendant 10 tours."
+  }
+ ],
+ "sorts": [
+  {
+   "n": "Aspir'nenfan",
+   "x": "Attire de 3 cases, en ligne de 2 à portée infinie."
+  },
+  {
+   "n": "Embûche de Nowel",
+   "x": "Soin complet et +100 puissance aux monstres pendant 10 tours."
+  }
+ ],
+ "monstres": [
+  {
+   "n": "Peluche Wabbit",
+   "d": "haut",
+   "x": "Soigne fortement ses alliés : élimine-la en priorité."
+  },
+  {
+   "n": "Cadob'",
+   "d": "haut",
+   "x": "En butin 5+, invoque Cadob'Omb qui OS autour de lui : tue-le en premier."
+  },
+  {
+   "n": "Marionnette du Dragon Cochon",
+   "d": "haut",
+   "x": "Élimine-la vite ou désenvoûte Étourderie quasi-mortelle."
+  },
+  {
+   "n": "Marionnette du Bouftou Royal",
+   "d": "moyen",
+   "x": "Se soigne beaucoup : tacle-la ou coupe ses lignes de vue."
+  }
+ ],
+ "strategie": [
+  "Élimine la peluche Wabbit, puis Cadob' en butin 5+.",
+  "Traite chaque Poutch : élimine-le s'il a reçu des PA.",
+  "Garde Mulou Meulé, Minotoror et Dark Vlad à distance avec du retrait PM (jamais sur le Père Fwetar).",
+  "Frappe le Père Fwetar en terre, idéalement en un seul tour."
+ ],
+ "pieges": [
+  "Ne tente jamais de lui retirer des PM.",
+  "Ne reste pas sur sa ligne : Aspir'nenfan peut t'attirer contre lui.",
+  "Ne laisse jamais un Poutch recevoir 2PA deux fois de suite."
+ ],
+ "tours": [
+  {
+   "from": 1,
+   "every": 3,
+   "to": null,
+   "parity": null,
+   "level": "alerte",
+   "text": "Le Père Fwetar invoque un Poutch Ingball."
+  },
+  {
+   "from": 3,
+   "every": 3,
+   "to": null,
+   "parity": null,
+   "level": "danger",
+   "text": "Élimine tout Poutch resté à 2PA avant la prochaine invocation (risque de Tuerie)."
+  }
+ ],
+ "succes": [
+  {
+   "n": "Chrono",
+   "x": "Vaincre tous les monstres en moins de 9 tours."
+  },
+  {
+   "n": "Nomade",
+   "x": "Utiliser tous tes PM à chaque tour."
+  },
+  {
+   "n": "Hardi",
+   "x": "Finir chaque tour adjacent à un ennemi."
+  },
+  {
+   "n": "Duo",
+   "x": "2 persos max, moins de 20 tours."
+  }
+ ],
+ "acces": [
+  "Île de Nowel, Taïga de Nowel en [-34,-89]."
+ ],
+ "src": "https://www.dofuspourlesnoobs.com/maison-du-papa-nowel.html"
+}

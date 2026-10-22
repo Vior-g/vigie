@@ -1,0 +1,77 @@
+{
+ "dj": "Épave du Grolandais violent",
+ "boss": "Ben le Ripate",
+ "maj": "13/04/2018",
+ "essentiel": [
+  "Ben est invulnérable et lourd dès le début.",
+  "Place un Hamrack au corps à corps de Ben pour le rendre vulnérable 5 tours.",
+  "Tu ne peux pousser Ben que vers le Hamrack, jamais l'inverse.",
+  "Garde tes alliés hors des cases rouges de Gouverne ail."
+ ],
+ "mecaniques": [
+  {
+   "t": "Invulnérabilité",
+   "x": "Le Hamrack qui explose à son contact lève sa protection."
+  },
+  {
+   "t": "Hamrack",
+   "x": "Invoqué par Tore tue : lourd, enraciné, 2 PM, disparaît après 3 tours."
+  },
+  {
+   "t": "Gouverne ail",
+   "x": "Au contact de Ben, il le rend vulnérable 5 tours et frappe les alliés en cases rouges (350 eau)."
+  },
+  {
+   "t": "Boost du Hamrack",
+   "x": "Lui retirer des PM lui donne +3 PM pendant 1 tour."
+  }
+ ],
+ "sorts": [
+  {
+   "n": "Tore tue",
+   "x": "Invoque un Hamrack à 5-10 PO, tous les 2 tours."
+  },
+  {
+   "n": "Frère de la côte",
+   "x": "Soigne 400 PV à un monstre, +150 puissance 1 tour."
+  },
+  {
+   "n": "Mâte l'eau",
+   "x": "250 feu en croix de 4 PO, attire de 3 cases."
+  }
+ ],
+ "monstres": [
+  {
+   "n": "Hamrack",
+   "d": "haut",
+   "x": "Place-le au contact de Ben : il explose après 3 tours."
+  },
+  {
+   "n": "Bertha",
+   "d": "moyen",
+   "x": "Sa Pitrouille explose en zone de rayon 4 quand on la frappe."
+  }
+ ],
+ "strategie": [
+  "Pousse Ben vers le Hamrack.",
+  "Bloque Ben pour qu'il reste près du Hamrack.",
+  "Booste les PM du Hamrack (ou retire-lui des PM : +3 PM).",
+  "Profite des 5 tours de vulnérabilité pour frapper."
+ ],
+ "pieges": [
+  "Ben joue avant le Hamrack et peut s'éloigner.",
+  "Gouverne ail frappe tes alliés sur les cases rouges."
+ ],
+ "tours": [],
+ "succes": [
+  {
+   "n": "Hamrack'n roll",
+   "x": "Aucun allié ne doit subir de dégâts de Hamrack."
+  }
+ ],
+ "acces": [
+  "Berceau d'Alma, en [-60,-84].",
+  "Avoir fait Serre du Royalmouth et Excavation du Mansot Royal."
+ ],
+ "src": "https://www.dofuspourlesnoobs.com/epave-du-grolandais-violent.html"
+}

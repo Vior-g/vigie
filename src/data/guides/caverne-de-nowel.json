@@ -1,0 +1,72 @@
+{
+ "dj": "Caverne de Nowel",
+ "boss": "Papa Nowel",
+ "maj": "30/11/2023",
+ "essentiel": [
+  "Papa Nowel peut t'OS en mêlée.",
+  "Lui retirer des PM booste sa portée.",
+  "Élimine vite les monstres annexes.",
+  "Une fois seul, tue-le en un tour avant sa reconstitution.",
+  "S'il se sépare, focus les jambes : elles terminent le combat."
+ ],
+ "mecaniques": [
+  {
+   "t": "Séparation",
+   "x": "À bas PV, il sacrifie 50% de ses PV et invoque le Demi Papa Nowel (le buste)."
+  },
+  {
+   "t": "Transformation",
+   "x": "Le Demi transforme un perso en cadeau tous les 4 tours (-1PM, -4PA)."
+  },
+  {
+   "t": "Fin du combat",
+   "x": "Tuer les jambes suffit."
+  }
+ ],
+ "sorts": [
+  {
+   "n": "Aspir'nenfan",
+   "x": "Attire de 3 cases, ligne, portée infinie, 2 fois par tour."
+  },
+  {
+   "n": "Infantophagie",
+   "x": "OS la cible en mêlée et soin de 500."
+  }
+ ],
+ "monstres": [
+  {
+   "n": "Mininuit",
+   "d": "haut",
+   "x": "Frappe fort en mêlée."
+  },
+  {
+   "n": "Bouboule de Neige",
+   "d": "moyen",
+   "x": "Soigne ses alliés : élimine-la tôt."
+  }
+ ],
+ "strategie": [
+  "Monstres d'abord.",
+  "Hors de son attirance en ligne.",
+  "Seul : retire la moitié de ses PV puis finis-le au tour suivant."
+ ],
+ "pieges": [
+  "Être attiré en mêlée.",
+  "Retirer ses PM."
+ ],
+ "tours": [],
+ "succes": [
+  {
+   "n": "Premier",
+   "x": "Achever Papa Nowel en premier."
+  },
+  {
+   "n": "Chrono",
+   "x": "Moins de 9 tours."
+  }
+ ],
+ "acces": [
+  "Terre de Nowel [-36,-89], après Sapik épique et Colégram."
+ ],
+ "src": "https://www.dofuspourlesnoobs.com/caverne-de-nowel.html"
+}

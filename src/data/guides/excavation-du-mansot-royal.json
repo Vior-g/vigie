@@ -1,0 +1,95 @@
+{
+ "dj": "Excavation du Mansot Royal",
+ "boss": "Mansot Royal",
+ "maj": "21/06/2026",
+ "essentiel": [
+  "Le Mansot Royal commence invulnérable.",
+  "Soigne un allié au contact du boss pour lever son invulnérabilité (6 tours).",
+  "Ce soin déclenche Mansodah : ~200 eau aux alliés voisins du soigné.",
+  "Chaque allié mort renforce le boss (vitalité, dommages, PM).",
+  "Chaque tour, seul le combattant marqué d'un cœur peut être soigné."
+ ],
+ "mecaniques": [
+  {
+   "t": "Invulnérabilité",
+   "x": "Levée par un soin sur un allié au contact du boss."
+  },
+  {
+   "t": "Mansodah",
+   "x": "Frappe les alliés adjacents au soigné (~200 eau)."
+  },
+  {
+   "t": "Vulnérabilité",
+   "x": "Dure 6 tours ; si le soigné meurt, l'invulnérabilité revient."
+  },
+  {
+   "t": "Mansomnanbule",
+   "x": "Après l'avoir attiré ou poussé : tu te soignes de 100% des dégâts infligés 1 tour."
+  },
+  {
+   "t": "Privilège royal",
+   "x": "Seul un combattant marqué d'un cœur peut recevoir des soins chaque tour."
+  }
+ ],
+ "sorts": [
+  {
+   "n": "Mansolénoïde",
+   "x": "Feu = 10% de ses PV manquants, au contact, quand il est vulnérable."
+  },
+  {
+   "n": "Mansoluble",
+   "x": "400 eau en vol de vie avec échange de place."
+  },
+  {
+   "n": "Mansoxygène",
+   "x": "2 PM et 30 fuite si invulnérable, bouclier si vulnérable."
+  }
+ ],
+ "monstres": [
+  {
+   "n": "Mansovegarde",
+   "d": "haut",
+   "x": "Ressuscite un mort à 10% PV tous les 3 tours : priorité."
+  },
+  {
+   "n": "Mansogrenu",
+   "d": "haut",
+   "x": "Reste hors de son cercle de rayon 2 (300 eau en vol de vie)."
+  },
+  {
+   "n": "Mansolotage",
+   "d": "haut",
+   "x": "Évite sa ligne jusqu'à 2 PO (attire et 300 terre)."
+  }
+ ],
+ "strategie": [
+  "Prévois un soigneur pour lever l'invulnérabilité au contact du boss.",
+  "Qu'aucun allié ne touche le soigné (Mansodah).",
+  "Frappe fort pendant les 6 tours de vulnérabilité.",
+  "Répète dès que l'invulnérabilité revient."
+ ],
+ "pieges": [
+  "Te soigner au contact te fait subir environ 900 dégâts.",
+  "La mort du soigné rend l'invulnérabilité au boss."
+ ],
+ "tours": [
+  {
+   "from": 1,
+   "every": 1,
+   "to": null,
+   "parity": null,
+   "level": "info",
+   "text": "Un seul combattant reçoit le cœur et peut être soigné ce tour."
+  }
+ ],
+ "succes": [
+  {
+   "n": "Privilège royal",
+   "x": "Ne soigner que le combattant désigné par le cœur."
+  }
+ ],
+ "acces": [
+  "Lac gelé en [-64,-55], skis sombres achetés en [-82,-46]."
+ ],
+ "src": "https://www.dofuspourlesnoobs.com/excavation-du-mansot-royal.html"
+}

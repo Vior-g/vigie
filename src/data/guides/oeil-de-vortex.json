@@ -1,0 +1,115 @@
+{
+ "dj": "Œil de Vortex",
+ "boss": "Vortex",
+ "maj": "05/10/2026",
+ "essentiel": [
+  "Tue chaque monstre une seconde fois, à la même heure que la première mort.",
+  "Le Vortex reste invulnérable tant que les 5 vagues ne sont pas définitivement éliminées.",
+  "Reste loin du Vortex : son sort en ligne jusqu'à 8 PO, sans ligne de vue, inflige Pacifiste.",
+  "Évite de finir en ligne avec l'Auroraire au tour du Vortex.",
+  "Retire les PM du Vortex dès qu'il devient vulnérable."
+ ],
+ "mecaniques": [
+  {
+   "t": "Invulnérabilité",
+   "x": "Chaque vague arrive invulnérable un tour, comme le Vortex après la dernière vague éliminée."
+  },
+  {
+   "t": "Auroraire",
+   "x": "Elle avance d'une heure à chaque début de tour d'un personnage ; chaque heure donne un buff aux monstres."
+  },
+  {
+   "t": "Résurrection",
+   "x": "Le Vortex ressuscite les monstres tués ; il faut les retuer à la même heure pour les éliminer."
+  },
+  {
+   "t": "Glyphes",
+   "x": "Marcher sur le glyphe d'un monstre t'échange avec lui et fait avancer l'Auroraire d'une heure."
+  },
+  {
+   "t": "Heurage",
+   "x": "Le Vortex se téléporte au corps à corps de l'Auroraire, utilisable seulement tous les 3 tours."
+  }
+ ],
+ "sorts": [
+  {
+   "n": "Heuristique",
+   "x": "Frappe air et feu, retire 2 tours d'envoûtement et met Pacifiste ; en ligne jusqu'à 8 PO."
+  },
+  {
+   "n": "Morfaille",
+   "x": "Frappe en zone autour de la cible, te renvoie à ta position précédente et pose un poison qui répète le sort."
+  },
+  {
+   "n": "En temps et en heure",
+   "x": "Frappe terre et érode ; touche automatiquement les entités en ligne avec l'Auroraire à chaque tour."
+  }
+ ],
+ "monstres": [
+  {
+   "n": "Harpille",
+   "d": "haut",
+   "x": "Son petit poison touche tous tes persos ; prévois une Cawotte ou des soins pour le retirer."
+  },
+  {
+   "n": "Méjaire",
+   "d": "haut",
+   "x": "Elle met Pacifiste ; garde-la à distance et retire-lui des PM."
+  },
+  {
+   "n": "Buboxor",
+   "d": "moyen",
+   "x": "Son bouclier gagne puissance et PM quand tu l'attaques à distance ; limite ces attaques répétées."
+  },
+  {
+   "n": "Ikargn",
+   "d": "moyen",
+   "x": "Il attire tes personnages proches et leur retire 3 PM ; garde tes distances."
+  }
+ ],
+ "strategie": [
+  "Tape fort à distance et élimine les vagues une par une, sans prendre de retard.",
+  "Note qui a tué quel monstre et à quelle heure pour prévoir la seconde mort.",
+  "À 2, 3, 4 ou 6 personnages, fais tuer toujours le même personnage pour les deux morts.",
+  "Sans retrait PM, retue directement les ressuscités pour éviter l'envahissement.",
+  "Une fois le Vortex vulnérable, éloigne-toi de lui et retire-lui ses PM."
+ ],
+ "pieges": [
+  "Le trousseau de clés et la téléportation de groupe ne fonctionnent pas en dimension.",
+  "Ne place pas tes bombes dans une ligne où l'Auroraire peut les toucher.",
+  "En multi-compte, les latences peuvent te déconnecter quand le Vortex tue plusieurs monstres."
+ ],
+ "tours": [
+  {
+   "from": 7,
+   "every": 1,
+   "to": 7,
+   "parity": null,
+   "level": "info",
+   "text": "La deuxième vague arrive au tour 7 ; la première dure un tour de plus."
+  }
+ ],
+ "succes": [
+  {
+   "n": "Hardi",
+   "x": "Finir chaque tour de tes alliés collé à un ennemi."
+  },
+  {
+   "n": "Focus",
+   "x": "Achever chaque ennemi avant d'en attaquer un autre."
+  },
+  {
+   "n": "Heure de la mort",
+   "x": "Éliminer tous les ennemis, ressuscités compris, à la même heure."
+  },
+  {
+   "n": "Trio",
+   "x": "Vaincre tous les monstres à 3 personnages max en moins de 80 tours."
+  }
+ ],
+ "acces": [
+  "Entrée sur la dimension Xélorium, en case [7,-7].",
+  "Passe par une recherche de portail, car le trousseau ne marche pas en dimension."
+ ],
+ "src": "https://www.dofuspourlesnoobs.com/oeil-de-vortex.html"
+}

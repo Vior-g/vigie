@@ -1,0 +1,107 @@
+{
+ "dj": "Pyramide d'Ombre",
+ "boss": "Ombre",
+ "maj": "22/04/2025",
+ "essentiel": [
+  "Ombre commence invulnérable : tu dois le rendre vulnérable pour le blesser.",
+  "Place la Silhouette dans le glyphe blanc du Globilum.",
+  "Garde Ombre hors de ce glyphe, sinon il redevient invulnérable.",
+  "Tu ne peux déplacer Ombre ou la Silhouette qu'une fois par tour."
+ ],
+ "mecaniques": [
+  {
+   "t": "Invulnérabilité d'Ombre",
+   "x": "Ombre reste invulnérable tant que la Silhouette n'est pas dans le glyphe et qu'Ombre est dehors."
+  },
+  {
+   "t": "Globilum",
+   "x": "Invulnérable et indéplaçable, son glyphe blanc de rayon 3 donne +20% de dégâts finaux aux ennemis dedans."
+  },
+  {
+   "t": "Silhouette",
+   "x": "Frappe en feu selon les PV érodés de la cible, peut retirer 10 PM et appliquer 20% d'érosion."
+  },
+  {
+   "t": "Éclairage",
+   "x": "Au début de chaque tour, 350 dégâts neutres en zone inversée de rayon 6 autour du Globilum."
+  },
+  {
+   "t": "Encrage",
+   "x": "Déplacer Ombre ou la Silhouette les rend indéplaçables un tour et leur donne +100 puissance."
+  }
+ ],
+ "sorts": [
+  {
+   "n": "Liaison",
+   "x": "Attire la cible de 3 cases et inflige 500 dégâts neutres ; 2 fois par tour."
+  },
+  {
+   "n": "Distorsion",
+   "x": "700 dégâts eau en cercle de rayon 3 autour d'Ombre ; une fois par tour."
+  },
+  {
+   "n": "Paranoïa",
+   "x": "Glyphe retirant 100% de fuite et de tacle ; seulement si Ombre est vulnérable."
+  }
+ ],
+ "monstres": [
+  {
+   "n": "Sombléro",
+   "d": "haut",
+   "x": "Focus-le en premier : il booste ses alliés et frappe à distance."
+  },
+  {
+   "n": "Caznoar",
+   "d": "haut",
+   "x": "Retire des PA si tu l'attaques à distance et arrive vite au corps à corps."
+  },
+  {
+   "n": "Noctulule",
+   "d": "moyen",
+   "x": "Le moins dangereux des trois ; élimine-le en dernier."
+  }
+ ],
+ "strategie": [
+  "Élimine d'abord le Sombléro, puis le Caznoar, puis le Noctulule.",
+  "Une fois seul, place la Silhouette dans le glyphe du Globilum.",
+  "Garde Ombre loin du glyphe et retire-lui ses PM.",
+  "Replace la Silhouette si elle sort, jusqu'à la mort d'Ombre."
+ ],
+ "pieges": [
+  "Si Ombre entre dans le glyphe, il redevient invulnérable immédiatement.",
+  "La Silhouette fuit après avoir frappé ; garde-lui assez de PM pour rentrer.",
+  "Le Globilum bouge d'une case par tour, ajuste ton placement."
+ ],
+ "tours": [
+  {
+   "from": 2,
+   "every": 3,
+   "to": null,
+   "parity": null,
+   "level": "info",
+   "text": "Pénombre peut être lancé à partir du tour 2, puis tous les 3 tours."
+  }
+ ],
+ "succes": [
+  {
+   "n": "Premier",
+   "x": "Tuer Ombre en premier."
+  },
+  {
+   "n": "Collant",
+   "x": "Finir ton tour adjacent à un allié."
+  },
+  {
+   "n": "Jeux d'ombres",
+   "x": "Les ennemis ne doivent subir que des dégâts de mêlée."
+  },
+  {
+   "n": "Duo",
+   "x": "2 persos maximum en moins de 26 tours."
+  }
+ ],
+ "acces": [
+  "Fond de la Dimension Obscure, en [5,9]."
+ ],
+ "src": "https://www.dofuspourlesnoobs.com/pyramide-dombre.html"
+}

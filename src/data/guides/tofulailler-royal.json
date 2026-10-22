@@ -1,0 +1,104 @@
+{
+ "dj": "Tofulailler Royal",
+ "boss": "Tofu Royal",
+ "maj": null,
+ "essentiel": [
+  "Tue les monstres avant le tour 2 : ils gagnent 50% de dégâts ce tour-là.",
+  "Le Tofu Royal perd son invulnérabilité 2 tours s'il n'utilise aucun PM pendant son tour.",
+  "Entoure-le pour bloquer ses déplacements, puis sors-le de son glyphe avant de le frapper.",
+  "Chaque dégât en mêlée retire 1 PM à la cible (5 fois par tour)."
+ ],
+ "mecaniques": [
+  {
+   "t": "Invulnérabilité",
+   "x": "Tombe pour 2 tours si le Tofu Royal n'utilise aucun PM pendant son tour."
+  },
+  {
+   "t": "Galiformation Royal",
+   "x": "Dès le tour 2 puis tous les deux tours, boost cyclique différent."
+  },
+  {
+   "t": "Glyphes noirs",
+   "x": "Cercle 4 : -20% dégâts à distance et soin de 8% aux monstres dedans."
+  }
+ ],
+ "sorts": [
+  {
+   "n": "Royal Bécot",
+   "x": "1200 eau en ligne de 5, pesanteur, 5 PO."
+  },
+  {
+   "n": "Envolée Lyrique",
+   "x": "500 air, repousse de 1, -2 PA, 12 PO."
+  }
+ ],
+ "monstres": [
+  {
+   "n": "Tofuzmo",
+   "d": "haut",
+   "x": "12 PM, retire de la PO : élimine-le tôt."
+  },
+  {
+   "n": "Vilain Petit Tofu",
+   "d": "haut",
+   "x": "12 PM : tue-le avant le tour 2."
+  },
+  {
+   "n": "Tofubine",
+   "d": "moyen",
+   "x": "Poison par PA utilisé, soigne."
+  }
+ ],
+ "strategie": [
+  "Tue les monstres avant le tour 2.",
+  "Frappe en mêlée pour retirer des PM, puis entoure le Tofu Royal.",
+  "Laisse-le jouer sans PM pour lever l'invulnérabilité."
+ ],
+ "pieges": [
+  "S'il utilise un PM, l'invulnérabilité reste."
+ ],
+ "tours": [
+  {
+   "from": 2,
+   "every": 8,
+   "to": null,
+   "parity": null,
+   "level": "alerte",
+   "text": "Tous les ennemis gagnent +50% de dégâts pendant un tour."
+  },
+  {
+   "from": 4,
+   "every": 8,
+   "to": null,
+   "parity": null,
+   "level": "info",
+   "text": "Bouclier de 10% des PV du Tofu Royal."
+  },
+  {
+   "from": 6,
+   "every": 8,
+   "to": null,
+   "parity": null,
+   "level": "info",
+   "text": "Tofu Royal intaclable un tour."
+  },
+  {
+   "from": 8,
+   "every": 8,
+   "to": null,
+   "parity": null,
+   "level": "info",
+   "text": "Soin de 10% des PV max du Tofu Royal."
+  }
+ ],
+ "succes": [
+  {
+   "n": "Poursuite royale",
+   "x": "Chaque ennemi doit jouer un tour sans PM avant d'être achevé."
+  }
+ ],
+ "acces": [
+  "Atelier paysan en [5,6], parle à Kazy Ingalsse."
+ ],
+ "src": "https://www.dofuspourlesnoobs.com/tofulailler-royal.html"
+}

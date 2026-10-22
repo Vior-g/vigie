@@ -1,0 +1,81 @@
+{
+ "dj": "Bibliothèque du Maître Corbac",
+ "boss": "Maître Corbac",
+ "maj": "21/01/2025",
+ "essentiel": [
+  "Garde le Maître Corbac à distance : sa mêlée frappe très fort.",
+  "Il a beaucoup de résistances : frappe de préférence en terre.",
+  "Au tour 3 puis tous les 4 tours, Carapace d'Ailes renvoie 400 dégâts : ne le frappe pas (ou débuff).",
+  "N'achève pas le Corbac invoqué : il revient au tour suivant."
+ ],
+ "mecaniques": [
+  {
+   "t": "Carapace d'Ailes",
+   "x": "Tour 3 puis tous les 4 tours : renvoie 400 dégâts (800 en CC). Débuffable."
+  },
+  {
+   "t": "Corbac invoqué",
+   "x": "Un seul à la fois, réinvoqué au tour suivant."
+  },
+  {
+   "t": "Modulation",
+   "x": "Au-delà de 4 persos, les monstres gagnent des PV et des dégâts."
+  }
+ ],
+ "sorts": [
+  {
+   "n": "Sanction Ténébreuse",
+   "x": "350 air en mêlée, doublé en critique."
+  }
+ ],
+ "monstres": [
+  {
+   "n": "Corbac Apprivoisé",
+   "d": "haut",
+   "x": "Repousse jusqu'à 12 cases : évite sa ligne, focus-le en premier."
+  },
+  {
+   "n": "Buveur",
+   "d": "haut",
+   "x": "Éloigne-le de ses alliés (75% de résistances)."
+  },
+  {
+   "n": "Renarbo",
+   "d": "haut",
+   "x": "Retire 100% de résistances dans un élément aléatoire."
+  }
+ ],
+ "strategie": [
+  "Éloigne le Buveur de ses alliés au tour 1.",
+  "Focus le Corbac Apprivoisé, puis le Renarbo.",
+  "Achève le Maître Corbac à distance."
+ ],
+ "pieges": [
+  "Frapper sous Carapace d'Ailes.",
+  "Rester en ligne avec le Corbac Apprivoisé."
+ ],
+ "tours": [
+  {
+   "from": 3,
+   "every": 4,
+   "to": null,
+   "parity": null,
+   "level": "danger",
+   "text": "Carapace d'Ailes : ne frappe pas le Maître Corbac (renvoi 400)."
+  }
+ ],
+ "succes": [
+  {
+   "n": "Premier",
+   "x": "Achever le Maître Corbac en premier."
+  },
+  {
+   "n": "Spécial",
+   "x": "Finir chaque tour à 5PO ou moins d'un ennemi."
+  }
+ ],
+ "acces": [
+  "Pénates du Corbac [-15,-62], parle à Virgil."
+ ],
+ "src": "https://www.dofuspourlesnoobs.com/bibliotheque-du-maitre-corbac.html"
+}

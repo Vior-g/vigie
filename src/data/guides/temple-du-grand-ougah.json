@@ -1,0 +1,107 @@
+{
+ "dj": "Temple du Grand Ougah",
+ "boss": "Ougah",
+ "maj": "25/09/2022",
+ "essentiel": [
+  "Sois au minimum 4 personnages pour franchir la salle 4.",
+  "Élimine Ougah en priorité : ses dégâts et poisons deviennent vite dangereux.",
+  "Retire les buffs d'Ougah avec un débuff dès le tour 2, avant de le frapper fort.",
+  "Ne laisse pas Spore Hanchambre le soigner pendant ton focus."
+ ],
+ "mecaniques": [
+  {
+   "t": "Spore Hanchambre",
+   "x": "Ougah gagne 50% de critique quand il subit des dégâts et un buff qui peut le soigner entièrement."
+  },
+  {
+   "t": "Type de soin",
+   "x": "Le buff est tiré au lancement : dégâts, retrait de PA ou retrait de PM (33% chacun)."
+  },
+  {
+   "t": "Aperçu des dégâts",
+   "x": "L'aperçu de tes actions indique si elles soignent Ougah."
+  },
+  {
+   "t": "Bizarrerie",
+   "x": "Cumule des boosts de puissance sur ses cibles."
+  }
+ ],
+ "sorts": [
+  {
+   "n": "Opiniâtreté",
+   "x": "600 feu et 600 terre en croix, -20% résistance air, poison air de 300 pendant 4 tours."
+  },
+  {
+   "n": "Sirop Spore",
+   "x": "Poison neutre de 80 par PA utilisé, 4 tours, dès le tour 3."
+  }
+ ],
+ "monstres": [
+  {
+   "n": "Champbis",
+   "d": "haut",
+   "x": "Faiblesse et poison feu : élimine-le vite."
+  },
+  {
+   "n": "Champ à gnons",
+   "d": "haut",
+   "x": "Invoque un Champa Explosif, poisons neutres à 11 PO."
+  },
+  {
+   "n": "Champodonte",
+   "d": "moyen",
+   "x": "Retire jusqu'à 5 PA : pas au corps à corps."
+  },
+  {
+   "n": "Tromperelle",
+   "d": "moyen",
+   "x": "Poison qui frappe selon tes PA utilisés."
+  }
+ ],
+ "strategie": [
+  "Booste-toi au maximum dès le tour 1.",
+  "Au début du tour 2, retire les buffs d'Ougah.",
+  "Frappe Ougah à fond jusqu'à ce qu'il tombe.",
+  "Termine ensuite les monstres."
+ ],
+ "pieges": [
+  "N'ouvre pas une seule grille dans la salle des dalles.",
+  "Évite de dépenser trop de PA face à la Tromperelle."
+ ],
+ "tours": [
+  {
+   "from": 2,
+   "every": 1,
+   "to": null,
+   "parity": null,
+   "level": "alerte",
+   "text": "Ougah invoque des monstres à chaque tour."
+  },
+  {
+   "from": 2,
+   "every": 3,
+   "to": null,
+   "parity": null,
+   "level": "danger",
+   "text": "Spore Hanchambre : prévois de le débuffer."
+  }
+ ],
+ "succes": [
+  {
+   "n": "Dernier",
+   "x": "Ougah doit tomber en dernier."
+  },
+  {
+   "n": "Spécial : Mycologie",
+   "x": "Ne finis jamais ton tour en ligne ou en diagonale d'un ennemi."
+  },
+  {
+   "n": "Duo",
+   "x": "2 persos max, moins de 15 tours."
+  }
+ ],
+ "acces": [
+  "Caverne des Fungus, [-9,29]."
+ ],
+ "src": "https://www.dofuspourlesnoobs.com/temple-du-grand-ougah.html"
+}

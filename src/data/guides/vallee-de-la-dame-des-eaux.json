@@ -1,0 +1,75 @@
+{
+ "dj": "Vallée de la Dame des eaux",
+ "boss": "Nagate",
+ "maj": null,
+ "essentiel": [
+  "Nagate est invulnérable à distance : rejoins-la sur son îlot.",
+  "Attends une Bombombre à Eau et ne la tue pas.",
+  "Place-la au bord de map devant l'îlot, frappe-la au CàC sans la tuer : tu es téléporté sur l'îlot.",
+  "Tue Nagate en un tour, sinon elle te renvoie sur la map."
+ ],
+ "mecaniques": [
+  {
+   "t": "Invulnérabilité",
+   "x": "Invulnérable à distance en permanence."
+  },
+  {
+   "t": "Bombombre à Eau",
+   "x": "La frapper au CàC sans la tuer te téléporte sur l'îlot."
+  },
+  {
+   "t": "Renvoi",
+   "x": "Si tu n'es pas au contact de Nagate au début de son tour, elle te renvoie sur la map."
+  },
+  {
+   "t": "Contrôle d'un Kwapa",
+   "x": "Avec Révérence, ses Bombombres deviennent des Bombombres à Eau."
+  }
+ ],
+ "sorts": [
+  {
+   "n": "Hors de ma vue",
+   "x": "Éjecte la cible de l'îlot si tu n'es pas à son contact."
+  },
+  {
+   "n": "Eau Fraîche",
+   "x": "Soigne tous les monstres d'environ 800 PV."
+  }
+ ],
+ "monstres": [
+  {
+   "n": "Kwamouraï",
+   "d": "haut",
+   "x": "Double les PV de tous en salle 4."
+  },
+  {
+   "n": "Pioche-Concombre",
+   "d": "haut",
+   "x": "220 terre en zone 3x3, sans ligne de vue."
+  }
+ ],
+ "strategie": [
+  "Attends une Bombombre à Eau.",
+  "Place-la au bord devant l'îlot.",
+  "Frappe-la au CàC sans la tuer, puis frappe Nagate."
+ ],
+ "pieges": [
+  "Tuer la Bombombre à Eau trop tôt."
+ ],
+ "tours": [],
+ "succes": [
+  {
+   "n": "Spécial : Le jeu de la Dame",
+   "x": "Aucune Bombombre normale ne doit subir de dégâts."
+  },
+  {
+   "n": "Duo",
+   "x": "2 persos max, moins de 20 tours."
+  }
+ ],
+ "acces": [
+  "Akwadala en [22,-24].",
+  "Sort Révérence : Rei Beransu, Taverne d'Osakwa [20,-20]."
+ ],
+ "src": "https://www.dofuspourlesnoobs.com/vallee-de-la-dame-des-eaux.html"
+}

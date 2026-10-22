@@ -1,0 +1,74 @@
+{
+ "dj": "Laboratoire du Tynril",
+ "boss": "Tynril",
+ "maj": null,
+ "essentiel": [
+  "Chaque Tynril a 200% de résistance sauf dans une caractéristique : frappe avec celle-là.",
+  "Perfide : intelligence (feu), Déconcerté : chance (eau), Consterné : agilité (air), Ahuri : force (terre).",
+  "Retire les PM des Tynrils (ils n'en ont que 2).",
+  "Sépare les Tynrils : deux au contact peuvent se reconstituer.",
+  "Ne te place pas trop près des Tynrils au départ."
+ ],
+ "mecaniques": [
+  {
+   "t": "Résistances",
+   "x": "200% partout sauf dans l'élément faible de chaque Tynril."
+  },
+  {
+   "t": "Reconstitution",
+   "x": "Deux Tynrils au contact peuvent se reconstituer."
+  },
+  {
+   "t": "Transposition",
+   "x": "À son tour, un Tynril échange sa place avec un autre."
+  }
+ ],
+ "sorts": [
+  {
+   "n": "Sort de Tynril",
+   "x": "Un perso proche subit -2000% de résistance dans l'élément du Tynril."
+  },
+  {
+   "n": "Corps à corps élémentaire",
+   "x": "Si tu es faible dans son élément, un coup au CàC te tue."
+  }
+ ],
+ "monstres": [
+  {
+   "n": "Floribonde",
+   "d": "haut",
+   "x": "Chaque coup subi t'inflige -50% dans un élément."
+  },
+  {
+   "n": "Abrakleur Sombre",
+   "d": "haut",
+   "x": "Reste à distance."
+  },
+  {
+   "n": "Fécorce",
+   "d": "moyen",
+   "x": "Poison par PA utilisé."
+  }
+ ],
+ "strategie": [
+  "Emmène du retrait PM.",
+  "Garde tes persos importants loin des Tynrils.",
+  "Retire leurs PM jusqu'à zéro ou repousse-les.",
+  "Frappe chaque Tynril dans son élément faible."
+ ],
+ "pieges": [
+  "Un placement trop proche peut faire tuer tes persos avant leur tour.",
+  "Les soins sont inutiles dans la dernière salle."
+ ],
+ "tours": [],
+ "succes": [
+  {
+   "n": "Prendre racine",
+   "x": "Aucun Tynril ne doit être déplacé ni subir de retrait de PM."
+  }
+ ],
+ "acces": [
+  "Jungle obscure en [-53,20], parle à Mulèze."
+ ],
+ "src": "https://www.dofuspourlesnoobs.com/laboratoire-du-tynril.html"
+}

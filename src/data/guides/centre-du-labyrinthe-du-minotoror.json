@@ -1,0 +1,77 @@
+{
+ "dj": "Centre du Labyrinthe du Minotoror",
+ "boss": "Minotoror",
+ "maj": "06/05/2024",
+ "essentiel": [
+  "Pas d'invulnérabilité, mais 40 à 60% de résistances sauf en Terre (-20%).",
+  "Prévois un personnage qui frappe en Terre.",
+  "Évite la mêlée du Sabotage, surtout près d'un obstacle.",
+  "Ne laisse pas le Déminoboule te frapper en mêlée.",
+  "N'invoque que si nécessaire (Mominotor)."
+ ],
+ "mecaniques": [
+  {
+   "t": "Tofus lancés",
+   "x": "Chaque tour, il invoque un Tofu de 99 PV et 11 PM qui frappe en Air."
+  },
+  {
+   "t": "Poussée",
+   "x": "Sabotage repousse de 6 cases ; un obstacle aggrave les dégâts."
+  }
+ ],
+ "sorts": [
+  {
+   "n": "Sabotage",
+   "x": "600 neutre (1000 en critique), repousse de 6, mêlée, 2 fois par tour."
+  },
+  {
+   "n": "Lancer de Tofu",
+   "x": "Invoque un Tofu jusqu'à 10 PO."
+  }
+ ],
+ "monstres": [
+  {
+   "n": "Déminoboule",
+   "d": "haut",
+   "x": "Retire beaucoup de puissance en mêlée."
+  },
+  {
+   "n": "Mominotor",
+   "d": "haut",
+   "x": "Retire des PM et OS les invocations."
+  },
+  {
+   "n": "Gamino",
+   "d": "moyen",
+   "x": "Focus-le si tu n'as pas de Terre."
+  }
+ ],
+ "strategie": [
+  "Avec un perso Terre : focus le Minotoror.",
+  "Sans Terre : Gamino d'abord.",
+  "Reste à distance et retire des PM."
+ ],
+ "pieges": [
+  "Sabotage contre un obstacle.",
+  "Un Déminoboule en mêlée."
+ ],
+ "tours": [],
+ "succes": [
+  {
+   "n": "Mains propres",
+   "x": "Achever sans dégâts directs, sans frapper les Tofus."
+  },
+  {
+   "n": "Spécial : Garde emplumée",
+   "x": "Aucun Tofu lancé présent quand tu frappes le Minotoror."
+  },
+  {
+   "n": "Duo",
+   "x": "2 persos max, moins de 20 tours."
+  }
+ ],
+ "acces": [
+  "Île du Minotoror en [-42,-17], centre du labyrinthe (clé + 2 reliques)."
+ ],
+ "src": "https://www.dofuspourlesnoobs.com/centre-du-labyrinthe-du-minotoror.html"
+}

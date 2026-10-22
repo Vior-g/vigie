@@ -1,0 +1,106 @@
+{
+ "dj": "Sentence de la Balance",
+ "boss": "Misère",
+ "maj": "17/06/2020",
+ "essentiel": [
+  "Misère passe en phase 2 à 50% de PV, soit 9000 PV à 4 persos, et monte sur son vautour.",
+  "Tue les monstres d'abord en gardant Misère à distance pour limiter ses vols de puissance.",
+  "Équipe un maximum de stuffs eau, car Misère résiste moins à l'eau.",
+  "Ne laisse pas de charogne à 4PO d'elle, sinon elle gagne du bouclier.",
+  "Reste derrière un obstacle, car ses attirances tirent ton équipe vers elle."
+ ],
+ "mecaniques": [
+  {
+   "t": "Invulnérabilité",
+   "x": "En phase 2, elle est invulnérable un tour, jusqu'au tour du personnage qui l'a fait passer à 50%."
+  },
+  {
+   "t": "État Collecte",
+   "x": "Un monstre qui vole des stats gagne cet état. Misère lui reprend ces stats au début de son tour, si elle le voit."
+  },
+  {
+   "t": "Thésaurisation",
+   "x": "Retirer PA, PM ou PO à un monstre lui donne 10 esquive PA/PM, cumulable."
+  },
+  {
+   "t": "Charognes",
+   "x": "Près d'un monstre, une charogne le soigne de 1200 PV. Près de Misère, elle lui donne 880 de bouclier."
+  },
+  {
+   "t": "Faim du Monde",
+   "x": "Chaque monstre gagne 4PM à son tour, sauf s'il déclenche une charogne à 4PO."
+  }
+ ],
+ "sorts": [
+  {
+   "n": "Balance-Fléau",
+   "x": "1000 dégâts tous éléments sauf neutre, vole 200 puissance, zone demi-cercle, ligne 6PO, deux fois par tour."
+  },
+  {
+   "n": "Funérailles Célestes",
+   "x": "600 dégâts air, échange de place avec la cible, portée 4 à 8PO sans ligne de vue, en phase 2."
+  },
+  {
+   "n": "Dakhma",
+   "x": "600 dégâts feu, retire 100 PA/PM, invulnérabilité un tour, téléporte la cible, portée 2PO, en phase 1."
+  }
+ ],
+ "monstres": [
+  {
+   "n": "Ferrailleur",
+   "d": "haut",
+   "x": "Le plus dangereux : frappe fort, vole vitalité et dommages. Tue-le en priorité."
+  },
+  {
+   "n": "Krèvladal",
+   "d": "haut",
+   "x": "Vole PA et chance. Éloigne-le de Misère et des persos axés chance."
+  },
+  {
+   "n": "Skentu",
+   "d": "haut",
+   "x": "À partir de 5 persos, vole intelligence et inflige de gros dégâts. Tue-le vite."
+  },
+  {
+   "n": "Désosseur",
+   "d": "moyen",
+   "x": "Le moins dangereux : vole PM et agilité. Garde-le pour la fin."
+  }
+ ],
+ "strategie": [
+  "Tue les monstres en commençant par ceux les plus éloignés de Misère.",
+  "Reste hors de portée de Balance-Fléau (6PO) pendant tout ce combat.",
+  "En phase 1, repousse Misère derrière un obstacle sans trop t'exposer.",
+  "Frappe-la vite avec des dégâts eau dès qu'elle monte sur son vautour.",
+  "En phase 2, reste à distance de ses sorts et ne perds pas de temps."
+ ],
+ "pieges": [
+  "Chaque coup reçu ou début de tour l'attire vers elle, selon son pourcentage de PV.",
+  "Dakhma téléporte ton perso. Un sort de dégâts sur la cible retire ses effets.",
+  "Les charognes proches d'un monstre le soignent. Près de Misère, elles lui donnent du bouclier."
+ ],
+ "tours": [],
+ "succes": [
+  {
+   "n": "Hardi",
+   "x": "Tous les alliés finissent leur tour à côté d'un ennemi."
+  },
+  {
+   "n": "Mains propres",
+   "x": "Achève les ennemis sans dégâts directs ; poisons, poussées et invocations sont permis."
+  },
+  {
+   "n": "Spécial : Abjecte opulence",
+   "x": "Tue Misère en premier et fais-la entrer en état Collecte à chaque tour."
+  },
+  {
+   "n": "Duo",
+   "x": "Vaincre tous les monstres avec 2 persos maximum, en moins de 40 tours."
+  }
+ ],
+ "acces": [
+  "Entrée : Désert de Misère en [1,0], avec la clé craftée via la recette du donjon.",
+  "Zone des 4 Cavaliers : Zaap Arche de Vili en [15,-20], accessible par la faille de la Mine Hable en [10,-19]."
+ ],
+ "src": "https://www.dofuspourlesnoobs.com/sentence-de-la-balance.html"
+}

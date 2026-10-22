@@ -1,0 +1,99 @@
+{
+ "dj": "Tanière Givrefoux",
+ "boss": "Tengu Givrefoux",
+ "maj": null,
+ "essentiel": [
+  "Le Tengu démarre invulnérable et lourd.",
+  "Garde le Yokaï et le Yomi en vie tant que le Tengu n'est pas vulnérable.",
+  "Applique Fulguration et Floutage au Tengu dans le même tour.",
+  "Ne reste pas en ligne avec le Tengu : il attire jusqu'à 8PO sans ligne de vue."
+ ],
+ "mecaniques": [
+  {
+   "t": "Invulnérabilité",
+   "x": "Au même tour, tape le Yomi à l'arme en ligne et pousse ou attire le Yokaï en diagonale du Tengu."
+  },
+  {
+   "t": "Fulguration",
+   "x": "Taper le Yomi à l'arme l'applique au Tengu et aux alliés en ligne pendant 2 tours."
+  },
+  {
+   "t": "Floutage",
+   "x": "Pousser ou attirer le Yokaï l'applique au Tengu et aux alliés en diagonale pendant 2 tours."
+  },
+  {
+   "t": "Vulnérabilité",
+   "x": "Avec les deux états au début de son tour, le Tengu devient vulnérable 4 tours."
+  },
+  {
+   "t": "Instinct maternel",
+   "x": "En duo avec Fuji : chaque monstre éliminé donne 1PM et 1000 dommages à Fuji et au Tengu."
+  }
+ ],
+ "sorts": [
+  {
+   "n": "Câlin frigorifique",
+   "x": "Attire de 3 cases, en ligne de 2 à 8PO, sans ligne de vue."
+  },
+  {
+   "n": "Malice glacée",
+   "x": "800 eau en vol de vie et 10% d'érosion, en mêlée."
+  },
+  {
+   "n": "Foux d'amour",
+   "x": "Invoque un Yomi ou un Yokaï en alternance ; relance 3 tours."
+  }
+ ],
+ "monstres": [
+  {
+   "n": "Maho Givrefoux",
+   "d": "haut",
+   "x": "800 terre en ligne perpendiculaire ; reste à distance."
+  },
+  {
+   "n": "Yomi Givrefoux",
+   "d": "haut",
+   "x": "Retire 10PM ; frappe-le à l'arme de loin."
+  },
+  {
+   "n": "Yokaï Givrefoux",
+   "d": "moyen",
+   "x": "Frappe plus fort quand il a peu de PV."
+  },
+  {
+   "n": "Kami Givrefoux",
+   "d": "moyen",
+   "x": "Ne tape qu'en diagonale : reste en ligne avec elle."
+  }
+ ],
+ "strategie": [
+  "Élimine les accompagnateurs en gardant Yokaï et Yomi en vie.",
+  "Pousse ou attire le Yokaï en diagonale du Tengu.",
+  "Dans le même tour, tape le Yomi à l'arme en ligne du Tengu.",
+  "Frappe le Tengu pendant ses 4 tours de vulnérabilité."
+ ],
+ "pieges": [
+  "En duo, éliminer un monstre booste Fuji et le Tengu.",
+  "Le Yomi peut retirer 10PM : ne reste pas à son contact."
+ ],
+ "tours": [
+  {
+   "from": 2,
+   "every": 3,
+   "to": null,
+   "parity": null,
+   "level": "info",
+   "text": "Le Tengu invoque (Yomi ou Yokaï)."
+  }
+ ],
+ "succes": [
+  {
+   "n": "Autonomie givrée",
+   "x": "Termine chaque tour à plus de 4PO de tous tes alliés."
+  }
+ ],
+ "acces": [
+  "Crevasse Perge, en [-80,-75]."
+ ],
+ "src": "https://www.dofuspourlesnoobs.com/taniegravere-givrefoux.html"
+}

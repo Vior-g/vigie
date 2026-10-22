@@ -1,0 +1,115 @@
+{
+ "dj": "Arbre de Mort",
+ "boss": "Corruption",
+ "maj": "05/10/2026",
+ "essentiel": [
+  "Retire la Peau pourrissante uniquement aux personnages qui vont frapper.",
+  "Ne soigne pas ton tank au début, pour qu'il garde la Peau pourrissante.",
+  "Retire Kissiphrot Sipique sur chaque monstre avant de le frapper, sinon tu prends du poison terre.",
+  "Il faut 3 soins pour retirer une maladie ; le vol de vie fonctionne aussi.",
+  "Évite le glyphe de Corruption pour ne pas accumuler de maladies et risquer la phase Germinal."
+ ],
+ "mecaniques": [
+  {
+   "t": "Kissiphrot Sipique",
+   "x": "Chaque monstre inflige un poison terre quand tu le frappes. Soigne un allié au corps à corps pour le retirer."
+  },
+  {
+   "t": "Peau pourrissante",
+   "x": "État de départ : poison feu, dégâts réduits de 90 %, et perte de 10 % de PV par tour dès le tour 2."
+  },
+  {
+   "t": "Corruption",
+   "x": "Chaque maladie différente augmente ton niveau de Corruption, avec moins de soins reçus et plus de dégâts subis."
+  },
+  {
+   "t": "Phase Germinal",
+   "x": "Au-delà de trois maladies, tu te transformes et invoques un Germinial qui frappe alliés et ennemis."
+  },
+  {
+   "t": "Maladies",
+   "x": "Chaque soin fait reculer une maladie d'un stade ; trois soins la suppriment et réduisent ton niveau de Corruption."
+  }
+ ],
+ "sorts": [
+  {
+   "n": "Bêche corrompue",
+   "x": "Frappe en ligne de 600 feu, retire 3 PA (4 au corps à corps) pendant 2 tours."
+  },
+  {
+   "n": "Bombe Bactériologique",
+   "x": "Booste un allié de 660 PB avec une maladie aléatoire, qui explose en zone en fin de tour."
+  },
+  {
+   "n": "Liquéfaction",
+   "x": "Frappe de 350 eau, 50 % de chance de te donner une maladie aléatoire, puis échange de place."
+  }
+ ],
+ "monstres": [
+  {
+   "n": "Nheur'Gueule",
+   "d": "haut",
+   "x": "Focus prioritaire : il retire des PA et applique Brutalyte, qui blesse tes alliés proches."
+  },
+  {
+   "n": "Gangredogue",
+   "d": "haut",
+   "x": "Applique Gangrainyte, la maladie la plus dangereuse, qui réduit tes soins et se propage."
+  },
+  {
+   "n": "Pistilangue",
+   "d": "moyen",
+   "x": "Flemingysme réduit tes PV et dégâts ; son sacrifice peut bloquer tes coups, sépare-le des cibles."
+  },
+  {
+   "n": "Dolid",
+   "d": "moyen",
+   "x": "Peu dangereux seul, mais son Tétanysme applique Tétanyte, qui inflige des dégâts lors des déplacements."
+  }
+ ],
+ "strategie": [
+  "Retire la Peau pourrissante à tes personnages qui frappent.",
+  "Tue d'abord le Nheur'Gueule, puis les autres monstres, en gardant Corruption à distance.",
+  "Place une invocation au corps à corps d'un monstre et soigne-la pour retirer Kissiphrot Sipique.",
+  "Attends d'avoir tué tous les monstres avant de t'occuper de Corruption.",
+  "Soigne tes maladies pendant le combat et frappe Corruption en lui retirant son état."
+ ],
+ "pieges": [
+  "Glyphe de Corruption : tu peux recevoir des maladies aléatoires si tu marches dedans.",
+  "Gangrainyte et Brutalyte : ce sont les pires maladies, à soigner en priorité.",
+  "Sacrifice du Pistilangue : tu prends le poison si la cible sacrifiée le possède."
+ ],
+ "tours": [
+  {
+   "from": 2,
+   "every": 1,
+   "to": null,
+   "parity": null,
+   "level": "alerte",
+   "text": "À partir du tour 2, tu perds 10 % de tes PV actuels à chaque fin de tour."
+  }
+ ],
+ "succes": [
+  {
+   "n": "Collant",
+   "x": "Finir son tour adjacent à un allié, sans invocation."
+  },
+  {
+   "n": "Mains propres",
+   "x": "Achever les ennemis sans dégâts directs, uniquement avec des dégâts indirects."
+  },
+  {
+   "n": "Spécial (Immunité collective)",
+   "x": "Seuls les personnages sans aucune maladie peuvent infliger des dégâts aux ennemis."
+  },
+  {
+   "n": "Duo",
+   "x": "Vaincre tous les monstres à deux personnages maximum, en moins de 40 tours."
+  }
+ ],
+ "acces": [
+  "Entrée dans le Royaume Corrompu, en [4,0].",
+  "Zaap Arche de Vili en [15,-20], accessible par la faille de la Mine Hable en [10,-19]."
+ ],
+ "src": "https://www.dofuspourlesnoobs.com/arbre-de-mort.html"
+}

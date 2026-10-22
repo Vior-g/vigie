@@ -1,0 +1,84 @@
+{
+ "dj": "Dojo du Vent",
+ "boss": "Hanshi et Shihan",
+ "maj": null,
+ "essentiel": [
+  "Tue les monstres avant les deux gardiens.",
+  "Hanshi et Shihan se partagent les dégâts.",
+  "Shihan encaisse moins à distance (-50%), Hanshi moins en mêlée (-50%) : frappe chacun dans son point faible.",
+  "Surveille les seuils de PV qui leur donnent des PM."
+ ],
+ "mecaniques": [
+  {
+   "t": "Partage des dégâts",
+   "x": "Les deux gardiens encaissent ensemble."
+  },
+  {
+   "t": "Réduction selon la distance",
+   "x": "Shihan réduit les dégâts à distance de 50% ; Hanshi les dégâts de mêlée de 50%."
+  },
+  {
+   "t": "Seuils de PV",
+   "x": "Shihan +2PM à 4350 et 1450 PV ; Hanshi +4PM à 2900 PV, puis +4PM et +20% mêlée à 1450."
+  },
+  {
+   "t": "Jufang",
+   "x": "Hanshi bloque sa cible au corps à corps un tour (pesanteur, indéplaçable)."
+  }
+ ],
+ "sorts": [
+  {
+   "n": "Grande Lame du Vent (Shihan)",
+   "x": "270 air en ligne de 5, repousse de 3, glyphe qui retire des PM."
+  },
+  {
+   "n": "Brise apaisante (Shihan)",
+   "x": "Soigne un allié de 350 et lui donne du bouclier."
+  }
+ ],
+ "monstres": [
+  {
+   "n": "Kurookin",
+   "d": "haut",
+   "x": "Élimine-le tôt (Rinku)."
+  },
+  {
+   "n": "Uchiwang",
+   "d": "moyen",
+   "x": "Bouclier en rushant."
+  },
+  {
+   "n": "Moussang",
+   "d": "moyen",
+   "x": "Téléportation et croix d'eau."
+  }
+ ],
+ "strategie": [
+  "Tue les monstres d'abord.",
+  "Garde 60-70 de fuite pour te libérer de Jufang.",
+  "Frappe Hanshi à distance et Shihan au corps à corps."
+ ],
+ "pieges": [
+  "Jufang bloque au corps à corps.",
+  "Le glyphe de Grande Lame retire 2PM."
+ ],
+ "tours": [],
+ "succes": [
+  {
+   "n": "Prudent",
+   "x": "Ne jamais finir son tour adjacent à un ennemi."
+  },
+  {
+   "n": "Dernier",
+   "x": "Achever Hanshi en dernier."
+  },
+  {
+   "n": "Duo",
+   "x": "2 persos max, moins de 20 tours."
+  }
+ ],
+ "acces": [
+  "Aerdala, position [20,-37]."
+ ],
+ "src": "https://www.dofuspourlesnoobs.com/dojo-du-vent.html"
+}

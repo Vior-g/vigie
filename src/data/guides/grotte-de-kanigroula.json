@@ -1,0 +1,106 @@
+{
+ "dj": "Grotte de Kanigroula",
+ "boss": "Kanigroula",
+ "maj": "25/09/2022",
+ "essentiel": [
+  "Tue les monstres avant Kanigroula, qui fuit.",
+  "Commence par le Kaniblou (distance + soins).",
+  "Garde l'Orfélin à distance, il frappe très fort en mêlée.",
+  "Frappe le Kanihilan en mêlée pour contourner son renvoi de sorts.",
+  "Chaque monstre tué affaiblit tes persos (-10% rés, -50 puissance, cumulable)."
+ ],
+ "mecaniques": [
+  {
+   "t": "Pas d'invulnérabilité",
+   "x": "Tu peux toujours infliger des dégâts."
+  },
+  {
+   "t": "Odorat bestial",
+   "x": "Révèle les invisibles au début de chaque tour."
+  },
+  {
+   "t": "Sauvagerie",
+   "x": "À la mort de Kanigroula, les survivants gagnent 2PM, 200 puissance, 10% rés."
+  },
+  {
+   "t": "Mort méphitique",
+   "x": "Chaque mort de monstre retire 10% de résistances et 50 puissance à tes persos."
+  },
+  {
+   "t": "Phéromones sauvages",
+   "x": "Les ennemis à rayon 2 de toi gagnent critique et puissance."
+  }
+ ],
+ "sorts": [
+  {
+   "n": "Chachyène cinglante",
+   "x": "450 eau en croix, -20% rés eau, portée 8."
+  },
+  {
+   "n": "Rugissement matriarcal",
+   "x": "Neutre selon ses PV en rayon 3, -2PM et -20 fuite."
+  },
+  {
+   "n": "Chachyène dominante",
+   "x": "Tue ton invocation ciblée dès le tour 3."
+  }
+ ],
+ "monstres": [
+  {
+   "n": "Kaniblou",
+   "d": "haut",
+   "x": "Focus-le en premier."
+  },
+  {
+   "n": "Orfélin",
+   "d": "haut",
+   "x": "Tape-le à distance (Boubou réduit la mêlée)."
+  },
+  {
+   "n": "Kanihilan",
+   "d": "moyen",
+   "x": "Achève-le en mêlée."
+  },
+  {
+   "n": "Panthégros",
+   "d": "moyen",
+   "x": "OS les invocations proches."
+  }
+ ],
+ "strategie": [
+  "Kaniblou, puis Orfélin, puis Kanihilan.",
+  "Kanigroula en dernier, à distance."
+ ],
+ "pieges": [
+  "Poursuivre Kanigroula trop tôt.",
+  "Rester près d'elle quand elle a beaucoup de PV (Rugissement)."
+ ],
+ "tours": [
+  {
+   "from": 3,
+   "every": 2,
+   "to": null,
+   "parity": null,
+   "level": "alerte",
+   "text": "Chachyène dominante peut tuer ton invocation."
+  }
+ ],
+ "succes": [
+  {
+   "n": "Premier",
+   "x": "Achever Kanigroula en premier."
+  },
+  {
+   "n": "Spécial",
+   "x": "Les ennemis ne subissent que des dégâts de mêlée."
+  },
+  {
+   "n": "Duo",
+   "x": "2 persos max, moins de 20 tours."
+  }
+ ],
+ "acces": [
+  "Dents de Pierre en [-5,-54]."
+ ],
+ "src": "https://www.dofuspourlesnoobs.com/grotte-de-kanigroula.html"
+}

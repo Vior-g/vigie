@@ -1,0 +1,115 @@
+{
+ "dj": "Mémoire d'Orukam",
+ "boss": "Roi Imagami",
+ "maj": "25/06/2026",
+ "essentiel": [
+  "Tue vite les monstres, car chaque vague arrive après un nombre limité de tours.",
+  "Fais passer le Roi sous ses seuils de PV pour invoquer la Reine Amirukam.",
+  "Reste au centre d'un glyphe blanc pour éviter les dégâts de Papetuerie.",
+  "Tue l'homologue invoqué par un monstre Lotus avant son quatrième tour d'invulnérabilité.",
+  "Surveille l'Imorok, car Tessellation sacrifie ses alliés dans une zone."
+ ],
+ "mecaniques": [
+  {
+   "t": "Invulnérabilité des vagues",
+   "x": "Une vague arrivante est invulnérable 1 tour. Tuer une vague entière lance la suivante directement."
+  },
+  {
+   "t": "Forme Lotus",
+   "x": "À 10% PV, le monstre devient invulnérable et enraciné 4 tours. Il se soigne puis invoque son homologue."
+  },
+  {
+   "t": "Glyphe du Roi",
+   "x": "Le glyphe blanc tue les monstres d'encre présents quand le Roi reprend sa forme normale. Sa taille diminue à chaque seuil."
+  },
+  {
+   "t": "Seuils du Roi",
+   "x": "Aux seuils de 75%, 50% et 25% PV, le Roi devient invulnérable 5 tours et invoque la Reine."
+  },
+  {
+   "t": "Portage",
+   "x": "Un Pandawa peut porter le Roi ou les monstres en forme Lotus, mais ils restent enracinés."
+  }
+ ],
+ "sorts": [
+  {
+   "n": "Papetuerie",
+   "x": "Dès le tour 2 puis tous les 3 tours, glyphes blancs. Au tour suivant, 700 dégâts neutres, évitables au centre."
+  },
+  {
+   "n": "Parchemin de Traverse",
+   "x": "600 dégâts neutres au corps à corps et téléporte le monstre de papier le plus proche au contact."
+  },
+  {
+   "n": "Roque Papier Ciseaux",
+   "x": "Bondit jusqu'à 2PO, inflige 750 neutre et applique un malus aléatoire aux ennemis adjacents."
+  }
+ ],
+ "monstres": [
+  {
+   "n": "Imafugo",
+   "d": "haut",
+   "x": "Focus en premier. Il booste ses alliés tant qu'il a beaucoup de PV et frappe fort au corps à corps."
+  },
+  {
+   "n": "Imushin",
+   "d": "haut",
+   "x": "Gros dégâts air et réduction des soins via Oriken. Son effet se retire par un débuff."
+  },
+  {
+   "n": "Imiyama",
+   "d": "haut",
+   "x": "Frappe à longue portée sur tous les éléments et détruit facilement les bombes. Gère ses boosts."
+  },
+  {
+   "n": "Imorok",
+   "d": "moyen",
+   "x": "Tessellation sacrifie ses alliés. Focus-le si un monstre a été sacrifié avant."
+  }
+ ],
+ "strategie": [
+  "Tape le Roi dès le tour 1 pour déclencher son premier seuil et invoquer la Reine.",
+  "Confie la Reine au personnage le plus proche du Roi, idéalement premier en initiative.",
+  "Utilise la Reine pour frapper, et donne-lui des PM ou place-la près des monstres.",
+  "Focus dans l'ordre : Imafugo, Imushin, Imiyama, Imetsu, puis Imorok.",
+  "Place les monstres d'encre dans le glyphe du Roi avant qu'il reprenne sa forme normale."
+ ],
+ "pieges": [
+  "Atteins le seuil du Roi avant que l'Imorok ne le sacrifie avec Tessellation.",
+  "Ne reste pas hors d'un glyphe blanc pendant Papetuerie.",
+  "Évite le corps à corps avec les Imushin, surtout au tour 3."
+ ],
+ "tours": [
+  {
+   "from": 2,
+   "every": 3,
+   "to": null,
+   "parity": null,
+   "level": "danger",
+   "text": "Papetuerie : glyphes blancs posés. Reste au centre d'un glyphe, car les dégâts arrivent au tour suivant."
+  }
+ ],
+ "succes": [
+  {
+   "n": "Hardi",
+   "x": "Finir son tour adjacent à un ennemi."
+  },
+  {
+   "n": "Mains propres",
+   "x": "Achever tous les ennemis sans dégâts directs, via glyphe, piège, poison ou Reine."
+  },
+  {
+   "n": "Spécial : Régence d'encre",
+   "x": "Un allié doit tuer la Reine avant que le Roi ne sorte de sa forme Lotus."
+  },
+  {
+   "n": "Trio",
+   "x": "Vaincre tous les monstres avec 3 personnages maximum en moins de 80 tours."
+  }
+ ],
+ "acces": [
+  "Entrée dans le Royaume d'encre en [-3,-1], accessible via les quêtes de Pandala.",
+  "Le trousseau de clés et la téléportation devant le donjon ne fonctionnent pas ici."
+ ],
+ "src": "https://www.dofuspourlesnoobs.com/memoire-d-orukam.html"
+}
