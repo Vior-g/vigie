@@ -1,0 +1,98 @@
+{
+  "dj": "Fonderie des Waddicts",
+  "boss": "Mawabouaino",
+  "maj": "2026-10-22",
+  "essentiel": [
+    "Dès qu'un Twakeuf est invoqué, chaque monstre ou invocation tué laisse un glyphe : marcher dessus donne +3 PA et +300 puissance pendant 2 tours.",
+    "Les glyphes disparaissent à la mort de Mawabouaino ; leur état permettrait aux Twakeufs de se téléporter sur toi (Mowfal).",
+    "Mawabouaino retire des PM (1-8 PO), repousse de 2 autour de lui et baisse ta résistance Terre de 20 à 30 % (Chocolave, ligne de 10).",
+    "Reste loin des Twakeufs et des Waccros ; ne t'aligne pas avec les Wadnozéams et Warkaïks."
+  ],
+  "mecaniques": [
+    {
+      "t": "Glyphes de chocolat",
+      "x": "Après l'invocation d'un Twakeuf, chaque mort laisse un glyphe : +3 PA et +300 puissance 2 tours pour qui marche dessus."
+    },
+    {
+      "t": "Soins des Wadulants",
+      "x": "Secouwiste soigne les alliés proches de la cible de 100 % des dégâts infligés : sépare-les."
+    }
+  ],
+  "sorts": [
+    {
+      "n": "Cacaobstwuant",
+      "x": "1-8 PO : Terre, retire 0 à 2 PM."
+    },
+    {
+      "n": "Chocohowte",
+      "x": "1-3 PO : invoque un Twakeuf et active les glyphes."
+    },
+    {
+      "n": "Éclat",
+      "x": "Cercle de 2 autour de lui : Terre et poussée de 2."
+    },
+    {
+      "n": "Chocolave",
+      "x": "Ligne 1-10 PO : Terre, -20 à 30 % de résistance Terre."
+    }
+  ],
+  "monstres": [
+    {
+      "n": "Twakeuf",
+      "d": "haut",
+      "x": "Calme à distance ; au contact cône Air, -tacle, vol de 100 à 125 vitalité ; se téléporte près de sa cible."
+    },
+    {
+      "n": "Warkaïk",
+      "d": "haut",
+      "x": "Seul tireur longue portée : Feu en croix 3-10 PO, -1 PO ; ligne de 6 au contact."
+    },
+    {
+      "n": "Wadulant",
+      "d": "moyen",
+      "x": "+2 PM au groupe, soins, +10 % dégâts et résistances."
+    },
+    {
+      "n": "Waccro",
+      "d": "moyen",
+      "x": "~150 Terre à 1-3 PO ; vole 100 puissance au contact. Reste à 4-5 cases."
+    },
+    {
+      "n": "Wadnozéam",
+      "d": "bas",
+      "x": "Ne touche qu'en ligne : attire de 1 à 3 cases et retire 1 PM."
+    }
+  ],
+  "strategie": [
+    "Joue à distance et hors des lignes.",
+    "Utilise les glyphes pour tes gros tours, puis tue Mawabouaino (ils disparaissent avec lui)."
+  ],
+  "pieges": [
+    "Se faire attirer au contact par les Wadnozéams.",
+    "Laisser les Wadulants soigner leur groupe."
+  ],
+  "succes": [
+    {
+      "n": "Chrono",
+      "x": "Vaincre en moins de 9 tours."
+    },
+    {
+      "n": "Versatile",
+      "x": "Chaque action une seule fois par tour."
+    },
+    {
+      "n": "Collant",
+      "x": "Finir son tour au contact d'un allié ou d'une invocation alliée."
+    },
+    {
+      "n": "Duo",
+      "x": "Deux personnages, moins de 20 tours."
+    }
+  ],
+  "acces": [
+    "Carrière Chocolatée (île de Pwâk), entrée en [-3,-4] ; ballon dirigeable du village d'Amakna en [1,-4].",
+    "Clé : trousseau, ou 5 Bois de Chêne, 5 Kobalte, 5 Menthe Sauvage, 1 Houblon, Dent de Waddict, Emballage Suspect, Tendon de Waccro, Oeil Bionique.",
+    "Niveau conseillé 60."
+  ],
+  "src": "https://dofus.jeuxonline.info/article/14720/fonderie-waddicts"
+}

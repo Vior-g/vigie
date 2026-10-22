@@ -1,0 +1,86 @@
+{
+  "dj": "Laboratoire de Brumen Tinctorias",
+  "boss": "Nelween",
+  "maj": "2026-10-22",
+  "essentiel": [
+    "Nelween peut te faire intercepter les dégâts des monstres proches : c'est la principale difficulté.",
+    "Exhalation Toxique : -30 % de résistances dans un cercle de 3 autour d'elle.",
+    "Tue le Kolérat tôt : Hypnose Brûlante frappe à 10 % de tes PV jusqu'à 8 PO.",
+    "Le Croc Gland désenvoûte (1-9 PO) et frappe très fort au contact."
+  ],
+  "mecaniques": [
+    {
+      "t": "Interception",
+      "x": "Effet qui te fait subir les dégâts infligés aux monstres proches : ne frappe pas autour de toi quand tu en es victime."
+    }
+  ],
+  "sorts": [
+    {
+      "n": "Mord Mollet",
+      "x": "Contact : Terre, retire jusqu'à 2 PM."
+    },
+    {
+      "n": "Soin Diffus",
+      "x": "Vol de vie Neutre."
+    },
+    {
+      "n": "Exhalation Toxique",
+      "x": "Cercle de 3 : -30 % de résistances."
+    }
+  ],
+  "monstres": [
+    {
+      "n": "Kolérat",
+      "d": "haut",
+      "x": "Hypnose Brûlante 1-8 PO (10 % de tes PV) ; Affaibli au contact (pas d'arme)."
+    },
+    {
+      "n": "Croc Gland",
+      "d": "haut",
+      "x": "Désenvoûtement 1-9 PO ; gros vol de vie Air au contact, -2 PA."
+    },
+    {
+      "n": "Scorbute",
+      "d": "moyen",
+      "x": "Altération : -51 à -100 caractéristiques en zone ; poisons."
+    },
+    {
+      "n": "Macien",
+      "d": "moyen",
+      "x": "Se régénère si tu restes collé et aligné ; repousse ; boost Air."
+    },
+    {
+      "n": "Crowneille",
+      "d": "bas",
+      "x": "Air en ligne 1-9 PO ; donne 2 PM et 4 PO à ses alliés."
+    }
+  ],
+  "strategie": [
+    "Place-toi bien dès le départ : les monstres arrivent vite au contact.",
+    "Kolérat d'abord, puis Croc Gland ; Nelween en dernier."
+  ],
+  "pieges": [
+    "Garder tes buffs importants près d'un Croc Gland.",
+    "Rester aligné et collé au Macien."
+  ],
+  "succes": [
+    {
+      "n": "Dernier",
+      "x": "Vaincre Nelween après ses compagnons."
+    },
+    {
+      "n": "Anachorète",
+      "x": "Ne jamais finir son tour collé à un allié."
+    },
+    {
+      "n": "Duo",
+      "x": "Deux personnages (limite de tours à vérifier en jeu)."
+    }
+  ],
+  "acces": [
+    "Désolation de Sidimote, entrée en [-27,-17] (zaap de la Route des Roulottes en [-25,12]).",
+    "Clé : trousseau ou Clef du Laboratoire de Brumen Tinctorias. Niveau conseillé 70.",
+    "Première visite : petite quête avec Tassa."
+  ],
+  "src": "https://dofus.jeuxonline.info/article/13856/laboratoire-brumen-tinctorias"
+}

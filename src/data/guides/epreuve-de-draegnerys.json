@@ -1,0 +1,88 @@
+{
+  "dj": "Épreuve de Draegnerys",
+  "boss": "Draegnerys",
+  "maj": "2026-10-22",
+  "essentiel": [
+    "Les Dragoeufs évoluent : Audacieux au début de leur tour (+3 PM, +2 PA, +50 puissance), puis Intrépide 2 tours plus tard (+4 PM, +6 PA, +100 puissance).",
+    "Tue les Dragoeufs avant le stade Intrépide.",
+    "Draegnerys booste un Dragoeuf (+2 PA, +2 PM, +15 % vitalité, +200 puissance 2 tours) : tue-la vite.",
+    "Knout (1-5 PO) repousse de 2 ; Drakaaris frappe en Feu jusqu'à 10 PO."
+  ],
+  "mecaniques": [
+    {
+      "t": "Évolution des Dragoeufs",
+      "x": "Audacieux dès leur premier tour, Intrépide 2 tours plus tard : leurs sorts gagnent en zone, en portée et en nombre de lancers."
+    }
+  ],
+  "sorts": [
+    {
+      "n": "Somatotropine",
+      "x": "1-6 PO : +2 PA, +2 PM, +15 % vitalité, +200 puissance 2 tours à un Dragoeuf."
+    },
+    {
+      "n": "Knout",
+      "x": "1-5 PO : Feu et poussée de 2."
+    },
+    {
+      "n": "Drakaaris",
+      "x": "1-10 PO : Feu."
+    }
+  ],
+  "monstres": [
+    {
+      "n": "Dragoeuf Charbon",
+      "d": "haut",
+      "x": "Feu à distance, portée jusqu'à 13 en Intrépide, -1 PO."
+    },
+    {
+      "n": "Dragoeuf Ardoise",
+      "d": "haut",
+      "x": "Eau 1-6 PO, vole 100 chance ; 3 lancers par tour en Intrépide. Reste à plus de 6 cases."
+    },
+    {
+      "n": "Dragoeuf Calcaire",
+      "d": "moyen",
+      "x": "+2 PM à ses alliés (cercle de 2), +2 PA en Intrépide."
+    },
+    {
+      "n": "Dragoeuf Argile",
+      "d": "moyen",
+      "x": "Air au contact et autour de lui, vole de l'agilité en Intrépide."
+    }
+  ],
+  "strategie": [
+    "Tue Draegnerys rapidement, puis les Dragoeufs avant leur évolution.",
+    "Distance face aux Ardoise et Charbon ; contact possible contre les Argile."
+  ],
+  "pieges": [
+    "Laisser un Dragoeuf atteindre le stade Intrépide.",
+    "Se faire repousser hors de portée."
+  ],
+  "tours": [
+    {
+      "from": 3,
+      "level": "alerte",
+      "text": "Les Dragoeufs du début passent Intrépides (+6 PA, +4 PM, +100 puissance) : finis-les."
+    }
+  ],
+  "succes": [
+    {
+      "n": "Focus",
+      "x": "Achever un ennemi avant d'en attaquer un autre."
+    },
+    {
+      "n": "Hardi",
+      "x": "Finir chaque tour au contact d'un ennemi."
+    },
+    {
+      "n": "Duo",
+      "x": "Deux personnages, moins de 20 tours."
+    }
+  ],
+  "acces": [
+    "Presqu'île des Dragoeufs, entrée en [-4,29] (zaap de la Plaine des Scarafeuilles en [-1,24]).",
+    "Clé : trousseau ou Clef de l'Épreuve de Draegnerys (coquilles de Dragoeuf, Menthe Sauvage, Houblon, Carpe d'Iem, Bois de Bombu).",
+    "Niveau conseillé 70."
+  ],
+  "src": "https://dofus.jeuxonline.info/article/14747/epreuve-draegnerys"
+}

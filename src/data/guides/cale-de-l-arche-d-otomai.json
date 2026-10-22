@@ -1,0 +1,95 @@
+{
+  "dj": "Cale de l'Arche d'Otomaï",
+  "boss": "Gourlo le Terrible",
+  "maj": "2026-10-22",
+  "essentiel": [
+    "Gourlo a 200 % de résistance dans tous les éléments : il faut le placer au contact de ses Tonneaux.",
+    "Chaque Tonneau a un élément aléatoire ; son Rhum Fourbe retire 200 % de résistance dans cet élément aux créatures à son contact (cumulable).",
+    "Coince Gourlo dans un coin, collé aux Tonneaux des éléments de ton équipe.",
+    "Le Flib peut te faire passer ton tour (Passton Tournoube) : ne reste pas à son contact."
+  ],
+  "mecaniques": [
+    {
+      "t": "Tonneaux",
+      "x": "Gourlo invoque des Tonneaux d'un élément aléatoire (+200 agilité 1 tour). Rhum Fourbe : -200 % de résistance dans l'élément du Tonneau pour les créatures à son contact. Ne les tue pas trop vite."
+    },
+    {
+      "t": "Invisibilité",
+      "x": "Le Flib (Prestidigitation) et Boomba (Feu d'Artifesse) rendent les monstres invisibles."
+    }
+  ],
+  "sorts": [
+    {
+      "n": "Invocation de Tonneau",
+      "x": "1 PA : Tonneau d'un élément aléatoire."
+    },
+    {
+      "n": "Un gros boulet sur un autre boulet",
+      "x": "Feu à distance en cercle de 2."
+    },
+    {
+      "n": "Bombarde",
+      "x": "Feu au contact, -1 % de critique pendant 5 tours."
+    }
+  ],
+  "monstres": [
+    {
+      "n": "Le Flib",
+      "d": "haut",
+      "x": "Au contact, annule ton tour ; retire 200 puissance en zone ; rend ses alliés invisibles."
+    },
+    {
+      "n": "Barbroussa",
+      "d": "haut",
+      "x": "Échange de place + Eau ; Rapine Air = 15 % de ses PV. Cible prioritaire."
+    },
+    {
+      "n": "Canondorf",
+      "d": "moyen",
+      "x": "Feu à portée infinie sans ligne de vue, repousse ; -25 % de résistances."
+    },
+    {
+      "n": "Boomba",
+      "d": "moyen",
+      "x": "Bombe Feu 1-8 PO avec 15 % d'érosion ; invisibilité des alliés."
+    },
+    {
+      "n": "Sparo",
+      "d": "bas",
+      "x": "Retire 1 PM au contact ; -100 agilité et -20 esquive PM."
+    },
+    {
+      "n": "Nakunbra",
+      "d": "bas",
+      "x": "Attire de 3 cases à toute portée."
+    }
+  ],
+  "strategie": [
+    "Barbroussa d'abord (sauf succès Premier), puis le Flib.",
+    "Pousse et attire Gourlo contre les Tonneaux de tes éléments, puis frappe."
+  ],
+  "pieges": [
+    "Rester au contact du Flib (tours passés en boucle).",
+    "Tuer tous les Tonneaux : Gourlo redevient quasi invulnérable."
+  ],
+  "succes": [
+    {
+      "n": "Econome",
+      "x": "Ne jamais utiliser deux fois le même sort de tout le combat (invocations non concernées)."
+    },
+    {
+      "n": "Premier",
+      "x": "Tuer Gourlo en premier."
+    },
+    {
+      "n": "Duo",
+      "x": "Deux personnages, moins de 20 tours."
+    }
+  ],
+  "acces": [
+    "Arche d'Otomaï, entrée en [-55,-4] ; Transporteur Brigandin jusqu'en [-57,1].",
+    "Clé : trousseau, ou clé obtenue à la fin de la Grotte Hesque (non fabricable).",
+    "Niveau conseillé 70. Récompense : une relique pour réinitialiser les caractéristiques."
+  ],
+  "src": "https://dofus.jeuxonline.info/article/9858/arche-otomai"
+}

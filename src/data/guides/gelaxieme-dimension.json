@@ -1,0 +1,90 @@
+{
+  "dj": "Gelaxième Dimension",
+  "boss": "Gelée Royale Bleuet",
+  "maj": "2026-10-22",
+  "essentiel": [
+    "Quatre Gelées Royales (Bleuet, Citron, Fraise, Menthe) : prévois une équipe qui frappe dans les 4 éléments.",
+    "Chaque Royale invoque des Gelées de sa couleur et réduit ses dégâts subis (Gel Protecteur).",
+    "Gelpikes (cercle de 2 autour des Gelées) est le principal danger : ne te colle pas à elles.",
+    "Les Gelées retirent des caractéristiques (Chance, Agilité, Intelligence, Force) au contact."
+  ],
+  "mecaniques": [
+    {
+      "t": "Flaques de Gelée",
+      "x": "Chaque salle gagnée donne une Flaque de la couleur majoritaire du groupe battu ; elles servent à invoquer les Royales correspondantes."
+    },
+    {
+      "t": "Gel Protecteur",
+      "x": "Réduit les dégâts subis par la Gelée pendant 2 tours : change de cible pendant ce temps."
+    },
+    {
+      "t": "Mot de Jeunesse",
+      "x": "La Gelée Menthe réduit d'un tour les effets de sa cible et la soigne."
+    }
+  ],
+  "sorts": [
+    {
+      "n": "Bleu Os / Citron Os / Fraise Os / Menthe Os",
+      "x": "1-2 PO : dégâts (Eau, Air, Feu, Terre) et retrait de la caractéristique liée."
+    },
+    {
+      "n": "Gel Protecteur",
+      "x": "Réduction des dégâts subis."
+    },
+    {
+      "n": "Invocation",
+      "x": "Gelée de la même couleur."
+    }
+  ],
+  "monstres": [
+    {
+      "n": "Gelée Royale Citron",
+      "d": "moyen",
+      "x": "Air au contact, retire de l'agilité."
+    },
+    {
+      "n": "Gelée Royale Fraise",
+      "d": "moyen",
+      "x": "Feu au contact, retire de l'intelligence."
+    },
+    {
+      "n": "Gelée Royale Menthe",
+      "d": "moyen",
+      "x": "Terre au contact, retire de la force."
+    },
+    {
+      "n": "Gelée Menthe",
+      "d": "moyen",
+      "x": "Mot de Jeunesse : désenvoûte d'un tour et soigne (0-6 PO)."
+    },
+    {
+      "n": "Gelée Citron",
+      "d": "bas",
+      "x": "Gel Protecteur et Reconstitution (soin)."
+    }
+  ],
+  "strategie": [
+    "Associe chaque personnage à la Royale qu'il frappe le mieux.",
+    "Joue à 2 cases ou plus des Gelées pour éviter Gelpikes."
+  ],
+  "pieges": [
+    "Frapper une Gelée sous Gel Protecteur.",
+    "Collant oblige à rester groupé : attention à Gelpikes."
+  ],
+  "succes": [
+    {
+      "n": "Collant",
+      "x": "Rester au contact d'un allié pendant tout le combat."
+    },
+    {
+      "n": "Duo",
+      "x": "Vaincre les 4 Royales à deux personnages maximum, en moins de 20 tours."
+    }
+  ],
+  "acces": [
+    "Péninsule des Gelées, près de Sufokia.",
+    "Clé : Multygely (3 Vertgely, 2 Rougely, 4 Blugely).",
+    "Niveau conseillé 60 ; 5 salles."
+  ],
+  "src": "https://dofus.jeuxonline.info/article/13879/donjon-gelees-gelaxieme-dimension"
+}
