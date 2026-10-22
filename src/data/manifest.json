@@ -1,12 +1,12 @@
 {
  "schema": 2,
- "stamp": "2026-10-22T13:47:10.784Z",
+ "stamp": "2026-10-22T13:49:29.175Z",
  "files": {
   "songes.json": "7ee699e1fc11",
   "generated/dungeons.json": "29595f8ab097",
-  "generated/meta.json": "93419ff9ef87",
+  "generated/meta.json": "ef3a259eeb80",
   "generated/monsters.json": "03ee6316dbe9",
-  "generated/spells.json": "1d6ebab7ae61",
+  "generated/spells.json": "ed7cf6976a6a",
   "generated/subareas.json": "48e4b8d2155a",
   "guides/antichambre-des-gloursons.json": "59f74474ed1f",
   "guides/antre-de-crocabulia.json": "f0fab433d1df",
