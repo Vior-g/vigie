@@ -1,5 +1,10 @@
 # Nouveautés de Vigie
 
+## 0.3.1
+
+- **Guides pour presque tous les donjons** : 129 guides (39 de plus), dont tous les donjons de niveau 10 à 100 (Kardorim, Bouftou Royal, Tofus, Scarafeuilles, Blops, Gelées, Moon, Dragon Cochon, Meulou, Malléfisk…). Rappels tour par tour quand le donjon en a besoin (Abraknyde Ancestral, Meulou, Dragon Cochon, Moon, Larves…).
+- Les expéditions reprennent le guide de leur donjon.
+
 ## 0.3.0
 
 - **Mise à jour automatique, comme Relais** : Vigie vérifie les nouvelles versions au démarrage et propose « Mettre à jour » ; il télécharge la nouvelle version (seulement le code, quelques Mo, quand c'est possible), se ferme, se remplace et redémarre tout seul. Ton ancienne version est restaurée si quelque chose échoue.

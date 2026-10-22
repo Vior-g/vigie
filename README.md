@@ -2,7 +2,7 @@
 
 Vigie affiche par-dessus Dofus une fiche de combat qui suit tout seule l'endroit où tu te trouves :
 
-- **Tous les donjons du jeu** (187, expéditions comprises) : boss, résistances, PA/PM, esquives, sorts complets, monstres du donjon. **89 donjons ont un guide de mécaniques** (essentiel, mécaniques, stratégie, pièges, succès, accès, rappels tour par tour) ; les autres ont une synthèse tirée des données du jeu.
+- **Tous les donjons du jeu** (187, expéditions comprises) : boss, résistances, PA/PM, esquives, sorts complets, monstres du donjon. **129 donjons ont un guide de mécaniques** (essentiel, mécaniques, stratégie, pièges, succès, accès, rappels tour par tour) ; les autres ont une synthèse tirée des données du jeu.
 - **Mode Combat / Songe** : en survolant un groupe de monstres (ou un monstre en combat) et en appuyant sur `Ctrl+Alt+M`, Vigie lit leurs noms à l'écran et affiche leurs résistances, l'élément à jouer contre le groupe, leurs sorts, et les conseils des guides. Pratique dans les **Songes Infinis**, où les groupes sont tirés de tout le bestiaire.
 - **Songes Infinis** : règles, intensités, boss final et vagues, les 16 **Aberrations** et leur effet, les avis de recherche des songes.
 - **Comte Harebourg** : la case à cliquer pour le toucher malgré la confusion horaire, affichée directement sur la grille du jeu.

@@ -349,7 +349,13 @@ class GameData {
     for (const d of this.dungeons) {
       if (primary.has(d.id)) continue;
       const main = this.mainBoss(d, null);
-      const g = main ? guideByBossName.get(normalize(this.monsters[main].n)) || null : null;
+      let g = main ? guideByBossName.get(normalize(this.monsters[main].n)) || null : null;
+      if (!g && isExpe(d)) {
+        // « Expédition - X » / « Expédition de l'Audace - X » : guide du donjon X.
+        const base = d.n.split(/\s+-\s+/).slice(1).join(' - ');
+        const bd = base && byName.get(normalize(base));
+        if (bd && primary.has(bd.id)) g = primary.get(bd.id);
+      }
       add(makeDungeonFiche(d, g, 'boss'));
     }
     // 4) Fiches secondaires (second boss d'une instance) et guides sans donjon.

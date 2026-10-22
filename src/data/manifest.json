@@ -1,6 +1,6 @@
 {
  "schema": 2,
- "stamp": "2026-10-22T15:20:22.333Z",
+ "stamp": "2026-10-22T15:20:58.031Z",
  "files": {
   "songes.json": "7ee699e1fc11",
   "generated/dungeons.json": "29595f8ab097",
@@ -57,6 +57,7 @@
   "guides/dojo-du-vent.json": "0e6f3948a980",
   "guides/domaine-ancestral.json": "e3d9ed6d87ef",
   "guides/donjon-de-la-mine-de-sakaiuml.json": "582fe3902303",
+  "guides/donjon-de-nowel.json": "586a32bd0934",
   "guides/donjon-des-bworks.json": "ccb302b1b01a",
   "guides/donjon-des-forgerons.json": "80e8e36046af",
   "guides/donjon-des-larves.json": "b77d0dd9dd76",

@@ -1,0 +1,36 @@
+{
+  "dj": "Donjon de Nowel",
+  "boss": "Sapik",
+  "maj": "2026-10-22",
+  "essentiel": [
+    "Donjon d'événement de l'île de Nowel (période de Nowel).",
+    "Le Sapik renvoie 5 à 20 dommages à chaque coup reçu : évite les attaques à plusieurs lignes de dégâts et les armes multi-coups.",
+    "Enguirlandage frappe à distance (ligne de vue) et peut appliquer un malus de 4 tours.",
+    "Kokapik invoque des Pokipiks ou des Kipiks qui renforcent ses alliés : élimine-les."
+  ],
+  "mecaniques": [
+    {
+      "t": "Renvoi",
+      "x": "Envoûtement passif du Sapik : 5 à 20 dommages renvoyés par coup reçu."
+    }
+  ],
+  "sorts": [
+    {
+      "n": "Enguirlandage",
+      "x": "Dégâts à distance avec ligne de vue ; malus de 4 tours possible."
+    },
+    {
+      "n": "Kokapik",
+      "x": "Invoque des Pokipiks ou des Kipiks."
+    }
+  ],
+  "strategie": [
+    "Privilégie de gros coups uniques plutôt que des sorts à multiples lignes.",
+    "Casse les lignes de vue du Sapik et tue ses invocations."
+  ],
+  "acces": [
+    "Île de Nowel, entrée en [-32,-89] ; clé du donjon de Nowel."
+  ],
+  "note": "Source peu détaillée : vérifie les sorts du Sapik dans l'onglet Mécaniques (données du jeu).",
+  "src": "https://dofus.jeuxonline.info/article/13893/donjon-nowel"
+}
