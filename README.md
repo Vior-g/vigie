@@ -137,4 +137,5 @@ git push
 
 - [Dofus pour les Noobs](https://www.dofuspourlesnoobs.com) : guides des donjons (lien sur chaque fiche, onglet Accès) et [Songes Infinis](https://www.dofuspourlesnoobs.com/songes-infinis.html)
 - [DofusDB](https://dofusdb.fr) : bestiaire, sorts, donjons
+- Police [Atkinson Hyperlegible Next](https://github.com/googlefonts/atkinson-hyperlegible-next) (Braille Institute, licence SIL OFL, fichier `src/renderer/fonts/OFL.txt`)
 - [Le Bazar de Papycha](https://papycha.fr/donjon-du-comte-harebourg/) (table des confusions de Harebourg), [JeuxOnLine](https://dofus.jeuxonline.info/article/13413/donjon-comte-harebourg)

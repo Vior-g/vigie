@@ -1,7 +1,7 @@
 {
   "name": "vigie",
   "productName": "Vigie",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "private": true,
   "description": "Overlay d'aide aux combats pour Dofus 3 : fiches de tous les donjons, mode Combat/Songe, visée Harebourg (lecture seule)",
   "main": "src/main/main.js",

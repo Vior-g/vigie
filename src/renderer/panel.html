@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self'; img-src 'self' data: https://api.dofusdb.fr; style-src 'self' 'unsafe-inline'; script-src 'self'">
+        content="default-src 'self'; img-src 'self' data: https://api.dofusdb.fr; style-src 'self' 'unsafe-inline'; font-src 'self'; script-src 'self'">
   <title>Vigie — panneau</title>
   <link rel="stylesheet" href="panel.css">
 </head>
@@ -12,67 +12,72 @@
     <header class="head">
       <div class="portrait" id="portrait"></div>
       <div class="titles">
-        <div class="boss" id="bossName">Vigie</div>
-        <div class="dungeon" id="dungeonName">Aide aux combats Dofus</div>
+        <div class="title" id="bossName">Vigie</div>
+        <div class="subtitle"><span class="dot" id="statusDot"></span><span id="dungeonName">Aide aux combats Dofus</span></div>
       </div>
       <div class="actions">
-        <button class="icon" id="btnSettings" title="Réglages">⚙</button>
-        <button class="icon" id="btnCompact" title="Réduire / agrandir">▁</button>
-        <button class="icon" id="btnHide" title="Masquer (Ctrl+Alt+O)">✕</button>
+        <button class="icon" id="btnSearch" title="Chercher (Ctrl+Alt+F)" aria-label="Chercher">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5"/><path d="M13 13l4.5 4.5"/></svg>
+        </button>
+        <button class="icon" id="btnSettings" title="Réglages" aria-label="Réglages">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="2.6"/><path d="M10 2.5v2.2M10 15.3v2.2M2.5 10h2.2M15.3 10h2.2M4.7 4.7l1.6 1.6M13.7 13.7l1.6 1.6M4.7 15.3l1.6-1.6M13.7 6.3l1.6-1.6"/></svg>
+        </button>
+        <button class="icon" id="btnCompact" title="Réduire / agrandir" aria-label="Réduire ou agrandir">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 13h11"/></svg>
+        </button>
+        <button class="icon" id="btnHide" title="Masquer (Ctrl+Alt+O)" aria-label="Masquer">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5.5 5.5l9 9M14.5 5.5l-9 9"/></svg>
+        </button>
       </div>
     </header>
 
-    <div class="status" id="status"></div>
+    <div class="notice" id="notice" hidden></div>
     <div class="update" id="updateBanner" hidden></div>
 
-    <div class="modes" id="modes">
-      <button id="modeFiche" data-v="fiche">Fiche</button>
-      <button id="modeCombat" data-v="combat">Combat <span class="count" id="combatCount"></span></button>
-      <button class="read" id="btnRead" title="Lire les noms de monstres sous le curseur">◎ Lire les monstres</button>
-    </div>
-
-    <div class="searchbox">
-      <input id="search" type="search" placeholder="Donjon, boss ou monstre…  (Ctrl+Alt+F)" autocomplete="off" spellcheck="false">
+    <div class="searchrow" id="searchRow" hidden>
+      <input id="search" type="search" placeholder="Donjon, boss ou monstre…" autocomplete="off" spellcheck="false" aria-label="Chercher un donjon, un boss ou un monstre">
       <div class="results" id="results" hidden></div>
     </div>
 
+    <nav class="modes" id="modes">
+      <div class="seg" role="tablist">
+        <button id="modeFiche" role="tab">Donjon</button>
+        <button id="modeCombat" role="tab">Combat <span class="count" id="combatCount"></span></button>
+      </div>
+      <button class="read" id="btnRead">
+        <span>Lire les monstres</span><kbd id="readKey">Ctrl+Alt+M</kbd>
+      </button>
+    </nav>
+
     <main id="main">
       <section class="empty" id="empty">
-        <p><b>Aucun donjon détecté pour l'instant.</b></p>
-        <p class="muted" id="emptyHint">Entre dans un donjon ou un Songe : la fiche s'ouvre toute seule.</p>
+        <h2>Prêt pour le prochain combat</h2>
+        <p id="emptyHint">La fiche du donjon s'ouvre toute seule quand tu y entres.</p>
         <div class="quick" id="quick"></div>
-        <p class="muted small" id="dataStats"></p>
+        <p class="foot" id="dataStats"></p>
       </section>
 
       <section id="fiche" hidden>
+        <div id="verdict"></div>
         <div class="turnbar" id="turnbar">
-          <span class="lbl">Tour</span>
-          <button class="step" id="turnMinus" title="Tour précédent (Ctrl+Alt+Maj+T)">‹</button>
-          <span class="turn" id="turnNum">1</span>
-          <button class="step" id="turnPlus" title="Tour suivant (Ctrl+Alt+T)">›</button>
-          <span class="parity" id="turnParity">impair</span>
-          <button class="ghost" id="turnReset" title="Recommencer au tour 1 (Ctrl+Alt+R)">↺</button>
+          <button class="step" id="turnMinus" title="Tour précédent (Ctrl+Alt+Maj+T)" aria-label="Tour précédent">‹</button>
+          <div class="turninfo"><span class="turn">Tour <b id="turnNum">1</b></span><span class="parity" id="turnParity">impair</span></div>
+          <button class="step" id="turnPlus" title="Tour suivant (Ctrl+Alt+T)" aria-label="Tour suivant">›</button>
+          <button class="ghost" id="turnReset" title="Revenir au tour 1 (Ctrl+Alt+R)">Tour 1</button>
         </div>
         <ul class="reminders" id="reminders"></ul>
-        <ul class="compact-info" id="compactInfo"></ul>
-
-        <div class="stats" id="stats"></div>
-        <div class="res" id="res"></div>
-
-        <nav class="tabs" id="tabs"></nav>
-        <div class="tabbody" id="tabbody"></div>
+        <div class="sections" id="sections"></div>
       </section>
 
       <section id="combat" hidden>
         <div class="combat-bar">
-          <span class="songe-bar" id="songeBar"></span>
-          <span class="grow"></span>
-          <button class="chip-btn" id="combatClear" title="Vider la liste (Ctrl+Alt+Maj+M)">Vider</button>
+          <div class="songe-bar" id="songeBar"></div>
+          <button class="textbtn" id="combatClear" title="Vider la liste (Ctrl+Alt+Maj+M)">Vider la liste</button>
         </div>
-        <div class="muted small combat-info" id="combatInfo"></div>
-        <div class="summary" id="summary"></div>
-        <div class="aberr" id="aberr"></div>
-        <div class="cards" id="cards"></div>
+        <p class="combat-info" id="combatInfo"></p>
+        <div id="groupVerdict"></div>
+        <div id="aberr"></div>
+        <div class="rows" id="cards"></div>
         <div class="empty-combat" id="combatEmpty"></div>
       </section>
     </main>

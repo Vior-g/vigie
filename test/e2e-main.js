@@ -45,15 +45,17 @@ app.whenReady().then(async () => {
   await shot(panel, '01c-telechargement');
   global.__vigieTestUpdate(null);
 
-  const tab = (label) => js(panel, `[...document.querySelectorAll('#tabs button')].find(b => b.textContent === '${label}').click(); document.getElementById('main').scrollTop = 0;`);
+  const sec = (key, scroll = true) => js(panel, `(() => { const d = document.querySelector('[data-sec="${key}"]'); d.open = true; ${scroll ? 'd.scrollIntoView({ block: "start" });' : ''} })()`);
 
   // Fiche Harebourg (guide + outil de visée)
   await js(panel, `vigie.select('d71')`);
-  await wait(600);
+  await wait(700);
   await js(panel, `vigie.setTurn(4); vigie.harebourg({ baseQ: 1, meleeLines: 0 });`);
   await wait(300);
+  await js(panel, `document.querySelectorAll('details.sec').forEach(d => { if (d.dataset.sec !== 'essentiel') d.open = false; })`);
+  await wait(200);
   await shot(panel, '02-harebourg');
-  await tab('Visée');
+  await sec('visee');
   await wait(400);
   await js(panel, `(() => {
     const c = document.getElementById('miniCanvas'); const r = c.getBoundingClientRect();
@@ -61,35 +63,39 @@ app.whenReady().then(async () => {
     const p1 = H.gridToPixel({ a: 0, b: 0 }, o, 30); const p2 = H.gridToPixel({ a: 3, b: 3 }, o, 30);
     c.dispatchEvent(new MouseEvent('mousedown', { button: 0, clientX: r.left + p1.x, clientY: r.top + p1.y, bubbles: true }));
     c.dispatchEvent(new MouseEvent('mousedown', { button: 2, clientX: r.left + p2.x, clientY: r.top + p2.y, bubbles: true }));
-    document.getElementById('main').scrollTop = 330;
   })()`);
   await wait(300);
   await shot(panel, '03-visee');
-  await tab('Mécaniques');
+  await js(panel, `document.querySelector('[data-sec="visee"]').open = false`);
+  await sec('mecaniques');
   await wait(400);
   await shot(panel, '04-mecaniques');
-  await tab('Monstres');
-  await wait(600);
+  await js(panel, `document.querySelector('[data-sec="mecaniques"]').open = false`);
+  await sec('monstres');
+  await wait(400);
+  await js(panel, `document.querySelector('[data-sec="monstres"] .m-head').click()`);
+  await wait(400);
   await shot(panel, '05-monstres');
+  await js(panel, `document.querySelector('[data-sec="monstres"]').open = false; document.getElementById('main').scrollTop = 0;`);
 
   // Recherche dans tout le bestiaire
-  await js(panel, `(() => { const i = document.getElementById('search'); i.focus(); i.value = 'kralam'; i.dispatchEvent(new Event('input')); })()`);
+  await js(panel, `(() => { document.getElementById('btnSearch').click(); const i = document.getElementById('search'); i.value = 'kralam'; i.dispatchEvent(new Event('input')); })()`);
   await wait(500);
   await shot(panel, '06-recherche');
   await js(panel, `document.querySelector('#results button').dispatchEvent(new MouseEvent('mousedown', { bubbles: true }))`);
-  await wait(700);
+  await wait(800);
   await shot(panel, '07-kralamoure');
 
-  // Donjon sans guide : synthèse automatique
+  // Donjon de bas niveau
   await js(panel, `vigie.search('Cour du Bouftou Royal').then(r => vigie.select(r[0].ref))`);
-  await wait(700);
-  await shot(panel, '08-sans-guide');
+  await wait(800);
+  await shot(panel, '08-bouftou');
 
   // Songes
   await js(panel, `vigie.select('songes')`);
-  await wait(700);
+  await wait(800);
   await shot(panel, '09-songes');
-  await tab('Aberrations');
+  await sec('s-aberrations');
   await wait(300);
   await shot(panel, '10-aberrations');
 
@@ -98,22 +104,31 @@ app.whenReady().then(async () => {
   LOG('combat ids', JSON.stringify(ids));
   await wait(900);
   await shot(panel, '11-combat');
-  await js(panel, `[...document.querySelectorAll('.card .card-actions button')].find(b => b.textContent.startsWith('Sorts')).click()`);
+  await js(panel, `document.querySelector('#cards .m-head').click()`);
   await wait(300);
-  await js(panel, `document.getElementById('main').scrollTop = 260`);
+  await js(panel, `document.getElementById('main').scrollTop = 230`);
   await wait(200);
-  await shot(panel, '12-combat-sorts');
+  await shot(panel, '12-combat-detail');
+
+  // Un seul monstre lu en combat (PV lus)
+  await js(panel, `vigie.combatClear()`);
+  await wait(300);
+  global.__vigieTestMonsters('Strigide\n4 200 / 4 200');
+  await wait(800);
+  await shot(panel, '12b-un-monstre');
 
   // Réglages
   await js(panel, `document.getElementById('btnSettings').click()`);
   await wait(400);
   await shot(panel, '13-reglages');
-  await js(panel, `document.getElementById('settings').scrollTop = 560`);
+  await js(panel, `document.getElementById('settings').scrollTop = 700`);
   await wait(200);
   await shot(panel, '14-reglages-bas');
-  await js(panel, `document.getElementById('settings').querySelector('h3 button').click()`);
+  await js(panel, `document.getElementById('settings').querySelector('h2 button').click()`);
 
-  // Mode réduit en combat
+  // Mode réduit
+  await js(panel, `vigie.select('d71'); vigie.setTurn(2);`);
+  await wait(500);
   await js(panel, `document.getElementById('btnCompact').click()`);
   await wait(700);
   await shot(panel, '15-compact');

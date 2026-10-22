@@ -1,5 +1,14 @@
 # Nouveautés de Vigie
 
+## 0.4.0
+
+- **Panneau plus simple et plus lisible** : police conçue pour la lisibilité (Atkinson Hyperlegible), texte plus grand et plus contrasté.
+- En haut de chaque fiche, **« Frappe en … »** : les éléments à jouer en grand, celui à éviter, puis les PV, PA et PM du boss. Même chose pour un groupe en combat.
+- Les onglets sont remplacés par des sections qu'on ouvre d'un clic (L'essentiel, Mécaniques, Monstres, Stratégie et pièges, Sorts, Succès, Accès) ; Vigie se souvient de celles que tu laisses ouvertes.
+- Monstres en une ligne : nom, niveau et PV, élément à jouer, effets dangereux ; un clic affiche résistances, conseil et sorts.
+- Recherche derrière la loupe (ou Ctrl+Alt+F), état de la détection dans un simple point de couleur, avis seulement quand il y a quelque chose à faire.
+- Réglages réorganisés : l'essentiel d'abord, les réglages de lecture dans « Réglages avancés ».
+
 ## 0.3.1
 
 - **Guides pour presque tous les donjons** : 129 guides (39 de plus), dont tous les donjons de niveau 10 à 100 (Kardorim, Bouftou Royal, Tofus, Scarafeuilles, Blops, Gelées, Moon, Dragon Cochon, Meulou, Malléfisk…). Rappels tour par tour quand le donjon en a besoin (Abraknyde Ancestral, Meulou, Dragon Cochon, Moon, Larves…).
