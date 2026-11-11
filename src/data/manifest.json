@@ -1,13 +1,13 @@
 {
  "schema": 2,
- "stamp": "2026-11-04T12:58:42.195Z",
+ "stamp": "2026-11-11T12:42:15.847Z",
  "files": {
   "songes.json": "7ee699e1fc11",
   "generated/dungeons.json": "29595f8ab097",
-  "generated/meta.json": "e41d352b312f",
-  "generated/monsters.json": "ba8f2e208954",
-  "generated/spells.json": "ed7cf6976a6a",
-  "generated/subareas.json": "48e4b8d2155a",
+  "generated/meta.json": "a7d234e4c943",
+  "generated/monsters.json": "c203f2e4d16d",
+  "generated/spells.json": "6fd774d941a8",
+  "generated/subareas.json": "f9e7f636310f",
   "guides/akademie-des-gobs.json": "2d4895ffca37",
   "guides/antichambre-des-gloursons.json": "59f74474ed1f",
   "guides/antre-de-crocabulia.json": "f0fab433d1df",

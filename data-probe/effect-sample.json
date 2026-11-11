@@ -485,12 +485,12 @@
   ],
   "effectId": -1,
   "description": {
-   "id": "1195874",
-   "de": "Zustand {{state,#3}}",
-   "en": "{{state,#3}} state",
-   "es": "Estado {{state,#3}}",
+   "id": "1200532",
+   "de": "Zustand #3",
+   "en": "#3 state",
+   "es": "Estado #3",
    "fr": "État #3",
-   "pt": "Estado {{state,#3}}"
+   "pt": "Estado #3"
   },
   "theoreticalDescription": {
    "id": "0"
@@ -498,6 +498,6 @@
   "className": "EffectData",
   "m_id": 950,
   "createdAt": "2026-03-03T17:13:30.365Z",
-  "updatedAt": "2026-10-07T22:24:21.467Z"
+  "updatedAt": "2026-11-07T11:30:06.935Z"
  }
 ]
