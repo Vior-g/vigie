@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-18T13:55:44.689Z",
+ "generatedAt": "2026-11-25T15:34:48.347Z",
  "source": "https://api.dofusdb.fr",
  "counts": {
   "dungeons": 187,
@@ -13,5 +13,5 @@
   ]
  },
  "requests": 599,
- "seconds": 26
+ "seconds": 33
 }

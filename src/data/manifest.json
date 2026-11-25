@@ -1,10 +1,10 @@
 {
  "schema": 2,
- "stamp": "2026-11-18T13:55:44.794Z",
+ "stamp": "2026-11-25T15:34:48.431Z",
  "files": {
   "songes.json": "7ee699e1fc11",
   "generated/dungeons.json": "29595f8ab097",
-  "generated/meta.json": "6b245ef673b9",
+  "generated/meta.json": "ebe283586a94",
   "generated/monsters.json": "c203f2e4d16d",
   "generated/spells.json": "6fd774d941a8",
   "generated/subareas.json": "f9e7f636310f",
